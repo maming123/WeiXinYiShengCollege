@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\WebWXRelease</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/log4net.dll">
+      <publishTime>04/11/2017 12:14:54</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.dll">
+      <publishTime>04/11/2017 14:47:50</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.MP.dll">
+      <publishTime>04/11/2017 16:58:58</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.MP.pdb">
+      <publishTime>04/11/2017 16:18:53</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.dll">
+      <publishTime>04/11/2017 16:59:01</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.pdb">
+      <publishTime>04/11/2017 16:18:56</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.pdb">
+      <publishTime>04/11/2017 16:18:51</publishTime>
+    </File>
+    <File Include="bin/WeiXinYiShengCollege.Business.dll">
+      <publishTime>04/11/2017 16:53:50</publishTime>
+    </File>
+    <File Include="bin/WeiXinYiShengCollege.Business.pdb">
+      <publishTime>04/11/2017 16:18:53</publishTime>
+    </File>
+    <File Include="bin/WeiXinYiShengCollege.dll">
+      <publishTime>04/11/2017 16:59:03</publishTime>
+    </File>
+    <File Include="bin/WeiXinYiShengCollege.pdb">
+      <publishTime>04/11/2017 16:18:58</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>04/11/2017 16:36:52</publishTime>
+    </File>
+    <File Include="log4.config">
+      <publishTime>04/11/2017 16:36:25</publishTime>
+    </File>
+    <File Include="log4net.config">
+      <publishTime>04/11/2017 16:57:35</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>04/11/2017 15:51:51</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/11/2017 16:53:55</publishTime>
+    </File>
+    <File Include="Weixin.aspx">
+      <publishTime>04/11/2017 11:30:18</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

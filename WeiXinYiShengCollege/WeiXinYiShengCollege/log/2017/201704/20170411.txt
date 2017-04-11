@@ -1,0 +1,26 @@
+
+ 
+记录时间：2017-04-11 15:25:00,524 
+线程ID:[7] 
+日志级别：  INFO  
+出错类：WeiXinYiShengCollege.WebSite.Weixin property: [(null)] - 
+错误描述：aaaa
+ 
+
+ 
+：2017-04-11 15:34:22,156 threadID:[6] INFO  
+：WeiXinYiShengCollege.Business.LogHelper property: [(null)] - 
+描述：aaaa
+ 
+
+ 
+2017-04-11 15:36:35,390 threadID:[7] INFO  WeiXinYiShengCollege.Business.LogHelper property: [(null)] - 描述：aaaa
+ 
+
+ 
+2017-04-11 15:40:02,696 threadID:[7] INFO  WeiXinYiShengCollege.WebSite.Weixin property: [(null)] - 描述：aaaa
+ 
+
+ 
+2017-04-11 15:40:19,438 threadID:[8] INFO  WeiXinYiShengCollege.WebSite.Weixin property: [(null)] - 描述：aaaa
+ 

@@ -1,0 +1,7 @@
+E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege.Business\bin\Debug\WeiXinYiShengCollege.Business.dll.config
+E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege.Business\bin\Debug\WeiXinYiShengCollege.Business.dll
+E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege.Business\bin\Debug\WeiXinYiShengCollege.Business.pdb
+E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege.Business\bin\Debug\log4net.dll
+E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege.Business\bin\Debug\log4net.xml
+E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege.Business\obj\Debug\WeiXinYiShengCollege.Business.dll
+E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege.Business\obj\Debug\WeiXinYiShengCollege.Business.pdb
