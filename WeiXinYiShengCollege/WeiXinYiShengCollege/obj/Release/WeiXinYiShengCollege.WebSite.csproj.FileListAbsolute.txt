@@ -16,3 +16,5 @@ E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\
 E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\obj\Release\WeiXinYiShengCollege.WebSite.csprojResolveAssemblyReference.cache
 E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\obj\Release\WeiXinYiShengCollege.dll
 E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\obj\Release\WeiXinYiShengCollege.pdb
+E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\Newtonsoft.Json.dll
+E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\Newtonsoft.Json.xml

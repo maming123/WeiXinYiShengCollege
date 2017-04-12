@@ -6,8 +6,8 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>后台 - 首页</title>
-    <link href="/js/easyui-1.4.1/themes/bootstrap/easyui.css" rel="stylesheet" />
-    <link href="/js/easyui-1.4.1/themes/icon.css" rel="stylesheet" />
+    <link href="../js/easyui-1.4.1/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="../js/easyui-1.4.1/themes/icon.css" rel="stylesheet" />
     <style>
         .tempul {
             list-style: none;
@@ -22,9 +22,9 @@
                     text-decoration: none;
                 }
     </style>
-    <script src="/js/jquery-1.9.1.min.js"></script>
-    <script src="/js/easyui-1.4.1/jquery.easyui.min.js"></script>
-    <script src="/js/easyui-1.4.1/locale/easyui-lang-zh_CN.js"></script>
+    <script src="..//js/jquery-1.9.1.min.js"></script>
+    <script src="..//js/easyui-1.4.1/jquery.easyui.min.js"></script>
+    <script src="..//js/easyui-1.4.1/locale/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript">
         function addTab(subtitle, url) {
             if (!$('#tabs').tabs('exists', subtitle)) {
@@ -50,7 +50,7 @@
    <div data-options="region:'north',border:false" style="background: #B3DFDA; padding: 10px">
         <%=LoginUserName %>后台管理系统
         <%--<image src="login/images/logo.png"></image>--%>
-        <a href="/home/login/LoginOut.aspx?U=/home/login/index.aspx">退出登录</a>
+        <a href="/weixin/home/login/LoginOut.aspx?U=/weixin/home/login/index.aspx">退出登录</a>
     </div>
     <div data-options="region:'west',split:false,title:'导航菜单'" style="width: 250px; padding: 10px;">
 
