@@ -16,13 +16,13 @@
       <publishTime>04/11/2017 14:47:50</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.dll">
-      <publishTime>04/11/2017 16:58:58</publishTime>
+      <publishTime>04/12/2017 12:05:37</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.dll">
-      <publishTime>04/11/2017 16:59:01</publishTime>
+      <publishTime>04/12/2017 12:05:41</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.pdb">
       <publishTime>04/11/2017 16:18:56</publishTime>
@@ -37,13 +37,379 @@
       <publishTime>04/11/2017 16:18:53</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.dll">
-      <publishTime>04/11/2017 16:59:03</publishTime>
+      <publishTime>04/12/2017 12:05:44</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.pdb">
       <publishTime>04/11/2017 16:18:58</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>04/11/2017 16:36:52</publishTime>
+    </File>
+    <File Include="jqueryweui/.project">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/css/jquery-weui.css">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/css/jquery-weui.min.css">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/action-sheet.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/article.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/badge.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/buttons.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/calendar.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/cell.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/city-picker.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/cols.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/contacts.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/css/demos.css">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/datetime-picker.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/dialog.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/flex.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/footer.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/form.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/gallery.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/gesture.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/grid.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/icons.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_actionSheet.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_article.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_button.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_calendar.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_cell.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_city.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_datetime.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_dialog.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_icons.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_msg.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_new.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_noti.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_panel.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_photo.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_picker.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_progress.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_ptr.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_search_bar.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_select.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_swiper.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_tab.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_toast.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/icon_nav_up.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/pic_160.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/pic_article.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/present.png">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/swiper-1.jpg">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/swiper-2.jpg">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/swiper-3.jpg">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/swiper-4.jpg">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/images/vcode.jpg">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/index.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/infinite-with-navbar.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/infinite.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/loadmore.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/msg.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/navbar.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/noti.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/panel.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/photo-browser.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/picker.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/popup.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/preview.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/progress.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/ptr-with-infinite.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/ptr.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/pull-to-refresh-with-navbar.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/searchbar.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/select-test.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/select.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/slider.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/swiper.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/tabbar.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/toast.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/toptip.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/demos/uploader.html">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/js/city-picker.js">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/js/city-picker.min.js">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/js/jquery-weui.js">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/js/jquery-weui.min.js">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/js/swiper.js">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/js/swiper.min.js">
+      <publishTime>04/12/2017 11:41:11</publishTime>
+    </File>
+    <File Include="jqueryweui/lib/fastclick.js">
+      <publishTime>04/12/2017 11:41:12</publishTime>
+    </File>
+    <File Include="jqueryweui/lib/jquery-2.1.4.js">
+      <publishTime>04/12/2017 11:41:12</publishTime>
+    </File>
+    <File Include="jqueryweui/lib/weui.css">
+      <publishTime>04/12/2017 11:41:12</publishTime>
+    </File>
+    <File Include="jqueryweui/lib/weui.min.css">
+      <publishTime>04/12/2017 11:41:12</publishTime>
+    </File>
+    <File Include="jqueryweui/lib/zepto.js">
+      <publishTime>04/12/2017 11:41:12</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/css/demos.css">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_actionSheet.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_article.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_button.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_calendar.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_cell.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_city.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_datetime.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_dialog.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_icons.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_msg.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_new.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_noti.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_panel.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_photo.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_picker.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_progress.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_ptr.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_search_bar.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_select.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_swiper.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_tab.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_toast.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/icon_nav_up.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/pic_160.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/pic_article.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/present.png">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/swiper-1.jpg">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/swiper-2.jpg">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/swiper-3.jpg">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/swiper-4.jpg">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/vcode.jpg">
+      <publishTime>04/12/2017 12:02:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/profile.aspx">
+      <publishTime>04/12/2017 12:04:57</publishTime>
     </File>
     <File Include="log4.config">
       <publishTime>04/11/2017 16:36:25</publishTime>

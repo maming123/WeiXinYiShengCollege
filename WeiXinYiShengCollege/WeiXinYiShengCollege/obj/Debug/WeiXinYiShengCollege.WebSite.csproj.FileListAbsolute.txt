@@ -14,3 +14,5 @@ E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\
 E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\log4net.xml
 E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\obj\Debug\WeiXinYiShengCollege.dll
 E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\obj\Debug\WeiXinYiShengCollege.pdb
+E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\Newtonsoft.Json.dll
+E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\Newtonsoft.Json.xml

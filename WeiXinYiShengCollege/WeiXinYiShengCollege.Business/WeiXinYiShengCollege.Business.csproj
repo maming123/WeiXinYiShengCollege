@@ -35,22 +35,77 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.8\lib\net40-full\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\DataAccess\ConnectionStrings.cs" />
+    <Compile Include="Common\DataAccess\SqlHelper.cs" />
+    <Compile Include="Common\Models\DataBase_P.cs" />
+    <Compile Include="Common\Models\Generated\Database.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Models\PetaPoco.cs" />
+    <Compile Include="Common\SNS.Library\Database\DatabaseFactory.cs" />
+    <Compile Include="Common\SNS.Library\Database\DBImageManager.cs" />
+    <Compile Include="Common\SNS.Library\Database\IDatabase.cs" />
+    <Compile Include="Common\SNS.Library\Database\SqlServer.cs" />
+    <Compile Include="Common\SNS.Library\Log\Log.cs" />
+    <Compile Include="Common\SNS.Library\Log\LogDAO.cs" />
+    <Compile Include="Common\SNS.Library\Log\LogDAOFactory.cs" />
+    <Compile Include="Common\SNS.Library\Log\LogDAOImplSQLServer.cs" />
+    <Compile Include="Common\SNS.Library\Tools\ExportPage.cs" />
+    <Compile Include="Common\SNS.Library\Tools\HelpManager.cs" />
+    <Compile Include="Common\SNS.Library\Tools\StyleHelper.cs" />
+    <Compile Include="Common\SNS.Library\Tools\WebTools.cs" />
+    <Compile Include="Common\Utils\BaseBusiness.cs" />
+    <Compile Include="Common\Utils\BaseCommon.cs" />
+    <Compile Include="Common\Utils\BaseHandler.cs" />
+    <Compile Include="Common\Utils\CookiesHelper.cs" />
+    <Compile Include="Common\Utils\EncryptTools.cs" />
+    <Compile Include="Common\Utils\ExceptionType.cs" />
+    <Compile Include="Common\Utils\ExportDataCommon.cs" />
+    <Compile Include="Common\Utils\GenerateSequence.cs" />
+    <Compile Include="Common\Utils\LiveEmail.cs" />
+    <Compile Include="Common\Utils\MessageBox.cs" />
+    <Compile Include="Common\Utils\PageList.cs" />
+    <Compile Include="Common\Utils\Parser.cs" />
+    <Compile Include="Common\Utils\QuickLoginBusiness.cs" />
+    <Compile Include="Common\Utils\RequestKeeper.cs" />
+    <Compile Include="Common\Utils\ReturnJsonType.cs" />
+    <Compile Include="Common\Utils\TypeConvert.cs" />
+    <Compile Include="Common\Utils\UnitCommon.cs" />
     <Compile Include="LogHelper.cs" />
+    <Compile Include="LoginAdminUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="Common\Models\Generated\Database.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Database.cs</LastGenOutput>
+    </Content>
     <Content Include="log4net.config" />
+    <None Include="Common\Models\Generated\PetaPoco.Core.ttinclude" />
+    <None Include="Common\Models\Generated\PetaPoco.Generator.ttinclude" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

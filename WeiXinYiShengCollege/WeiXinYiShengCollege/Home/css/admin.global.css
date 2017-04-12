@@ -1,0 +1,63 @@
+﻿
+body{margin:0px; padding:0px; font-family:"微软雅黑","宋体","Arial"; font-size:12px;}
+form,h1,h2,h3,h4,h5,p,div,ul,li{margin:0px; padding:0px;}
+input,button,textarea,select, a:hover{resize: none; outline:none;}
+img{border:0;}
+a span{vertical-align:baseline;}
+label,input,button,textarea,select{vertical-align:middle;}
+input[type=checkbox] {vertical-align: middle; padding: 2px; border:none; }
+.hide{display:none;}
+.clear{clear:both; height:0px; line-height:0px; font-size:0px; overflow:hidden;}
+.middle{vertical-align:middle;}
+a{ color:#395a7b; text-decoration: none; }/*#456B0A*/
+a:hover{ text-decoration: underline; }
+a.btn-lit{text-decoration: none; }
+input[type=submit] {border:1px solid #4168a5;box-shadow:0 1px 0 #81a6d0 inset;background-color:#5c8ac0;background:-webkit-gradient(linear,0 0,0 100%,from(#6190c4),to(#4b73b0));background:-moz-linear-gradient(top,#6190c4,#4b73b0);background:-ms-linear-gradient(top,#6190c4 0,#4b73b0 67%);background:linear-gradient(top,#6190c4 0,#4b73b0 100%); height:23px; color:White; margin-bottom:5px; padding-bottom:2px; }
+/* 三态按钮 */
+.btn{display:inline-block; height:28px; line-height:28px; text-align:center; border:none; background-image:url(../images/button-green.png); background-repeat:no-repeat; background-position:0px 0px; padding:0px 0px 0px 12px; text-decoration:none; font-weight:bold; color:#FFFFFF; /*text-shadow:-1px -1px 0 #99B119;*/}
+.btn span{display:block; padding:0px 12px 0px 0px; background-image:url(../images/button-green.png); background-repeat:no-repeat; background-position:right 0px; font-size:14px;}
+.btn-hover{background-position:0px -30px;}
+.btn-hover span{background-position:right -30px;}
+.btn-active{background-position:0px -60px;}
+.btn-active span{background-position:right -60px;}
+
+.btn-lit{display:inline-block; height:23px; line-height:23px; text-align:center; border:none; background-image:url(../images/button-green-lit.png); background-repeat:no-repeat; background-position:0px 0px; padding:0px 0px 0px 12px; text-decoration:none; font-weight:bold; color:#FFFFFF; /*text-shadow:-1px -1px 0 #99B119;*/}
+.btn-lit span{display:block; padding:0px 12px 0px 0px; background-image:url(../images/button-green-lit.png); background-repeat:no-repeat; background-position:right 0px; font-size:12px;}
+.btn-lit-hover{background-position:0px -25px;}
+.btn-lit-hover span{background-position:right -25px;}
+.btn-lit-active{background-position:0px -50px;}
+.btn-lit-active span{background-position:right -50px;}
+
+
+/* 通用字体 */
+.txt-white{color:#ffffff; font-weight:normal;}
+.txt-white-b{color:#ffffff; font-weight:bold;}
+.txt-green{color:#456B0A; font-weight:normal;}
+.txt-green-b{color:#456B0A; font-weight:bold;}
+.txt-gray{color:#666666; font-weight:normal;}
+.txt-gray-b{color:#666666; font-weight:bold;}
+.txt-red{color:#FF0000; font-weight:normal;}
+.txt-red-b{color:#FF0000; font-weight:bold;}
+.txt-orange{color:#FF6600; font-weight:normal;}
+.txt-orange-b{color:#FF6600; font-weight:bold;}
+.txt-blue{color:#003366; font-weight:normal;}
+.txt-blue-b{color:#003366; font-weight:bold;}
+
+/* 通用文本 */
+select{height:24px; line-height:24px;}
+input,textarea{border:1px solid #A4A4A4; color:#4a4a4a; font-size:12px; font-family:Tahoma,"Times New Roman", Times, "宋体";}
+.input-code,.input-small,.input-normal,.input-big,.input-xbig,.input-xxbig{height:18px; line-height:18px;}
+
+.input-code{width:35px;}
+.input-small{width:100px;}
+.input-normal{width:180px;}
+.input-big{width:250px;}
+.input-xbig{width:350px;}
+.input-xxbig{width:450px;}
+
+
+
+
+
+
+

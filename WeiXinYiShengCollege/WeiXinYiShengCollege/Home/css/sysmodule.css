@@ -1,0 +1,451 @@
+﻿body
+{
+	font-family:宋体; font-size:9pt; overflow:auto;
+	scrollbar-face-color: #93B5EC; 
+	scrollbar-shadow-color: #93B5EC;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-3dlight-color: #96AABD;
+	scrollbar-darkshadow-color: #96AABD;
+	scrollbar-track-color: #ffffff;
+	scrollbar-arrow-color: #606D79; 	
+}
+
+table
+{
+	font-family:宋体; font-size:9pt;
+}
+
+select
+{
+	font-size:9pt;
+}
+
+A:link
+{
+	color:#003399;text-decoration:none}
+
+A:visited
+{
+	color:#65038e;text-decoration:none}
+
+A:active
+{
+	color:#ff0000; text-decoration:none}
+
+A:hover
+{
+	color:#ff0000;text-decoration:underline}
+	
+INPUT.BigButton {
+	  FONT-SIZE: 9pt; BACKGROUND: #d6e7ef;  CURSOR: hand; COLOR: #000066;  TEXT-DECORATION: none;border:#333 1px solid;
+}
+
+INPUT.BigInput {
+	border-width: 0px;  BACKGROUND: #d6e7ef;  COLOR: #000066;  HEIGHT: 19px
+}
+
+INPUT.ReadOnly 
+{
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BACKGROUND: #d0d0c8; BORDER-LEFT: black 1px solid; COLOR: #000066; BORDER-BOTTOM: black 1px solid; HEIGHT: 19px
+}
+
+input.ErrorInput
+{
+	BORDER-RIGHT: #0d3896 1px solid; 
+	BORDER-TOP: #0d3896 1px solid; 
+	FONT-SIZE: 12px; 
+	BORDER-LEFT: #0d3896 1px solid; 
+	COLOR: #14317d; 
+	BORDER-BOTTOM: #0d3896 1px solid; 
+	FONT-FAMILY: "Verdana", "Arial", "宋体", "sans-serif"; 
+	BACKGROUND-COLOR: red
+}
+
+TEXTAREA.BigTextArea 
+{
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BACKGROUND: #d6e7ef; BORDER-LEFT: black 1px solid; COLOR: #000066; BORDER-BOTTOM: black 1px solid
+}
+
+.TableBackground {
+	BACKGROUND: #d0d0c8
+}
+
+.TableHeader {
+	BACKGROUND: #D6E0EF
+}
+
+.Category{background-color: #eaf0f9}
+
+.TableHeaderTemp {
+	BACKGROUND: #d3e5fa
+}
+
+.TableFirstRow
+{
+	/*color: #FFFFFF; font-weight: bold; background-color: #6699CC*/
+	/*background-image: url(../images/query/title_bg.jpg);color: #ffffff; font-weight: bold;*/
+	background-image: url(../images/table/first_row_bg.gif);color: #ffffff; font-weight: bold; height:27px
+}
+
+.TableFirstRowText
+{
+	color: #ffffff; font-weight: bold;
+}
+
+.TableFirstRow2
+{
+	color: #FFFFFF; font-weight: bold; background-color: #6699CC
+	/*background-image: url(../images/query/title_bg.jpg);color: #ffffff; font-weight: bold;*/
+}
+
+.TableBorder{ background: #D6E0EF; border: 1px solid #6699CC; a:expression(this.cellSpacing = 1);
+	b:expression(this.cellPadding = 0);
+	} 
+	
+.TableBorder1{ background: #ffffff; border-left: 1px solid #6699CC; border-right: 1px solid #6699CC; border-bottom: 1px solid #6699CC; a:expression(this.cellSpacing = 1);
+	b:expression(this.cellPadding = 0);
+	}
+	
+.TDBorder{ background-image: url(../images/table/first_row_bg.gif); border-left: 1px solid #6699CC; border-right: 1px solid #6699CC; border-top: 1px solid #6699CC; a:expression(this.cellSpacing = 1);
+	b:expression(this.cellPadding = 0); font-weight:bold; color:#ffffff
+	}	
+	
+.TDBorder1{ border-bottom: 1px solid #6699CC;
+	}		 	
+	
+.TableBorderCell{background: #D6E0EF;}
+
+.PaginationCreater{color:#333333;}
+
+.3D_Button {
+ BORDER-RIGHT: #002D96 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #002D96 1px solid; PADDING-LEFT: 2px; 
+ FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#9DBCEA); 
+ BORDER-LEFT: #002D96 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #002D96 1px solid
+}
+
+.Small_3D_Button {
+ BORDER-RIGHT: #002D96 1px solid; BORDER-TOP: #002D96 1px solid;
+ FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#9DBCEA); 
+ BORDER-LEFT: #002D96 1px solid; CURSOR: hand; COLOR: black; BORDER-BOTTOM: #002D96 1px solid;
+ height:15pt
+}
+
+.TableDataRow {
+	/*background: #ffffff*/
+	background-color: #ffffff;
+}
+
+.TableSelectedRow
+{
+	/*background:#D8FED1;*/
+	background-color: #D8FED1;
+}
+.PinkRow {
+	/*background: #ffffff*/
+	background-color: #fff5f8;
+}
+
+.BlueRow {
+	/*background: #ffffff*/
+	background-color: #EAF7FF;
+}
+
+/* mym添加样式
+.TableSelectedRow_Pink
+{
+	background-color: #fff5f8;
+}
+.TableEvenRow 
+{
+	background-color: #EAF7FF;
+}*/
+
+.TableErrorRow
+{
+	background:red
+}
+
+.IndexPageBackground
+{
+	background:#b0c4de
+}
+
+.FieldsetStyle
+{
+	border-right: lightgrey 1px outset; border-top: lightgrey 1px outset; border-left: lightgrey 1px outset; border-bottom: lightgrey 1px outset
+}
+
+.TDStyle
+{
+	border-bottom-width:1px; border-bottom-color:#333333; border-bottom-style:solid
+}
+
+.Input
+{
+	BORDER-RIGHT: #0d3896 1px solid; 
+	BORDER-TOP: #0d3896 1px solid; 
+	FONT-SIZE: 12px; 
+	BORDER-LEFT: #0d3896 1px solid; 
+	COLOR: #14317d; 
+	BORDER-BOTTOM: #0d3896 1px solid; 
+	FONT-FAMILY: "Verdana", "Arial", "宋体", "sans-serif"; 
+	BACKGROUND-COLOR: #f5f6f6
+}
+
+.ReadOnlyInput
+{
+	BORDER-RIGHT: #0d3896 0px solid; 
+	BORDER-TOP: #0d3896 0px solid; 
+	FONT-SIZE: 12px; 
+	BORDER-LEFT: #0d3896 0px solid; 
+	COLOR: #14317d; 
+	BORDER-BOTTOM: #0d3896 0px solid; 
+	FONT-FAMILY: "Verdana", "Arial", "宋体", "sans-serif"; 
+	BACKGROUND-COLOR: #f5f6f6
+}
+
+.Button_Old
+{
+	BORDER-RIGHT: #0d3896 1px solid; 
+	BORDER-TOP: #0d3896 1px solid; 
+	FONT-SIZE: 12px; 
+	BORDER-LEFT: #0d3896 1px solid; 
+	COLOR: #14317d; 
+	BORDER-BOTTOM: #0d3896 1px solid; 
+	FONT-FAMILY: "Verdana", "Arial", "宋体", "sans-serif"; 
+	BACKGROUND-COLOR: #f5f6f6;
+	height:21
+}
+
+.SmallButton
+{
+	BORDER-RIGHT: #0d3896 1px solid; 
+	BORDER-TOP: #0d3896 1px solid; 
+	FONT-SIZE: 12px; 
+	BORDER-LEFT: #0d3896 1px solid; 
+	COLOR: #14317d; 
+	BORDER-BOTTOM: #0d3896 1px solid; 
+	FONT-FAMILY: "Verdana", "Arial", "宋体", "sans-serif"; 
+	BACKGROUND-COLOR: #f5f6f6;
+	height:19
+}
+
+.BottomLineInput
+{
+	BORDER-RIGHT: #ffffff 0px solid; 
+	BORDER-TOP: #ffffff 0px solid; 
+	FONT-SIZE: 12px; 
+	BORDER-LEFT: #ffffff 0px solid; 
+	BORDER-BOTTOM: #333333 1px solid; 
+	FONT-FAMILY: "Verdana", "Arial", "宋体", "sans-serif"; 
+	COLOR: #14317d; 
+}
+
+.NoBorderInput
+{
+	BORDER-RIGHT: #ffffff 0px solid; 
+	BORDER-TOP: #ffffff 0px solid; 
+	FONT-SIZE: 12px; 
+	BORDER-LEFT: #ffffff 0px solid; 
+	BORDER-BOTTOM: #ffffff 0px solid; 
+	FONT-FAMILY: "Verdana", "Arial", "宋体", "sans-serif"; 
+	COLOR: #14317d; 
+}
+
+.3dfont {
+	FILTER: dropshadow(color=black,offx=1,offy=1,positive=100); WIDTH: 100%; POSITION: relative
+}
+
+.OutlookBarItemBackroundStyle
+{
+	background-color: #93B5EC
+}
+
+.OutlookBarItemHeaderStyle
+{
+	color: #000077;
+	height :21;
+	vertical-align :middle;
+	 text-align:center;
+}
+
+.OutlookBarBackgroundStyle
+{
+	background-color: #93B5EC
+}
+
+.OutlookBarContainerBackgroundStyle
+{
+	background-color:#6699CC
+}
+
+.f14ptBold{
+	font-size:12pt;
+	font-weight:bold;
+	COLOR: #000080
+}
+
+.GISToolbar{
+    height: 44px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-bottom: solid 1px #606060;
+    /*background-color:#A1C6EB;*/
+    background-image: url(../images/table/first_row_bg.gif);
+    position:absolute;
+}
+
+.ModuleDescriptionForeColor
+{
+	color:#0699CC
+}
+.Top_HRColor{
+   	background-color:#86ADD6
+}
+
+.Button_3D {
+ BORDER-RIGHT: #002D96 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #002D96 1px solid; PADDING-LEFT: 2px; 
+ FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#9DBCEA); 
+ BORDER-LEFT: #002D96 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #002D96 1px solid
+}
+
+.Small_Button_3D {
+ BORDER-RIGHT: #002D96 1px solid; BORDER-TOP: #002D96 1px solid;
+ FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#9DBCEA); 
+ BORDER-LEFT: #002D96 1px solid; CURSOR: hand; COLOR: black; BORDER-BOTTOM: #002D96 1px solid;
+ height:15pt
+}
+
+.TableFirstRow1
+{
+	/*color: #FFFFFF; font-weight: bold; background-color: #6699CC*/
+	color:#02228F; background-color: #EEEEEE; font-weight: bold; 
+}
+	
+/*.TableBorder1
+{ 
+	background: #D4DDEC; border:solid 1px #D3DFEF; a:expression(this.cellSpacing = 1);
+	b:expression(this.cellPadding = 0)
+}*/
+
+
+
+.GISToolbarBG{background-color:#DDEBF1}
+
+
+.TableBorderLeftTopTitle{ background: #D6E0EF; border: 1px solid #6699CC;
+                          border-bottom-style: none;border-color: #6fbde4;
+                           a:expression(this.cellSpacing = 0);b:expression(this.cellPadding = 0);}
+.TableBorderSmall{background: #D6E0EF; border: 1px solid #6699CC;border-color: #6fbde4;
+                  a:expression(this.cellSpacing = 1);b:expression(this.cellPadding = 0);}                           
+.TDBgColor{background: #D9EBF5}
+
+
+/* 表头设计专用样式表 */
+.BorderAll
+{
+	BACKGROUND-COLOR: #d6e0ef;
+	border-left: 1px solid #ffffff;
+ 	border-bottom: 1px solid #ffffff;
+	border-top: 1px solid #ffffff; 
+	border-right: 1px solid #ffffff; 
+}
+.BorderOnlyBottom
+{
+	BACKGROUND-COLOR: #d6e0ef;
+ 	border-bottom: 1px solid #ffffff;
+}
+.BorderTopAndRight
+{
+	BACKGROUND-COLOR: #d6e0ef;
+	border-top: 1px solid #ffffff; 
+	border-right: 1px solid #ffffff; 
+}
+.BorderOnlyLeft
+{
+	BACKGROUND-COLOR: #d6e0ef;
+	border-left: 1px solid #ffffff;
+}
+.BorderNoRight
+{
+	BACKGROUND-COLOR: #d6e0ef;
+	border-left: 1px solid #ffffff;
+ 	border-bottom: 1px solid #ffffff;
+	border-top: 1px solid #ffffff; 
+}
+.BorderNoLeft
+{
+	BACKGROUND-COLOR: #d6e0ef;
+ 	border-bottom: 1px solid #ffffff;
+	border-top: 1px solid #ffffff; 
+	border-right: 1px solid #ffffff; 
+}
+.BorderRightAndBottom
+{
+	BACKGROUND-COLOR: #d6e0ef;
+	border-right: 1px solid #ffffff;
+	border-bottom: 1px solid #ffffff;
+}
+.BorderOnlyTop
+{
+	BACKGROUND-COLOR: #d6e0ef;
+	border-top: 1px solid #ffffff;
+}
+.BorderTopAndLeft
+{
+	BACKGROUND-COLOR: #d6e0ef;	
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+}
+
+/*****列表***2011-8-31 added by qinyuan**/ 
+.TableEvenRow 
+{
+	background-color: #EAF7FF;	
+}
+.TableTdBorder
+{
+	border-right:1px solid #d6e0ef;
+	border-bottom:1px solid #d6e0ef;
+}
+.TableSumBorder
+{
+	border-right:1px solid #ffffff;
+    POSITION: relative;
+}
+.trHead
+{
+    /*background-color: #eaf0f9;*/
+    z-index: 100;
+    position: relative;
+    top: expression(this.offsetParent.scrollTop);
+}
+.thHeadNoLeft
+{
+	BACKGROUND-COLOR: #d6e0ef;
+	border-top: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    border-bottom:1px solid #ffffff;
+    POSITION: relative;
+}
+.thHeadRight
+{
+	BACKGROUND-COLOR: #d6e0ef;
+    border-right: 1px solid #ffffff;
+    POSITION: relative;
+}
+.thHeadTopAndRight
+{
+	BACKGROUND-COLOR: #d6e0ef;
+	border-top: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    POSITION: relative;
+}
+.thHeadRightAndBottom
+{
+	BACKGROUND-COLOR: #d6e0ef;
+	border-right: 1px solid #ffffff;
+	border-bottom: 1px solid #ffffff;
+    POSITION: relative;
+}
