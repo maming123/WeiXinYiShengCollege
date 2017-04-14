@@ -50,7 +50,7 @@
    <div data-options="region:'north',border:false" style="background: #B3DFDA; padding: 10px">
         <%=LoginUserName %>后台管理系统
         <%--<image src="login/images/logo.png"></image>--%>
-        <a href="/weixin/home/login/LoginOut.aspx?U=/weixin/home/login/index.aspx">退出登录</a>
+        <a href="login/LoginOut.aspx?U=../login/index.aspx">退出登录</a>
     </div>
     <div data-options="region:'west',split:false,title:'导航菜单'" style="width: 250px; padding: 10px;">
 
@@ -60,16 +60,8 @@
             <div title="功能管理" data-options="collapsed:true,collapsible:true" style="padding: 10px;">
                 <ul class="tempul">
 
-                    <li><a href="javascript:void(0)" onclick="addTab('书籍管理','SystemModule/Sys/Modules/modulelist.aspx')"><span style="color:#977171">>&nbsp;&nbsp;书籍管理</span></a></li>
-                    <li><a href="javascript:void(0)" onclick="addTab('导入导出管理[一级目录]','ImportBook1Level.aspx')"><span style="color:#977171">>&nbsp;&nbsp;导入导出管理[一级目录]</span></a></li>
-                    <li><a href="javascript:void(0)" onclick="addTab('导入导出管理[二级目录]','ImportBook2Level.aspx')"><span style="color:#977171">>&nbsp;&nbsp;导入导出管理[二级目录]</span></a></li>
-                    <li><a href="javascript:void(0)" onclick="addTab('导入导出管理[三级目录]','ImportBook3Level.aspx')"><span style="color:#977171">>&nbsp;&nbsp;导入导出管理[三级目录]</span></a></li>
-                    <li><a href="javascript:void(0)" onclick="addTab('导入导出管理[四级目录]','ImportBook4Level.aspx')"><span style="color:#977171">>&nbsp;&nbsp;导入导出管理[四级目录]</span></a></li>
-                    <li><a href="javascript:void(0)" onclick="addTab('导入导出管理[五级目录]','ImportBook5Level.aspx')"><span style="color:#977171">>&nbsp;&nbsp;导入导出管理[五级目录]</span></a></li>
-                    <li><a href="javascript:void(0)" onclick="addTab('注册用户管理','UserManage.aspx')"><span style="color:#977171">>&nbsp;&nbsp;注册用户管理</span></a></li>
-                    <li><a href="javascript:void(0)" onclick="addTab('注册用户日志管理','UserRegistLogManage.aspx')"><span style="color:#977171">>&nbsp;&nbsp;注册用户日志管理</span></a></li>
-                    <li><a href="javascript:void(0)" onclick="addTab('书籍注册码管理','RegistCodeManage.aspx')"><span style="color:#977171">>&nbsp;&nbsp;书籍注册码管理</span></a></li>
-
+                    <li><a href="javascript:void(0)" onclick="addTab('图文素材列表','MaterialNews/MaterialNewsList.aspx')"><span style="color:#977171">>&nbsp;&nbsp;图文素材列表</span></a></li>
+                    
                 </ul>
             </div>
             <div title="系统管理" data-options="collapsed:false,collapsible:false" style="padding: 10px;">

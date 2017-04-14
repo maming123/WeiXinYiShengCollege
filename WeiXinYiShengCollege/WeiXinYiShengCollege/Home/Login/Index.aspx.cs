@@ -61,7 +61,7 @@ namespace DMedia.FetionActivity.WebSite.Utils.Login.home
                 //成功登录 
                 this.Page.ClientScript.RegisterStartupScript(this.GetType(), "aaa", "<script> $(function(){ $(\"input[type='submit']\").removeClass(\"login-btn\").addClass(\"login-btn2\"); });</script>", false);
                 //跳转原因：绕开 IE7,8 下 iframe https  跨域访问http 显示无权限问题
-                Response.Redirect("/weixin/home/index.aspx");
+                Response.Redirect("../index.aspx");
             }
         }
 

@@ -5,8 +5,9 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 using log4net.Config;
+using WeiXinYiShengCollege.Business;
 
-namespace WeiXinYiShengCollege
+namespace WeiXinYiShengCollege.WebSite
 {
     public class Global : System.Web.HttpApplication
     {
@@ -14,7 +15,8 @@ namespace WeiXinYiShengCollege
         protected void Application_Start(object sender, EventArgs e)
         {
             //应用程序启动时，自动加载配置log4Net  
-            XmlConfigurator.Configure();  
+            XmlConfigurator.Configure();
+            WeiXinBusiness.AccessTokenRegister();
         }
 
         protected void Session_Start(object sender, EventArgs e)
