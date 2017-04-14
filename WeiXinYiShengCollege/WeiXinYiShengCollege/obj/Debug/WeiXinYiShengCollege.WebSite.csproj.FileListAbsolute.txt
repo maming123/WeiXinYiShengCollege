@@ -1,7 +1,4 @@
 E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\obj\Debug\WeiXinYiShengCollege.WebSite.csprojResolveAssemblyReference.cache
-E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\WeiXinYiShengCollege.dll.config
-E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\WeiXinYiShengCollege.dll
-E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\WeiXinYiShengCollege.pdb
 E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\log4net.dll
 E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\Senparc.Weixin.dll
 E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\Senparc.Weixin.MP.dll
@@ -12,7 +9,10 @@ E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\
 E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\Senparc.Weixin.pdb
 E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\WeiXinYiShengCollege.Business.pdb
 E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\log4net.xml
-E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\obj\Debug\WeiXinYiShengCollege.dll
-E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\obj\Debug\WeiXinYiShengCollege.pdb
 E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\Newtonsoft.Json.dll
 E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\Newtonsoft.Json.xml
+E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\WeiXinYiShengCollege.WebSite.dll.config
+E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\WeiXinYiShengCollege.WebSite.dll
+E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\bin\WeiXinYiShengCollege.WebSite.pdb
+E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\obj\Debug\WeiXinYiShengCollege.WebSite.dll
+E:\MyProject\WeiXinYiShengCollege\WeiXinYiShengCollege\WeiXinYiShengCollege\obj\Debug\WeiXinYiShengCollege.WebSite.pdb

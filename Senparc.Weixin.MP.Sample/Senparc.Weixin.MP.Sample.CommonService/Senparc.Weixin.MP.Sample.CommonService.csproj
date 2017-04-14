@@ -84,6 +84,7 @@
     <Compile Include="TemplateMessage\WeixinTemplate_ExceptionAlert.cs" />
     <Compile Include="TemplateMessage\WxOpen\WxOpenTemplateMessage_PaySuccessNotice.cs" />
     <Compile Include="Utilities\Server.cs" />
+    <Compile Include="WeiXinBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Download\readme.txt" />

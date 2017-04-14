@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="profile.aspx.cs" Inherits="WeiXinYiShengCollege.wx.profile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="profile.aspx.cs" Inherits="WeiXinYiShengCollege.WebSite.wx.profile" %>
 
 <!DOCTYPE html>
 <html>

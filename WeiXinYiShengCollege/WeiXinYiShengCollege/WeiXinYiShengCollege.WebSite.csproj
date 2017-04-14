@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WeiXinYiShengCollege</RootNamespace>
-    <AssemblyName>WeiXinYiShengCollege</AssemblyName>
+    <RootNamespace>WeiXinYiShengCollege.WebSite</RootNamespace>
+    <AssemblyName>WeiXinYiShengCollege.WebSite</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -123,6 +123,7 @@
     <Content Include="Home\Login\Index.aspx" />
     <Content Include="Home\Login\js\common.js" />
     <Content Include="Home\Login\LoginOut.aspx" />
+    <Content Include="Home\MaterialNews\MaterialNewsList.aspx" />
     <Content Include="Home\UserManage.aspx" />
     <Content Include="Home\UserRegistLogManage.aspx" />
     <Content Include="images\Query\00000001_r1_c1.gif" />
@@ -664,6 +665,13 @@
     </Compile>
     <Compile Include="Home\ManagePageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\MaterialNews\MaterialNewsList.aspx.cs">
+      <DependentUpon>MaterialNewsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\MaterialNews\MaterialNewsList.aspx.designer.cs">
+      <DependentUpon>MaterialNewsList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home\UserManage.aspx.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>

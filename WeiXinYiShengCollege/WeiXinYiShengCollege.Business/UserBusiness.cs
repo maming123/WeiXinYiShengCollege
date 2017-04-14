@@ -6,7 +6,7 @@ using Module.Models;
 using Module.Utils;
 using PetaPoco;
 
-namespace HospitalBook.Module
+namespace WeiXinYiShengCollege.Business
 {
     public  class UserBusiness:BaseBusiness
     {

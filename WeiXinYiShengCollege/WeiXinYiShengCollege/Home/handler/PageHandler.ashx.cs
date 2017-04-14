@@ -5,6 +5,7 @@ using System.Web;
 using HospitalBook.Module;
 using Module.Models;
 using Module.Utils;
+using WeiXinYiShengCollege.Business;
 
 namespace HospitalBookWebSite.Home.handler
 {
