@@ -6,6 +6,8 @@ using System.Configuration;
 using Senparc.Weixin.MP.AdvancedAPIs;
 using Senparc.Weixin.MP.AdvancedAPIs.Media;
 using Senparc.Weixin.MP.Containers;
+using Senparc.Weixin.MP.AdvancedAPIs.QrCode;
+using System.IO;
 
 namespace WeiXinYiShengCollege.Business
 {
@@ -36,5 +38,40 @@ namespace WeiXinYiShengCollege.Business
            MediaList_NewsResult r = MediaApi.GetNewsMediaList(Appid, offset, 20);
            return r;
        }
+
+       /// <summary>
+       /// 生成二维码
+       /// </summary>
+       /// <param name="sceneId"></param>
+       /// <returns></returns>
+       public static CreateQrCodeResult CreateQrCode(int sceneId)
+       {
+         CreateQrCodeResult r =  QrCodeApi.Create(Appid, 0, sceneId, Senparc.Weixin.MP.QrCode_ActionName.QR_LIMIT_SCENE);
+         return r;
+       }
+       /// <summary>
+       /// 获取二维码图片
+       /// </summary>
+       /// <param name="sceneId"></param>
+       /// <returns></returns>
+       public static String GetQrCodeImgUrl(int sceneId)
+       {
+           CreateQrCodeResult r = QrCodeApi.Create(Appid, 0, sceneId, Senparc.Weixin.MP.QrCode_ActionName.QR_LIMIT_SCENE);
+           String qrcodeurl = QrCodeApi.GetShowQrCodeUrl(r.ticket);
+           return qrcodeurl;
+       }
+       /// <summary>
+       /// 获取二维码图片
+       /// </summary>
+       /// <param name="sceneId"></param>
+       /// <returns></returns>
+       public static MemoryStream GetQrCodeImgStream(int sceneId)
+       {
+           CreateQrCodeResult r = QrCodeApi.Create(Appid, 0, sceneId, Senparc.Weixin.MP.QrCode_ActionName.QR_LIMIT_SCENE);
+           MemoryStream ms =new MemoryStream() ;
+           QrCodeApi.ShowQrCode(r.ticket,ms);
+           return ms;
+       }
+
     }
 }

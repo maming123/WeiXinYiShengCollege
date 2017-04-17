@@ -19,13 +19,13 @@
       <publishTime>04/17/2017 17:10:01</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.dll">
-      <publishTime>04/17/2017 17:45:28</publishTime>
+      <publishTime>04/18/2017 02:14:35</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.dll">
-      <publishTime>04/17/2017 17:45:32</publishTime>
+      <publishTime>04/18/2017 02:14:37</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.pdb">
       <publishTime>04/11/2017 16:18:56</publishTime>
@@ -34,7 +34,7 @@
       <publishTime>04/11/2017 16:18:51</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.dll">
-      <publishTime>04/17/2017 17:45:29</publishTime>
+      <publishTime>04/18/2017 02:14:35</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
@@ -46,10 +46,13 @@
       <publishTime>04/11/2017 16:18:58</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.WebSite.dll">
-      <publishTime>04/17/2017 17:45:35</publishTime>
+      <publishTime>04/18/2017 02:14:40</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>04/14/2017 18:51:59</publishTime>
+    </File>
+    <File Include="Home/CreateQrCode.aspx">
+      <publishTime>04/18/2017 01:45:04</publishTime>
     </File>
     <File Include="Home/css/admin.content.css">
       <publishTime>04/12/2017 16:58:52</publishTime>
@@ -202,7 +205,7 @@
       <publishTime>04/12/2017 16:58:52</publishTime>
     </File>
     <File Include="Home/Index.aspx">
-      <publishTime>04/17/2017 14:48:34</publishTime>
+      <publishTime>04/17/2017 23:31:58</publishTime>
     </File>
     <File Include="Home/Login/CodePngComplex.ashx">
       <publishTime>04/12/2017 16:58:52</publishTime>
@@ -211,7 +214,7 @@
       <publishTime>04/12/2017 16:58:52</publishTime>
     </File>
     <File Include="Home/Login/css/register.css">
-      <publishTime>04/12/2017 16:58:53</publishTime>
+      <publishTime>04/17/2017 23:30:21</publishTime>
     </File>
     <File Include="Home/Login/EasyLogin.ashx">
       <publishTime>04/12/2017 16:58:53</publishTime>
@@ -243,8 +246,11 @@
     <File Include="Home/MaterialNews/MaterialNewsList.aspx">
       <publishTime>04/17/2017 12:18:04</publishTime>
     </File>
+    <File Include="Home/UserEdit.aspx">
+      <publishTime>04/18/2017 01:01:37</publishTime>
+    </File>
     <File Include="Home/UserManage.aspx">
-      <publishTime>04/17/2017 14:49:16</publishTime>
+      <publishTime>04/18/2017 01:18:42</publishTime>
     </File>
     <File Include="Home/UserRegistLogManage.aspx">
       <publishTime>04/14/2017 18:35:02</publishTime>

@@ -127,7 +127,15 @@
                     $contentTrTmp.find("td").eq(11).html(tmpItem.UserInfoJson);
                     $contentTrTmp.find("td").eq(12).html(tmpItem.CreateDateTime);
                     //在编辑里进行验证通过操作（验证通过的同时需要生成场景ID）
-                    $contentTrTmp.find("td").eq(12).html("编辑");
+                    $contentTrTmp.find("td").eq(13).html('<a href="UserEdit.aspx?OpenId=' + tmpItem.OpenId + '" target="_blank">编辑</a>');
+
+                    var qrcode = '';
+                    if (tmpItem.QrCodeScene_id > 0)
+                    {
+                        qrcode = ('<a href="CreateQrCode.aspx?OpenId=' + tmpItem.OpenId + '" target="_blank">生成二维码</a>');
+                    }
+                    $contentTrTmp.find("td").eq(14).html(qrcode);
+
                     $contentTrTmp.appendTo("#tbodyHtml");
                 }
                 //console.log(firstTr);
@@ -175,6 +183,8 @@
                                 <th scope="col" >CustomerManagerId</th>
                                 <th scope="col" >UserInfoJson</th>
                                 <th scope="col" >创建时间</th>
+                                <th scope="col" >编辑</th>
+                                <th scope="col" >生成二维码</th>
                             </tr>
                             <tr>
                                 <td align="center">&nbsp;</td>
@@ -190,6 +200,8 @@
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                 <td>&nbsp;</td>
                             </tr>
                         </table>
                     </div>

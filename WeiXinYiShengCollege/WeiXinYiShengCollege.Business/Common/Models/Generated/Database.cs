@@ -294,7 +294,41 @@ namespace Module.Models
 	}
 
     
-	[TableName("User")]
+	[TableName("MaterialNews")]
+
+
+	[ExplicitColumns]
+    public partial class MaterialNews : CoreDB.Record<MaterialNews>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string Media_Id { get; set; }
+
+
+
+
+
+		[Column] public string MediaJson { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDateTime { get; set; }
+
+
+
+	}
+
+    
+	[TableName("Sys_User")]
 
 
 	[PrimaryKey("Id")]
@@ -302,7 +336,7 @@ namespace Module.Models
 
 
 	[ExplicitColumns]
-    public partial class User : CoreDB.Record<User>  
+    public partial class Sys_User : CoreDB.Record<Sys_User>  
     {
 
 
@@ -425,37 +459,9 @@ namespace Module.Models
 
 
 
-	}
-
-    
-	[TableName("MaterialNews")]
 
 
-	[ExplicitColumns]
-    public partial class MaterialNews : CoreDB.Record<MaterialNews>  
-    {
-
-
-
-		[Column] public int Id { get; set; }
-
-
-
-
-
-		[Column] public string Media_Id { get; set; }
-
-
-
-
-
-		[Column] public string MediaJson { get; set; }
-
-
-
-
-
-		[Column] public DateTime CreateDateTime { get; set; }
+		[Column] public DateTime? UpdateDateTime { get; set; }
 
 
 

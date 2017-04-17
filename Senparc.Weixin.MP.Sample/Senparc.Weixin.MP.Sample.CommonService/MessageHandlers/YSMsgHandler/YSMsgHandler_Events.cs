@@ -68,9 +68,9 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
            bool bIsExists = UserBusiness.IsExistUser(requestMessage.FromUserName);
            if (!bIsExists)
            {
-               User newUser = new User()
+               Sys_User newUser = new Sys_User()
                {
-                   ApproveFlag = Convert.ToInt32(ApproveFlag.noapprove),
+                   ApproveFlag = Convert.ToInt32(ApproveFlag.未认证),
                    City = "",
                    CompanyName = "",
                    CreateDateTime = DateTime.Now,
@@ -87,8 +87,8 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
                    Remark = "",
                    Score = 0,
                    UserInfoJson = "",
-                   UserLevel = Convert.ToInt32(UserLevel.noassign),
-                   UserType = Convert.ToInt32(UserType.noassign)
+                   UserLevel = Convert.ToInt32(UserLevel.未分配),
+                   UserType = Convert.ToInt32(UserType.未分配)
                };
                newUser.Insert();
            }else

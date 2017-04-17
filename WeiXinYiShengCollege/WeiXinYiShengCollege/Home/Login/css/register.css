@@ -48,9 +48,7 @@ div.register_content .register_content_center .second_title{
     background: none repeat scroll 0 0 #FFFFFF;
     border: 1px solid #8D8D8D;
     border-radius: 3px 3px 3px 3px;
-    height: 18px;
-    width: 190px;
-}
+    }
  label.checked {
   background:url("http://res.fetionpic.com/img/huodong/Utils/Login/home/images/new_reports_ui/layout.png") no-repeat -2px -1026px !important;
 }

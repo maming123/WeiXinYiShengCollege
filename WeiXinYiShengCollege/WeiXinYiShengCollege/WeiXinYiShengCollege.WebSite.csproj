@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Home\CreateQrCode.aspx" />
     <Content Include="Home\css\admin.content.css" />
     <Content Include="Home\css\admin.global.css" />
     <Content Include="Home\css\sysmodule.css" />
@@ -124,8 +125,8 @@
     <Content Include="Home\Login\js\common.js" />
     <Content Include="Home\Login\LoginOut.aspx" />
     <Content Include="Home\MaterialNews\MaterialNewsList.aspx" />
+    <Content Include="Home\UserEdit.aspx" />
     <Content Include="Home\UserManage.aspx" />
-    <Content Include="Home\UserRegistLogManage.aspx" />
     <Content Include="images\Query\00000001_r1_c1.gif" />
     <Content Include="images\Query\00000001_r1_c2.gif" />
     <Content Include="images\Query\00000001_r1_c3.gif" />
@@ -626,6 +627,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Home\CreateQrCode.aspx.cs">
+      <DependentUpon>CreateQrCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\CreateQrCode.aspx.designer.cs">
+      <DependentUpon>CreateQrCode.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home\handler\PageHandler.ashx.cs">
       <DependentUpon>PageHandler.ashx</DependentUpon>
     </Compile>
@@ -673,19 +681,19 @@
     <Compile Include="Home\MaterialNews\MaterialNewsList.aspx.designer.cs">
       <DependentUpon>MaterialNewsList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Home\UserEdit.aspx.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\UserEdit.aspx.designer.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home\UserManage.aspx.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Home\UserManage.aspx.designer.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Home\UserRegistLogManage.aspx.cs">
-      <DependentUpon>UserRegistLogManage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Home\UserRegistLogManage.aspx.designer.cs">
-      <DependentUpon>UserRegistLogManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Weixin.aspx.cs">
@@ -719,6 +727,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images\qrcode\" />
     <Folder Include="js\kindeditor-4.1.10\attached\" />
   </ItemGroup>
   <ItemGroup>

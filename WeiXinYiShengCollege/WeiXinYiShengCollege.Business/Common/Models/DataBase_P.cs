@@ -14,5 +14,9 @@ using PetaPoco;
 namespace Module.Models
 {
  
+    public partial class Sys_User
+    {
+        
+    }
     
 }

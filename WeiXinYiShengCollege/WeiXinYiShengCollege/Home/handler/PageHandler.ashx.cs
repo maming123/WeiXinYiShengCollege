@@ -40,15 +40,15 @@ namespace HospitalBookWebSite.Home.handler
             if (!IsReady())
                 return;
 
-            int bookId = RequestKeeper.GetFormInt(Request["bookId"]);
+            
             long mobile = RequestKeeper.GetFormLong(Request["mobile"]);
             int pageIndex = RequestKeeper.GetFormInt(Request["PageIndex"]);
             int pageSize = 12;// RequestKeeper.GetFormInt(Request["PageSize"]);
 
-            PageList<List<User>> pList = UserBusiness.GetUserList(mobile, pageIndex, pageSize);
+            PageList<List<Sys_User>> pList = UserBusiness.GetUserList(mobile, pageIndex, pageSize);
 
 
-            Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<PageList<List<User>>>() { code = 1, m = pList }));
+            Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<PageList<List<Sys_User>>>() { code = 1, m = pList }));
 
         }
         

@@ -69,7 +69,7 @@ namespace Senparc.Weixin.MP.AdvancedAPIs
         /// </summary>
         /// <param name="accessTokenOrAppId"></param>
         /// <param name="expireSeconds">临时二维码有效时间，以秒为单位。永久二维码将忽略此参数</param>
-        /// <param name="sceneId">场景值ID，临时二维码时为32位整型，永久二维码时最大值为1000</param>
+        /// <param name="sceneId">场景值ID，临时二维码时为32位整型，永久二维码时最大值为100000</param>
         /// <param name="sceneStr">场景字符串，仅actionName为QR_LIMIT_STR_SCENE时有效</param>
         /// <param name="timeOut">代理请求超时时间（毫秒）</param>
         /// <param name="actionName">二维码类型，当actionName为QR_LIMIT_STR_SCENE时，sceneId会被忽略</param>
