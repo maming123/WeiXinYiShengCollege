@@ -9,12 +9,12 @@ using System.Web.UI.WebControls;
 using Senparc.Weixin.MP;
 using Senparc.Weixin.MP.Entities.Request;
 using Senparc.Weixin.MP.Sample.CommonService.CustomMessageHandler;
+using Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler;
 using Senparc.Weixin.XmlUtility;
 using WeiXinYiShengCollege.Business;
 
 namespace WeiXinYiShengCollege.WebSite
 {
-
 
     public partial class Weixin : System.Web.UI.Page
     {
@@ -66,7 +66,7 @@ namespace WeiXinYiShengCollege.WebSite
                 var maxRecordCount = 10;
 
                 //自定义MessageHandler，对微信请求的详细判断操作都在这里面。
-                var messageHandler = new CustomMessageHandler(Request.InputStream, postModel, maxRecordCount);
+                var messageHandler = new YSMsgHandler(Request.InputStream, postModel, maxRecordCount);
 
                 try
                 {

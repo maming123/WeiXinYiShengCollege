@@ -17,14 +17,24 @@ namespace WeiXinYiShengCollege.Business
 
        public static readonly string AppSecret = ConfigurationManager.AppSettings["WeixinAppSecret"];
 
+       /// <summary>
+       /// 全局注册appid和appsecret 获取token
+       /// </summary>
        public static void AccessTokenRegister()
        {
            AccessTokenContainer.Register(Appid,AppSecret);
        }
-       public static MediaList_NewsResult GetNewsMediaList()
+
+       /// <summary>
+       /// 获取永久素材列表
+       /// </summary>
+       /// <param name="offset"></param>
+       /// <param name="count"></param>
+       /// <returns></returns>
+       public static MediaList_NewsResult GetNewsMediaList(int offset)
        {
-          MediaList_NewsResult r = MediaApi.GetNewsMediaList(Appid,0,20);
-          return r;
+           MediaList_NewsResult r = MediaApi.GetNewsMediaList(Appid, offset, 20);
+           return r;
        }
     }
 }

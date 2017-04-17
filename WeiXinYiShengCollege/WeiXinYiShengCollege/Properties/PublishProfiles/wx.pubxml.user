@@ -16,16 +16,16 @@
       <publishTime>04/11/2017 11:14:04</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.dll">
-      <publishTime>04/11/2017 14:47:50</publishTime>
+      <publishTime>04/17/2017 17:10:01</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.dll">
-      <publishTime>04/12/2017 20:03:44</publishTime>
+      <publishTime>04/17/2017 17:45:28</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.dll">
-      <publishTime>04/12/2017 20:03:48</publishTime>
+      <publishTime>04/17/2017 17:45:32</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.pdb">
       <publishTime>04/11/2017 16:18:56</publishTime>
@@ -34,7 +34,7 @@
       <publishTime>04/11/2017 16:18:51</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.dll">
-      <publishTime>04/12/2017 19:45:39</publishTime>
+      <publishTime>04/17/2017 17:45:29</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
@@ -45,8 +45,11 @@
     <File Include="bin/WeiXinYiShengCollege.pdb">
       <publishTime>04/11/2017 16:18:58</publishTime>
     </File>
+    <File Include="bin/WeiXinYiShengCollege.WebSite.dll">
+      <publishTime>04/17/2017 17:45:35</publishTime>
+    </File>
     <File Include="Global.asax">
-      <publishTime>04/11/2017 16:36:52</publishTime>
+      <publishTime>04/14/2017 18:51:59</publishTime>
     </File>
     <File Include="Home/css/admin.content.css">
       <publishTime>04/12/2017 16:58:52</publishTime>
@@ -199,7 +202,7 @@
       <publishTime>04/12/2017 16:58:52</publishTime>
     </File>
     <File Include="Home/Index.aspx">
-      <publishTime>04/12/2017 20:03:30</publishTime>
+      <publishTime>04/17/2017 14:48:34</publishTime>
     </File>
     <File Include="Home/Login/CodePngComplex.ashx">
       <publishTime>04/12/2017 16:58:52</publishTime>
@@ -237,11 +240,14 @@
     <File Include="Home/Login/LoginOut.aspx">
       <publishTime>04/12/2017 16:58:53</publishTime>
     </File>
+    <File Include="Home/MaterialNews/MaterialNewsList.aspx">
+      <publishTime>04/17/2017 12:18:04</publishTime>
+    </File>
     <File Include="Home/UserManage.aspx">
-      <publishTime>04/12/2017 16:58:56</publishTime>
+      <publishTime>04/17/2017 14:49:16</publishTime>
     </File>
     <File Include="Home/UserRegistLogManage.aspx">
-      <publishTime>04/12/2017 16:58:56</publishTime>
+      <publishTime>04/14/2017 18:35:02</publishTime>
     </File>
     <File Include="images/Query/00000001_r1_c1.gif">
       <publishTime>04/12/2017 16:58:56</publishTime>
@@ -649,7 +655,7 @@
       <publishTime>04/12/2017 12:02:52</publishTime>
     </File>
     <File Include="jqueryweui/wx/profile.aspx">
-      <publishTime>04/12/2017 12:26:41</publishTime>
+      <publishTime>04/14/2017 18:51:59</publishTime>
     </File>
     <File Include="js/admin.js">
       <publishTime>04/12/2017 16:58:56</publishTime>
@@ -1741,10 +1747,10 @@
       <publishTime>04/11/2017 15:51:51</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/12/2017 19:45:47</publishTime>
+      <publishTime>04/17/2017 16:22:24</publishTime>
     </File>
     <File Include="Weixin.aspx">
-      <publishTime>04/11/2017 11:30:18</publishTime>
+      <publishTime>04/17/2017 16:58:55</publishTime>
     </File>
   </ItemGroup>
 </Project>

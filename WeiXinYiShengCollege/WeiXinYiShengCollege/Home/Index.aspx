@@ -67,6 +67,7 @@
             <div title="系统管理" data-options="collapsed:false,collapsible:false" style="padding: 10px;">
                 <ul class="tempul">
                     <li><a href="javascript:void(0)" onclick="addTab('密码修改','Login/EditPassword.aspx')"><span style="color:#977171">>&nbsp;&nbsp;密码修改</span></a></li>
+                    <li><a href="javascript:void(0)" onclick="addTab('用户信息管理','UserManage.aspx')"><span style="color:#977171">>&nbsp;&nbsp;用户信息管理</span></a></li>
                 
                 </ul>
             </div>

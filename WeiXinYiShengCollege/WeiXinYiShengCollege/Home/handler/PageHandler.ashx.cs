@@ -45,7 +45,7 @@ namespace HospitalBookWebSite.Home.handler
             int pageIndex = RequestKeeper.GetFormInt(Request["PageIndex"]);
             int pageSize = 12;// RequestKeeper.GetFormInt(Request["PageSize"]);
 
-            PageList<List<User>> pList = UserBusiness.GetUserList(mobile,bookId, pageIndex, pageSize);
+            PageList<List<User>> pList = UserBusiness.GetUserList(mobile, pageIndex, pageSize);
 
 
             Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<PageList<List<User>>>() { code = 1, m = pList }));

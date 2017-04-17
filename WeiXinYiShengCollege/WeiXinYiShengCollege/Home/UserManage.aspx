@@ -7,10 +7,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/admin.global.css" rel="stylesheet" type="text/css" />
     <link href="css/admin.content.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.utils.js"></script>
-    <script type="text/javascript" src="/js/admin.js"></script>
-    <script type="text/javascript" src="/js/jsonlint.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.utils.js"></script>
+    <script type="text/javascript" src="../js/admin.js"></script>
+    <script type="text/javascript" src="../js/jsonlint.js"></script>
     <title>用户管理</title>
     <script type="text/javascript">
         var pageCount = 0;
@@ -20,11 +20,11 @@
         //获取中奖纪录
         function GetList(pageIndex) {
             var mobile = $("#txtmobile").val();
-            var bookId = $("#ddlBook").val();
+            
             $.ajax({
                 type: "POST",
                 url: "handler/PageHandler.ashx",
-                data: { Action: "GetUserList", mobile: mobile,bookId:bookId, PageIndex: pageIndex, r: Math.random() },
+                data: { Action: "GetUserList", mobile: mobile, PageIndex: pageIndex, r: Math.random() },
                 dataType: "json",
                 async: true,
                 success: function (result) {
@@ -114,10 +114,20 @@
                     var $contentTrTmp = $contentTr.clone();
                     var tmpItem = data.Source[i];
                     $contentTrTmp.find("td").eq(0).html(tmpItem.Id);
-                    $contentTrTmp.find("td").eq(1).html(tmpItem.Mobile);
-                    $contentTrTmp.find("td").eq(2).html(tmpItem.Email);
-                    $contentTrTmp.find("td").eq(3).html(tmpItem.RegistCode);
-                    $contentTrTmp.find("td").eq(4).html(tmpItem.CreateDateTime);
+                    $contentTrTmp.find("td").eq(1).html(tmpItem.OpenId);
+                    $contentTrTmp.find("td").eq(2).html(tmpItem.Mobile);
+                    $contentTrTmp.find("td").eq(3).html(tmpItem.NickName);
+                    $contentTrTmp.find("td").eq(4).html(tmpItem.UserType);
+                    $contentTrTmp.find("td").eq(5).html(tmpItem.UserLevel);
+                    $contentTrTmp.find("td").eq(6).html(tmpItem.ParentId);
+                    $contentTrTmp.find("td").eq(7).html(tmpItem.ApproveFlag);
+                    $contentTrTmp.find("td").eq(8).html(tmpItem.Score);
+                    $contentTrTmp.find("td").eq(9).html(tmpItem.QrCodeScene_id);
+                    $contentTrTmp.find("td").eq(10).html(tmpItem.CustomerManagerId);
+                    $contentTrTmp.find("td").eq(11).html(tmpItem.UserInfoJson);
+                    $contentTrTmp.find("td").eq(12).html(tmpItem.CreateDateTime);
+                    //在编辑里进行验证通过操作（验证通过的同时需要生成场景ID）
+                    $contentTrTmp.find("td").eq(12).html("编辑");
                     $contentTrTmp.appendTo("#tbodyHtml");
                 }
                 //console.log(firstTr);
@@ -135,8 +145,7 @@
                 <span class="icon-sprite icon-list"></span>
                 <h3>用户列表</h3>
                 <div class="bar">
-                     选择书籍：<asp:DropDownList ID="ddlBook" runat="server" >
-                    </asp:DropDownList>&nbsp;&nbsp;手机号：<input id="txtmobile" type="text" />
+                     手机号：<input id="txtmobile" type="text" />
                     <input id="btnQuery" type="button" value="查询" onclick="GetList(1);" />
                 </div>
             </div>
@@ -153,14 +162,30 @@
                     <div>
                         <table  id="tbodyHtml" class="data-table" cellspacing="0" cellpadding="0" id="gvList" style="border-collapse: collapse;">
                             <tr>
-                                <th scope="col" style="width: 50px;">序号</th>
-                                <th align="left" scope="col" style="width: 100px;">手机号</th>
-                                <th scope="col" style="width: 100px;">邮箱</th>
-                                <th scope="col" style="width: 120px;">注册码</th>
-                                <th scope="col" style="width: 120px;">创建时间</th>
+                                <th scope="col" >序号</th>
+                                <th align="left" scope="col" >OpenId</th>
+                                <th scope="col" >Mobile</th>
+                                <th scope="col" >NickName</th>
+                                <th scope="col" >UserType</th>
+                                <th scope="col" >UserLevel</th>
+                                <th scope="col" >ParentId</th>
+                                <th scope="col" >ApproveFlag</th>
+                                <th scope="col" >Score</th>
+                                <th scope="col" >QrCodeScene_id</th>
+                                <th scope="col" >CustomerManagerId</th>
+                                <th scope="col" >UserInfoJson</th>
+                                <th scope="col" >创建时间</th>
                             </tr>
                             <tr>
                                 <td align="center">&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>

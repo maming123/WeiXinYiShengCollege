@@ -79,12 +79,16 @@
     <Compile Include="MessageHandlers\CustomMessageHandler\CustomMessageContext.cs" />
     <Compile Include="MessageHandlers\CustomMessageHandler\CustomMessageHandler.cs" />
     <Compile Include="MessageHandlers\CustomMessageHandler\CustomMessageHandler_Events.cs" />
+    <Compile Include="MessageHandlers\YSMsgHandler\YSMsgContext.cs" />
+    <Compile Include="MessageHandlers\YSMsgHandler\YSMsgHandler.cs" />
+    <Compile Include="MessageHandlers\YSMsgHandler\YSMsgHandler_Events.cs" />
     <Compile Include="OpenTicket\OpenTicketHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TemplateMessage\WeixinTemplate_ExceptionAlert.cs" />
     <Compile Include="TemplateMessage\WxOpen\WxOpenTemplateMessage_PaySuccessNotice.cs" />
     <Compile Include="Utilities\Server.cs" />
     <Compile Include="WeiXinBusiness.cs" />
+    <Compile Include="ModelForPageShow\WeiXinModelForPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Download\readme.txt" />
@@ -101,6 +105,10 @@
     <ProjectReference Include="..\..\Senparc.Weixin\Senparc.Weixin\Senparc.Weixin.csproj">
       <Project>{814092cd-9cd0-4fb7-91e8-d147f476f1fb}</Project>
       <Name>Senparc.Weixin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WeiXinYiShengCollege\WeiXinYiShengCollege.Business\WeiXinYiShengCollege.Business.csproj">
+      <Project>{3976a1f8-4795-4657-aa25-25c782f8e28c}</Project>
+      <Name>WeiXinYiShengCollege.Business</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

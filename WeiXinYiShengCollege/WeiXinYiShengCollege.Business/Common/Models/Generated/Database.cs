@@ -232,6 +232,68 @@ namespace Module.Models
 	}
 
     
+	[TableName("OrderInfo")]
+
+
+	[ExplicitColumns]
+    public partial class OrderInfo : CoreDB.Record<OrderInfo>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string OpenId { get; set; }
+
+
+
+
+
+		[Column] public string OrderInfoJson { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDateTime { get; set; }
+
+
+
+	}
+
+    
+	[TableName("CustomerManager")]
+
+
+	[ExplicitColumns]
+    public partial class CustomerManager : CoreDB.Record<CustomerManager>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string Name { get; set; }
+
+
+
+
+
+		[Column] public long? Mobile { get; set; }
+
+
+
+	}
+
+    
 	[TableName("User")]
 
 
@@ -246,6 +308,12 @@ namespace Module.Models
 
 
 		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string OpenId { get; set; }
 
 
 
@@ -275,7 +343,73 @@ namespace Module.Models
 
 
 
-		[Column] public string RegistCode { get; set; }
+		[Column] public string CompanyName { get; set; }
+
+
+
+
+
+		[Column] public int UserType { get; set; }
+
+
+
+
+
+		[Column] public int? UserLevel { get; set; }
+
+
+
+
+
+		[Column] public string Remark { get; set; }
+
+
+
+
+
+		[Column] public int ParentId { get; set; }
+
+
+
+
+
+		[Column] public int ApproveFlag { get; set; }
+
+
+
+
+
+		[Column] public int? Score { get; set; }
+
+
+
+
+
+		[Column] public string Province { get; set; }
+
+
+
+
+
+		[Column] public string City { get; set; }
+
+
+
+
+
+		[Column] public string UserInfoJson { get; set; }
+
+
+
+
+
+		[Column] public int QrCodeScene_id { get; set; }
+
+
+
+
+
+		[Column] public int IsDelete { get; set; }
 
 
 
@@ -287,7 +421,41 @@ namespace Module.Models
 
 
 
-		[Column] public int BookId { get; set; }
+		[Column] public int? CustomerManagerId { get; set; }
+
+
+
+	}
+
+    
+	[TableName("MaterialNews")]
+
+
+	[ExplicitColumns]
+    public partial class MaterialNews : CoreDB.Record<MaterialNews>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string Media_Id { get; set; }
+
+
+
+
+
+		[Column] public string MediaJson { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDateTime { get; set; }
 
 
 
