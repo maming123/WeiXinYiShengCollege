@@ -8,8 +8,10 @@ using Senparc.Weixin.MP.AdvancedAPIs.Media;
 using Senparc.Weixin.MP.Containers;
 using Senparc.Weixin.MP.AdvancedAPIs.QrCode;
 using System.IO;
+using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
+using Senparc.Weixin.MP.AdvancedAPIs.User;
 
-namespace WeiXinYiShengCollege.Business
+namespace Senparc.Weixin.MP.Sample.CommonService
 {
    public class WeiXinBusiness
     {
@@ -71,6 +73,43 @@ namespace WeiXinYiShengCollege.Business
            MemoryStream ms =new MemoryStream() ;
            QrCodeApi.ShowQrCode(r.ticket,ms);
            return ms;
+       }
+
+       /// <summary>
+       /// 获取redirectUrl?code=xxx
+       /// </summary>
+       /// <param name="redirectUrl"></param>
+       /// <returns></returns>
+       public static string GetAuthorizeUrl(string redirectUrl)
+       {
+
+           String strUrl = OAuthApi.GetAuthorizeUrl(Appid, redirectUrl, "none", OAuthScope.snsapi_base);
+           
+           return strUrl;
+       }
+
+       /// <summary>
+       /// 通过code获取AuthAccessToken
+       /// </summary>
+       /// <param name="code"></param>
+       /// <param name="getNewToken"></param>
+       /// <returns></returns>
+       public static String GetOpenIdFromOAuthAccessToken(string code, bool getNewToken = false)
+       {
+           OAuthAccessTokenResult result = OAuthApi.GetAccessToken(Appid, AppSecret, code);
+         
+           return result.openid;
+       }
+
+       /// <summary>
+       /// 通过Api 获取用户信息
+       /// </summary>
+       /// <param name="openId"></param>
+       /// <returns></returns>
+       public static UserInfoJson GetUserInfoFromApi(string openId)
+       {
+           UserInfoJson userInfoJson = AdvancedAPIs.UserApi.Info(Appid, openId);
+           return userInfoJson;
        }
 
     }

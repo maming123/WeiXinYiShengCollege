@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 using log4net.Config;
+using Senparc.Weixin.MP.Sample.CommonService;
 using WeiXinYiShengCollege.Business;
 
 namespace WeiXinYiShengCollege.WebSite

@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OAuth2.aspx.cs" Inherits="WeiXinYiShengCollege.WebSite.OAuth2" %>

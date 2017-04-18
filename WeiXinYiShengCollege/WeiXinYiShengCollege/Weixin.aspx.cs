@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Senparc.Weixin.MP;
 using Senparc.Weixin.MP.Entities.Request;
+using Senparc.Weixin.MP.Sample.CommonService;
 using Senparc.Weixin.MP.Sample.CommonService.CustomMessageHandler;
 using Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler;
 using Senparc.Weixin.XmlUtility;

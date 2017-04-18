@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Module.Models;
 using Module.Utils;
+using Senparc.Weixin.MP.AdvancedAPIs.User;
 using Senparc.Weixin.MP.Entities;
 using Senparc.Weixin.MP.Sample.CommonService.Download;
 using WeiXinYiShengCollege.Business;
@@ -34,22 +35,8 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
             //通过扫描关注
             var responseMessage = CreateResponseMessage<ResponseMessageText>();
 
-            //下载文档
-            if (!string.IsNullOrEmpty(requestMessage.EventKey))
-            {
-                var sceneId = long.Parse(requestMessage.EventKey.Replace("qrscene_", ""));
-                //var configHelper = new ConfigHelper(new HttpContextWrapper(HttpContext.Current));
-                var codeRecord =
-                    ConfigHelper.CodeCollection.Values.FirstOrDefault(z => z.QrCodeTicket != null && z.QrCodeId == sceneId);
-
-
-                if (codeRecord != null)
-                {
-                    //确认可以下载
-                    codeRecord.AllowDownload = true;
-                    responseMessage.Content = GetDownloadInfo(codeRecord);
-                }
-            }
+            //EventKey 对应数据库里的Sys_User表的QrCodeScene_id 字段值
+            Subscribe(requestMessage.EventKey, requestMessage.FromUserName, responseMessage);
 
             responseMessage.Content = responseMessage.Content ?? string.Format("通过扫描二维码进入，场景值：{0}", requestMessage.EventKey);
 
@@ -64,64 +51,108 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
         {
             var responseMessage = ResponseMessageBase.CreateFromRequestMessage<ResponseMessageText>(requestMessage);
             responseMessage.Content = GetWelcomeInfo();
-            //订阅，需要插入到数据库 新创建用户
-           bool bIsExists = UserBusiness.IsExistUser(requestMessage.FromUserName);
-           if (!bIsExists)
-           {
-               Sys_User newUser = new Sys_User()
-               {
-                   ApproveFlag = Convert.ToInt32(ApproveFlag.未认证),
-                   City = "",
-                   CompanyName = "",
-                   CreateDateTime = DateTime.Now,
-                   CustomerManagerId = 0,
-                   Email = "",
-                   IsDelete = 0,
-                   Mobile = 0,
-                   NickName = "",
-                   OpenId = requestMessage.FromUserName,
-                   ParentId = 0,
-                   PassWord = "",
-                   Province = "",
-                   QrCodeScene_id = 0,
-                   Remark = "",
-                   Score = 0,
-                   UserInfoJson = "",
-                   UserLevel = Convert.ToInt32(UserLevel.未分配),
-                   UserType = Convert.ToInt32(UserType.未分配)
-               };
-               newUser.Insert();
-           }else
-           {
-               //存在 那么看是否携带场景值，如果携带 证明是谁的粉丝 那么更新parentid 为QrCodeScene_id的ID
-               if (!string.IsNullOrEmpty(requestMessage.EventKey))
-               {
-                   responseMessage.Content += "\r\n============\r\n场景值：" + requestMessage.EventKey;
-               }
-
-           }
-            
-            
-            //推送消息
-            //下载文档
-            if (requestMessage.EventKey.StartsWith("qrscene_"))
-            {
-                var sceneId = long.Parse(requestMessage.EventKey.Replace("qrscene_", ""));
-                //var configHelper = new ConfigHelper(new HttpContextWrapper(HttpContext.Current));
-                var codeRecord =
-                    ConfigHelper.CodeCollection.Values.FirstOrDefault(z => z.QrCodeTicket != null && z.QrCodeId == sceneId);
-
-                if (codeRecord != null)
-                {
-                    //确认可以下载
-                    codeRecord.AllowDownload = true;
-                    AdvancedAPIs.CustomApi.SendText(null, WeixinOpenId, GetDownloadInfo(codeRecord));
-                }
-            }
-
-
+            Subscribe(requestMessage.EventKey,requestMessage.FromUserName, responseMessage);
             
             return responseMessage;
         }
+
+
+   
+
+
+        #region 自定义处理逻辑
+
+        /// <summary>
+        /// 订阅关注逻辑
+       /// </summary>
+       /// <param name="eventKey"></param>
+       /// <param name="FromUserName">OpenId</param>
+       /// <param name="responseMessage"></param>
+        private static void Subscribe(String eventKey, String FromUserName, ResponseMessageText responseMessage)
+        {
+            //订阅，需要插入到数据库 新创建用户
+            Sys_User sUserRequest = UserBusiness.GetUserInfo(FromUserName);
+
+            UserInfoJson userInfoJson = AdvancedAPIs.UserApi.Info(WeiXinBusiness.Appid, FromUserName);
+            String userInfoJsonStr = BaseCommon.ObjectToJson(userInfoJson);
+            // 根据场景值获取parentId
+            int parentId = GetParentIdFromEventKey(eventKey);
+            if (sUserRequest == null || (sUserRequest != null && sUserRequest.Id <= 0))
+            {//新用户
+                Sys_User newUser = new Sys_User()
+                {
+                    ApproveFlag = Convert.ToInt32(ApproveFlag.未认证),
+                    City = "",
+                    CompanyName = "",
+                    CreateDateTime = DateTime.Now,
+                    CustomerManagerId = 0,
+                    Email = "",
+                    IsDelete = 0,
+                    Mobile = 0,
+                    NickName = "",
+                    OpenId = FromUserName,
+                    ParentId = parentId,
+                    PassWord = "",
+                    Province = "",
+                    QrCodeScene_id = 0,
+                    Remark = "",
+                    Score = 0,
+                    UserInfoJson = userInfoJsonStr,
+                    UserLevel = Convert.ToInt32(UserLevel.未分配),
+                    UserType = Convert.ToInt32(UserType.粉丝类型)
+                };
+                newUser.Insert();
+
+                if (!string.IsNullOrEmpty(eventKey))
+                {
+                    responseMessage.Content += "\r\n============\r\n新用户场景值：" + eventKey;
+                }
+            }
+            else
+            {
+                //存在
+                if (sUserRequest.UserType != (int)UserType.理事类型 && sUserRequest.ParentId==0)
+                {
+                    Sys_User sUser = new Sys_User() { Id = sUserRequest.Id };
+                    sUser.ParentId = parentId;
+                    sUser.UserInfoJson = userInfoJsonStr;
+                    sUser.Update(new String[] { "ParentId", "UserInfoJson" });
+                }
+
+                if (!string.IsNullOrEmpty(eventKey))
+                {
+                    responseMessage.Content += "\r\n============\r\n用户已关注过场景值：" + eventKey;
+                }
+
+            }
+        }
+
+        /// <summary>
+        /// 看是否携带场景值并且场景值>0，如果携带 证明是谁的粉丝 那么通过场景值（QrCodeScene_id）获取对应的Id
+        /// </summary>
+        /// <param name="eventKey"></param>
+        /// <returns></returns>
+        private static int GetParentIdFromEventKey(String eventKey)
+        {
+            int parentId = 0;
+            if (!string.IsNullOrEmpty(eventKey))
+            {   //有场景值
+                //responseMessage.Content += "\r\n============\r\n新用户场景值：" + requestMessage.EventKey;
+                int eventKeytmp = 0;
+                if (Int32.TryParse(eventKey, out eventKeytmp))
+                {
+                    //粉丝可以设置ParentID
+                    Sys_User sParentUser = Sys_User.SingleOrDefault("where QrCodeScene_id=@0", eventKeytmp);
+                    if (sParentUser != null && sParentUser.Id > 0)
+                    {
+                        parentId = sParentUser.Id;
+                    }
+                }
+            }
+            return parentId;
+        }
+
+        #endregion
+
     }
 }
