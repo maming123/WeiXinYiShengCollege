@@ -75,6 +75,8 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
 
             UserInfoJson userInfoJson = AdvancedAPIs.UserApi.Info(WeiXinBusiness.Appid, FromUserName);
             String userInfoJsonStr = BaseCommon.ObjectToJson(userInfoJson);
+            string nickName = userInfoJson.nickname;
+            string headImgUrl = userInfoJson.headimgurl;
             // 根据场景值获取parentId
             int parentId = GetParentIdFromEventKey(eventKey);
             if (sUserRequest == null || (sUserRequest != null && sUserRequest.Id <= 0))
@@ -89,7 +91,7 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
                     Email = "",
                     IsDelete = 0,
                     Mobile = 0,
-                    NickName = "",
+                    NickName = nickName,
                     OpenId = FromUserName,
                     ParentId = parentId,
                     PassWord = "",
@@ -99,7 +101,8 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
                     Score = 0,
                     UserInfoJson = userInfoJsonStr,
                     UserLevel = Convert.ToInt32(UserLevel.未分配),
-                    UserType = Convert.ToInt32(UserType.粉丝类型)
+                    UserType = Convert.ToInt32(UserType.粉丝类型),
+                    HeadImgUrl = headImgUrl
                 };
                 newUser.Insert();
 

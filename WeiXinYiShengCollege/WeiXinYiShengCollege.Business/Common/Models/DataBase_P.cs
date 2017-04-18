@@ -14,9 +14,35 @@ using PetaPoco;
 namespace Module.Models
 {
  
+    /// <summary>
+    /// 带Str结尾的都为别名供页面显示
+    /// </summary>
     public partial class Sys_User
     {
         
+        
+
+    }
+    /// <summary>
+    /// Sys_User的扩展 应对联合查询
+    /// </summary>
+    public class Sys_UserEx : Sys_User
+    {
+        
+        public string ProvinceStr { get; set; }
+        
+        public string CityStr { get; set; }
+        
+        public string CustomerManagerMobile { get; set; }
+       
+        public string CustomerManagerName { get; set; }
+        
+        public string ApproveFlagStr { get; set; }
+        
+        public string UserTypeStr { get; set; }
+        
+        public string UserLevelStr { get; set; }
+        public string ParentNickName { get; set; }
     }
     
 }

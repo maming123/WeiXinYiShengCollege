@@ -7,9 +7,9 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace WeiXinYiShengCollege.WebSite.wx {
+namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx {
     
     
-    public partial class profile {
+    public partial class CreateQrCodeUI {
     }
 }

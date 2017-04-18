@@ -15,9 +15,17 @@ namespace HospitalBookWebSite.Home
         {
             if (!Page.IsPostBack)
             {
-               
+                InitddlCustomerManagerId();
             }
         }
-
+        private void InitddlCustomerManagerId()
+        {
+            List<CustomerManager> cstmaglist = CustomerManager.Query("").ToList();
+            foreach (CustomerManager cm in cstmaglist)
+            {
+                ddlCustomerManagerId.Items.Add(new ListItem() { Text = cm.Name + "|" + cm.Mobile, Value = cm.Id.ToString() });
+            }
+            ddlCustomerManagerId.Items.Insert(0, new ListItem() { Text = "请选择", Value = "0" });
+        }
     }
 }

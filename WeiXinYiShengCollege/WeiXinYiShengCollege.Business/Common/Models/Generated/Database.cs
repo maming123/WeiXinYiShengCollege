@@ -365,6 +365,12 @@ namespace Module.Models
 
 
 
+		[Column] public string HeadImgUrl { get; set; }
+
+
+
+
+
 		[Column] public string PassWord { get; set; }
 
 

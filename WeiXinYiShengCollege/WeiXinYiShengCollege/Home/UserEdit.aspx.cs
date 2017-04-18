@@ -17,7 +17,14 @@ namespace WeiXinYiShengCollege.WebSite.Home
             if (!Page.IsPostBack)
             {
                 string openId = RequestKeeper.GetFormString(Request["OpenId"]);
+                string id = RequestKeeper.GetFormString(Request["Id"]);
+
                 InitddlCustomerManagerId();
+                if(String.IsNullOrEmpty(openId))
+                {//证明只是查看用户信息
+                    openId = UserBusiness.GetUserInfoById(id).OpenId;
+                    this.btnEdit.Visible = false;
+                }
                 ShowDetail(openId);
             }
         }
@@ -58,7 +65,7 @@ namespace WeiXinYiShengCollege.WebSite.Home
             List<CustomerManager> cstmaglist = CustomerManager.Query("").ToList();
             foreach (CustomerManager cm in cstmaglist)
             {
-                ddlCustomerManagerId.Items.Add(new ListItem() { Text = cm.Name, Value = cm.Id.ToString() });
+                ddlCustomerManagerId.Items.Add(new ListItem() { Text = cm.Name+"|"+cm.Mobile, Value = cm.Id.ToString() });
             }
             ddlCustomerManagerId.Items.Insert(0, new ListItem() { Text = "请选择", Value = "0" });
         }
@@ -91,7 +98,8 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 ddlCustomerManagerId.SelectedValue = u.CustomerManagerId.ToString();
                 ddlUserLevel.SelectedValue = u.UserLevel.ToString();
                 ddlUserType.SelectedValue = u.UserType.ToString();
-               
+
+                txtUserInfoJson.Text = u.UserInfoJson;
                 
             }
         }

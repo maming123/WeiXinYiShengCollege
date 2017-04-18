@@ -6,22 +6,38 @@ using Module.Models;
 using Module.Utils;
 using PetaPoco;
 
+
 namespace WeiXinYiShengCollege.Business
 {
     public  class UserBusiness:BaseBusiness
     {
-        public static PageList<List<Sys_User>> GetUserList(long mobile, int pageIndex, int pageSize)
+        public static PageList<List<dynamic>> GetUserList(long mobile,int userType,int userLevel,int customerManagerId, int pageIndex, int pageSize)
         {
-            string strSql = string.Format(@"select * from Sys_User where 1=1 ");
+            string strSql = string.Format(@"SELECT  s1.* ,
+                                                    s2.nickname AS 'ParentNickName'
+                                            FROM    Sys_User s1 LEFT JOIN Sys_User s2
+                                            ON   s1.parentid = s2.id WHERE 1=1   ");
             if(mobile>0)
             {
-                strSql += string.Format(@" and Mobile={0}",mobile);
+                strSql += string.Format(@" and s1.Mobile={0}",mobile);
+            }
+            if (userType >= 0)
+            {
+                strSql += string.Format(@" and s1.UserType={0}", userType);
+            }
+            if (userLevel >= 0)
+            {
+                strSql += string.Format(@" and s1.UserLevel={0}", userLevel);
+            }
+            if (customerManagerId > 0)
+            {
+                strSql += string.Format(@" and s1.CustomerManagerId={0}", customerManagerId);
             }
             
             var db = CoreDB.GetInstance();
-            Page<Sys_User> pagelist = db.Page<Sys_User>(pageIndex, pageSize, strSql);
+            Page<dynamic> pagelist = db.Page<dynamic>(pageIndex, pageSize, strSql);
 
-            PageList<List<Sys_User>> pList = new PageList<List<Sys_User>>((int)pagelist.CurrentPage, (int)pagelist.ItemsPerPage, (int)pagelist.TotalItems);
+            PageList<List<dynamic>> pList = new PageList<List<dynamic>>((int)pagelist.CurrentPage, (int)pagelist.ItemsPerPage, (int)pagelist.TotalItems);
             pList.Source = pagelist.Items.ToList();
             return pList;
         }
@@ -30,6 +46,11 @@ namespace WeiXinYiShengCollege.Business
         {
             Sys_User u = Sys_User.SingleOrDefault(" where OpenId=@0", openId);
            return u;
+        }
+        public static Sys_User GetUserInfoById(string id)
+        {
+            Sys_User u = Sys_User.SingleOrDefault((object)id);
+            return u;
         }
 
 
@@ -53,6 +74,18 @@ namespace WeiXinYiShengCollege.Business
            int count =  CoreDB.GetInstance().ExecuteScalar<int>(str,(int)ApproveFlag.已认证,(int)UserType.理事类型);
            return count;
         }
+
+        /// <summary>
+        /// 获取客服经理列表
+        /// </summary>
+        /// <returns></returns>
+        public static List<CustomerManager> GetCustomerManagerList()
+        {
+            
+            List<CustomerManager> list = CustomerManager.Query("where 1=1").ToList();
+            return list;
+        }
+        
         
     }
 

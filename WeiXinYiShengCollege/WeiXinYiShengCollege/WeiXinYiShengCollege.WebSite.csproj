@@ -229,6 +229,7 @@
     <Content Include="jqueryweui\lib\weui.css" />
     <Content Include="jqueryweui\lib\weui.min.css" />
     <Content Include="jqueryweui\lib\zepto.js" />
+    <Content Include="jqueryweui\wx\CreateQrCodeUI.aspx" />
     <Content Include="jqueryweui\wx\css\demos.css" />
     <Content Include="jqueryweui\wx\images\icon_nav_actionSheet.png" />
     <Content Include="jqueryweui\wx\images\icon_nav_article.png" />
@@ -695,6 +696,13 @@
     </Compile>
     <Compile Include="Home\UserManage.aspx.designer.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jqueryweui\wx\CreateQrCodeUI.aspx.cs">
+      <DependentUpon>CreateQrCodeUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\CreateQrCodeUI.aspx.designer.cs">
+      <DependentUpon>CreateQrCodeUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="OAuth2.aspx.cs">
       <DependentUpon>OAuth2.aspx</DependentUpon>

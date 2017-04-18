@@ -100,13 +100,20 @@
                 <td align="right" class="style1">客户经理：</td>
                 <td>
                     
-                    <asp:DropDownList ID="ddlCustomerManagerId" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlCustomerManagerId" runat="server"  Width="145px"></asp:DropDownList>
                 </td>
             </tr>
             <tr>
                 <td align="right" class="style1">个人简介：</td>
                 <td colspan="7">
                     <asp:TextBox ID="txtRemark" runat="server" CssClass=" input_txt" Columns="5" Height="84px" Rows="10" TextMode="MultiLine" Width="645px" ></asp:TextBox>
+                </td>
+                
+            </tr>
+            <tr>
+                <td align="right" class="style1">从微信API获取的用户信息：</td>
+                <td colspan="7">
+                    <asp:TextBox ID="txtUserInfoJson" ReadOnly="true" runat="server" CssClass=" input_txt" Columns="5" Height="120px" Rows="10" TextMode="MultiLine" Width="645px" ></asp:TextBox>
                 </td>
                 
             </tr>
