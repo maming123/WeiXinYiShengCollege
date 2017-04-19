@@ -231,6 +231,8 @@
     <Content Include="jqueryweui\lib\zepto.js" />
     <Content Include="jqueryweui\wx\CreateQrCodeUI.aspx" />
     <Content Include="jqueryweui\wx\css\demos.css" />
+    <Content Include="jqueryweui\wx\FansProfile.aspx" />
+    <Content Include="jqueryweui\wx\FansProfileEdit.aspx" />
     <Content Include="jqueryweui\wx\images\icon_nav_actionSheet.png" />
     <Content Include="jqueryweui\wx\images\icon_nav_article.png" />
     <Content Include="jqueryweui\wx\images\icon_nav_button.png" />
@@ -262,6 +264,9 @@
     <Content Include="jqueryweui\wx\images\swiper-3.jpg" />
     <Content Include="jqueryweui\wx\images\swiper-4.jpg" />
     <Content Include="jqueryweui\wx\images\vcode.jpg" />
+    <Content Include="jqueryweui\wx\MyCustomerManager.aspx" />
+    <Content Include="jqueryweui\wx\MyFansList.aspx" />
+    <Content Include="jqueryweui\wx\ProfileEdit.aspx" />
     <Content Include="js\admin.js" />
     <Content Include="js\bdCount.js" />
     <Content Include="js\common.js" />
@@ -623,7 +628,7 @@
     <Content Include="OAuth2.aspx" />
     <Content Include="Web.config" />
     <Content Include="Weixin.aspx" />
-    <Content Include="jqueryweui\wx\profile.aspx" />
+    <Content Include="jqueryweui\wx\Profile.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -704,6 +709,41 @@
     <Compile Include="jqueryweui\wx\CreateQrCodeUI.aspx.designer.cs">
       <DependentUpon>CreateQrCodeUI.aspx</DependentUpon>
     </Compile>
+    <Compile Include="jqueryweui\wx\FansProfile.aspx.cs">
+      <DependentUpon>FansProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\FansProfile.aspx.designer.cs">
+      <DependentUpon>FansProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jqueryweui\wx\FansProfileEdit.aspx.cs">
+      <DependentUpon>FansProfileEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\FansProfileEdit.aspx.designer.cs">
+      <DependentUpon>FansProfileEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jqueryweui\wx\MyCustomerManager.aspx.cs">
+      <DependentUpon>MyCustomerManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\MyCustomerManager.aspx.designer.cs">
+      <DependentUpon>MyCustomerManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jqueryweui\wx\MyFansList.aspx.cs">
+      <DependentUpon>MyFansList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\MyFansList.aspx.designer.cs">
+      <DependentUpon>MyFansList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jqueryweui\wx\ProfileEdit.aspx.cs">
+      <DependentUpon>ProfileEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\ProfileEdit.aspx.designer.cs">
+      <DependentUpon>ProfileEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="OAuth2.aspx.cs">
       <DependentUpon>OAuth2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -716,12 +756,12 @@
       <DependentUpon>Weixin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="jqueryweui\wx\profile.aspx.cs">
-      <DependentUpon>profile.aspx</DependentUpon>
+    <Compile Include="jqueryweui\wx\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="jqueryweui\wx\profile.aspx.designer.cs">
-      <DependentUpon>profile.aspx</DependentUpon>
+    <Compile Include="jqueryweui\wx\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

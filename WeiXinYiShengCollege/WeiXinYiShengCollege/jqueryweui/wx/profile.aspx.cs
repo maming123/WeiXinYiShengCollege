@@ -14,18 +14,19 @@ namespace WeiXinYiShengCollege.WebSite.wx
     public partial class profile : System.Web.UI.Page
     {
 
-        public string NickName = "";
-        public String OpenId = "";
+        public Sys_User sUser = new Sys_User();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             string code =RequestKeeper.GetFormString(Request["code"]);
             if(!string.IsNullOrEmpty(code))
             {
                 //获取Accesstoken 进而获取openId 通过OpenId获取用户信息
-                OpenId = WeiXinBusiness.GetOpenIdFromOAuthAccessToken(code);
+               String  OpenId = WeiXinBusiness.GetOpenIdFromOAuthAccessToken(code);
 
-                Sys_User sUser = UserBusiness.GetUserInfo(OpenId);
-                NickName = sUser.NickName;
+                Sys_User tmpUser = UserBusiness.GetUserInfo(OpenId);
+                if (tmpUser != null)
+                    sUser = tmpUser;
                 //Response.Write(openId+BaseCommon.ObjectToJson(sUser));
                
             }else
