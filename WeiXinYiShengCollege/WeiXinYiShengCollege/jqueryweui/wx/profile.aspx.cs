@@ -26,7 +26,31 @@ namespace WeiXinYiShengCollege.WebSite.wx
 
                 Sys_User tmpUser = UserBusiness.GetUserInfo(OpenId);
                 if (tmpUser != null)
+                {
                     sUser = tmpUser;
+                    if(sUser.ParentId>0)
+                    {
+                        //认为是粉丝
+                        //判断如果没完善信息则取完善 手机号，姓名，完善后跳转到 FansProfile.aspx
+                        if(sUser.Mobile<=0)
+                        {
+                            Response.Redirect("FansProfileComplete.aspx?Id=" + sUser.Id);
+                        }
+
+                    }else
+                    {
+                        //认为是理事
+                        
+                        //判断如果没完善信息并且未认证者则去跳转到完善 手机号，姓名， 省、市、单位名称页面 完善后 跳转到Profile.aspx 
+                        //但在未通过审核前只显示待审核中
+                        if (sUser.ApproveFlag == 0)
+                        {   
+                            //只有未认证情况才跳去完善页面
+                            Response.Redirect("ProfileApprove.aspx?Id=" + sUser.Id);
+                        }
+                    }
+                }
+                
                 //Response.Write(openId+BaseCommon.ObjectToJson(sUser));
                
             }else

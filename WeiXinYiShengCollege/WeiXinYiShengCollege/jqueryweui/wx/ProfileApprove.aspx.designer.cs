@@ -10,6 +10,6 @@
 namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx {
     
     
-    public partial class MyFansList {
+    public partial class ProfileApprove {
     }
 }

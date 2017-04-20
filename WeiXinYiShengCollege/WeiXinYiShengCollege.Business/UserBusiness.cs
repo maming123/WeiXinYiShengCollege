@@ -16,7 +16,7 @@ namespace WeiXinYiShengCollege.Business
             string strSql = string.Format(@"SELECT  s1.* ,
                                                     s2.nickname AS 'ParentNickName'
                                             FROM    Sys_User s1 LEFT JOIN Sys_User s2
-                                            ON   s1.parentid = s2.id WHERE 1=1   ");
+                                            ON   s1.parentid = s2.id WHERE s1.IsDelete=0   ");
             if(mobile>0)
             {
                 strSql += string.Format(@" and s1.Mobile={0}",mobile);
@@ -70,7 +70,7 @@ namespace WeiXinYiShengCollege.Business
         /// <returns></returns>
         public static int GetLishiUserCount()
         {
-            String str =String.Format(@"select count(1) from Sys_User where ApproveFlag=@0 and UserType=@1");
+            String str = String.Format(@"select count(1) from Sys_User where  IsDelete=0 and ApproveFlag=@0 and UserType=@1");
            int count =  CoreDB.GetInstance().ExecuteScalar<int>(str,(int)ApproveFlag.已认证,(int)UserType.理事类型);
            return count;
         }
@@ -82,8 +82,35 @@ namespace WeiXinYiShengCollege.Business
         public static List<CustomerManager> GetCustomerManagerList()
         {
             
-            List<CustomerManager> list = CustomerManager.Query("where 1=1").ToList();
+            List<CustomerManager> list = CustomerManager.Query("").ToList();
             return list;
+        }
+
+        /// <summary>
+        /// 获取我的粉丝列表
+        /// </summary>
+        /// <param name="parentId"></param>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+        public static PageList<List<Sys_User>> GetMyFansList(int parentId, int pageIndex, int pageSize)
+        {
+            string strSql = string.Format(@"SELECT  * 
+                                            FROM    Sys_User WHERE IsDelete=0  ");
+            if (parentId > 0)
+            {
+                strSql += string.Format(@" and ParentId={0}", parentId);
+            }else
+            {
+                return null;
+            }
+
+            var db = CoreDB.GetInstance();
+            Page<Sys_User> pagelist = db.Page<Sys_User>(pageIndex, pageSize, strSql);
+
+            PageList<List<Sys_User>> pList = new PageList<List<Sys_User>>((int)pagelist.CurrentPage, (int)pagelist.ItemsPerPage, (int)pagelist.TotalItems);
+            pList.Source = pagelist.Items.ToList();
+            return pList;
         }
         
         

@@ -56,6 +56,26 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
             return responseMessage;
         }
 
+        /// <summary>
+        /// 退订
+        /// 实际上用户无法收到非订阅账号的消息，所以这里可以随便写。
+        /// unsubscribe事件的意义在于及时删除网站应用中已经记录的OpenID绑定，消除冗余数据。并且关注用户流失的情况。
+        /// </summary>
+        /// <returns></returns>
+        public override IResponseMessageBase OnEvent_UnsubscribeRequest(RequestMessageEvent_Unsubscribe requestMessage)
+        {
+            var responseMessage = base.CreateResponseMessage<ResponseMessageText>();
+
+            Sys_User sUserRequest = UserBusiness.GetUserInfo(requestMessage.FromUserName);
+            Sys_User sUser = new Sys_User() { Id = sUserRequest.Id };
+            sUser.IsDelete = 1;
+
+            sUser.Update(new String[] {  "IsDelete" });
+
+            responseMessage.Content = "有空再来";
+            return responseMessage;
+        }
+
 
    
 
@@ -113,13 +133,15 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
             }
             else
             {
-                //存在
+                
+                //存在 假如存在就恢复删除标识
+                Sys_User sUser = new Sys_User() { Id = sUserRequest.Id };
+                sUser.IsDelete = 0;
                 if (sUserRequest.UserType != (int)UserType.理事类型 && sUserRequest.ParentId==0)
                 {
-                    Sys_User sUser = new Sys_User() { Id = sUserRequest.Id };
                     sUser.ParentId = parentId;
                     sUser.UserInfoJson = userInfoJsonStr;
-                    sUser.Update(new String[] { "ParentId", "UserInfoJson" });
+                    sUser.Update(new String[] { "ParentId", "UserInfoJson", "IsDelete" });
                 }
 
                 if (!string.IsNullOrEmpty(eventKey))

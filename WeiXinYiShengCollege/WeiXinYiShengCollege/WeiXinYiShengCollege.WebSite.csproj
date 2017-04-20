@@ -232,6 +232,7 @@
     <Content Include="jqueryweui\wx\CreateQrCodeUI.aspx" />
     <Content Include="jqueryweui\wx\css\demos.css" />
     <Content Include="jqueryweui\wx\FansProfile.aspx" />
+    <Content Include="jqueryweui\wx\FansProfileComplete.aspx" />
     <Content Include="jqueryweui\wx\FansProfileEdit.aspx" />
     <Content Include="jqueryweui\wx\images\icon_nav_actionSheet.png" />
     <Content Include="jqueryweui\wx\images\icon_nav_article.png" />
@@ -266,6 +267,8 @@
     <Content Include="jqueryweui\wx\images\vcode.jpg" />
     <Content Include="jqueryweui\wx\MyCustomerManager.aspx" />
     <Content Include="jqueryweui\wx\MyFansList.aspx" />
+    <Content Include="jqueryweui\wx\ProfileApprove.aspx" />
+    <Content Include="jqueryweui\wx\ProfileApproveOK.aspx" />
     <Content Include="jqueryweui\wx\ProfileEdit.aspx" />
     <Content Include="js\admin.js" />
     <Content Include="js\bdCount.js" />
@@ -716,6 +719,13 @@
     <Compile Include="jqueryweui\wx\FansProfile.aspx.designer.cs">
       <DependentUpon>FansProfile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="jqueryweui\wx\FansProfileComplete.aspx.cs">
+      <DependentUpon>FansProfileComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\FansProfileComplete.aspx.designer.cs">
+      <DependentUpon>FansProfileComplete.aspx</DependentUpon>
+    </Compile>
     <Compile Include="jqueryweui\wx\FansProfileEdit.aspx.cs">
       <DependentUpon>FansProfileEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -736,6 +746,20 @@
     </Compile>
     <Compile Include="jqueryweui\wx\MyFansList.aspx.designer.cs">
       <DependentUpon>MyFansList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jqueryweui\wx\ProfileApprove.aspx.cs">
+      <DependentUpon>ProfileApprove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\ProfileApprove.aspx.designer.cs">
+      <DependentUpon>ProfileApprove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jqueryweui\wx\ProfileApproveOK.aspx.cs">
+      <DependentUpon>ProfileApproveOK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\ProfileApproveOK.aspx.designer.cs">
+      <DependentUpon>ProfileApproveOK.aspx</DependentUpon>
     </Compile>
     <Compile Include="jqueryweui\wx\ProfileEdit.aspx.cs">
       <DependentUpon>ProfileEdit.aspx</DependentUpon>

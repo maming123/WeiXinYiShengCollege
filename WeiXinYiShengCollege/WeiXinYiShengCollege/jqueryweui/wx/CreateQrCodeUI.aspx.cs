@@ -22,8 +22,8 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
             {
                 string openId = RequestKeeper.GetFormString(Request["OpenId"]);
                 Sys_User u = UserBusiness.GetUserInfo(openId);
-                if (u != null && u.Id > 0)
-                {
+                if (u != null && u.Id > 0 && u.QrCodeScene_id > 0 && u.QrCodeScene_id <100000)
+                {//场景值 永久二维码微信api限定为10W个
                     //qrcodeurl = WeiXinBusiness.GetQrCodeImgUrl(u.QrCodeScene_id);
                     string m_fileName = string.Format(@"QrCodeScene_id_{0}.jpg", u.QrCodeScene_id);
                     string m_saveName = "../../images/qrcode/" + m_fileName;
@@ -59,6 +59,9 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
 
 
 
+                }else
+                {
+                    Response.Write("二维码场景值不正确或者用户不存在,请联系管理员");
                 }
             }
         }
