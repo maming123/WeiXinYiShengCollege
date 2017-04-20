@@ -182,152 +182,6 @@ namespace Module.Models
 	}
 
     
-	[TableName("Log")]
-
-
-	[PrimaryKey("log_id")]
-
-
-
-	[ExplicitColumns]
-    public partial class Log : CoreDB.Record<Log>  
-    {
-
-
-
-		[Column] public int log_id { get; set; }
-
-
-
-
-
-		[Column] public DateTime LogDate { get; set; }
-
-
-
-
-
-		[Column] public string descript { get; set; }
-
-
-
-
-
-		[Column] public short logtype { get; set; }
-
-
-
-
-
-		[Column] public string log_info { get; set; }
-
-
-
-
-
-		[Column] public string Module_Name { get; set; }
-
-
-
-	}
-
-    
-	[TableName("OrderInfo")]
-
-
-	[ExplicitColumns]
-    public partial class OrderInfo : CoreDB.Record<OrderInfo>  
-    {
-
-
-
-		[Column] public int Id { get; set; }
-
-
-
-
-
-		[Column] public string OpenId { get; set; }
-
-
-
-
-
-		[Column] public string OrderInfoJson { get; set; }
-
-
-
-
-
-		[Column] public DateTime CreateDateTime { get; set; }
-
-
-
-	}
-
-    
-	[TableName("CustomerManager")]
-
-
-	[ExplicitColumns]
-    public partial class CustomerManager : CoreDB.Record<CustomerManager>  
-    {
-
-
-
-		[Column] public int Id { get; set; }
-
-
-
-
-
-		[Column] public string Name { get; set; }
-
-
-
-
-
-		[Column] public long? Mobile { get; set; }
-
-
-
-	}
-
-    
-	[TableName("MaterialNews")]
-
-
-	[ExplicitColumns]
-    public partial class MaterialNews : CoreDB.Record<MaterialNews>  
-    {
-
-
-
-		[Column] public int Id { get; set; }
-
-
-
-
-
-		[Column] public string Media_Id { get; set; }
-
-
-
-
-
-		[Column] public string MediaJson { get; set; }
-
-
-
-
-
-		[Column] public DateTime CreateDateTime { get; set; }
-
-
-
-	}
-
-    
 	[TableName("Sys_User")]
 
 
@@ -425,13 +279,13 @@ namespace Module.Models
 
 
 
-		[Column] public string Province { get; set; }
+		[Column] public int? Province { get; set; }
 
 
 
 
 
-		[Column] public string City { get; set; }
+		[Column] public int? City { get; set; }
 
 
 
@@ -468,6 +322,194 @@ namespace Module.Models
 
 
 		[Column] public DateTime? UpdateDateTime { get; set; }
+
+
+
+	}
+
+    
+	[TableName("Log")]
+
+
+	[PrimaryKey("log_id")]
+
+
+
+	[ExplicitColumns]
+    public partial class Log : CoreDB.Record<Log>  
+    {
+
+
+
+		[Column] public int log_id { get; set; }
+
+
+
+
+
+		[Column] public DateTime LogDate { get; set; }
+
+
+
+
+
+		[Column] public string descript { get; set; }
+
+
+
+
+
+		[Column] public short logtype { get; set; }
+
+
+
+
+
+		[Column] public string log_info { get; set; }
+
+
+
+
+
+		[Column] public string Module_Name { get; set; }
+
+
+
+	}
+
+    
+	[TableName("OrderInfo")]
+
+
+	[ExplicitColumns]
+    public partial class OrderInfo : CoreDB.Record<OrderInfo>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string OpenId { get; set; }
+
+
+
+
+
+		[Column] public string OrderInfoJson { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDateTime { get; set; }
+
+
+
+	}
+
+    
+	[TableName("CustomerManager")]
+
+
+	[PrimaryKey("Id")]
+
+
+
+	[ExplicitColumns]
+    public partial class CustomerManager : CoreDB.Record<CustomerManager>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string Name { get; set; }
+
+
+
+
+
+		[Column] public long? Mobile { get; set; }
+
+
+
+	}
+
+    
+	[TableName("MaterialNews")]
+
+
+	[ExplicitColumns]
+    public partial class MaterialNews : CoreDB.Record<MaterialNews>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string Media_Id { get; set; }
+
+
+
+
+
+		[Column] public string MediaJson { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDateTime { get; set; }
+
+
+
+	}
+
+    
+	[TableName("Area")]
+
+
+	[PrimaryKey("Id")]
+
+
+
+	[ExplicitColumns]
+    public partial class Area : CoreDB.Record<Area>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string AreaName { get; set; }
+
+
+
+
+
+		[Column] public int ParentId { get; set; }
+
+
+
+
+
+		[Column] public int? AreaLevel { get; set; }
 
 
 

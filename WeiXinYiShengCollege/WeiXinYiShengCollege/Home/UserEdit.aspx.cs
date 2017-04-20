@@ -20,6 +20,8 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 string id = RequestKeeper.GetFormString(Request["Id"]);
 
                 InitddlCustomerManagerId();
+                InitddlProvince();
+                InitddlCity(0);
                 if(String.IsNullOrEmpty(openId))
                 {//证明只是查看用户信息
                     openId = UserBusiness.GetUserInfoById(id).OpenId;
@@ -34,8 +36,8 @@ namespace WeiXinYiShengCollege.WebSite.Home
             Sys_User u = UserBusiness.GetUserInfo(lblOpenId.Text);
 
             u.ApproveFlag = Convert.ToInt16(ddlApprove.SelectedValue);
-            u.City = ddlCity.SelectedValue;
-            u.Province = ddlProvince.SelectedValue;
+            u.City = Convert.ToInt32(ddlCity.SelectedValue);
+            u.Province = Convert.ToInt32(ddlProvince.SelectedValue);
             u.CompanyName = txtCompanyName.Text;
             u.CustomerManagerId = Convert.ToInt32(ddlCustomerManagerId.SelectedValue);
 
@@ -70,6 +72,26 @@ namespace WeiXinYiShengCollege.WebSite.Home
             ddlCustomerManagerId.Items.Insert(0, new ListItem() { Text = "请选择", Value = "0" });
         }
 
+        private void InitddlProvince()
+        {
+            List<Area> list = AreaBusiness.GetProvinceList();
+            foreach (Area area in list)
+            {
+                ddlProvince.Items.Add(new ListItem() { Text = area.AreaName, Value = area.Id.ToString() });
+            }
+            ddlProvince.Items.Insert(0, new ListItem() { Text = "不详", Value = "0" });
+        }
+        private void InitddlCity(int provinceId)
+        {
+            ddlCity.Items.Clear();
+            List<Area> list = AreaBusiness.GetCityList(provinceId);
+            foreach (Area area in list)
+            {
+                ddlCity.Items.Add(new ListItem() { Text = area.AreaName, Value = area.Id.ToString() });
+            }
+            ddlCity.Items.Insert(0, new ListItem() { Text = "不详", Value = "0" });
+        }
+
 
         private void ShowDetail(string openid)
         {
@@ -92,14 +114,16 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 txtRemark.Text = u.Remark;
                 txtScore.Text = u.Score.ToString();
 
-                ddlProvince.SelectedValue = u.Province;
-                ddlCity.SelectedValue = u.City;
+                ddlProvince.SelectedValue = u.Province.ToString();
+                InitddlCity(u.Province??0);
+                ddlCity.SelectedValue = u.City.ToString();
                 ddlApprove.SelectedValue = u.ApproveFlag.ToString();
                 ddlCustomerManagerId.SelectedValue = u.CustomerManagerId.ToString();
                 ddlUserLevel.SelectedValue = u.UserLevel.ToString();
                 ddlUserType.SelectedValue = u.UserType.ToString();
 
                 txtUserInfoJson.Text = u.UserInfoJson;
+                
                 
             }
         }
@@ -116,6 +140,11 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 ddlUserLevel.Enabled = true;
                 ddlApprove.Enabled = true;
             }
+        }
+
+        protected void ddlProvince_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            InitddlCity(Convert.ToInt32(((DropDownList)sender).SelectedValue));
         }
     }
 }

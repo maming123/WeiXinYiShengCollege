@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreaBusiness.cs" />
     <Compile Include="Common\DataAccess\ConnectionStrings.cs" />
     <Compile Include="Common\DataAccess\SqlHelper.cs" />
     <Compile Include="Common\Models\DataBase_P.cs" />

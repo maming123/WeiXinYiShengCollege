@@ -32,11 +32,11 @@
             <div class="weui-panel__bd">
                 <div class="weui-media-box weui-media-box_small-appmsg">
                     <div class="weui-cells">
-                        <a class="weui-cell weui-cell_access" href="CreateQrCodeUI.aspx?OpenId=<%=sUser.OpenId %>">
+                        <a class="weui-cell weui-cell_access" href="javascript:;">
                             <div class="weui-cell__bd weui-cell_primary">
                                 <p>我的级别(<%=Enum.GetName(typeof(UserLevel),sUser.UserLevel) %>)</p>
                             </div>
-                            <span class="weui-cell__ft"></span>
+                            
                         </a>
                         <a class="weui-cell weui-cell_access" href="CreateQrCodeUI.aspx?OpenId=<%=sUser.OpenId %>">
                             <div class="weui-cell__bd weui-cell_primary">

@@ -34,7 +34,7 @@ namespace WeiXinYiShengCollege.WebSite.wx
                         //判断如果没完善信息则取完善 手机号，姓名，完善后跳转到 FansProfile.aspx
                         if(sUser.Mobile<=0)
                         {
-                            Response.Redirect("FansProfileComplete.aspx?Id=" + sUser.Id);
+                            Response.Redirect("FansProfileComplete.aspx?OpenId=" + sUser.OpenId);
                         }
 
                     }else
@@ -46,7 +46,7 @@ namespace WeiXinYiShengCollege.WebSite.wx
                         if (sUser.ApproveFlag == 0)
                         {   
                             //只有未认证情况才跳去完善页面
-                            Response.Redirect("ProfileApprove.aspx?Id=" + sUser.Id);
+                            Response.Redirect("ProfileApprove.aspx?OpenId=" + sUser.OpenId);
                         }
                     }
                 }

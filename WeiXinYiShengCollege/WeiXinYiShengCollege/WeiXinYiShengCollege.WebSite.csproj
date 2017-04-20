@@ -637,6 +637,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="handlerui\PageHandler.ashx.cs">
+      <DependentUpon>PageHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Home\CreateQrCode.aspx.cs">
       <DependentUpon>CreateQrCode.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -797,6 +800,7 @@
     <Content Include="Home\Login\EasyLogin.ashx" />
     <Content Include="js\kindeditor-4.1.10\asp.net\file_manager_json.ashx" />
     <Content Include="js\kindeditor-4.1.10\asp.net\upload_json.ashx" />
+    <Content Include="handlerui\PageHandler.ashx" />
     <None Include="Properties\PublishProfiles\wx.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

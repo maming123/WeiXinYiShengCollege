@@ -25,7 +25,7 @@
       <publishTime>04/11/2017 16:18:53</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.dll">
-      <publishTime>04/20/2017 19:26:59</publishTime>
+      <publishTime>04/21/2017 06:55:45</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.pdb">
       <publishTime>04/11/2017 16:18:56</publishTime>
@@ -34,7 +34,7 @@
       <publishTime>04/11/2017 16:18:51</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.dll">
-      <publishTime>04/20/2017 19:05:50</publishTime>
+      <publishTime>04/21/2017 06:55:42</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
@@ -46,10 +46,13 @@
       <publishTime>04/11/2017 16:18:58</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.WebSite.dll">
-      <publishTime>04/20/2017 19:27:02</publishTime>
+      <publishTime>04/21/2017 06:55:47</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>04/14/2017 18:51:59</publishTime>
+    </File>
+    <File Include="handlerui/PageHandler.ashx">
+      <publishTime>04/21/2017 05:34:08</publishTime>
     </File>
     <File Include="Home/CreateQrCode.aspx">
       <publishTime>04/18/2017 01:45:04</publishTime>
@@ -58,7 +61,7 @@
       <publishTime>04/12/2017 16:58:52</publishTime>
     </File>
     <File Include="Home/css/admin.global.css">
-      <publishTime>04/12/2017 16:58:52</publishTime>
+      <publishTime>04/21/2017 06:47:54</publishTime>
     </File>
     <File Include="Home/css/sysmodule.css">
       <publishTime>04/12/2017 16:58:52</publishTime>
@@ -247,10 +250,10 @@
       <publishTime>04/17/2017 12:18:04</publishTime>
     </File>
     <File Include="Home/UserEdit.aspx">
-      <publishTime>04/19/2017 00:16:26</publishTime>
+      <publishTime>04/21/2017 06:54:11</publishTime>
     </File>
     <File Include="Home/UserManage.aspx">
-      <publishTime>04/19/2017 00:26:50</publishTime>
+      <publishTime>04/21/2017 06:53:15</publishTime>
     </File>
     <File Include="Home/UserRegistLogManage.aspx">
       <publishTime>04/14/2017 18:35:02</publishTime>
@@ -565,7 +568,7 @@
       <publishTime>04/12/2017 11:41:12</publishTime>
     </File>
     <File Include="jqueryweui/wx/CreateQrCodeUI.aspx">
-      <publishTime>04/20/2017 19:26:43</publishTime>
+      <publishTime>04/20/2017 19:50:35</publishTime>
     </File>
     <File Include="jqueryweui/wx/css/demos.css">
       <publishTime>04/12/2017 12:02:52</publishTime>
@@ -682,7 +685,7 @@
       <publishTime>04/20/2017 18:09:53</publishTime>
     </File>
     <File Include="jqueryweui/wx/ProfileApprove.aspx">
-      <publishTime>04/20/2017 19:20:26</publishTime>
+      <publishTime>04/21/2017 06:03:55</publishTime>
     </File>
     <File Include="jqueryweui/wx/ProfileApproveOK.aspx">
       <publishTime>04/20/2017 19:21:55</publishTime>

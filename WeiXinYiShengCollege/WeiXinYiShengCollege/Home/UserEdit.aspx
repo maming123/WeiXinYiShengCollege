@@ -66,14 +66,14 @@
             <tr>
                 <td align="right" class="style1">所属省份：</td>
                 <td>
-                    <asp:DropDownList ID="ddlProvince" runat="server">
-                        <asp:ListItem Value="0">不详</asp:ListItem>
+                    <asp:DropDownList ID="ddlProvince" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvince_SelectedIndexChanged">
+                        
                     </asp:DropDownList>
                 </td>
                 <td align="right" class="style1">所属地市：</td>
                 <td>
                     <asp:DropDownList ID="ddlCity" runat="server">
-                        <asp:ListItem Value="0">不详</asp:ListItem>
+                        
                     </asp:DropDownList>
                 </td>
                 

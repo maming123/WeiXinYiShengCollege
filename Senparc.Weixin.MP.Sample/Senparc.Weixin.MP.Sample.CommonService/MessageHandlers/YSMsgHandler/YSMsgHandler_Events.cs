@@ -97,6 +97,10 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
             String userInfoJsonStr = BaseCommon.ObjectToJson(userInfoJson);
             string nickName = userInfoJson.nickname;
             string headImgUrl = userInfoJson.headimgurl;
+            Area provinceArea, cityArea;
+            AreaBusiness.Insert(userInfoJson.province, userInfoJson.city, out provinceArea, out cityArea);
+            int provinceId = provinceArea.Id;
+            int cityId = cityArea.Id;
             // 根据场景值获取parentId
             int parentId = GetParentIdFromEventKey(eventKey);
             if (sUserRequest == null || (sUserRequest != null && sUserRequest.Id <= 0))
@@ -104,7 +108,7 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
                 Sys_User newUser = new Sys_User()
                 {
                     ApproveFlag = Convert.ToInt32(ApproveFlag.未认证),
-                    City = "",
+                    City = cityId,
                     CompanyName = "",
                     CreateDateTime = DateTime.Now,
                     CustomerManagerId = 0,
@@ -115,7 +119,7 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
                     OpenId = FromUserName,
                     ParentId = parentId,
                     PassWord = "",
-                    Province = "",
+                    Province = provinceId,
                     QrCodeScene_id = 0,
                     Remark = "",
                     Score = 0,
@@ -137,11 +141,18 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
                 //存在 假如存在就恢复删除标识
                 Sys_User sUser = new Sys_User() { Id = sUserRequest.Id };
                 sUser.IsDelete = 0;
+                sUser.Province = provinceId;
+                sUser.City = cityId;
+                sUser.HeadImgUrl = headImgUrl;
+                sUser.UpdateDateTime = DateTime.Now;
+                sUser.UserInfoJson = userInfoJsonStr;
                 if (sUserRequest.UserType != (int)UserType.理事类型 && sUserRequest.ParentId==0)
                 {
                     sUser.ParentId = parentId;
-                    sUser.UserInfoJson = userInfoJsonStr;
-                    sUser.Update(new String[] { "ParentId", "UserInfoJson", "IsDelete" });
+                    sUser.Update(new String[] { "ParentId", "UserInfoJson", "IsDelete", "Province", "City", "HeadImgUrl", "UpdateDateTime" });
+                }else
+                {
+                    sUser.Update(new String[] {  "UserInfoJson", "IsDelete", "Province", "City", "HeadImgUrl", "UpdateDateTime" });
                 }
 
                 if (!string.IsNullOrEmpty(eventKey))

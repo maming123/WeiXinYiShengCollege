@@ -23,10 +23,12 @@
             var usertype = $("#ddlUserType").val();
             var userlevel = $("#ddlUserLevel").val();
             var cmid = $("#ddlCustomerManagerId").val();
+            var province = $("#ddlProvince").val();
+            var city = $("#ddlCity").val();
             $.ajax({
                 type: "POST",
                 url: "handler/PageHandler.ashx",
-                data: { Action: "GetUserList", mobile: mobile, UserType: usertype, UserLevel: userlevel, CustomerManagerId: cmid, PageIndex: pageIndex, r: Math.random() },
+                data: { Action: "GetUserList", province:province,city:city,mobile: mobile, UserType: usertype, UserLevel: userlevel, CustomerManagerId: cmid, PageIndex: pageIndex, r: Math.random() },
                 dataType: "json",
                 async: true,
                 success: function (result) {
@@ -180,6 +182,8 @@ select option {
                         <asp:ListItem Value="3">荣誉理事</asp:ListItem>
                     </asp:DropDownList>
                      客户经理：<asp:DropDownList ID="ddlCustomerManagerId" runat="server"  Width="145px"></asp:DropDownList>
+                    所属省份：<asp:DropDownList ID="ddlProvince" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvince_SelectedIndexChanged"  ></asp:DropDownList>
+                    所属地市：<asp:DropDownList ID="ddlCity" runat="server"  ></asp:DropDownList>
                 &nbsp;<input id="btnQuery" type="button" value="查询" onclick="GetList(1);" />
                 </div>
             </div>

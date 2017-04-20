@@ -45,11 +45,14 @@ namespace HospitalBookWebSite.Home.handler
             int userType = RequestKeeper.GetFormInt(Request["UserType"]);
             int userLevel = RequestKeeper.GetFormInt(Request["UserLevel"]);
             int cmId = RequestKeeper.GetFormInt(Request["CustomerManagerId"]);
+            int province = RequestKeeper.GetFormInt(Request["province"]);
+            int city = RequestKeeper.GetFormInt(Request["city"]);
+
 
             int pageIndex = RequestKeeper.GetFormInt(Request["PageIndex"]);
             int pageSize = 12;// RequestKeeper.GetFormInt(Request["PageSize"]);
 
-            PageList<List<dynamic>> pList = UserBusiness.GetUserList(mobile,userType,userLevel,cmId, pageIndex, pageSize);
+            PageList<List<dynamic>> pList = UserBusiness.GetUserList(mobile,userType,userLevel,cmId,province,city, pageIndex, pageSize);
             if (pList != null && pList.Source != null && pList.Source.Count > 0)
             {
                 List<CustomerManager> clist = UserBusiness.GetCustomerManagerList();

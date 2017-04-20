@@ -11,12 +11,17 @@ namespace WeiXinYiShengCollege.Business
 {
     public  class UserBusiness:BaseBusiness
     {
-        public static PageList<List<dynamic>> GetUserList(long mobile,int userType,int userLevel,int customerManagerId, int pageIndex, int pageSize)
+        public static PageList<List<dynamic>> GetUserList(long mobile,int userType,int userLevel,int customerManagerId, int province,int city,int pageIndex, int pageSize)
         {
-            string strSql = string.Format(@"SELECT  s1.* ,
-                                                    s2.nickname AS 'ParentNickName'
-                                            FROM    Sys_User s1 LEFT JOIN Sys_User s2
-                                            ON   s1.parentid = s2.id WHERE s1.IsDelete=0   ");
+            string strSql = string.Format(@"
+SELECT  s1.* ,
+        s2.nickname AS 'ParentNickName',
+        (SELECT TOP 1 AreaName FROM Area WHERE Id=s1.Province) AS 'ProvinceStr',
+        (SELECT TOP 1 AreaName FROM Area WHERE Id=s1.City) AS 'CityStr'
+FROM    Sys_User s1
+        LEFT JOIN Sys_User s2 ON s1.parentid = s2.id
+WHERE   s1.IsDelete = 0
+");
             if(mobile>0)
             {
                 strSql += string.Format(@" and s1.Mobile={0}",mobile);
@@ -32,6 +37,14 @@ namespace WeiXinYiShengCollege.Business
             if (customerManagerId > 0)
             {
                 strSql += string.Format(@" and s1.CustomerManagerId={0}", customerManagerId);
+            }
+            if (province > 0)
+            {
+                strSql += string.Format(@" and s1.Province={0}", province);
+            }
+            if (city > 0)
+            {
+                strSql += string.Format(@" and s1.City={0}", city);
             }
             
             var db = CoreDB.GetInstance();
