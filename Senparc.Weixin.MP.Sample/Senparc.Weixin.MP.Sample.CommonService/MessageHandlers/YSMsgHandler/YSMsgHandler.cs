@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using Module.Models;
 using Senparc.Weixin.MP.Entities;
 using Senparc.Weixin.MP.Entities.Request;
 using Senparc.Weixin.MP.MessageHandlers;
@@ -31,12 +32,13 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
            * return responseMessage;
            */
 
-            var responseMessage = this.CreateResponseMessage<ResponseMessageText>();
-            responseMessage.Content = "这条消息来自DefaultResponseMessage。";
-            return responseMessage;
+            return GetDefaultReply();
+            //var responseMessage = this.CreateResponseMessage<ResponseMessageText>();
+            //responseMessage.Content = GetWelcomeInfo();
+            //return responseMessage;
         }
 
-        
+
 
         /// <summary>
         /// 模板消息集合（Key：checkCode，Value：OpenId）
@@ -88,7 +90,80 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
             CurrentMessageContext.StorageData = ((int)CurrentMessageContext.StorageData) + 1;
         }
 
+        public IResponseMessageBase GetDefaultReply()
+        {
+            var responseMessage = base.CreateResponseMessage<ResponseMessageText>();
+            responseMessage.Content = GetWelcomeInfo();
+            return responseMessage;
+        }
 
+        /// <summary>
+        /// 处理文字请求
+        /// </summary>
+        /// <returns></returns>
+        public override IResponseMessageBase OnTextRequest(RequestMessageText requestMessage)
+        {
+            //TODO:这里的逻辑可以交给Service处理具体信息，参考OnLocationRequest方法或/Service/LocationSercice.cs
+
+            #region //书中例子
+            //if (requestMessage.Content == "你好")
+            //{
+            //    var responseMessage = base.CreateResponseMessage<ResponseMessageNews>();
+            //    var title = "Title";
+            //    var description = "Description";
+            //    var picUrl = "PicUrl";
+            //    var url = "Url";
+            //    responseMessage.Articles.Add(new Article()
+            //    {
+            //        Title = title,
+            //        Description = description,
+            //        PicUrl = picUrl,
+            //        Url = url
+            //    });
+            //    return responseMessage;
+            //}
+            //else if (requestMessage.Content == "Senparc")
+            //{
+            //    //相似处理逻辑
+            //}
+            //else
+            //{
+            //    //...
+            //}
+            #endregion
+
+            List<AutoReplyContent> list = MsgAutoReplyBusiness.GetReplyContentList();
+            if (null == list)
+            {
+                return GetDefaultReply();
+            }
+
+            AutoReplyContent arc = list.Find(m => m.UpKey == requestMessage.Content.Trim().ToLower());
+            if (null == arc)
+            {
+                return GetDefaultReply();
+            }
+
+
+            if (arc.ResponseMsgType == ResponseMsgType.Text.ToString().ToLower())
+            {
+                var responseMessage = base.CreateResponseMessage<ResponseMessageText>();
+                return WeiXinBusiness.ProcessAutoReplyText(arc, responseMessage);
+
+            }
+            else if (arc.ResponseMsgType == ResponseMsgType.News.ToString().ToLower())
+            {
+                var responseMessage = base.CreateResponseMessage<ResponseMessageNews>();
+                return WeiXinBusiness.ProcessAutoReplyNews(arc, responseMessage);
+            }
+            else
+            {
+                return GetDefaultReply();
+            }
+
+            
+
+        }
 
     }
 }

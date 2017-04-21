@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserRegistLogManage.aspx.cs" Inherits="HospitalBookWebSite.Home.UserRegistLogManage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MsgAutoReplyManage.aspx.cs" Inherits="WeiXinYiShengCollege.WebSite.Home.MsgAutoReplyManage" %>
+
 
 <!DOCTYPE html>
 
@@ -7,25 +8,24 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/admin.global.css" rel="stylesheet" type="text/css" />
     <link href="css/admin.content.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.utils.js"></script>
-    <script type="text/javascript" src="/js/admin.js"></script>
-    <script type="text/javascript" src="/js/jsonlint.js"></script>
-    <title>注册用户日志管理</title>
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.utils.js"></script>
+    <script type="text/javascript" src="../js/admin.js"></script>
+    <script type="text/javascript" src="../js/jsonlint.js"></script>
+    <title>自动回复列表</title>
     <script type="text/javascript">
         var pageCount = 0;
         $(document).ready(function () {
             GetList(1);
-           
         });
         //获取中奖纪录
         function GetList(pageIndex) {
-            var mobile = $("#txtmobile").val();
-            var registcode = $("#txtregistcode").val();
+            var upkey = $("#txtupkey").val();
+           
             $.ajax({
                 type: "POST",
                 url: "handler/PageHandler.ashx",
-                data: { Action: "GetUserLogList", mobile: mobile, registcode: registcode, PageIndex: pageIndex, r: Math.random() },
+                data: { Action: "GetReplyContentList", upkey: upkey, PageIndex: pageIndex, r: Math.random() },
                 dataType: "json",
                 async: true,
                 success: function (result) {
@@ -115,10 +115,18 @@
                     var $contentTrTmp = $contentTr.clone();
                     var tmpItem = data.Source[i];
                     $contentTrTmp.find("td").eq(0).html(tmpItem.Id);
-                    $contentTrTmp.find("td").eq(1).html(tmpItem.Mobile);
-                    $contentTrTmp.find("td").eq(2).html(tmpItem.Email);
-                    $contentTrTmp.find("td").eq(3).html(tmpItem.RegistCode);
-                    $contentTrTmp.find("td").eq(4).html(tmpItem.CreateDateTime);
+                    $contentTrTmp.find("td").eq(1).html(tmpItem.UpKey);
+                    $contentTrTmp.find("td").eq(2).html(tmpItem.ResponseMsgType);
+                    $contentTrTmp.find("td").eq(3).html(tmpItem.CreateDatetime);
+                    //（1:删除 0：未删除）
+                    var isDelete = '正常显示';
+                    if (tmpItem.IsDelete == 1)
+                    {
+                        isDelete = '已被删除';
+                    }
+                    $contentTrTmp.find("td").eq(4).html(isDelete);
+                    $contentTrTmp.find("td").eq(5).html('<a href="MsgAutoReplyEdit.aspx?msgtype=' + tmpItem.ResponseMsgType + '&Id=' + tmpItem.Id + '" >编辑</a>');
+                    
                     $contentTrTmp.appendTo("#tbodyHtml");
                 }
                 //console.log(firstTr);
@@ -127,16 +135,22 @@
             }
         }
     </script>
+    <style type="text/css">
+
+select option {
+	padding-right:3px;
+}
+    </style>
 </head>
 <body>
+    <form id="form1" runat="server">
     <div id="divList">
         <div class="block">
             <div class="h">
                 <span class="icon-sprite icon-list"></span>
-                <h3>注册用户日志列表</h3>
+                <h3>自动回复列表</h3>
                 <div class="bar">
-                    注册码：<input id="txtregistcode" type="text" />&nbsp;&nbsp;手机号：<input id="txtmobile" type="text" />
-                    <input id="btnQuery" type="button" value="查询" onclick="GetList(1);" />
+                    <a href="MsgAutoReplyEdit.aspx">添加新回复</a>&nbsp;&nbsp; 用户上行内容：<input id="txtupkey" type="text" /><input id="btnQuery" type="button" value="查询" onclick="GetList(1);" />
                 </div>
             </div>
             <div class="tl corner">
@@ -152,18 +166,23 @@
                     <div>
                         <table  id="tbodyHtml" class="data-table" cellspacing="0" cellpadding="0" id="gvList" style="border-collapse: collapse;">
                             <tr>
-                                <th scope="col" style="width: 50px;">序号</th>
-                                <th align="left" scope="col" style="width: 100px;">手机号</th>
-                                <th scope="col" style="width: 100px;">邮箱</th>
-                                <th scope="col" style="width: 120px;">注册码</th>
-                                <th scope="col" style="width: 120px;">创建时间</th>
+                                <th scope="col" >序号</th>
+                                <th align="left" scope="col" >用户上行语</th>
+                                <th scope="col" >回复类型</th>
+                                <th scope="col" >创建时间</th>
+                                <th scope="col" >状态</th>
+                                <th scope="col" >编辑</th>
+                                
                             </tr>
                             <tr>
                                 <td align="center">&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
+                             
                                 <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                               
                             </tr>
                         </table>
                     </div>
@@ -197,5 +216,7 @@
             </tr>
         </table>
     </div>
+        </form>
 </body>
 </html>
+

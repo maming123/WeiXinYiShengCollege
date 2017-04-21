@@ -125,6 +125,8 @@
     <Content Include="Home\Login\js\common.js" />
     <Content Include="Home\Login\LoginOut.aspx" />
     <Content Include="Home\MaterialNews\MaterialNewsList.aspx" />
+    <Content Include="Home\MsgAutoReplyEdit.aspx" />
+    <Content Include="Home\MsgAutoReplyManage.aspx" />
     <Content Include="Home\UserEdit.aspx" />
     <Content Include="Home\UserManage.aspx" />
     <Content Include="images\Query\00000001_r1_c1.gif" />
@@ -694,6 +696,20 @@
     </Compile>
     <Compile Include="Home\MaterialNews\MaterialNewsList.aspx.designer.cs">
       <DependentUpon>MaterialNewsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\MsgAutoReplyEdit.aspx.cs">
+      <DependentUpon>MsgAutoReplyEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\MsgAutoReplyEdit.aspx.designer.cs">
+      <DependentUpon>MsgAutoReplyEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\MsgAutoReplyManage.aspx.cs">
+      <DependentUpon>MsgAutoReplyManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\MsgAutoReplyManage.aspx.designer.cs">
+      <DependentUpon>MsgAutoReplyManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home\UserEdit.aspx.cs">
       <DependentUpon>UserEdit.aspx</DependentUpon>

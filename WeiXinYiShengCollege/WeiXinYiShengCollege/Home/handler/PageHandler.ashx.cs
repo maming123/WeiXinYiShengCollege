@@ -17,7 +17,7 @@ namespace HospitalBookWebSite.Home.handler
         public PageHandler()
         {
             dictAction.Add("GetUserList", GetUserList);
-            
+            dictAction.Add("GetReplyContentList", GetReplyContentList);
             
         }
         /// <summary>
@@ -33,6 +33,28 @@ namespace HospitalBookWebSite.Home.handler
                 return false;
             }
             return true;
+        }
+
+
+        private void GetReplyContentList()
+        {
+            if (!IsReady())
+                return;
+
+
+            string upkey = RequestKeeper.GetFormString(Request["upkey"]);
+           
+
+            int pageIndex = RequestKeeper.GetFormInt(Request["PageIndex"]);
+            int pageSize = 1000;// RequestKeeper.GetFormInt(Request["PageSize"]);
+
+            List<AutoReplyContent> list = MsgAutoReplyBusiness.GetReplyContentList(upkey);
+
+            PageList<List<AutoReplyContent>> pList = new PageList<List<AutoReplyContent>>(1, pageSize, list.Count);
+            pList.Source = list;
+
+            Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<PageList<List<AutoReplyContent>>>() { code = 1, m = pList }));
+
         }
 
         private void GetUserList()

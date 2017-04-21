@@ -378,6 +378,56 @@ namespace Module.Models
 	}
 
     
+	[TableName("AutoReplyContent")]
+
+
+	[PrimaryKey("Id")]
+
+
+
+	[ExplicitColumns]
+    public partial class AutoReplyContent : CoreDB.Record<AutoReplyContent>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string UpKey { get; set; }
+
+
+
+
+
+		[Column] public string ReplyContent { get; set; }
+
+
+
+
+
+		[Column] public string ResponseMsgType { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDatetime { get; set; }
+
+
+
+
+
+		[Column] public int IsDelete { get; set; }
+
+
+
+	}
+
+    
 	[TableName("OrderInfo")]
 
 

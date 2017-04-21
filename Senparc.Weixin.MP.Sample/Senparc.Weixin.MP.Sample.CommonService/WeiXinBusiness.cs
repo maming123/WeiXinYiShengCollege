@@ -10,6 +10,9 @@ using Senparc.Weixin.MP.AdvancedAPIs.QrCode;
 using System.IO;
 using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
 using Senparc.Weixin.MP.AdvancedAPIs.User;
+using Senparc.Weixin.MP.Entities;
+using Module.Models;
+using Module.Utils;
 
 namespace Senparc.Weixin.MP.Sample.CommonService
 {
@@ -111,6 +114,34 @@ namespace Senparc.Weixin.MP.Sample.CommonService
            UserInfoJson userInfoJson = AdvancedAPIs.UserApi.Info(Appid, openId);
            return userInfoJson;
        }
+
+       #region 消息回复逻辑
+
+       /// <summary>
+       /// 获取到自动回复的内容，加工后返回信息
+       /// </summary>
+       /// <param name="arc"></param>
+       public static ResponseMessageText ProcessAutoReplyText(AutoReplyContent arc,ResponseMessageText responseMsgText)
+       {
+           responseMsgText.Content = arc.ReplyContent;
+           return responseMsgText;
+
+       }
+       public static ResponseMessageNews ProcessAutoReplyNews(AutoReplyContent arc, ResponseMessageNews responseMsgText)
+       {
+           List<Article> list = GetArticleList(arc.ReplyContent);
+           responseMsgText.ArticleCount = list.Count;
+           responseMsgText.Articles.AddRange(list);
+           return responseMsgText;
+       }
+       public static List<Article> GetArticleList(String strJson)
+       {
+           List<Article> list =   BaseCommon.JsonToObject<List<Article>>(strJson);
+           return list;
+       }
+       
+
+       #endregion
 
     }
 }

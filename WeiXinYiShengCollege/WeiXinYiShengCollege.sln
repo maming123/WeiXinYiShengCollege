@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5347D2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeiXinYiShengCollege.Business.Test", "WeiXinYiShengCollege.Business.Test\WeiXinYiShengCollege.Business.Test.csproj", "{6BD460F8-29DE-4FD5-8DF4-2F392D908926}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senparc.Weixin.MP.Sample.CommonService.Test", "Senparc.Weixin.MP.Sample.CommonService.Test\Senparc.Weixin.MP.Sample.CommonService.Test.csproj", "{6F7FE0F8-F929-493A-B5C5-99B9F9272509}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +96,15 @@ Global
 		{6BD460F8-29DE-4FD5-8DF4-2F392D908926}.Test|Any CPU.ActiveCfg = Release|Any CPU
 		{6BD460F8-29DE-4FD5-8DF4-2F392D908926}.Test|Any CPU.Build.0 = Release|Any CPU
 		{6BD460F8-29DE-4FD5-8DF4-2F392D908926}.Test|x86.ActiveCfg = Release|Any CPU
+		{6F7FE0F8-F929-493A-B5C5-99B9F9272509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F7FE0F8-F929-493A-B5C5-99B9F9272509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F7FE0F8-F929-493A-B5C5-99B9F9272509}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6F7FE0F8-F929-493A-B5C5-99B9F9272509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F7FE0F8-F929-493A-B5C5-99B9F9272509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F7FE0F8-F929-493A-B5C5-99B9F9272509}.Release|x86.ActiveCfg = Release|Any CPU
+		{6F7FE0F8-F929-493A-B5C5-99B9F9272509}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{6F7FE0F8-F929-493A-B5C5-99B9F9272509}.Test|Any CPU.Build.0 = Release|Any CPU
+		{6F7FE0F8-F929-493A-B5C5-99B9F9272509}.Test|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,5 +113,6 @@ Global
 		{814092CD-9CD0-4FB7-91E8-D147F476F1FB} = {6CF186B4-7024-4BE4-8319-558F8E416E56}
 		{1D815FBF-451C-4E23-939C-CB80172F445C} = {6CF186B4-7024-4BE4-8319-558F8E416E56}
 		{CCD291E9-16FA-4B53-B032-EBD3F659567B} = {6CF186B4-7024-4BE4-8319-558F8E416E56}
+		{6F7FE0F8-F929-493A-B5C5-99B9F9272509} = {6CF186B4-7024-4BE4-8319-558F8E416E56}
 	EndGlobalSection
 EndGlobal
