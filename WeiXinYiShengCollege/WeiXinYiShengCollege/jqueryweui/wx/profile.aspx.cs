@@ -33,8 +33,12 @@ namespace WeiXinYiShengCollege.WebSite.wx
                         //认为是粉丝
                         //判断如果没完善信息则取完善 手机号，姓名，完善后跳转到 FansProfile.aspx
                         if(sUser.Mobile<=0)
-                        {
+                        {   //未完善信息
                             Response.Redirect("FansProfileComplete.aspx?OpenId=" + sUser.OpenId);
+                        }else
+                        {
+                            //已完善信息
+                            Response.Redirect("FansProfile.aspx?OpenId=" + sUser.OpenId);
                         }
 
                     }else

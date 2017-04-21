@@ -10,13 +10,13 @@ using WeiXinYiShengCollege.Business;
 
 namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
 {
-    public partial class MyCustomerManager : System.Web.UI.Page
+    public partial class MyDoctor : System.Web.UI.Page
     {
-        public CustomerManager cM = new CustomerManager();
+        public Sys_User cM = new Sys_User();
         protected void Page_Load(object sender, EventArgs e)
         {
-            int CustomerManagerId = RequestKeeper.GetFormInt(Request["CustomerManagerId"]);
-            CustomerManager cMTmp =  UserBusiness.GetCustomerManagerInfo(CustomerManagerId);
+            string openID = RequestKeeper.GetFormString(Request["OpenId"]);
+            Sys_User cMTmp = UserBusiness.GetUserInfo(openID);
             if (null != cMTmp)
                 cM = cMTmp;
         }

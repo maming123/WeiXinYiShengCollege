@@ -38,12 +38,7 @@
                             </div>
                             
                         </a>
-                        <a class="weui-cell weui-cell_access" href="CreateQrCodeUI.aspx?OpenId=<%=sUser.OpenId %>">
-                            <div class="weui-cell__bd weui-cell_primary">
-                                <p>生成二维码</p>
-                            </div>
-                            <span class="weui-cell__ft"></span>
-                        </a>
+                       
                         <a class="weui-cell weui-cell_access" href="javascript:;">
 
                             <div class="weui-cell__bd weui-cell_primary">
@@ -72,10 +67,16 @@
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>
+                         <a class="weui-cell weui-cell_access" href="CreateQrCodeUI.aspx?OpenId=<%=sUser.OpenId %>">
+                            <div class="weui-cell__bd weui-cell_primary">
+                                <p>生成二维码</p>
+                            </div>
+                            <span class="weui-cell__ft"></span>
+                        </a>
                         <a class="weui-cell weui-cell_access" href="ProfileEdit.aspx?OpenId=<%=sUser.OpenId %>">
 
                             <div class="weui-cell__bd weui-cell_primary">
-                                <p>个人信息修改</p>
+                                <p>个人信息设置</p>
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>

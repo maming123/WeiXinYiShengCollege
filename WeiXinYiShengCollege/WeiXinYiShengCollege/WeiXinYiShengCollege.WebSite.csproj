@@ -266,6 +266,7 @@
     <Content Include="jqueryweui\wx\images\swiper-4.jpg" />
     <Content Include="jqueryweui\wx\images\vcode.jpg" />
     <Content Include="jqueryweui\wx\MyCustomerManager.aspx" />
+    <Content Include="jqueryweui\wx\MyDoctor.aspx" />
     <Content Include="jqueryweui\wx\MyFansList.aspx" />
     <Content Include="jqueryweui\wx\ProfileApprove.aspx" />
     <Content Include="jqueryweui\wx\ProfileApproveOK.aspx" />
@@ -742,6 +743,13 @@
     </Compile>
     <Compile Include="jqueryweui\wx\MyCustomerManager.aspx.designer.cs">
       <DependentUpon>MyCustomerManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jqueryweui\wx\MyDoctor.aspx.cs">
+      <DependentUpon>MyDoctor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\MyDoctor.aspx.designer.cs">
+      <DependentUpon>MyDoctor.aspx</DependentUpon>
     </Compile>
     <Compile Include="jqueryweui\wx\MyFansList.aspx.cs">
       <DependentUpon>MyFansList.aspx</DependentUpon>

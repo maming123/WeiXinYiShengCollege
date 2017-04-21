@@ -88,6 +88,7 @@ WHERE   s1.IsDelete = 0
            return count;
         }
 
+        #region 客服经理
         /// <summary>
         /// 获取客服经理列表
         /// </summary>
@@ -99,6 +100,19 @@ WHERE   s1.IsDelete = 0
             return list;
         }
 
+        /// <summary>
+        /// 获取客服经理信息
+        /// </summary>
+        /// <returns></returns>
+        public static CustomerManager GetCustomerManagerInfo(int CustomerManagerId)
+        {
+
+            CustomerManager cm = CustomerManager.SingleOrDefault((object)CustomerManagerId);
+            return cm;
+        }
+        #endregion
+
+        #region 粉丝
         /// <summary>
         /// 获取我的粉丝列表
         /// </summary>
@@ -125,8 +139,9 @@ WHERE   s1.IsDelete = 0
             pList.Source = pagelist.Items.ToList();
             return pList;
         }
-        
-        
+        #endregion
+
+
     }
 
     /// <summary>
