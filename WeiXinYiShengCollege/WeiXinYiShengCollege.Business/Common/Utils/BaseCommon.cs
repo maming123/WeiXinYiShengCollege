@@ -111,6 +111,36 @@ namespace Module.Utils
         }
 
         /// <summary>
+        /// 格式化输出Jsong
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string FormateJsonString(string str)
+        {
+            //格式化json字符串  
+            JsonSerializer serializer = new JsonSerializer();
+            TextReader tr = new StringReader(str);
+            JsonTextReader jtr = new JsonTextReader(tr);
+            object obj = serializer.Deserialize(jtr);
+            if (obj != null)
+            {
+                StringWriter textWriter = new StringWriter();
+                JsonTextWriter jsonWriter = new JsonTextWriter(textWriter)
+                {
+                    Formatting = Formatting.Indented,
+                    Indentation = 4,
+                    IndentChar = ' '
+                };
+                serializer.Serialize(jsonWriter, obj);
+                return textWriter.ToString();
+            }
+            else
+            {
+                return str;
+            }
+        }  
+
+        /// <summary>
         /// 返回指定查询的结果
         /// </summary>
         /// <param name="sql">输入的sql语句</param>

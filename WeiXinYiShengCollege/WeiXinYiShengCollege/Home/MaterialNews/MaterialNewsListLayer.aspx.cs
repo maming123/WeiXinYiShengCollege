@@ -15,7 +15,7 @@ using WeiXinYiShengCollege.Business;
 
 namespace WeiXinYiShengCollege.WebSite.Home.MaterialNews
 {
-    public partial class MaterialNewsList : ManagePageBase
+    public partial class MaterialNewsListLayer : ManagePageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -48,10 +48,11 @@ namespace WeiXinYiShengCollege.WebSite.Home.MaterialNews
                         d.media_id = newsitem.media_id;
                         d.author = newsitem.content.news_item[0].author;
                         d.title = newsitem.content.news_item[0].title;
-                        for (int j = 0; j < newsitem.content.news_item.Count; j++)
+                        for(int j=0;j<newsitem.content.news_item.Count;j++)
                         {
-                            newsitem.content.news_item[j].content = "";
+                            newsitem.content.news_item[j].content="";
                         }
+                        
                         d.Json = BaseCommon.ObjectToJson(newsitem);
                         list.Add(d);
                     }

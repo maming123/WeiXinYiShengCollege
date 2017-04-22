@@ -124,6 +124,7 @@
     <Content Include="Home\Login\Index.aspx" />
     <Content Include="Home\Login\js\common.js" />
     <Content Include="Home\Login\LoginOut.aspx" />
+    <Content Include="Home\MaterialNews\MaterialNewsListLayer.aspx" />
     <Content Include="Home\MaterialNews\MaterialNewsList.aspx" />
     <Content Include="Home\MsgAutoReplyEdit.aspx" />
     <Content Include="Home\MsgAutoReplyManage.aspx" />
@@ -689,6 +690,13 @@
     </Compile>
     <Compile Include="Home\ManagePageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\MaterialNews\MaterialNewsListLayer.aspx.cs">
+      <DependentUpon>MaterialNewsListLayer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\MaterialNews\MaterialNewsListLayer.aspx.designer.cs">
+      <DependentUpon>MaterialNewsListLayer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home\MaterialNews\MaterialNewsList.aspx.cs">
       <DependentUpon>MaterialNewsList.aspx</DependentUpon>
