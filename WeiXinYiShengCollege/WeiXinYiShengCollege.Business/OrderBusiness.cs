@@ -14,6 +14,19 @@ namespace WeiXinYiShengCollege.Business
            List<OrderInfo> list = OrderInfo.Query(strSql, status, dtbegin, dtend).ToList();
            return list;
        }
+
+       /// <summary>
+       /// 获取指定人的订单
+       /// </summary>
+       /// <param name="OpenId"></param>
+       /// <returns></returns>
+       public static List<OrderInfo> GetOrderInfoListFromDB(string OpenId)
+       {
+           string strSql = String.Format(@"where BuyerOpenId=@0 ");
+           List<OrderInfo> list = OrderInfo.Query(strSql, OpenId).ToList();
+           return list;
+       }
+
        public static void InsertIntoDB(List<OrderInfo> list)
        {
            foreach(OrderInfo info in list)
@@ -31,6 +44,7 @@ namespace WeiXinYiShengCollege.Business
                }
            }
        }
+
 
        /// <summary>
        /// 获取积分日志记录

@@ -19,13 +19,13 @@
       <publishTime>04/17/2017 17:10:01</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.dll">
-      <publishTime>04/23/2017 01:39:06</publishTime>
+      <publishTime>04/24/2017 16:39:52</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.dll">
-      <publishTime>04/22/2017 22:34:47</publishTime>
+      <publishTime>04/24/2017 16:39:55</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.pdb">
       <publishTime>04/11/2017 16:18:56</publishTime>
@@ -34,7 +34,7 @@
       <publishTime>04/11/2017 16:18:51</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.dll">
-      <publishTime>04/23/2017 01:31:22</publishTime>
+      <publishTime>04/24/2017 16:16:06</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
@@ -46,7 +46,7 @@
       <publishTime>04/11/2017 16:18:58</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.WebSite.dll">
-      <publishTime>04/23/2017 01:39:12</publishTime>
+      <publishTime>04/24/2017 16:39:57</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>04/14/2017 18:51:59</publishTime>
@@ -208,7 +208,7 @@
       <publishTime>04/12/2017 16:58:52</publishTime>
     </File>
     <File Include="Home/Index.aspx">
-      <publishTime>04/21/2017 17:06:31</publishTime>
+      <publishTime>04/24/2017 15:47:21</publishTime>
     </File>
     <File Include="Home/Login/CodePngComplex.ashx">
       <publishTime>04/12/2017 16:58:52</publishTime>
@@ -257,6 +257,9 @@
     </File>
     <File Include="Home/MsgAutoReplyManage.aspx">
       <publishTime>04/21/2017 17:28:27</publishTime>
+    </File>
+    <File Include="Home/OrderManage/OrderList.aspx">
+      <publishTime>04/24/2017 15:45:08</publishTime>
     </File>
     <File Include="Home/UserEdit.aspx">
       <publishTime>04/21/2017 06:54:11</publishTime>
@@ -583,7 +586,7 @@
       <publishTime>04/12/2017 12:02:52</publishTime>
     </File>
     <File Include="jqueryweui/wx/FansProfile.aspx">
-      <publishTime>04/21/2017 10:51:56</publishTime>
+      <publishTime>04/24/2017 16:14:35</publishTime>
     </File>
     <File Include="jqueryweui/wx/FansProfileComplete.aspx">
       <publishTime>04/21/2017 10:29:31</publishTime>
@@ -691,10 +694,16 @@
       <publishTime>04/21/2017 11:18:44</publishTime>
     </File>
     <File Include="jqueryweui/wx/MyFansList.aspx">
-      <publishTime>04/21/2017 09:54:24</publishTime>
+      <publishTime>04/24/2017 16:38:52</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/MyOrderList.aspx">
+      <publishTime>04/24/2017 16:39:38</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/ProductDetail.aspx">
+      <publishTime>04/24/2017 16:31:34</publishTime>
     </File>
     <File Include="jqueryweui/wx/profile.aspx">
-      <publishTime>04/21/2017 10:20:54</publishTime>
+      <publishTime>04/24/2017 16:14:22</publishTime>
     </File>
     <File Include="jqueryweui/wx/ProfileApprove.aspx">
       <publishTime>04/21/2017 06:03:55</publishTime>

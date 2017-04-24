@@ -60,7 +60,7 @@
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>
-                        <a class="weui-cell weui-cell_access" href="javascript:;">
+                        <a class="weui-cell weui-cell_access"  href="MyOrderList.aspx?OpenId=<%=sUser.OpenId %>">
 
                             <div class="weui-cell__bd weui-cell_primary">
                                 <p>我买了什么</p>

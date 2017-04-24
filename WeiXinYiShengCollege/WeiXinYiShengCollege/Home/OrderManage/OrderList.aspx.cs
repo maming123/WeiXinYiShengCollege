@@ -124,26 +124,32 @@ namespace WeiXinYiShengCollege.WebSite.Home.OrderManage
 
             //获取从数据库
             List<OrderInfo> orderInfoListFromDB = OrderBusiness.GetOrderInfoListFromDB(status, dtbegin, dtend);
-            //查看是否添加过积分，如果没添加过则添加积分
-            foreach (OrderInfo info in orderInfoListFromDB)
+            if (orderInfoListFromDB != null)
             {
-                AddScoreLog item = OrderBusiness.GetScoreLogItem(info.BuyerOpenId, info.OrderId);
-                if(null!=item)
+                //查看是否添加过积分，如果没添加过则添加积分
+                foreach (OrderInfo info in orderInfoListFromDB)
                 {
-                    //已添加过记录不作处理
-                }else
-                {
-                    AddScoreLog itemNew = new AddScoreLog() { OpenId=info.BuyerOpenId,OrderId=info.OrderId, CreateDateTime=DateTime.Now };
-                    object obj = itemNew.Insert();
-                    if(Convert.ToInt32(obj)>0)
-                    {  
-                        //钱和积分的换算
-                        int score = info.OrderTotalPrice / Convert.ToInt32(txtMoney.Text.Trim());
-                        UserBusiness.UpdateScore(info.BuyerOpenId, score);
+                    AddScoreLog item = OrderBusiness.GetScoreLogItem(info.BuyerOpenId, info.OrderId);
+                    if (null != item)
+                    {
+                        //已添加过记录不作处理
                     }
-                }
+                    else
+                    {
+                        AddScoreLog itemNew = new AddScoreLog() { OpenId = info.BuyerOpenId, OrderId = info.OrderId, CreateDateTime = DateTime.Now };
+                        object obj = itemNew.Insert();
+                        if (Convert.ToInt32(obj) > 0)
+                        {
+                            //钱和积分的换算
+                            int score = info.OrderTotalPrice / Convert.ToInt32(txtMoney.Text.Trim());
+                            UserBusiness.UpdateScore(info.BuyerOpenId, score);
+                        }
+                    }
 
+                }
+                MessageBox.Show(Page, "积分添加成功");
             }
+            
         }
     }
 }
