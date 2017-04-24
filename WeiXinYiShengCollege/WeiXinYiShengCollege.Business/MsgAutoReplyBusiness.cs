@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Module.Models;
+using Module.Utils;
 
 namespace WeiXinYiShengCollege.Business
 {
@@ -11,6 +12,10 @@ namespace WeiXinYiShengCollege.Business
     /// </summary>
    public class MsgAutoReplyBusiness
     {
+       /// <summary>
+       /// 缓存秒
+       /// </summary>
+       public static int cacheSecond = 5 * 60;
        /// <summary>
        /// 获取未被删除的回复内容列表
        /// </summary>
@@ -41,8 +46,18 @@ namespace WeiXinYiShengCollege.Business
        /// <returns></returns>
        public static AutoReplyContent GetReplyContent(String upKey)
        {
+           string cacheKey = string.Format(@"GetReplyContent_{0}", upKey);
+           if(BaseCommon.HasCache(cacheKey))
+           {
+               return BaseCommon.GetCache<AutoReplyContent>(cacheKey);
+           }
            AutoReplyContent arc = AutoReplyContent.SingleOrDefault("where IsDelete=@0 and UpKey=@1", 0,upKey);
-           return arc;
+           if(null!=arc)
+           {
+               BaseCommon.CacheInsert(cacheKey, arc, DateTime.Now.AddSeconds(cacheSecond));
+               return arc;
+           }
+           return null;
        }
        /// <summary>
        /// 获取未被删除的回复内容列表

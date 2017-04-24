@@ -115,6 +115,8 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 }
 
                 arc.Update();
+                string cacheKey = string.Format(@"GetReplyContent_{0}", arc.UpKey);
+                BaseCommon.CacheRemove(cacheKey);
             }
             else
             {
