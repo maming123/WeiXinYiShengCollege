@@ -66,7 +66,17 @@ WHERE   s1.IsDelete = 0
             return u;
         }
 
-
+        /// <summary>
+        /// 更新积分
+        /// </summary>
+        /// <param name="openId"></param>
+        /// <param name="score"></param>
+        public static void UpdateScore(string openId,int score)
+        {
+            Sys_User u = GetUserInfo(openId);
+            u.Score = score;
+            u.Update();
+        }
 
         public static bool IsExistUser(string openId)
         {

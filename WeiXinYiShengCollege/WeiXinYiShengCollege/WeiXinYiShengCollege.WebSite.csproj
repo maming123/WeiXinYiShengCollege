@@ -128,6 +128,7 @@
     <Content Include="Home\MaterialNews\MaterialNewsList.aspx" />
     <Content Include="Home\MsgAutoReplyEdit.aspx" />
     <Content Include="Home\MsgAutoReplyManage.aspx" />
+    <Content Include="Home\OrderManage\OrderList.aspx" />
     <Content Include="Home\UserEdit.aspx" />
     <Content Include="Home\UserManage.aspx" />
     <Content Include="images\Query\00000001_r1_c1.gif" />
@@ -718,6 +719,13 @@
     </Compile>
     <Compile Include="Home\MsgAutoReplyManage.aspx.designer.cs">
       <DependentUpon>MsgAutoReplyManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\OrderManage\OrderList.aspx.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\OrderManage\OrderList.aspx.designer.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home\UserEdit.aspx.cs">
       <DependentUpon>UserEdit.aspx</DependentUpon>

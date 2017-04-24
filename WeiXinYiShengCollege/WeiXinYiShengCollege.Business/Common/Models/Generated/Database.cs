@@ -428,11 +428,15 @@ namespace Module.Models
 	}
 
     
-	[TableName("OrderInfo")]
+	[TableName("AddScoreLog")]
+
+
+	[PrimaryKey("Id")]
+
 
 
 	[ExplicitColumns]
-    public partial class OrderInfo : CoreDB.Record<OrderInfo>  
+    public partial class AddScoreLog : CoreDB.Record<AddScoreLog>  
     {
 
 
@@ -449,6 +453,44 @@ namespace Module.Models
 
 
 
+		[Column] public string OrderId { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDateTime { get; set; }
+
+
+
+	}
+
+    
+	[TableName("OrderInfo")]
+
+
+	[PrimaryKey("Id")]
+
+
+
+	[ExplicitColumns]
+    public partial class OrderInfo : CoreDB.Record<OrderInfo>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string BuyerOpenId { get; set; }
+
+
+
+
+
 		[Column] public string OrderInfoJson { get; set; }
 
 
@@ -456,6 +498,60 @@ namespace Module.Models
 
 
 		[Column] public DateTime CreateDateTime { get; set; }
+
+
+
+
+
+		[Column] public string OrderId { get; set; }
+
+
+
+
+
+		[Column] public int OrderStatus { get; set; }
+
+
+
+
+
+		[Column] public int OrderTotalPrice { get; set; }
+
+
+
+
+
+		[Column] public int OrderCreateTime { get; set; }
+
+
+
+
+
+		[Column] public DateTime OrderCreateDateTime { get; set; }
+
+
+
+
+
+		[Column] public string BuyerNickName { get; set; }
+
+
+
+
+
+		[Column] public string ProductId { get; set; }
+
+
+
+
+
+		[Column] public string ProductName { get; set; }
+
+
+
+
+
+		[Column] public int ProductPrice { get; set; }
 
 
 
@@ -497,6 +593,10 @@ namespace Module.Models
 	[TableName("MaterialNews")]
 
 
+	[PrimaryKey("Id")]
+
+
+
 	[ExplicitColumns]
     public partial class MaterialNews : CoreDB.Record<MaterialNews>  
     {
@@ -522,6 +622,12 @@ namespace Module.Models
 
 
 		[Column] public DateTime CreateDateTime { get; set; }
+
+
+
+
+
+		[Column] public DateTime? UpdateDateTime { get; set; }
 
 
 

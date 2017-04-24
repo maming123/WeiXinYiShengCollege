@@ -13,6 +13,7 @@ using Senparc.Weixin.MP.AdvancedAPIs.User;
 using Senparc.Weixin.MP.Entities;
 using Module.Models;
 using Module.Utils;
+using Senparc.Weixin.MP.AdvancedAPIs.MerChant;
 
 namespace Senparc.Weixin.MP.Sample.CommonService
 {
@@ -140,6 +141,25 @@ namespace Senparc.Weixin.MP.Sample.CommonService
            return list;
        }
        
+
+       #endregion
+
+       #region 微信小店逻辑
+
+       /// <summary>
+       /// 根据订单状态/创建时间获取订单详情
+       /// </summary>
+       /// <param name="status">订单状态(不带该字段-全部状态, 2-待发货, 3-已发货, 5-已完成, 8-维权中, )</param>
+       /// <param name="beginTime">订单创建时间起始时间(不带该字段则不按照时间做筛选)</param>
+       /// <param name="endTime">订单创建时间终止时间(不带该字段则不按照时间做筛选)</param>
+       /// <returns></returns>
+        public static GetByFilterResult GetOrderList( int? status, DateTime? beginTime, DateTime? endTime)
+       {
+          string accessToken = AccessTokenContainer.TryGetAccessToken(Appid, AppSecret);
+
+            return OrderApi.GetByFilterOrder(accessToken,status, beginTime,  endTime);
+
+       }
 
        #endregion
 

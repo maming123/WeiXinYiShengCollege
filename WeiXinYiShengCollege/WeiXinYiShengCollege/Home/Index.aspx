@@ -60,6 +60,7 @@
             <div title="功能管理" data-options="collapsed:true,collapsible:true" style="padding: 10px;">
                 <ul class="tempul">
                     <li><a href="javascript:void(0)" onclick="addTab('自动回复管理','MsgAutoReplyManage.aspx')"><span style="color:#977171">>&nbsp;&nbsp;自动回复管理</span></a></li>
+                    <li><a href="javascript:void(0)" onclick="addTab('订单列表添加积分','OrderManage/OrderList.aspx')"><span style="color:#977171">>&nbsp;&nbsp;订单列表添加积分</span></a></li>
                     <li><a href="javascript:void(0)" onclick="addTab('图文素材查看','MaterialNews/MaterialNewsList.aspx')"><span style="color:#977171">>&nbsp;&nbsp;图文素材查看</span></a></li>
                     
                 </ul>
