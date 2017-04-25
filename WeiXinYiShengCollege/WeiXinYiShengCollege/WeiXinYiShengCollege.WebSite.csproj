@@ -633,6 +633,13 @@
     <Content Include="js\layer\skin\default\xubox_loading3.gif" />
     <Content Include="js\layer\skin\default\xubox_title0.png" />
     <Content Include="js\layer\skin\layer.css" />
+    <Content Include="js\My97DatePicker\calendar.js" />
+    <Content Include="js\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="js\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="js\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="js\My97DatePicker\skin\default\img.gif" />
+    <Content Include="js\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="js\My97DatePicker\WdatePicker.js" />
     <Content Include="js\validate.js" />
     <Content Include="OAuth2.aspx" />
     <Content Include="Web.config" />
