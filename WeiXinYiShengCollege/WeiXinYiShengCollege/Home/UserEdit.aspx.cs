@@ -17,7 +17,7 @@ namespace WeiXinYiShengCollege.WebSite.Home
             if (!Page.IsPostBack)
             {
                 string openId = RequestKeeper.GetFormString(Request["OpenId"]);
-                string id = RequestKeeper.GetFormString(Request["Id"]);
+                int id = RequestKeeper.GetFormInt(Request["Id"]);
 
                 InitddlCustomerManagerId();
                 InitddlProvince();

@@ -17,8 +17,17 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
         {
             string openID = RequestKeeper.GetFormString(Request["OpenId"]);
             Sys_User cMTmp = UserBusiness.GetUserInfo(openID);
+
             if (null != cMTmp)
-                cM = cMTmp;
+            {
+              Sys_User cMDoctor =  UserBusiness.GetUserInfoById(cMTmp.ParentId);
+                if(null !=cMDoctor)
+                {
+                    cM = cMDoctor;
+                }
+
+            }
+                
         }
     }
 }

@@ -60,7 +60,7 @@ WHERE   s1.IsDelete = 0
             Sys_User u = Sys_User.SingleOrDefault(" where OpenId=@0", openId);
            return u;
         }
-        public static Sys_User GetUserInfoById(string id)
+        public static Sys_User GetUserInfoById(int id)
         {
             Sys_User u = Sys_User.SingleOrDefault((object)id);
             return u;
