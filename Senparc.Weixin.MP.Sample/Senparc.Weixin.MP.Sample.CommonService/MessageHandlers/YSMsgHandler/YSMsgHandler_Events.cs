@@ -56,7 +56,7 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
         public override IResponseMessageBase OnEvent_SubscribeRequest(RequestMessageEvent_Subscribe requestMessage)
         {
             var responseMessage = ResponseMessageBase.CreateFromRequestMessage<ResponseMessageText>(requestMessage);
-            responseMessage.Content = GetWelcomeInfo();
+            responseMessage.Content = GetWelcomeInfo() + "\r\n\r\n\r\n";
             Subscribe(requestMessage.EventKey,requestMessage.FromUserName, responseMessage);
             
             return responseMessage;
@@ -108,7 +108,8 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
             int provinceId = provinceArea.Id;
             int cityId = cityArea.Id;
             // 根据场景值获取parentId
-            int parentId = GetParentIdFromEventKey(eventKey);
+            string lishiName="";
+            int parentId = GetParentIdFromEventKey(eventKey,out lishiName);
             if (sUserRequest == null || (sUserRequest != null && sUserRequest.Id <= 0))
             {//新用户
                 Sys_User newUser = new Sys_User()
@@ -138,7 +139,7 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
 
                 if (!string.IsNullOrEmpty(eventKey))
                 {
-                    responseMessage.Content += "\r\n============\r\n新用户场景值：" + eventKey;
+                    responseMessage.Content += string.Format(@"您已成为{0}的粉丝，请到个人中心完善信息",lishiName);// + eventKey;
                 }
             }
             else
@@ -163,7 +164,7 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
 
                 if (!string.IsNullOrEmpty(eventKey))
                 {
-                    responseMessage.Content += "\r\n============\r\n用户已关注过场景值：" + eventKey;
+                    responseMessage.Content += string.Format(@"信息变更，您已成为{0}的粉丝，请到个人中心完善信息", lishiName);// + eventKey;
                 }
 
             }
@@ -174,12 +175,20 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
         /// </summary>
         /// <param name="eventKey"></param>
         /// <returns></returns>
-        private static int GetParentIdFromEventKey(String eventKey)
+        private static int GetParentIdFromEventKey(String eventKey,out String lishiName)
         {
+            lishiName="";
             int parentId = 0;
             if (!string.IsNullOrEmpty(eventKey))
             {   //有场景值
                 //responseMessage.Content += "\r\n============\r\n新用户场景值：" + requestMessage.EventKey;
+                
+                //首次关注时推送的时间有字符串qrscene  qrscene_1
+                if(eventKey.Contains("qrscene_"))
+                {
+                    eventKey = eventKey.Replace("qrscene_","");
+                }
+
                 int eventKeytmp = 0;
                 if (Int32.TryParse(eventKey, out eventKeytmp))
                 {
@@ -188,6 +197,7 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
                     if (sParentUser != null && sParentUser.Id > 0)
                     {
                         parentId = sParentUser.Id;
+                        lishiName =sParentUser.NickName;
                     }
                 }
             }

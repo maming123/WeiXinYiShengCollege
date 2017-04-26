@@ -74,7 +74,7 @@ WHERE   s1.IsDelete = 0
         public static void UpdateScore(string openId,int score)
         {
             Sys_User u = GetUserInfo(openId);
-            u.Score = score;
+            u.Score = u.Score+score;
             u.Update();
         }
 

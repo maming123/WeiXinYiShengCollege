@@ -136,7 +136,8 @@ namespace WeiXinYiShengCollege.WebSite.Home.OrderManage
                     }
                     else
                     {
-                        AddScoreLog itemNew = new AddScoreLog() { OpenId = info.BuyerOpenId, OrderId = info.OrderId, CreateDateTime = DateTime.Now };
+                        //TODO:用事务保证积分一致性
+                        AddScoreLog itemNew = new AddScoreLog() { OpenId = info.BuyerOpenId, OrderId = info.OrderId, CreateDateTime = DateTime.Now  };
                         object obj = itemNew.Insert();
                         if (Convert.ToInt32(obj) > 0)
                         {

@@ -428,44 +428,6 @@ namespace Module.Models
 	}
 
     
-	[TableName("AddScoreLog")]
-
-
-	[PrimaryKey("Id")]
-
-
-
-	[ExplicitColumns]
-    public partial class AddScoreLog : CoreDB.Record<AddScoreLog>  
-    {
-
-
-
-		[Column] public int Id { get; set; }
-
-
-
-
-
-		[Column] public string OpenId { get; set; }
-
-
-
-
-
-		[Column] public string OrderId { get; set; }
-
-
-
-
-
-		[Column] public DateTime CreateDateTime { get; set; }
-
-
-
-	}
-
-    
 	[TableName("OrderInfo")]
 
 
@@ -552,6 +514,124 @@ namespace Module.Models
 
 
 		[Column] public int ProductPrice { get; set; }
+
+
+
+	}
+
+    
+	[TableName("ExchargeLog")]
+
+
+	[PrimaryKey("Id")]
+
+
+
+	[ExplicitColumns]
+    public partial class ExchargeLog : CoreDB.Record<ExchargeLog>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string OpenId { get; set; }
+
+
+
+
+
+		[Column] public int Score { get; set; }
+
+
+
+
+
+		[Column] public int Money { get; set; }
+
+
+
+
+
+		[Column] public int PayStatus { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDatetime { get; set; }
+
+
+
+
+
+		[Column] public DateTime? PayDateTime { get; set; }
+
+
+
+
+
+		[Column] public string PayUser { get; set; }
+
+
+
+	}
+
+    
+	[TableName("AddScoreLog")]
+
+
+	[PrimaryKey("Id")]
+
+
+
+	[ExplicitColumns]
+    public partial class AddScoreLog : CoreDB.Record<AddScoreLog>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string OpenId { get; set; }
+
+
+
+
+
+		[Column] public string OrderId { get; set; }
+
+
+
+
+
+		[Column] public int OrderTotalPrice { get; set; }
+
+
+
+
+
+		[Column] public int Score { get; set; }
+
+
+
+
+
+		[Column] public int ExchargeStatus { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDateTime { get; set; }
 
 
 
