@@ -130,6 +130,7 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
                     QrCodeScene_id = 0,
                     Remark = "",
                     Score = 0,
+                    LastScore=0,
                     UserInfoJson = userInfoJsonStr,
                     UserLevel = Convert.ToInt32(UserLevel.未分配),
                     UserType = Convert.ToInt32(UserType.粉丝类型),

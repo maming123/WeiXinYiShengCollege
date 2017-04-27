@@ -126,26 +126,11 @@ namespace WeiXinYiShengCollege.WebSite.Home.OrderManage
             List<OrderInfo> orderInfoListFromDB = OrderBusiness.GetOrderInfoListFromDB(status, dtbegin, dtend);
             if (orderInfoListFromDB != null)
             {
-                //查看是否添加过积分，如果没添加过则添加积分
+                
                 foreach (OrderInfo info in orderInfoListFromDB)
                 {
-                    AddScoreLog item = OrderBusiness.GetScoreLogItem(info.BuyerOpenId, info.OrderId);
-                    if (null != item)
-                    {
-                        //已添加过记录不作处理
-                    }
-                    else
-                    {
-                        //TODO:用事务保证积分一致性
-                        AddScoreLog itemNew = new AddScoreLog() { OpenId = info.BuyerOpenId, OrderId = info.OrderId, CreateDateTime = DateTime.Now  };
-                        object obj = itemNew.Insert();
-                        if (Convert.ToInt32(obj) > 0)
-                        {
-                            //钱和积分的换算
-                            int score = info.OrderTotalPrice / Convert.ToInt32(txtMoney.Text.Trim());
-                            UserBusiness.UpdateScore(info.BuyerOpenId, score);
-                        }
-                    }
+                    ////查看是否添加过积分，如果没添加过则添加积分 并记录添加日志
+                    ScoreBusiness.AddScore(info);
 
                 }
                 MessageBox.Show(Page, "积分添加成功");

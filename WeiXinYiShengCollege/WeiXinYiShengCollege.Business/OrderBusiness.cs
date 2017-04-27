@@ -46,21 +46,7 @@ namespace WeiXinYiShengCollege.Business
        }
 
 
-       /// <summary>
-       /// 获取积分日志记录
-       /// </summary>
-       /// <param name="openId"></param>
-       /// <param name="orderid"></param>
-       /// <returns></returns>
-       public static AddScoreLog GetScoreLogItem(string openId,string orderid)
-       {
-           string strSql = string.Format(@"where OpenId=@0 and OrderId=@1");
-           AddScoreLog item = AddScoreLog.SingleOrDefault(strSql, openId, orderid);
-           if (null != item)
-               return item;
-           else
-               return null;
-       }
+
     }
 }
 

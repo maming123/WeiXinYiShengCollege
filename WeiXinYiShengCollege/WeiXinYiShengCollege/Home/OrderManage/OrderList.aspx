@@ -30,8 +30,7 @@
                         结束时间：<asp:TextBox ID="txtEndDate" runat="server" class="Wdate" onfocus="WdatePicker({dateFmt: 'yyyy年MM月dd日', minDate: '20140401', maxDate: '20200401' })"></asp:TextBox> &nbsp; <asp:Button ID="btnSyncFromWeiXin" runat="server" Text="从微信同步订单数据到本地" OnClick="btnSyncFromWeiXin_Click" />
 &nbsp; <asp:Button ID="btnFromDB" runat="server" Text="直接从本地数据库获取" OnClick="btnFromDB_Click" />
 &nbsp;<asp:Button ID="btnAddScore" runat="server" Text="添加积分" OnClick="btnAddScore_Click" />
-        公式：<asp:TextBox ID="txtMoney" runat="server" Width="40px">1</asp:TextBox>
-        分钱相当于1积分</div>
+        </div>
 
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"
                 Width="100%" BorderStyle="None" BorderWidth="0px" CellPadding="1" CellSpacing="1">

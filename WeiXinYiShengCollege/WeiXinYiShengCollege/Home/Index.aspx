@@ -59,14 +59,19 @@
 
             <div title="功能管理" data-options="collapsed:true,collapsible:true" style="padding: 10px;">
                 <ul class="tempul">
+
                     <li><a href="javascript:void(0)" onclick="addTab('自动回复管理','MsgAutoReplyManage.aspx')"><span style="color:#977171">>&nbsp;&nbsp;自动回复管理</span></a></li>
-                    <li><a href="javascript:void(0)" onclick="addTab('订单列表添加积分','OrderManage/OrderList.aspx')"><span style="color:#977171">>&nbsp;&nbsp;订单列表添加积分</span></a></li>
-                    <li><a href="javascript:void(0)" onclick="addTab('图文素材查看','MaterialNews/MaterialNewsList.aspx')"><span style="color:#977171">>&nbsp;&nbsp;图文素材查看</span></a></li>
+                    <li><a href="javascript:void(0)" onclick="addTab('图文素材管理','MaterialNews/MaterialNewsList.aspx')"><span style="color:#977171">>&nbsp;&nbsp;图文素材查看</span></a></li>
+                    <li><a href="javascript:void(0)" onclick="addTab('订单积分管理','OrderManage/OrderList.aspx')"><span style="color:#977171">>&nbsp;&nbsp;订单列表添加积分</span></a></li>
+                    <li><a href="javascript:void(0)" onclick="addTab('积分兑换管理','ScoreManage/ExchangeScoreList.aspx')"><span style="color:#977171">>&nbsp;&nbsp;积分兑换管理</span></a></li>
+                    <li><a href="javascript:void(0)" onclick="addTab('兑换配置查看','ScoreManage/ScoreConfigList.aspx')"><span style="color:#977171">>&nbsp;&nbsp;兑换配置查看</span></a></li>
+                    <li><a href="javascript:void(0)" onclick="addTab('客户经理查看','CustomerManager/CustomerManagerList.aspx')"><span style="color:#977171">>&nbsp;&nbsp;客户经理查看</span></a></li>
                     
                 </ul>
             </div>
             <div title="系统管理" data-options="collapsed:false,collapsible:false" style="padding: 10px;">
                 <ul class="tempul">
+
                     <li><a href="javascript:void(0)" onclick="addTab('用户信息管理','UserManage.aspx')"><span style="color:#977171">>&nbsp;&nbsp;用户信息管理</span></a></li>
                     <li><a href="javascript:void(0)" onclick="addTab('密码修改','Login/EditPassword.aspx')"><span style="color:#977171">>&nbsp;&nbsp;密码修改</span></a></li>
                 

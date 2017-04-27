@@ -182,152 +182,6 @@ namespace Module.Models
 	}
 
     
-	[TableName("Sys_User")]
-
-
-	[PrimaryKey("Id")]
-
-
-
-	[ExplicitColumns]
-    public partial class Sys_User : CoreDB.Record<Sys_User>  
-    {
-
-
-
-		[Column] public int Id { get; set; }
-
-
-
-
-
-		[Column] public string OpenId { get; set; }
-
-
-
-
-
-		[Column] public long Mobile { get; set; }
-
-
-
-
-
-		[Column] public string NickName { get; set; }
-
-
-
-
-
-		[Column] public string HeadImgUrl { get; set; }
-
-
-
-
-
-		[Column] public string PassWord { get; set; }
-
-
-
-
-
-		[Column] public string Email { get; set; }
-
-
-
-
-
-		[Column] public string CompanyName { get; set; }
-
-
-
-
-
-		[Column] public int UserType { get; set; }
-
-
-
-
-
-		[Column] public int? UserLevel { get; set; }
-
-
-
-
-
-		[Column] public string Remark { get; set; }
-
-
-
-
-
-		[Column] public int ParentId { get; set; }
-
-
-
-
-
-		[Column] public int ApproveFlag { get; set; }
-
-
-
-
-
-		[Column] public int? Score { get; set; }
-
-
-
-
-
-		[Column] public int? Province { get; set; }
-
-
-
-
-
-		[Column] public int? City { get; set; }
-
-
-
-
-
-		[Column] public string UserInfoJson { get; set; }
-
-
-
-
-
-		[Column] public int QrCodeScene_id { get; set; }
-
-
-
-
-
-		[Column] public int IsDelete { get; set; }
-
-
-
-
-
-		[Column] public DateTime CreateDateTime { get; set; }
-
-
-
-
-
-		[Column] public int? CustomerManagerId { get; set; }
-
-
-
-
-
-		[Column] public DateTime? UpdateDateTime { get; set; }
-
-
-
-	}
-
-    
 	[TableName("Log")]
 
 
@@ -372,6 +226,74 @@ namespace Module.Models
 
 
 		[Column] public string Module_Name { get; set; }
+
+
+
+	}
+
+    
+	[TableName("ExchangeLog")]
+
+
+	[PrimaryKey("Id")]
+
+
+
+	[ExplicitColumns]
+    public partial class ExchangeLog : CoreDB.Record<ExchangeLog>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string OpenId { get; set; }
+
+
+
+
+
+		[Column] public string NickName { get; set; }
+
+
+
+
+
+		[Column] public decimal Score { get; set; }
+
+
+
+
+
+		[Column] public int Money { get; set; }
+
+
+
+
+
+		[Column] public int PayStatus { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDatetime { get; set; }
+
+
+
+
+
+		[Column] public DateTime? PayDateTime { get; set; }
+
+
+
+
+
+		[Column] public string PayUser { get; set; }
 
 
 
@@ -520,26 +442,22 @@ namespace Module.Models
 	}
 
     
-	[TableName("ExchargeLog")]
-
-
-	[PrimaryKey("Id")]
-
+	[TableName("ScoreMoneyConfig")]
 
 
 	[ExplicitColumns]
-    public partial class ExchargeLog : CoreDB.Record<ExchargeLog>  
+    public partial class ScoreMoneyConfig : CoreDB.Record<ScoreMoneyConfig>  
     {
 
 
 
-		[Column] public int Id { get; set; }
+		[Column] public int UserType { get; set; }
 
 
 
 
 
-		[Column] public string OpenId { get; set; }
+		[Column] public int UserLevel { get; set; }
 
 
 
@@ -557,25 +475,7 @@ namespace Module.Models
 
 
 
-		[Column] public int PayStatus { get; set; }
-
-
-
-
-
-		[Column] public DateTime CreateDatetime { get; set; }
-
-
-
-
-
-		[Column] public DateTime? PayDateTime { get; set; }
-
-
-
-
-
-		[Column] public string PayUser { get; set; }
+		[Column] public string Remark { get; set; }
 
 
 
@@ -619,13 +519,13 @@ namespace Module.Models
 
 
 
-		[Column] public int Score { get; set; }
+		[Column] public decimal Score { get; set; }
 
 
 
 
 
-		[Column] public int ExchargeStatus { get; set; }
+		[Column] public int ExchangeStatus { get; set; }
 
 
 
@@ -746,6 +646,158 @@ namespace Module.Models
 
 
 		[Column] public int? AreaLevel { get; set; }
+
+
+
+	}
+
+    
+	[TableName("Sys_User")]
+
+
+	[PrimaryKey("Id")]
+
+
+
+	[ExplicitColumns]
+    public partial class Sys_User : CoreDB.Record<Sys_User>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string OpenId { get; set; }
+
+
+
+
+
+		[Column] public long Mobile { get; set; }
+
+
+
+
+
+		[Column] public string NickName { get; set; }
+
+
+
+
+
+		[Column] public string HeadImgUrl { get; set; }
+
+
+
+
+
+		[Column] public string PassWord { get; set; }
+
+
+
+
+
+		[Column] public string Email { get; set; }
+
+
+
+
+
+		[Column] public string CompanyName { get; set; }
+
+
+
+
+
+		[Column] public int UserType { get; set; }
+
+
+
+
+
+		[Column] public int? UserLevel { get; set; }
+
+
+
+
+
+		[Column] public string Remark { get; set; }
+
+
+
+
+
+		[Column] public int ParentId { get; set; }
+
+
+
+
+
+		[Column] public int ApproveFlag { get; set; }
+
+
+
+
+
+		[Column] public decimal Score { get; set; }
+
+
+
+
+
+		[Column] public decimal LastScore { get; set; }
+
+
+
+
+
+		[Column] public int? Province { get; set; }
+
+
+
+
+
+		[Column] public int? City { get; set; }
+
+
+
+
+
+		[Column] public string UserInfoJson { get; set; }
+
+
+
+
+
+		[Column] public int QrCodeScene_id { get; set; }
+
+
+
+
+
+		[Column] public int IsDelete { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDateTime { get; set; }
+
+
+
+
+
+		[Column] public int? CustomerManagerId { get; set; }
+
+
+
+
+
+		[Column] public DateTime? UpdateDateTime { get; set; }
 
 
 

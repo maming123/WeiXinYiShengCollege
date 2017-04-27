@@ -68,6 +68,7 @@
     <Content Include="Home\css\admin.content.css" />
     <Content Include="Home\css\admin.global.css" />
     <Content Include="Home\css\sysmodule.css" />
+    <Content Include="Home\CustomerMgr\CustomerManagerList.aspx" />
     <Content Include="Home\images\block-corner.png" />
     <Content Include="Home\images\block-h.gif" />
     <Content Include="Home\images\box-title.gif" />
@@ -129,6 +130,8 @@
     <Content Include="Home\MsgAutoReplyEdit.aspx" />
     <Content Include="Home\MsgAutoReplyManage.aspx" />
     <Content Include="Home\OrderManage\OrderList.aspx" />
+    <Content Include="Home\ScoreManage\ExchangeScoreList.aspx" />
+    <Content Include="Home\ScoreManage\ScoreConfigList.aspx" />
     <Content Include="Home\UserEdit.aspx" />
     <Content Include="Home\UserManage.aspx" />
     <Content Include="images\Query\00000001_r1_c1.gif" />
@@ -660,6 +663,13 @@
     <Compile Include="Home\CreateQrCode.aspx.designer.cs">
       <DependentUpon>CreateQrCode.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Home\CustomerMgr\CustomerManagerList.aspx.cs">
+      <DependentUpon>CustomerManagerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\CustomerMgr\CustomerManagerList.aspx.designer.cs">
+      <DependentUpon>CustomerManagerList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home\handler\PageHandler.ashx.cs">
       <DependentUpon>PageHandler.ashx</DependentUpon>
     </Compile>
@@ -734,6 +744,20 @@
     </Compile>
     <Compile Include="Home\OrderManage\OrderList.aspx.designer.cs">
       <DependentUpon>OrderList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\ScoreManage\ExchangeScoreList.aspx.cs">
+      <DependentUpon>ExchangeScoreList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\ScoreManage\ExchangeScoreList.aspx.designer.cs">
+      <DependentUpon>ExchangeScoreList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\ScoreManage\ScoreConfigList.aspx.cs">
+      <DependentUpon>ScoreConfigList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\ScoreManage\ScoreConfigList.aspx.designer.cs">
+      <DependentUpon>ScoreConfigList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home\UserEdit.aspx.cs">
       <DependentUpon>UserEdit.aspx</DependentUpon>
