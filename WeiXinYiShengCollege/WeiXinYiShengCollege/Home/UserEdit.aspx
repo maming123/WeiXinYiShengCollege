@@ -58,7 +58,7 @@
                 <td>
                     <asp:Label ID="lblParentId" runat="server" Text=""></asp:Label>
                 </td>
-                <td align="right" class="style1">积分：</td>
+                <td align="right" class="style1">总积分：</td>
                 <td>
                     <asp:TextBox ID="txtScore" runat="server" CssClass="input_205 input_txt" ></asp:TextBox>
                 </td>
@@ -81,10 +81,9 @@
                 <td>
                     <asp:TextBox ID="txtCompanyName" runat="server" CssClass="input_205 input_txt" ></asp:TextBox>
                 </td>
-                <td align="right" class="style1">二维码场景ID：</td>
+                 <td align="right" class="style1">剩余积分：</td>
                 <td>
-                    <asp:Label ID="lblQrCodeScene_id" runat="server" Text=""></asp:Label>
-                    
+                    <asp:TextBox ID="txtLastScore" runat="server" CssClass="input_205 input_txt" ></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -101,6 +100,11 @@
                 <td>
                     
                     <asp:DropDownList ID="ddlCustomerManagerId" runat="server"  Width="145px"></asp:DropDownList>
+                </td>
+                <td align="right" class="style1">二维码场景ID：</td>
+                <td>
+                    <asp:Label ID="lblQrCodeScene_id" runat="server" Text=""></asp:Label>
+                    
                 </td>
             </tr>
             <tr>

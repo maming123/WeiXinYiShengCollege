@@ -257,6 +257,12 @@ namespace Module.Models
 
 
 
+		[Column] public long? Mobile { get; set; }
+
+
+
+
+
 		[Column] public string NickName { get; set; }
 
 

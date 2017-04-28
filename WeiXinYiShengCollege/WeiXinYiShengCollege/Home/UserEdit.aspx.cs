@@ -41,7 +41,8 @@ namespace WeiXinYiShengCollege.WebSite.Home
             u.CompanyName = txtCompanyName.Text;
             u.CustomerManagerId = Convert.ToInt32(ddlCustomerManagerId.SelectedValue);
 
-            u.Score = Convert.ToInt32(txtScore.Text);
+            u.Score = Convert.ToDecimal(txtScore.Text);
+            u.LastScore = Convert.ToDecimal(txtLastScore.Text);
             u.Remark = txtRemark.Text;
             u.NickName = txtNickName.Text;
             u.Mobile = Convert.ToInt64(txtMobile.Text);
@@ -113,7 +114,7 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 txtNickName.Text = u.NickName;
                 txtRemark.Text = u.Remark;
                 txtScore.Text = u.Score.ToString();
-
+                txtLastScore.Text = u.LastScore.ToString();
                 ddlProvince.SelectedValue = u.Province.ToString();
                 InitddlCity(u.Province??0);
                 ddlCity.SelectedValue = u.City.ToString();

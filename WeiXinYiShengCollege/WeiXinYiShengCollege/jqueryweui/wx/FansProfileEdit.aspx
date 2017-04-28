@@ -88,7 +88,11 @@
                 success: function (result) {
                     if (result && typeof result == "object") {
                         if (result.code == 1) {
-                            $.toptip('更新成功，请返回个人中心');
+                            $.toast("修改成功", function () {
+                                //console.log('close');
+                                //操作成功弹窗消失后执行
+                                document.location.href = "FansProfile.aspx?OpenId=" + OpenId;
+                            });
                         }else
                         {
                             $.toptip('信息提交失败');

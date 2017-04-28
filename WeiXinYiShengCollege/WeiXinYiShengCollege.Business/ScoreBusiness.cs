@@ -21,7 +21,7 @@ namespace WeiXinYiShengCollege.Business
         /// 获取积分和钱的配置
         /// </summary>
         /// <returns></returns>
-        private static List<ScoreMoneyConfig> GetScoreCfg()
+        public static List<ScoreMoneyConfig> GetScoreCfg()
         {
             string cacheKey = string.Format(@"GetScoreCfg");
             if (BaseCommon.HasCache(cacheKey))
@@ -154,7 +154,7 @@ namespace WeiXinYiShengCollege.Business
         }
 
         /// <summary>
-        /// 用户兑换积分
+        /// 用户申请兑换积分
         /// </summary>
         /// <param name="score"></param>
         public static int UserExchangeScore(Sys_User sUser,decimal score)
@@ -176,12 +176,13 @@ namespace WeiXinYiShengCollege.Business
                     Money = Convert.ToInt32(scoreInput / scoreForOneCent)
                     , OpenId=sUser.OpenId
                     , NickName=sUser.NickName
-                    , PayStatus= (int)PayStatus.NoPay
+                    , PayStatus= (int)PayStatus.Paying
                 };
                 db.Insert(exchange);
                 //减少积分
-                
-                string strUpdate = string.Format(@"update Sys_User set Score=Score-@0,LastScore=LastScore-@0  where OpenId=@1");
+
+                //string strUpdate = string.Format(@"update Sys_User set Score=Score-@0,LastScore=LastScore-@0  where OpenId=@1");
+                string strUpdate = string.Format(@"update Sys_User set LastScore=LastScore-@0  where OpenId=@1");
                 int r = db.Execute(strUpdate, score, sUser.OpenId);
                 if(r<=0)
                 {
@@ -210,12 +211,12 @@ namespace WeiXinYiShengCollege.Business
         /// 获取不可兑换的积分（规则暂定：积分的可兑换规则：每月5号之后可以提取每月5号之前所有未兑换的积分）
         /// </summary>
         /// <returns></returns>
-        private static decimal GetInValidExchangeScore()
+        private static decimal GetInValidExchangeScore(string openId)
         {
             //查找指定规则不可兑换的积分
             ////每月5号之后可以提取每月5号前的所有未兑换积分
             DateTime dtbegin=DateTime.Now;
-             DateTime dtend =DateTime.Now;
+            DateTime dtend =DateTime.Now;
             if(DateTime.Now.Day-5<=0)
             {
                dtbegin =  Convert.ToDateTime(DateTime.Now.AddMonths(-1).ToString("yyyy-MM-5"));
@@ -225,9 +226,12 @@ namespace WeiXinYiShengCollege.Business
                dtbegin =  Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-5"));
                dtend =DateTime.Now;
             }
+            //先默认可兑换全部,待正式上线再注释掉
+            dtbegin = dtend.AddYears(1);
+
             //不可兑换的积分
             decimal totalNoExChangeScore=0;
-            List<AddScoreLog> listScoreLog =AddScoreLog.Query("where CreateDateTime between @0 and @1",dtbegin,dtend).ToList();
+            List<AddScoreLog> listScoreLog =AddScoreLog.Query("where  OpenId=@2 and CreateDateTime between @0 and @1 ",dtbegin,dtend,openId).ToList();
             if(null !=listScoreLog)
             {
                 totalNoExChangeScore =listScoreLog.Sum(m => m.Score);
@@ -242,10 +246,10 @@ namespace WeiXinYiShengCollege.Business
         /// </summary>
         /// <param name="openId"></param>
         /// <returns></returns>
-        public static decimal GetValidExchangeScore(decimal lastScore)
+        public static decimal GetValidExchangeScore(string openId,decimal lastScore)
         {
             // 剩余积分(sys_user的lastscore) 减去 不可兑换积分 = 可兑换的积分
-            decimal validScore = lastScore - GetInValidExchangeScore();
+            decimal validScore = lastScore - GetInValidExchangeScore(openId);
             return validScore;
         }
 
@@ -256,7 +260,7 @@ namespace WeiXinYiShengCollege.Business
         /// <returns></returns>
         public static List<ExchangeLog> GetExchangeLogList(string openId)
         {
-            List<ExchangeLog> list = ExchangeLog.Query("where OpenId=@0", openId).ToList();
+            List<ExchangeLog> list = ExchangeLog.Query("where OpenId=@0 order by CreateDatetime desc", openId).ToList();
             return list;
         }
 
@@ -267,12 +271,17 @@ namespace WeiXinYiShengCollege.Business
         /// <param name="dtBegin">积分申请兑换开始时间</param>
         /// <param name="dtEnd">积分申请兑换结束时间</param>
         /// <returns></returns>
-        public static List<ExchangeLog> GetExchangeLogList(PayStatus payStatus, DateTime dtBegin, DateTime dtEnd)
+        public static List<ExchangeLog> GetExchangeLogList(int payStatus, DateTime dtBegin, DateTime dtEnd,long mobile)
         {
             String strSql = string.Format(@"select * from ExchangeLog where 1=1 ");
-            if (null != payStatus)
+
+            if (mobile>0)
             {
-                strSql += string.Format(@" and PayStatus ={0}", (int)payStatus);
+                strSql += string.Format(@" and Mobile ={0}", mobile);
+            }
+            if (payStatus>=0)
+            {
+                strSql += string.Format(@" and PayStatus ={0}", payStatus);
             }
             if (null != dtBegin)
             {

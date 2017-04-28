@@ -73,6 +73,20 @@
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>
+                        <a class="weui-cell weui-cell_access" href="MyExchange.aspx?OpenId=<%=sUser.OpenId %>">
+
+                            <div class="weui-cell__bd weui-cell_primary">
+                                <p>兑换积分</p>
+                            </div>
+                            <span class="weui-cell__ft"></span>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="MyExchangeList.aspx?OpenId=<%=sUser.OpenId %>">
+
+                            <div class="weui-cell__bd weui-cell_primary">
+                                <p>积分兑换记录</p>
+                            </div>
+                            <span class="weui-cell__ft"></span>
+                        </a>
                         <a class="weui-cell weui-cell_access" href="ProfileEdit.aspx?OpenId=<%=sUser.OpenId %>">
 
                             <div class="weui-cell__bd weui-cell_primary">
@@ -80,7 +94,6 @@
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>
-
                     </div>
                 </div>
             </div>
@@ -91,7 +104,13 @@
       else
       { %>
     <header class='demos-header'>
-        <h1 class="demos-title"><%=Enum.GetName(typeof(ApproveFlag),sUser.ApproveFlag)%></h1>
+        <h1 class="demos-title">
+            <%if(sUser.ApproveFlag== (int)ApproveFlag.已提交认证申请){ %>
+              已提交认证申请,请耐心等待审核结果，请关闭此窗口回到个人中心
+            <%} else{%>
+            <%=Enum.GetName(typeof(ApproveFlag),sUser.ApproveFlag)%>
+            <%} %>
+        </h1>
     </header>
     <%} %>
 

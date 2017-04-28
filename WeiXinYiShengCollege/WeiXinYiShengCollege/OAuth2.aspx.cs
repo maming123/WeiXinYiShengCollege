@@ -12,7 +12,7 @@ namespace WeiXinYiShengCollege.WebSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string redirectUrl = string.Format(@"{0}", Request.Url.AbsoluteUri.Replace("oauth2.aspx", "jqueryweui/wx/profile.aspx"));
+            string redirectUrl = string.Format(@"{0}", Request.Url.AbsoluteUri.Replace("oauth2.aspx", "jqueryweui/wx/goto.aspx"));
             String strUrl = WeiXinBusiness.GetAuthorizeUrl(redirectUrl);
             Response.Redirect(strUrl);
         }
