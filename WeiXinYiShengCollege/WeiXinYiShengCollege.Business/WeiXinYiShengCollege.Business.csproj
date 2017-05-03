@@ -89,6 +89,7 @@
     <Compile Include="Common\Utils\ReturnJsonType.cs" />
     <Compile Include="Common\Utils\TypeConvert.cs" />
     <Compile Include="Common\Utils\UnitCommon.cs" />
+    <Compile Include="DoctorBusiness.cs" />
     <Compile Include="EnumConst.cs" />
     <Compile Include="LogHelper.cs" />
     <Compile Include="LoginAdminUser.cs" />

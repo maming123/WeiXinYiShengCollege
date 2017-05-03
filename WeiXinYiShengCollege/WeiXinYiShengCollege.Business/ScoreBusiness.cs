@@ -173,7 +173,7 @@ namespace WeiXinYiShengCollege.Business
                     CreateDatetime = DateTime.Now
                     , Score=scoreInput
                     ,
-                    Money = Convert.ToInt32(scoreInput / scoreForOneCent)
+                    Money = scoreInput /*目前定的积分兑换钱是 1:1兑换关系 （1积分兑换1分钱）*/
                     , OpenId=sUser.OpenId
                     , NickName=sUser.NickName
                     , PayStatus= (int)PayStatus.Paying

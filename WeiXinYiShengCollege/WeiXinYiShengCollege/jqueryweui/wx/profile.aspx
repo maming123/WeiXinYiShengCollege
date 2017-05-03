@@ -42,7 +42,7 @@
                         <a class="weui-cell weui-cell_access" href="javascript:;">
 
                             <div class="weui-cell__bd weui-cell_primary">
-                                <p>我的积分(<%=sUser.Score %>)</p>
+                                <p>我的积分(<%=sUser.LastScore %>)</p>
                             </div>
 
                         </a>
@@ -91,6 +91,20 @@
 
                             <div class="weui-cell__bd weui-cell_primary">
                                 <p>个人信息设置</p>
+                            </div>
+                            <span class="weui-cell__ft"></span>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="DoctorList.aspx?OpenId=<%=sUser.OpenId %>">
+
+                            <div class="weui-cell__bd weui-cell_primary">
+                                <p>出诊医生设置</p>
+                            </div>
+                            <span class="weui-cell__ft"></span>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="DoctorWorkManage.aspx?OpenId=<%=sUser.OpenId %>">
+
+                            <div class="weui-cell__bd weui-cell_primary">
+                                <p>出诊排期设置</p>
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>

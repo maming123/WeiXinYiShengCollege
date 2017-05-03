@@ -275,7 +275,7 @@ namespace Module.Models
 
 
 
-		[Column] public int Money { get; set; }
+		[Column] public decimal Money { get; set; }
 
 
 
@@ -350,6 +350,112 @@ namespace Module.Models
 
 
 		[Column] public int IsDelete { get; set; }
+
+
+
+	}
+
+    
+	[TableName("DoctorInfo")]
+
+
+	[PrimaryKey("Id")]
+
+
+
+	[ExplicitColumns]
+    public partial class DoctorInfo : CoreDB.Record<DoctorInfo>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string DoctorName { get; set; }
+
+
+
+
+
+		[Column] public string Remark { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDatetime { get; set; }
+
+
+
+
+
+		[Column] public string CreatorOpenId { get; set; }
+
+
+
+	}
+
+    
+	[TableName("DoctorWorkSchedule")]
+
+
+	[PrimaryKey("Id")]
+
+
+
+	[ExplicitColumns]
+    public partial class DoctorWorkSchedule : CoreDB.Record<DoctorWorkSchedule>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public int DoctorId { get; set; }
+
+
+
+
+
+		[Column] public DateTime WorkDateTime { get; set; }
+
+
+
+
+
+		[Column] public string DoctorName { get; set; }
+
+
+
+
+
+		[Column] public int WorkShortDate { get; set; }
+
+
+
+
+
+		[Column] public int DayTime { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDateTime { get; set; }
+
+
+
+
+
+		[Column] public string CreatorOpenId { get; set; }
 
 
 

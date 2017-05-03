@@ -19,13 +19,13 @@
       <publishTime>04/17/2017 17:10:01</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.dll">
-      <publishTime>04/28/2017 13:37:42</publishTime>
+      <publishTime>05/03/2017 12:06:29</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.dll">
-      <publishTime>04/28/2017 13:37:47</publishTime>
+      <publishTime>05/03/2017 12:06:32</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.pdb">
       <publishTime>04/11/2017 16:18:56</publishTime>
@@ -34,7 +34,7 @@
       <publishTime>04/11/2017 16:18:51</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.dll">
-      <publishTime>04/28/2017 13:37:43</publishTime>
+      <publishTime>05/03/2017 12:06:29</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
@@ -46,7 +46,7 @@
       <publishTime>04/11/2017 16:18:58</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.WebSite.dll">
-      <publishTime>04/28/2017 13:37:52</publishTime>
+      <publishTime>05/03/2017 12:06:36</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>04/14/2017 18:51:59</publishTime>
@@ -589,7 +589,7 @@
       <publishTime>04/12/2017 11:41:12</publishTime>
     </File>
     <File Include="jqueryweui/wx/CreateQrCodeUI.aspx">
-      <publishTime>04/20/2017 19:50:35</publishTime>
+      <publishTime>04/28/2017 14:02:23</publishTime>
     </File>
     <File Include="jqueryweui/wx/css/demos.css">
       <publishTime>04/12/2017 12:02:52</publishTime>
@@ -598,7 +598,7 @@
       <publishTime>04/24/2017 16:14:35</publishTime>
     </File>
     <File Include="jqueryweui/wx/FansProfileComplete.aspx">
-      <publishTime>04/21/2017 10:29:31</publishTime>
+      <publishTime>04/28/2017 16:35:00</publishTime>
     </File>
     <File Include="jqueryweui/wx/FansProfileEdit.aspx">
       <publishTime>04/28/2017 12:37:05</publishTime>
@@ -706,7 +706,7 @@
       <publishTime>04/21/2017 11:18:44</publishTime>
     </File>
     <File Include="jqueryweui/wx/MyExchange.aspx">
-      <publishTime>04/28/2017 12:17:03</publishTime>
+      <publishTime>04/28/2017 14:00:06</publishTime>
     </File>
     <File Include="jqueryweui/wx/MyExchangeList.aspx">
       <publishTime>04/28/2017 13:36:10</publishTime>
@@ -721,10 +721,10 @@
       <publishTime>04/24/2017 16:31:34</publishTime>
     </File>
     <File Include="jqueryweui/wx/profile.aspx">
-      <publishTime>04/28/2017 12:22:39</publishTime>
+      <publishTime>04/28/2017 13:49:47</publishTime>
     </File>
     <File Include="jqueryweui/wx/ProfileApprove.aspx">
-      <publishTime>04/28/2017 13:20:29</publishTime>
+      <publishTime>04/28/2017 13:46:30</publishTime>
     </File>
     <File Include="jqueryweui/wx/ProfileApproveOK.aspx">
       <publishTime>04/20/2017 19:21:55</publishTime>
