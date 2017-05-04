@@ -10,7 +10,7 @@ using WeiXinYiShengCollege.Business;
 
 namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
 {
-    public partial class DoctorWorkView : System.Web.UI.Page
+    public partial class DoctorWorkView : PageBase
     {
         public string OpenId = "";
         public DoctorWorkSchedule dws = new DoctorWorkSchedule();

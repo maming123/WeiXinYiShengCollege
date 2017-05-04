@@ -10,7 +10,7 @@ using WeiXinYiShengCollege.Business;
 
 namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
 {
-    public partial class FansProfileEdit : System.Web.UI.Page
+    public partial class FansProfileEdit : PageBase
     {
         public String OpenId = "0";
         public Sys_User sUser = new Sys_User();

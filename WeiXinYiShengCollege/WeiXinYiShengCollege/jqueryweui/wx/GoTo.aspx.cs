@@ -11,7 +11,7 @@ using WeiXinYiShengCollege.Business;
 
 namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
 {
-    public partial class GoTo : System.Web.UI.Page
+    public partial class GoTo : PageBase
     {
         public Sys_User sUser = new Sys_User();
 

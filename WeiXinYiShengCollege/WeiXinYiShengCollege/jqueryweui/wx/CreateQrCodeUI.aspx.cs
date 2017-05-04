@@ -12,7 +12,7 @@ using WeiXinYiShengCollege.Business;
 
 namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
 {
-    public partial class CreateQrCodeUI : System.Web.UI.Page
+    public partial class CreateQrCodeUI : PageBase
     {
         public string qrcodeurl = "";
         public string ImgUrl = "";

@@ -10,7 +10,7 @@ using WeiXinYiShengCollege.Business;
 
 namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
 {
-    public partial class DoctorEdit : System.Web.UI.Page
+    public partial class DoctorEdit : PageBase
     {
         public string OpenId = "";
         public DoctorInfo docInfo = new DoctorInfo();

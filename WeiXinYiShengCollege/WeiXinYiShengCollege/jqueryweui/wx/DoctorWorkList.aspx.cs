@@ -10,7 +10,7 @@ using WeiXinYiShengCollege.Business;
 
 namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
 {
-    public partial class DoctorWorkList : System.Web.UI.Page
+    public partial class DoctorWorkList : PageBase
     {
         public string OpenId = "";
         public List<DoctorWorkSchedule> listDws = new List<DoctorWorkSchedule>();

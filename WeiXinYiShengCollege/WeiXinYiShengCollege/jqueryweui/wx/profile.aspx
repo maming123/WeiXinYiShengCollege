@@ -94,7 +94,7 @@
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>
-                        <a class="weui-cell weui-cell_access" href="DoctorList.aspx?OpenId=<%=sUser.OpenId %>">
+                        <a class="weui-cell weui-cell_access" href="DoctorManage.aspx?OpenId=<%=sUser.OpenId %>">
 
                             <div class="weui-cell__bd weui-cell_primary">
                                 <p>出诊医生设置</p>

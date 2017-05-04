@@ -916,6 +916,9 @@
     <Compile Include="jqueryweui\wx\MyOrderList.aspx.designer.cs">
       <DependentUpon>MyOrderList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="jqueryweui\wx\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="jqueryweui\wx\ProfileApprove.aspx.cs">
       <DependentUpon>ProfileApprove.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

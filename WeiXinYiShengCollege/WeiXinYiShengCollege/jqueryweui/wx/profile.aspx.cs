@@ -8,10 +8,11 @@ using Module.Models;
 using Module.Utils;
 using Senparc.Weixin.MP.Sample.CommonService;
 using WeiXinYiShengCollege.Business;
+using WeiXinYiShengCollege.WebSite.jqueryweui.wx;
 
 namespace WeiXinYiShengCollege.WebSite.wx
 {
-    public partial class profile : System.Web.UI.Page
+    public partial class profile : PageBase
     {
 
         public Sys_User sUser = new Sys_User();

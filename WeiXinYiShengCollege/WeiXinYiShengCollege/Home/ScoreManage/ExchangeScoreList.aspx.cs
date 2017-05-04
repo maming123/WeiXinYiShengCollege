@@ -4,12 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using HospitalBook.WebSite.Home;
 using Module.Models;
 using WeiXinYiShengCollege.Business;
 
 namespace WeiXinYiShengCollege.WebSite.Home.ScoreManage
 {
-    public partial class ExchangeScoreList : System.Web.UI.Page
+    public partial class ExchangeScoreList : ManagePageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

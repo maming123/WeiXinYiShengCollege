@@ -10,7 +10,7 @@ using WeiXinYiShengCollege.Business;
 
 namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
 {
-    public partial class MyFansList : System.Web.UI.Page
+    public partial class MyFansList : PageBase
     {
         public List<Sys_User> myFansList = new List<Sys_User>();
         protected void Page_Load(object sender, EventArgs e)

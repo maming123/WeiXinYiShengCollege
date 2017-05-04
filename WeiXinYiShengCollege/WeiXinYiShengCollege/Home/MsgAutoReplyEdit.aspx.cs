@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using HospitalBook.WebSite.Home;
 using Module.Models;
 using Module.Utils;
 using Senparc.Weixin.MP;
@@ -13,7 +14,7 @@ using WeiXinYiShengCollege.Business;
 
 namespace WeiXinYiShengCollege.WebSite.Home
 {
-    public partial class MsgAutoReplyEdit : System.Web.UI.Page
+    public partial class MsgAutoReplyEdit : ManagePageBase
     {
         protected int Id = 0;
         protected void Page_Load(object sender, EventArgs e)

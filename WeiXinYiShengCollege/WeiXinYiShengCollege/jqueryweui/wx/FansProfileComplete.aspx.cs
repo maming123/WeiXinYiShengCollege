@@ -8,7 +8,7 @@ using Module.Utils;
 
 namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
 {
-    public partial class FansProfileComplete : System.Web.UI.Page
+    public partial class FansProfileComplete : PageBase
     {
         public String OpenId = "0";
         protected void Page_Load(object sender, EventArgs e)

@@ -10,7 +10,7 @@ using WeiXinYiShengCollege.Business;
 
 namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
 {
-    public partial class MyCustomerManager : System.Web.UI.Page
+    public partial class MyCustomerManager : PageBase
     {
         public CustomerManager cM = new CustomerManager();
         protected void Page_Load(object sender, EventArgs e)

@@ -14,6 +14,7 @@ using Senparc.Weixin.MP.Entities;
 using Module.Models;
 using Module.Utils;
 using Senparc.Weixin.MP.AdvancedAPIs.MerChant;
+using System.Web;
 
 namespace Senparc.Weixin.MP.Sample.CommonService
 {
@@ -162,6 +163,32 @@ namespace Senparc.Weixin.MP.Sample.CommonService
        }
 
        #endregion
+
+       /// <summary>
+       /// 判断是否在微信浏览器内
+       /// </summary>
+       /// <param name="httpContext"></param>
+       /// <returns></returns>
+        public static bool IsSideInWeixinBrowser(HttpContextBase httpContext)
+       {
+           bool isIn = BrowserUtility.BrowserUtility.SideInWeixinBrowser(httpContext);
+
+           return isIn ;
+       }
+       /// <summary>
+       /// 判断是否启用检查微信浏览器 true 启用判断
+       /// </summary>
+       /// <returns></returns>
+       public static bool IsEnabledWeixinBrowser()
+        {
+            string str = ConfigurationManager.AppSettings["SideInWeixinBrowser"];
+            bool isCheck = false;
+            if (!string.IsNullOrEmpty(str) && Convert.ToInt32(str) == 1)
+            {
+                isCheck = true;
+            }
+            return isCheck;
+        }
 
     }
 }
