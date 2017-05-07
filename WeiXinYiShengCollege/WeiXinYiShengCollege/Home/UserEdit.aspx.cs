@@ -38,8 +38,7 @@ namespace WeiXinYiShengCollege.WebSite.Home
         {
             Sys_User u = UserBusiness.GetUserInfo(lblOpenId.Text);
 
-            
-            
+            u.ApproveFlag = Convert.ToInt16(ddlApprove.SelectedValue);
             u.City = Convert.ToInt32(ddlCity.SelectedValue);
             u.Province = Convert.ToInt32(ddlProvince.SelectedValue);
             u.CompanyName = txtCompanyName.Text;
@@ -60,6 +59,10 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 //QrCodeScene_id =理事的个数+1
                 int lishiNum =UserBusiness.GetLishiUserCount();
                 u.QrCodeScene_id = lishiNum + 1;
+            }
+            if(u.UserType == (int)UserType.粉丝类型)
+            {//粉丝类型强制变成QR值为0 
+                u.QrCodeScene_id = 0;
             }
 
             int r = u.Update();
@@ -155,6 +158,7 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 ddlApprove.Enabled = false;
                 ddlUserLevel.SelectedValue = "0";
                 ddlApprove.SelectedValue = "0";
+                ddlCustomerManagerId.SelectedValue = "0";
             }
             else
             {
@@ -166,6 +170,14 @@ namespace WeiXinYiShengCollege.WebSite.Home
         protected void ddlProvince_SelectedIndexChanged(object sender, EventArgs e)
         {
             InitddlCity(Convert.ToInt32(((DropDownList)sender).SelectedValue));
+        }
+
+        protected void ddlUserLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(ddlUserLevel.SelectedValue ==  Convert.ToInt32(UserLevel.荣誉理事).ToString())
+            {
+                ddlParentId.SelectedValue = "0";
+            }
         }
     }
 }

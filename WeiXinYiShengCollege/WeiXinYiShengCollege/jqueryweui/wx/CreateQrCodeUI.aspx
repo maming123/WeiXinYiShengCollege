@@ -28,8 +28,8 @@
 
 <body ontouchstart>
 
-    <div class="icon-box">
-        <img src="<%=ImgUrl %>"  style="width:400px; height:400px;"/>
+    <div  style="vertical-align:middle;">
+        <img   src="<%=ImgUrl %>"  style="width:380px; height:380px;"/>
     </div>
     <script src="../lib/jquery-2.1.4.js"></script>
     <script src="../lib/fastclick.js"></script>

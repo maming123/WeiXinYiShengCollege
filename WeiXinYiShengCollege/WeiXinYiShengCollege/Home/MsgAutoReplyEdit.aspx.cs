@@ -108,7 +108,7 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 if (this.panelText.Visible)
                 {
                     //修改文本
-                    arc.ReplyContent = txtText.Text.Trim();
+                    arc.ReplyContent = txtText.Text;
                     
                 }else if(this.panelNews.Visible)
                 {
@@ -132,11 +132,11 @@ namespace WeiXinYiShengCollege.WebSite.Home
                     ,
                     UpKey = txtUpKey.Text.Trim()
                     ,
-                    ReplyContent = txtText.Text.Trim()
+                    ReplyContent = txtText.Text
                 };
                 if (this.panelText.Visible)
                 {
-                    arc.ReplyContent = txtText.Text.Trim();
+                    arc.ReplyContent = txtText.Text;
                 }
                 else if (this.panelNews.Visible)
                 {

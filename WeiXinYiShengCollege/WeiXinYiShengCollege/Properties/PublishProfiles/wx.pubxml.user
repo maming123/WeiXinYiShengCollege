@@ -16,16 +16,16 @@
       <publishTime>04/11/2017 11:14:04</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.dll">
-      <publishTime>04/17/2017 17:10:01</publishTime>
+      <publishTime>05/07/2017 18:23:46</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.dll">
-      <publishTime>05/07/2017 15:43:08</publishTime>
+      <publishTime>05/07/2017 18:29:14</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.dll">
-      <publishTime>05/07/2017 15:43:12</publishTime>
+      <publishTime>05/07/2017 18:29:17</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.pdb">
       <publishTime>04/11/2017 16:18:56</publishTime>
@@ -34,7 +34,7 @@
       <publishTime>04/11/2017 16:18:51</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.dll">
-      <publishTime>05/07/2017 15:43:09</publishTime>
+      <publishTime>05/07/2017 17:50:50</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
@@ -46,7 +46,7 @@
       <publishTime>04/11/2017 16:18:58</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.WebSite.dll">
-      <publishTime>05/07/2017 15:43:14</publishTime>
+      <publishTime>05/07/2017 18:29:20</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>04/14/2017 18:51:59</publishTime>
@@ -271,7 +271,7 @@
       <publishTime>05/07/2017 15:00:27</publishTime>
     </File>
     <File Include="Home/UserEdit.aspx">
-      <publishTime>05/07/2017 14:44:48</publishTime>
+      <publishTime>05/07/2017 18:02:01</publishTime>
     </File>
     <File Include="Home/UserManage.aspx">
       <publishTime>05/07/2017 14:38:04</publishTime>
@@ -589,7 +589,7 @@
       <publishTime>04/12/2017 11:41:12</publishTime>
     </File>
     <File Include="jqueryweui/wx/CreateQrCodeUI.aspx">
-      <publishTime>04/28/2017 14:02:23</publishTime>
+      <publishTime>05/07/2017 18:28:46</publishTime>
     </File>
     <File Include="jqueryweui/wx/css/demos.css">
       <publishTime>04/12/2017 12:02:52</publishTime>

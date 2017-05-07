@@ -92,12 +92,12 @@ WHERE   s1.IsDelete = 0
         }
 
         /// <summary>
-        /// 获取理事数量
+        /// 获取理事数量 通过最大QR值+1的形式获得，可能会有因为理事降级会员的原因导致qr值不连续
         /// </summary>
         /// <returns></returns>
         public static int GetLishiUserCount()
         {
-            String str = String.Format(@"select count(1) from Sys_User where  IsDelete=0 and ApproveFlag=@0 and UserType=@1");
+            String str = String.Format(@"select Max(QrCodeScene_id) as 'QrCodeScene_id' from Sys_User where  IsDelete=0 and ApproveFlag=@0 and UserType=@1");
            int count =  CoreDB.GetInstance().ExecuteScalar<int>(str,(int)ApproveFlag.已认证,(int)UserType.理事类型);
            return count;
         }

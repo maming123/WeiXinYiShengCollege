@@ -44,7 +44,9 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
             //EventKey 对应数据库里的Sys_User表的QrCodeScene_id 字段值
             Subscribe(requestMessage.EventKey, requestMessage.FromUserName, responseMessage);
 
-            responseMessage.Content = responseMessage.Content ?? string.Format("通过扫描二维码进入，场景值：{0}", requestMessage.EventKey);
+            //responseMessage.Content = responseMessage.Content ?? string.Format("通过扫描二维码进入，场景值：{0}", requestMessage.EventKey);
+
+            responseMessage.Content = responseMessage.Content ?? GetWelcomeInfo();
 
             return responseMessage;
         }
@@ -82,6 +84,49 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
             return responseMessage;
         }
 
+
+        /// <summary>
+        /// 点击事件
+        /// </summary>
+        /// <param name="requestMessage"></param>
+        /// <returns></returns>
+        public override IResponseMessageBase OnEvent_ClickRequest(RequestMessageEvent_Click requestMessage)
+        {
+            IResponseMessageBase reponseMessage = null;
+            //菜单点击，需要跟创建菜单时的Key匹配
+
+            List<AutoReplyContent> list = MsgAutoReplyBusiness.GetReplyContentList();
+            if (null == list)
+            {
+                return GetDefaultReply();
+            }
+
+            AutoReplyContent arc = list.Find(m => m.UpKey == requestMessage.EventKey.Trim().ToLower());
+            if (null == arc)
+            {
+                return GetDefaultReply();
+            }
+
+
+            if (arc.ResponseMsgType == ResponseMsgType.Text.ToString().ToLower())
+            {
+                var responseMessage = base.CreateResponseMessage<ResponseMessageText>();
+                return WeiXinBusiness.ProcessAutoReplyText(arc, responseMessage);
+
+            }
+            else if (arc.ResponseMsgType == ResponseMsgType.News.ToString().ToLower())
+            {
+                var responseMessage = base.CreateResponseMessage<ResponseMessageNews>();
+                return WeiXinBusiness.ProcessAutoReplyNews(arc, responseMessage);
+            }
+            else
+            {
+                return GetDefaultReply();
+            }
+
+
+            //return reponseMessage;
+        }
 
    
 
@@ -158,17 +203,26 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
                 // 已分配理事的粉丝可以更换理事 所以去掉&& sUserRequest.ParentId==0)
                 if (sUserRequest.UserType != (int)UserType.理事类型 )
                 {
-                    sUser.ParentId = parentId;
-                    sUser.Update(new String[] { "ParentId", "UserInfoJson", "IsDelete", "Province", "City", "HeadImgUrl", "UpdateDateTime" });
+                    if (parentId > 0)
+                    {//并且parentId>0 才更新parentid 针对已是粉丝但又关注了公众号的情况不做修改
+                        sUser.ParentId = parentId;
+                        sUser.Update(new String[] { "ParentId", "UserInfoJson", "IsDelete", "Province", "City", "HeadImgUrl", "UpdateDateTime" });
+                        if (!string.IsNullOrEmpty(eventKey))
+                        {
+                            responseMessage.Content += string.Format(@"信息变更，您已成为{0}的粉丝，请到个人中心完善信息", lishiName);// + eventKey;
+                        }
+                    }else
+                    {
+                        
+                        sUser.Update(new String[] {  "UserInfoJson", "IsDelete", "Province", "City", "HeadImgUrl", "UpdateDateTime" });
+                    }
+
                 }else
                 {
                     sUser.Update(new String[] {  "UserInfoJson", "IsDelete", "Province", "City", "HeadImgUrl", "UpdateDateTime" });
                 }
 
-                if (!string.IsNullOrEmpty(eventKey))
-                {
-                    responseMessage.Content += string.Format(@"信息变更，您已成为{0}的粉丝，请到个人中心完善信息", lishiName);// + eventKey;
-                }
+                
 
             }
         }

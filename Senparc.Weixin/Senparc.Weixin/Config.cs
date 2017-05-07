@@ -52,7 +52,7 @@ namespace Senparc.Weixin
         /// </summary>
         public const int TIME_OUT = 10000;
 
-        private static bool _isDebug = true;//TODO:需要考虑分布式的情况，后期需要储存在缓存中
+        private static bool _isDebug = false;//TODO:需要考虑分布式的情况，后期需要储存在缓存中
 
         /// <summary>
         /// 指定是否是Debug状态，如果是，系统会自动输出日志

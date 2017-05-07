@@ -47,7 +47,7 @@
                 </td>
                 <td align="right" class="style1">用户级别：</td>
                 <td>
-                    <asp:DropDownList ID="ddlUserLevel" runat="server">
+                    <asp:DropDownList ID="ddlUserLevel" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlUserLevel_SelectedIndexChanged">
                         <asp:ListItem Value="0">未分配（不详）</asp:ListItem>
                         <asp:ListItem Value="1">理事</asp:ListItem>
                         <asp:ListItem Value="2">常务理事</asp:ListItem>
