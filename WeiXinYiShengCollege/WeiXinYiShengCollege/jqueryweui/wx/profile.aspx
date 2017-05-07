@@ -42,7 +42,7 @@
                         <a class="weui-cell weui-cell_access" href="javascript:;">
 
                             <div class="weui-cell__bd weui-cell_primary">
-                                <p>我的积分(<%=sUser.LastScore %>)</p>
+                                <p>我的积分(<%=sUser.LastScore/100 %>)</p>
                             </div>
 
                         </a>

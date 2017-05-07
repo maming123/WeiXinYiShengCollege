@@ -25,10 +25,11 @@
             var cmid = $("#ddlCustomerManagerId").val();
             var province = $("#ddlProvince").val();
             var city = $("#ddlCity").val();
+            var approveflag = $("#ddlApproveFlag").val();
             $.ajax({
                 type: "POST",
                 url: "handler/PageHandler.ashx",
-                data: { Action: "GetUserList", province:province,city:city,mobile: mobile, UserType: usertype, UserLevel: userlevel, CustomerManagerId: cmid, PageIndex: pageIndex, r: Math.random() },
+                data: { Action: "GetUserList",approveflag:approveflag, province:province,city:city,mobile: mobile, UserType: usertype, UserLevel: userlevel, CustomerManagerId: cmid, PageIndex: pageIndex, r: Math.random() },
                 dataType: "json",
                 async: true,
                 success: function (result) {
@@ -118,7 +119,8 @@
                     var $contentTrTmp = $contentTr.clone();
                     var tmpItem = data.Source[i];
                     $contentTrTmp.find("td").eq(0).html(tmpItem.Id);
-                    $contentTrTmp.find("td").eq(1).html(tmpItem.OpenId);
+                    //$contentTrTmp.find("td").eq(1).html(tmpItem.OpenId);
+                    $contentTrTmp.find("td").eq(1).html("");
                     $contentTrTmp.find("td").eq(2).html(tmpItem.Mobile);
                     $contentTrTmp.find("td").eq(3).html(tmpItem.NickName);
                     $contentTrTmp.find("td").eq(4).html(tmpItem.UserType + tmpItem.UserTypeStr);
@@ -131,19 +133,20 @@
                     $contentTrTmp.find("td").eq(6).html(parentIdStr);
                     $contentTrTmp.find("td").eq(7).html(tmpItem.ApproveFlag + tmpItem.ApproveFlagStr);
                     $contentTrTmp.find("td").eq(8).html(tmpItem.Score);
-                    $contentTrTmp.find("td").eq(9).html(tmpItem.QrCodeScene_id);
-                    $contentTrTmp.find("td").eq(10).html(tmpItem.CustomerManagerId + tmpItem.CustomerManagerName + tmpItem.CustomerManagerMobile);
+                    $contentTrTmp.find("td").eq(9).html(tmpItem.LastScore);
+                    $contentTrTmp.find("td").eq(10).html(tmpItem.QrCodeScene_id);
+                    $contentTrTmp.find("td").eq(11).html(tmpItem.CustomerManagerId + tmpItem.CustomerManagerName + tmpItem.CustomerManagerMobile);
                     //$contentTrTmp.find("td").eq(11).html(tmpItem.UserInfoJson);
-                    $contentTrTmp.find("td").eq(11).html(tmpItem.CreateDateTime);
+                    $contentTrTmp.find("td").eq(12).html(tmpItem.CreateDateTime);
                     //在编辑里进行验证通过操作（验证通过的同时需要生成场景ID）
-                    $contentTrTmp.find("td").eq(12).html('<a href="UserEdit.aspx?OpenId=' + tmpItem.OpenId + '" target="_blank">编辑</a>');
+                    $contentTrTmp.find("td").eq(13).html('<a href="UserEdit.aspx?OpenId=' + tmpItem.OpenId + '" target="_blank">编辑</a>');
 
                     var qrcode = '';
                     if (tmpItem.QrCodeScene_id > 0)
                     {
                         qrcode = ('<a href="CreateQrCode.aspx?OpenId=' + tmpItem.OpenId + '" target="_blank">生成二维码</a>');
                     }
-                    $contentTrTmp.find("td").eq(13).html(qrcode);
+                    $contentTrTmp.find("td").eq(14).html(qrcode);
 
                     $contentTrTmp.appendTo("#tbodyHtml");
                 }
@@ -181,6 +184,13 @@ select option {
                         <asp:ListItem Value="2">常务理事</asp:ListItem>
                         <asp:ListItem Value="3">荣誉理事</asp:ListItem>
                     </asp:DropDownList>
+                    认证状态：<asp:DropDownList ID="ddlApproveFlag" runat="server">
+                         <asp:ListItem Value="-1">请选择</asp:ListItem>
+                        <asp:ListItem Value="0">未认证</asp:ListItem>
+                        <asp:ListItem Value="1">已认证</asp:ListItem>
+                        <asp:ListItem Value="2">已提交认证申请</asp:ListItem>
+                        <asp:ListItem Value="3">认证未通过</asp:ListItem>
+                    </asp:DropDownList>
                      客户经理：<asp:DropDownList ID="ddlCustomerManagerId" runat="server"  Width="145px"></asp:DropDownList>
                     所属省份：<asp:DropDownList ID="ddlProvince" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvince_SelectedIndexChanged"  ></asp:DropDownList>
                     所属地市：<asp:DropDownList ID="ddlCity" runat="server"  ></asp:DropDownList>
@@ -208,7 +218,8 @@ select option {
                                 <th scope="col" >用户级别</th>
                                 <th scope="col" >所属理事</th>
                                 <th scope="col" >认证状态</th>
-                                <th scope="col" >积分</th>
+                                <th scope="col" >总获得积分(元)</th>
+                                <th scope="col" >剩余积分(元)</th>
                                 <th scope="col" >QR场景值</th>
                                 <th scope="col" >客户经理</th>
                                 
@@ -222,6 +233,7 @@ select option {
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                              
+                                <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>

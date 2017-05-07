@@ -57,6 +57,8 @@
                 <td align="right" class="style1">所属理事：</td>
                 <td>
                     <asp:Label ID="lblParentId" runat="server" Text=""></asp:Label>
+                    
+                    <asp:DropDownList ID="ddlParentId" runat="server"  Width="145px"></asp:DropDownList>
                 </td>
                 <td align="right" class="style1">总积分：</td>
                 <td>

@@ -69,12 +69,13 @@ namespace HospitalBookWebSite.Home.handler
             int cmId = RequestKeeper.GetFormInt(Request["CustomerManagerId"]);
             int province = RequestKeeper.GetFormInt(Request["province"]);
             int city = RequestKeeper.GetFormInt(Request["city"]);
+            int approveflag = RequestKeeper.GetFormInt(Request["approveflag"]);
 
 
             int pageIndex = RequestKeeper.GetFormInt(Request["PageIndex"]);
             int pageSize = 12;// RequestKeeper.GetFormInt(Request["PageSize"]);
 
-            PageList<List<dynamic>> pList = UserBusiness.GetUserList(mobile,userType,userLevel,cmId,province,city, pageIndex, pageSize);
+            PageList<List<dynamic>> pList = UserBusiness.GetUserList(mobile, userType, userLevel, cmId, province, city, approveflag, pageIndex, pageSize);
             if (pList != null && pList.Source != null && pList.Source.Count > 0)
             {
                 List<CustomerManager> clist = UserBusiness.GetCustomerManagerList();
@@ -93,6 +94,9 @@ namespace HospitalBookWebSite.Home.handler
                     dic["UserLevelStr"] = Enum.GetName(typeof(UserLevel), dic["UserLevel"]);
                     dic["UserTypeStr"] = Enum.GetName(typeof(UserType), dic["UserType"]);
                     dic["ApproveFlagStr"] = Enum.GetName(typeof(ApproveFlag), dic["ApproveFlag"]);
+                    dic["Score"] = Convert.ToDecimal(dic["Score"]) / 100; //分换算成元
+                    dic["LastScore"] = Convert.ToDecimal(dic["LastScore"]) / 100; //分换算成元
+
                 }
             }
 

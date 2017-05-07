@@ -133,7 +133,7 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
                     LastScore=0,
                     UserInfoJson = userInfoJsonStr,
                     UserLevel = Convert.ToInt32(UserLevel.未分配),
-                    UserType = Convert.ToInt32(UserType.粉丝类型),
+                    UserType = Convert.ToInt32(UserType.未分配),
                     HeadImgUrl = headImgUrl
                 };
                 newUser.Insert();
@@ -154,7 +154,9 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
                 sUser.HeadImgUrl = headImgUrl;
                 sUser.UpdateDateTime = DateTime.Now;
                 sUser.UserInfoJson = userInfoJsonStr;
-                if (sUserRequest.UserType != (int)UserType.理事类型 && sUserRequest.ParentId==0)
+
+                // 已分配理事的粉丝可以更换理事 所以去掉&& sUserRequest.ParentId==0)
+                if (sUserRequest.UserType != (int)UserType.理事类型 )
                 {
                     sUser.ParentId = parentId;
                     sUser.Update(new String[] { "ParentId", "UserInfoJson", "IsDelete", "Province", "City", "HeadImgUrl", "UpdateDateTime" });

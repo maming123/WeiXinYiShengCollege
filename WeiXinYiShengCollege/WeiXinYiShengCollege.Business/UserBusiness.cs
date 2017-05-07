@@ -11,7 +11,7 @@ namespace WeiXinYiShengCollege.Business
 {
     public  class UserBusiness:BaseBusiness
     {
-        public static PageList<List<dynamic>> GetUserList(long mobile,int userType,int userLevel,int customerManagerId, int province,int city,int pageIndex, int pageSize)
+        public static PageList<List<dynamic>> GetUserList(long mobile, int userType, int userLevel, int customerManagerId, int province, int city, int approveflag, int pageIndex, int pageSize)
         {
             string strSql = string.Format(@"
 SELECT  s1.* ,
@@ -33,6 +33,10 @@ WHERE   s1.IsDelete = 0
             if (userLevel >= 0)
             {
                 strSql += string.Format(@" and s1.UserLevel={0}", userLevel);
+            }
+            if (approveflag >= 0)
+            {
+                strSql += string.Format(@" and s1.ApproveFlag={0}", approveflag);
             }
             if (customerManagerId > 0)
             {
