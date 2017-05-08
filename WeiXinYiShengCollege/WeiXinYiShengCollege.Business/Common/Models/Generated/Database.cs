@@ -554,6 +554,44 @@ namespace Module.Models
 	}
 
     
+	[TableName("ExportsLiShi")]
+
+
+	[PrimaryKey("Id")]
+
+
+
+	[ExplicitColumns]
+    public partial class ExportsLiShi : CoreDB.Record<ExportsLiShi>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public int ExpertsSysUserId { get; set; }
+
+
+
+
+
+		[Column] public int LiShiSysUserId { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDateTime { get; set; }
+
+
+
+	}
+
+    
 	[TableName("ScoreMoneyConfig")]
 
 
@@ -644,6 +682,12 @@ namespace Module.Models
 
 
 		[Column] public DateTime CreateDateTime { get; set; }
+
+
+
+
+
+		[Column] public string FromOrderId { get; set; }
 
 
 

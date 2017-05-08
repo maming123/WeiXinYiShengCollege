@@ -99,7 +99,15 @@ namespace WeiXinYiShengCollege.Business
                     {
                         db.BeginTransaction();
                         
-                        AddScoreLog itemNew = new AddScoreLog() { OpenId = info.BuyerOpenId, OrderId = info.OrderId, CreateDateTime = DateTime.Now, OrderTotalPrice = info.OrderTotalPrice, Score = info.OrderTotalPrice * scoreForOneCent, ExchangeStatus=0 };
+                        AddScoreLog itemNew = new AddScoreLog() { 
+                            OpenId = info.BuyerOpenId
+                            , OrderId = info.OrderId
+                            , CreateDateTime = DateTime.Now
+                            , OrderTotalPrice = info.OrderTotalPrice
+                            , Score = info.OrderTotalPrice * scoreForOneCent
+                            , ExchangeStatus=0
+                            , FromOrderId=info.OrderId
+                        };
 
                         object obj = db.Insert(itemNew);
                         
@@ -114,7 +122,15 @@ namespace WeiXinYiShengCollege.Business
                             Sys_User parentUser = db.SingleOrDefault<Sys_User>((object)sUser.ParentId);
                             //看看用户是什么类型 怎么加分  
                             decimal scoreForOneCentForParent = GetScoreByOneCentMoney(Convert.ToInt32(parentUser.UserLevel), parentUser.UserType);
-                            AddScoreLog itemParentNew = new AddScoreLog() { OpenId = parentUser.OpenId, OrderId = "0", CreateDateTime = DateTime.Now, OrderTotalPrice = info.OrderTotalPrice, Score = info.OrderTotalPrice * scoreForOneCentForParent, ExchangeStatus = 0 };
+                            AddScoreLog itemParentNew = new AddScoreLog() {
+                                OpenId = parentUser.OpenId
+                                , OrderId = "0"
+                                , CreateDateTime = DateTime.Now
+                                , OrderTotalPrice = info.OrderTotalPrice
+                                , Score = info.OrderTotalPrice * scoreForOneCentForParent
+                                , ExchangeStatus = 0
+                                , FromOrderId=info.OrderId
+                            };
                             object objParent = db.Insert(itemParentNew);
                             //钱和积分的换算
                             String strUpdateParent = string.Format(@"update Sys_User set Score=Score+@0,LastScore=LastScore+@0  where OpenId=@1");
@@ -122,10 +138,22 @@ namespace WeiXinYiShengCollege.Business
                             if (rParent <= 0)
                             {
                                 LogHelper.WriteLogError(typeof(ScoreBusiness)
-                                    , string.Format(@"未能增加Sys_User相应的Score，OpenId：{0},Score:{1},{2}", itemParentNew.OpenId, itemParentNew.Score, strUpdate)
+                                    , string.Format(@"未能增加理事Sys_User相应的Score，OpenId：{0},Score:{1},{2}", itemParentNew.OpenId, itemParentNew.Score, strUpdate)
                                     );
                                 db.AbortTransaction();
                                 return;
+                            }else
+                            { //加分成功，那么再看他本身是否存在专家理事 如果存在也相应的给专家理事加分
+
+                                #region //有专家理事对应
+                                bool isOk = AddScoreForExpertLiShi(info, db, parentUser, itemParentNew);
+                                if (!isOk)
+                                {
+                                    db.AbortTransaction();
+                                    return;
+                                }
+                                #endregion
+
                             }
                         }
                         #endregion
@@ -137,7 +165,21 @@ namespace WeiXinYiShengCollege.Business
                                 );
                             db.AbortTransaction();
                             return;
+                        }else
+                        {
+                            //加分成功，那么再看他本身是否存在专家理事 如果存在也相应的给专家理事加分
+
+                           #region //有专家理事对应
+                           bool isOk= AddScoreForExpertLiShi(info, db, sUser, itemNew);
+                            if(!isOk)
+                            {
+                                db.AbortTransaction();
+                                return;
+                            }
+                            #endregion
+
                         }
+
                         db.CompleteTransaction();
                     }
                     catch(Exception ex)
@@ -151,6 +193,64 @@ namespace WeiXinYiShengCollege.Business
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// 专家理事加分
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="db"></param>
+        /// <param name="parentUser"></param>
+        /// <param name="itemParentNew"></param>
+        private static bool AddScoreForExpertLiShi(OrderInfo info, CoreDB db, Sys_User sUser, AddScoreLog scoreLog)
+        {
+            bool isOk = false;
+            ExportsLiShi experts = db.FirstOrDefault<ExportsLiShi>("where LiShiSysUserId=@0", sUser.Id);
+            if (null != experts && experts.ExpertsSysUserId > 0)
+            {
+                //有专家 那么给专家加分 专家分数定为理事的5%
+                Sys_User expertsUser = db.SingleOrDefault<Sys_User>((object)experts.ExpertsSysUserId);
+                decimal expertsScore = (scoreLog.Score * 5) / 100;
+                AddScoreLog itemExpertsNew = new AddScoreLog()
+                {
+                    OpenId = expertsUser.OpenId
+                    ,
+                    OrderId = "-1"
+                    ,
+                    CreateDateTime = DateTime.Now
+                    ,
+                    OrderTotalPrice = info.OrderTotalPrice
+                    ,
+                    Score = expertsScore
+                    ,
+                    ExchangeStatus = 0
+                    ,
+                    FromOrderId = info.OrderId
+                };
+                object objExperts = db.Insert(itemExpertsNew);
+                if (Convert.ToInt32(objExperts) > 0)
+                {
+                    //专家理事钱和积分的换算
+                    String strUpdateExperts = string.Format(@"update Sys_User set Score=Score+@0,LastScore=LastScore+@0  where OpenId=@1");
+                    int rExperts = db.Execute(strUpdateExperts, itemExpertsNew.Score, expertsUser.OpenId);
+                    if (rExperts <= 0)
+                    {
+                        LogHelper.WriteLogError(typeof(ScoreBusiness)
+                            , string.Format(@"未能增加专家Sys_User相应的Score，OpenId：{0},Score:{1},{2}", expertsUser.OpenId, expertsUser.Score, strUpdateExperts)
+                            );
+                        
+                    }else
+                    {
+                        isOk = true;
+                    }
+                }
+
+            }else
+            {
+                //未找到也认为正常
+                isOk = true;
+            }
+            return isOk;
         }
 
         /// <summary>

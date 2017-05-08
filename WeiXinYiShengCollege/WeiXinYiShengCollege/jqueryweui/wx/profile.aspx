@@ -53,6 +53,15 @@
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>
+                        <%if(sUser.UserLevel== (int)UserLevel.荣誉理事){%>
+                         <a class="weui-cell weui-cell_access" href="MyLiShiList.aspx?Id=<%=sUser.Id %>">
+
+                            <div class="weui-cell__bd weui-cell_primary">
+                                <p>我的理事</p>
+                            </div>
+                            <span class="weui-cell__ft"></span>
+                        </a>
+                        <%} %>
                         <a class="weui-cell weui-cell_access" href="MyCustomerManager.aspx?CustomerManagerId=<%=sUser.CustomerManagerId %>">
 
                             <div class="weui-cell__bd weui-cell_primary">

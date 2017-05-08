@@ -155,6 +155,31 @@ WHERE   s1.IsDelete = 0
         }
         #endregion
 
+        #region 专家理事
+
+        //查找专家理事对应的理事列表
+        public static List<Sys_User> GetExportsLiShiListByExpertsSysUserId(int expertsSysUserId)
+        {
+            string strSql = string.Format(@"SELECT * FROM dbo.Sys_User su RIGHT JOIN dbo.ExportsLiShi es
+ON su.Id=es.LiShiSysUserId WHERE es.ExpertsSysUserId={0}", expertsSysUserId);
+            List<Sys_User> list = Sys_User.Query(strSql).ToList();
+            return list;
+        }
+
+        /// <summary>
+        /// 通过理事ID获得专家理事的ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static ExportsLiShi GetExportsLiShiByLiShiSysUserId(int liShiSysUserId)
+        {
+            string strSql = string.Format(@"SELECT * FROM dbo.ExportsLiShi WHERE LiShiSysUserId={0}", liShiSysUserId);
+            ExportsLiShi sUser = ExportsLiShi.FirstOrDefault(strSql);
+            return sUser;
+        }
+
+
+        #endregion
 
     }
 

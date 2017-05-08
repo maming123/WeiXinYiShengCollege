@@ -54,7 +54,7 @@
                         <asp:ListItem Value="3">荣誉理事</asp:ListItem>
                     </asp:DropDownList>
                 </td>
-                <td align="right" class="style1">所属理事：</td>
+                <td align="right" class="style1">所属普通理事：</td>
                 <td>
                     <asp:Label ID="lblParentId" runat="server" Text=""></asp:Label>
                     
@@ -66,16 +66,17 @@
                 </td>
             </tr>
             <tr>
-                <td align="right" class="style1">所属省份：</td>
+                <td align="right" class="style1">所属荣誉理事：</td>
                 <td>
-                    <asp:DropDownList ID="ddlProvince" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvince_SelectedIndexChanged">
-                        
-                    </asp:DropDownList>
+                    <asp:DropDownList ID="ddlExpertsLiShi" runat="server"  Width="145px"></asp:DropDownList>
                 </td>
-                <td align="right" class="style1">所属地市：</td>
+                <td align="right" class="style1">审核状态：</td>
                 <td>
-                    <asp:DropDownList ID="ddlCity" runat="server">
-                        
+                    <asp:DropDownList ID="ddlApprove" runat="server">
+                        <asp:ListItem Value="0">未认证</asp:ListItem>
+                        <asp:ListItem Value="1">已认证</asp:ListItem>
+                        <asp:ListItem Value="2">已提交认证申请</asp:ListItem>
+                        <asp:ListItem Value="3">认证未通过</asp:ListItem>
                     </asp:DropDownList>
                 </td>
                 
@@ -89,19 +90,18 @@
                 </td>
             </tr>
             <tr>
-                <td align="right" class="style1">审核状态：</td>
+                <td align="right" class="style1">所属地市：</td>
                 <td>
-                    <asp:DropDownList ID="ddlApprove" runat="server">
-                        <asp:ListItem Value="0">未认证</asp:ListItem>
-                        <asp:ListItem Value="1">已认证</asp:ListItem>
-                        <asp:ListItem Value="2">已提交认证申请</asp:ListItem>
-                        <asp:ListItem Value="3">认证未通过</asp:ListItem>
+                    <asp:DropDownList ID="ddlCity" runat="server">
+                        
                     </asp:DropDownList>
                 </td>
-                <td align="right" class="style1">客户经理：</td>
+                <td align="right" class="style1">所属省份：</td>
                 <td>
                     
-                    <asp:DropDownList ID="ddlCustomerManagerId" runat="server"  Width="145px"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlProvince" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvince_SelectedIndexChanged">
+                        
+                    </asp:DropDownList>
                 </td>
                 <td align="right" class="style1">二维码场景ID：</td>
                 <td>
@@ -109,6 +109,13 @@
                     
                 </td>
             </tr>
+            <tr><td align="right" class="style1">客户经理：</td>
+                <td colspan="7">
+                    
+                    <asp:DropDownList ID="ddlCustomerManagerId" runat="server"  Width="145px"></asp:DropDownList>
+                    <asp:HiddenField ID="hidExpertsLiShiId" runat="server" />
+                </td>
+                </tr>
             <tr>
                 <td align="right" class="style1">个人简介：</td>
                 <td colspan="7">
