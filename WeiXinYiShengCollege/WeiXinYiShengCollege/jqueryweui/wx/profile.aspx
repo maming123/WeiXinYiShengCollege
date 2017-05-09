@@ -94,7 +94,7 @@
                         <a class="weui-cell weui-cell_access" href="MyExchangeList.aspx?OpenId=<%=sUser.OpenId %>">
 
                             <div class="weui-cell__bd weui-cell_primary">
-                                <p>积分兑换记录</p>
+                                <p>兑换记录</p>
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>

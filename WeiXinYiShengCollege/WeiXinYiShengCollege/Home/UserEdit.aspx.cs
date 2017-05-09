@@ -52,12 +52,22 @@ namespace WeiXinYiShengCollege.WebSite.Home
                         return;
                     }
                 }
+                if(Convert.ToInt32(ddlParentId.SelectedValue)==0)
+                {
+                    MessageBox.Show(Page, "用户类型是粉丝类型必须选择所属理事");
+                    return;
+                }
             }
             if (ddlUserType.SelectedValue == Convert.ToInt32(UserType.理事类型).ToString())
             {
                 if (Convert.ToInt32(ddlUserLevel.SelectedValue) == 0)
                 {
                     MessageBox.Show(Page, "因用户类型是理事类型，所以必须选择理事的级别");
+                    return;
+                }
+                if (Convert.ToInt32(this.ddlCustomerManagerId.SelectedValue) == 0)
+                {
+                    MessageBox.Show(Page, "因用户类型是理事类型，所以必须选择相应的客户经理");
                     return;
                 }
             }
@@ -180,7 +190,7 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 }
 
                 db.CompleteTransaction();
-                MessageBox.Show(Page, "修改成功");
+                MessageBox.ResponseScript(Page, "alert('修改成功');window.close();");
                 return;
             }
             catch (Exception ex)
