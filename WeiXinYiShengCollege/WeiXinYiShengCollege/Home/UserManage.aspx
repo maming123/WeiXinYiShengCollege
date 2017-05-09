@@ -119,18 +119,22 @@
                     var $contentTrTmp = $contentTr.clone();
                     var tmpItem = data.Source[i];
                     $contentTrTmp.find("td").eq(0).html(tmpItem.Id);
-                    //$contentTrTmp.find("td").eq(1).html(tmpItem.OpenId);
-                    $contentTrTmp.find("td").eq(1).html("");
-                    $contentTrTmp.find("td").eq(2).html(tmpItem.Mobile);
-                    $contentTrTmp.find("td").eq(3).html(tmpItem.NickName);
-                    $contentTrTmp.find("td").eq(4).html(tmpItem.UserType + tmpItem.UserTypeStr);
-                    $contentTrTmp.find("td").eq(5).html(tmpItem.UserLevel + tmpItem.UserLevelStr);
+                    
+                    $contentTrTmp.find("td").eq(1).html(tmpItem.Mobile);
+                    $contentTrTmp.find("td").eq(2).html(tmpItem.NickName);
+                    $contentTrTmp.find("td").eq(3).html(tmpItem.UserType + tmpItem.UserTypeStr);
+                    $contentTrTmp.find("td").eq(4).html(tmpItem.UserLevel + tmpItem.UserLevelStr);
                     var parentIdStr = '';
                     if (tmpItem.ParentId > 0)
                     {
                         parentIdStr ='<a href="UserEdit.aspx?Id=' + tmpItem.ParentId + '" target="_blank">'+tmpItem.ParentNickName+'</a>'
                     }
-                    $contentTrTmp.find("td").eq(6).html(parentIdStr);
+                    $contentTrTmp.find("td").eq(5).html(parentIdStr);
+                    var expertsIdStr = '';
+                    if (tmpItem.ExpertsId > 0) {
+                        expertsIdStr = '<a href="UserEdit.aspx?Id=' + tmpItem.ExpertsId + '" target="_blank">' + tmpItem.ExpertsNickName + '</a>'
+                    }
+                    $contentTrTmp.find("td").eq(6).html(expertsIdStr);
                     $contentTrTmp.find("td").eq(7).html(tmpItem.ApproveFlag + tmpItem.ApproveFlagStr);
                     $contentTrTmp.find("td").eq(8).html(tmpItem.Score);
                     $contentTrTmp.find("td").eq(9).html(tmpItem.LastScore);
@@ -211,18 +215,17 @@ select option {
                         <table  id="tbodyHtml" class="data-table" cellspacing="0" cellpadding="0" id="gvList" style="border-collapse: collapse;">
                             <tr>
                                 <th scope="col" >序号</th>
-                                <th align="left" scope="col" >OpenId</th>
                                 <th scope="col" >手机号</th>
                                 <th scope="col" >姓名</th>
                                 <th scope="col" >用户类型</th>
                                 <th scope="col" >用户级别</th>
                                 <th scope="col" >所属理事</th>
+                                <th scope="col" >所属荣誉理事</th>
                                 <th scope="col" >认证状态</th>
                                 <th scope="col" >总获得积分(元)</th>
                                 <th scope="col" >剩余积分(元)</th>
                                 <th scope="col" >QR场景值</th>
                                 <th scope="col" >客户经理</th>
-                                
                                 <th scope="col" >创建时间</th>
                                 <th scope="col" >编辑</th>
                                 <th scope="col" >生成二维码</th>

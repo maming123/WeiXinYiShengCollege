@@ -36,6 +36,33 @@ namespace WeiXinYiShengCollege.WebSite.Home
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
+
+            if(ddlUserType.SelectedValue==Convert.ToInt32(UserType.粉丝类型).ToString())
+            {
+                if(Convert.ToInt32(ddlUserLevel.SelectedValue)>0)
+                {
+                    MessageBox.Show(Page, "用户类型是粉丝类型不能选择理事类型");
+                    return;
+                }
+                if(Convert.ToInt32(ddlExpertsLiShi.SelectedValue)>0)
+                {
+                    if (Convert.ToInt32(ddlUserLevel.SelectedValue) > 0)
+                    {
+                        MessageBox.Show(Page, "用户类型是粉丝类型不能选择荣誉理事");
+                        return;
+                    }
+                }
+            }
+            if (ddlUserType.SelectedValue == Convert.ToInt32(UserType.理事类型).ToString())
+            {
+                if (Convert.ToInt32(ddlUserLevel.SelectedValue) == 0)
+                {
+                    MessageBox.Show(Page, "因用户类型是理事类型，所以必须选择理事的级别");
+                    return;
+                }
+            }
+
+
             var db = CoreDB.GetInstance();
             try
             {
@@ -234,11 +261,7 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 lblOpenId.Text = u.OpenId;
                 lblQrCodeScene_id.Text = u.QrCodeScene_id.ToString();
 
-                //Sys_User uParent = Sys_User.SingleOrDefault((object)u.ParentId);
-                //if (uParent != null && uParent.Id > 0)
-                //{
-                //    lblParentId.Text = uParent.NickName;
-                //}
+                
 
                 txtCompanyName.Text = u.CompanyName;
                 txtMobile.Text = u.Mobile.ToString();
@@ -268,17 +291,17 @@ namespace WeiXinYiShengCollege.WebSite.Home
                     hidExpertsLiShiId.Value = "0";
                 }
 
-                SetDDLStatus();
-
+                SetDDLStatusForUserType();
+                SetDDLStatusForUserLevel();
             }
         }
 
         protected void ddlUserType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SetDDLStatus();
+            SetDDLStatusForUserType();
         }
 
-        private void SetDDLStatus()
+        private void SetDDLStatusForUserType()
         {
 
             if (ddlUserType.SelectedValue == Convert.ToInt32(UserType.粉丝类型).ToString())
@@ -318,10 +341,38 @@ namespace WeiXinYiShengCollege.WebSite.Home
 
         protected void ddlUserLevel_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(ddlUserLevel.SelectedValue ==  Convert.ToInt32(UserLevel.荣誉理事).ToString())
-            {
-                ddlParentId.SelectedValue = "0";
-            }
+            SetDDLStatusForUserLevel();
         }
+
+        private void SetDDLStatusForUserLevel()
+        {
+
+            if (ddlUserLevel.SelectedValue == Convert.ToInt32(UserLevel.荣誉理事).ToString())
+            {
+                //如果是荣誉理事 那么就不能有所属理事 和专家理事
+                ddlParentId.SelectedValue = "0";
+                ddlExpertsLiShi.SelectedValue = "0";
+                ddlParentId.Enabled = false;
+                ddlExpertsLiShi.Enabled = false;
+            }
+            else if (ddlUserLevel.SelectedValue == Convert.ToInt32(UserLevel.常务理事).ToString()
+                || ddlUserLevel.SelectedValue == Convert.ToInt32(UserLevel.理事).ToString())
+            {
+                //如果是普通理事 那么就不能有所属理事  可以有专家理事
+                ddlParentId.SelectedValue = "0";
+                ddlParentId.Enabled = false;
+                ddlExpertsLiShi.Enabled = true;
+            }
+            else if (ddlUserLevel.SelectedValue == Convert.ToInt32(UserLevel.未分配).ToString())
+            {
+                if (ddlUserType.SelectedValue == Convert.ToInt32(UserType.粉丝类型).ToString())
+                {
+                    ddlParentId.Enabled = true;
+                    ddlExpertsLiShi.Enabled = false;
+                }
+            }
+
+        }
+
     }
 }

@@ -56,20 +56,16 @@
                 </td>
                 <td align="right" class="style1">所属普通理事：</td>
                 <td>
-                    <asp:Label ID="lblParentId" runat="server" Text=""></asp:Label>
                     
                     <asp:DropDownList ID="ddlParentId" runat="server"  Width="145px"></asp:DropDownList>
                 </td>
-                <td align="right" class="style1">总积分：</td>
-                <td>
-                    <asp:TextBox ID="txtScore" runat="server" CssClass="input_205 input_txt" ></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
                 <td align="right" class="style1">所属荣誉理事：</td>
                 <td>
                     <asp:DropDownList ID="ddlExpertsLiShi" runat="server"  Width="145px"></asp:DropDownList>
+                    <asp:HiddenField ID="hidExpertsLiShiId" runat="server" />
                 </td>
+            </tr>
+            <tr>
                 <td align="right" class="style1">审核状态：</td>
                 <td>
                     <asp:DropDownList ID="ddlApprove" runat="server">
@@ -79,10 +75,15 @@
                         <asp:ListItem Value="3">认证未通过</asp:ListItem>
                     </asp:DropDownList>
                 </td>
-                
-                <td align="right" class="style1">单位名称：</td>
+                <td align="right" class="style1">客户经理：</td>
                 <td>
-                    <asp:TextBox ID="txtCompanyName" runat="server" CssClass="input_205 input_txt" ></asp:TextBox>
+                    
+                    <asp:DropDownList ID="ddlCustomerManagerId" runat="server"  Width="145px"></asp:DropDownList>
+                </td>
+                
+                <td align="right" class="style1">总积分：</td>
+                <td>
+                    <asp:TextBox ID="txtScore" runat="server" CssClass="input_205 input_txt" ></asp:TextBox>
                 </td>
                  <td align="right" class="style1">剩余积分：</td>
                 <td>
@@ -109,11 +110,10 @@
                     
                 </td>
             </tr>
-            <tr><td align="right" class="style1">客户经理：</td>
+            <tr><td align="right" class="style1">单位名称：</td>
                 <td colspan="7">
                     
-                    <asp:DropDownList ID="ddlCustomerManagerId" runat="server"  Width="145px"></asp:DropDownList>
-                    <asp:HiddenField ID="hidExpertsLiShiId" runat="server" />
+                    <asp:TextBox ID="txtCompanyName" runat="server" CssClass="input_205 input_txt" ></asp:TextBox>
                 </td>
                 </tr>
             <tr>

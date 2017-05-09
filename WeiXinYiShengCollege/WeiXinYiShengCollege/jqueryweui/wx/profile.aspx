@@ -34,7 +34,7 @@
                     <div class="weui-cells">
                         <a class="weui-cell weui-cell_access" href="javascript:;">
                             <div class="weui-cell__bd weui-cell_primary">
-                                <p>我的级别(<%=Enum.GetName(typeof(UserLevel),sUser.UserLevel) %>)</p>
+                                <p><%=Enum.GetName(typeof(UserLevel),sUser.UserLevel) %></p>
                             </div>
                             
                         </a>
@@ -46,14 +46,7 @@
                             </div>
 
                         </a>
-                        <a class="weui-cell weui-cell_access" href="MyFansList.aspx?Id=<%=sUser.Id %>">
-
-                            <div class="weui-cell__bd weui-cell_primary">
-                                <p>我的粉丝</p>
-                            </div>
-                            <span class="weui-cell__ft"></span>
-                        </a>
-                        <%if(sUser.UserLevel== (int)UserLevel.荣誉理事){%>
+                         <%if(sUser.UserLevel== (int)UserLevel.荣誉理事){%>
                          <a class="weui-cell weui-cell_access" href="MyLiShiList.aspx?Id=<%=sUser.Id %>">
 
                             <div class="weui-cell__bd weui-cell_primary">
@@ -62,26 +55,35 @@
                             <span class="weui-cell__ft"></span>
                         </a>
                         <%} %>
-                        <a class="weui-cell weui-cell_access" href="MyCustomerManager.aspx?CustomerManagerId=<%=sUser.CustomerManagerId %>">
+                        <a class="weui-cell weui-cell_access" href="MyFansList.aspx?Id=<%=sUser.Id %>">
 
                             <div class="weui-cell__bd weui-cell_primary">
-                                <p>我的客服经理</p>
+                                <p>我的粉丝</p>
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>
-                        <a class="weui-cell weui-cell_access"  href="MyOrderList.aspx?OpenId=<%=sUser.OpenId %>">
+                       <a class="weui-cell weui-cell_access"  href="MyOrderList.aspx?OpenId=<%=sUser.OpenId %>">
 
                             <div class="weui-cell__bd weui-cell_primary">
-                                <p>我买了什么</p>
+                                <p>我的消费</p>
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>
                          <a class="weui-cell weui-cell_access" href="CreateQrCodeUI.aspx?OpenId=<%=sUser.OpenId %>">
                             <div class="weui-cell__bd weui-cell_primary">
-                                <p>生成二维码</p>
+                                <p>我的二维码</p>
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>
+                        <a class="weui-cell weui-cell_access" href="MyCustomerManager.aspx?CustomerManagerId=<%=sUser.CustomerManagerId %>">
+
+                            <div class="weui-cell__bd weui-cell_primary">
+                                <p>客服经理</p>
+                            </div>
+                            <span class="weui-cell__ft"></span>
+                        </a>
+                        
+                        
                         <a class="weui-cell weui-cell_access" href="MyExchange.aspx?OpenId=<%=sUser.OpenId %>">
 
                             <div class="weui-cell__bd weui-cell_primary">
@@ -99,21 +101,21 @@
                         <a class="weui-cell weui-cell_access" href="ProfileEdit.aspx?OpenId=<%=sUser.OpenId %>">
 
                             <div class="weui-cell__bd weui-cell_primary">
-                                <p>个人信息设置</p>
+                                <p>个人设置</p>
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>
                         <a class="weui-cell weui-cell_access" href="DoctorManage.aspx?OpenId=<%=sUser.OpenId %>">
 
                             <div class="weui-cell__bd weui-cell_primary">
-                                <p>出诊医生设置</p>
+                                <p>出诊专家设置</p>
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>
                         <a class="weui-cell weui-cell_access" href="DoctorWorkManage.aspx?OpenId=<%=sUser.OpenId %>">
 
                             <div class="weui-cell__bd weui-cell_primary">
-                                <p>出诊排期设置</p>
+                                <p>出诊日期设置</p>
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>

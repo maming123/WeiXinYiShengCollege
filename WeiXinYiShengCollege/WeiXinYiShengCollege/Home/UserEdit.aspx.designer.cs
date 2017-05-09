@@ -76,15 +76,6 @@ namespace WeiXinYiShengCollege.WebSite.Home {
         protected global::System.Web.UI.WebControls.DropDownList ddlUserLevel;
         
         /// <summary>
-        /// lblParentId 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblParentId;
-        
-        /// <summary>
         /// ddlParentId 控件。
         /// </summary>
         /// <remarks>
@@ -92,15 +83,6 @@ namespace WeiXinYiShengCollege.WebSite.Home {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlParentId;
-        
-        /// <summary>
-        /// txtScore 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtScore;
         
         /// <summary>
         /// ddlExpertsLiShi 控件。
@@ -112,6 +94,15 @@ namespace WeiXinYiShengCollege.WebSite.Home {
         protected global::System.Web.UI.WebControls.DropDownList ddlExpertsLiShi;
         
         /// <summary>
+        /// hidExpertsLiShiId 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidExpertsLiShiId;
+        
+        /// <summary>
         /// ddlApprove 控件。
         /// </summary>
         /// <remarks>
@@ -121,13 +112,22 @@ namespace WeiXinYiShengCollege.WebSite.Home {
         protected global::System.Web.UI.WebControls.DropDownList ddlApprove;
         
         /// <summary>
-        /// txtCompanyName 控件。
+        /// ddlCustomerManagerId 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCompanyName;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCustomerManagerId;
+        
+        /// <summary>
+        /// txtScore 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtScore;
         
         /// <summary>
         /// txtLastScore 控件。
@@ -166,22 +166,13 @@ namespace WeiXinYiShengCollege.WebSite.Home {
         protected global::System.Web.UI.WebControls.Label lblQrCodeScene_id;
         
         /// <summary>
-        /// ddlCustomerManagerId 控件。
+        /// txtCompanyName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCustomerManagerId;
-        
-        /// <summary>
-        /// hidExpertsLiShiId 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hidExpertsLiShiId;
+        protected global::System.Web.UI.WebControls.TextBox txtCompanyName;
         
         /// <summary>
         /// txtRemark 控件。

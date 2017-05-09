@@ -14,14 +14,19 @@ namespace WeiXinYiShengCollege.Business
         public static PageList<List<dynamic>> GetUserList(long mobile, int userType, int userLevel, int customerManagerId, int province, int city, int approveflag, int pageIndex, int pageSize)
         {
             string strSql = string.Format(@"
+select * ,(Select NickName from Sys_User where Id=ExpertsId) as 'ExpertsNickName'
+from 
+(
 SELECT  s1.* ,
         s2.nickname AS 'ParentNickName',
         (SELECT TOP 1 AreaName FROM Area WHERE Id=s1.Province) AS 'ProvinceStr',
-        (SELECT TOP 1 AreaName FROM Area WHERE Id=s1.City) AS 'CityStr'
+        (SELECT TOP 1 AreaName FROM Area WHERE Id=s1.City) AS 'CityStr',
+        (select top 1 ExpertsSysUserId from ExportsLiShi where LiShiSysUserId=s1.Id) as 'ExpertsId'
+        
 FROM    Sys_User s1
         LEFT JOIN Sys_User s2 ON s1.parentid = s2.id
 WHERE   s1.IsDelete = 0
-");
+)B");
             if(mobile>0)
             {
                 strSql += string.Format(@" and s1.Mobile={0}",mobile);
