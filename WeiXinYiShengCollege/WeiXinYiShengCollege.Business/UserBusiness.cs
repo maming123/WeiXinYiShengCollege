@@ -26,34 +26,34 @@ SELECT  s1.* ,
 FROM    Sys_User s1
         LEFT JOIN Sys_User s2 ON s1.parentid = s2.id
 WHERE   s1.IsDelete = 0
-)B");
+)B where 1=1 ");
             if(mobile>0)
             {
-                strSql += string.Format(@" and s1.Mobile={0}",mobile);
+                strSql += string.Format(@" and Mobile={0}",mobile);
             }
             if (userType >= 0)
             {
-                strSql += string.Format(@" and s1.UserType={0}", userType);
+                strSql += string.Format(@" and UserType={0}", userType);
             }
             if (userLevel >= 0)
             {
-                strSql += string.Format(@" and s1.UserLevel={0}", userLevel);
+                strSql += string.Format(@" and UserLevel={0}", userLevel);
             }
             if (approveflag >= 0)
             {
-                strSql += string.Format(@" and s1.ApproveFlag={0}", approveflag);
+                strSql += string.Format(@" and ApproveFlag={0}", approveflag);
             }
             if (customerManagerId > 0)
             {
-                strSql += string.Format(@" and s1.CustomerManagerId={0}", customerManagerId);
+                strSql += string.Format(@" and CustomerManagerId={0}", customerManagerId);
             }
             if (province > 0)
             {
-                strSql += string.Format(@" and s1.Province={0}", province);
+                strSql += string.Format(@" and Province={0}", province);
             }
             if (city > 0)
             {
-                strSql += string.Format(@" and s1.City={0}", city);
+                strSql += string.Format(@" and City={0}", city);
             }
             
             var db = CoreDB.GetInstance();

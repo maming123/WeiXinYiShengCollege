@@ -58,7 +58,7 @@
       </div>
      </div>
      
-    <div class="weui-cells__tips">底部说明文字底部说明文字</div>
+    <div class="weui-cells__tips">请按要求修改</div>
 
     <div class="weui-btn-area">
       <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">修改</a>

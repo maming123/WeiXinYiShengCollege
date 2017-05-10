@@ -67,6 +67,15 @@ namespace WeiXinYiShengCollege.WebSite.Home {
         protected global::System.Web.UI.WebControls.DropDownList ddlUserType;
         
         /// <summary>
+        /// hidUserType 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidUserType;
+        
+        /// <summary>
         /// ddlUserLevel 控件。
         /// </summary>
         /// <remarks>
@@ -74,6 +83,15 @@ namespace WeiXinYiShengCollege.WebSite.Home {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlUserLevel;
+        
+        /// <summary>
+        /// hidUserLevel 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidUserLevel;
         
         /// <summary>
         /// ddlParentId 控件。
@@ -173,6 +191,24 @@ namespace WeiXinYiShengCollege.WebSite.Home {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCompanyName;
+        
+        /// <summary>
+        /// panelLiShiToFans 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panelLiShiToFans;
+        
+        /// <summary>
+        /// ddlNewLiShiId 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlNewLiShiId;
         
         /// <summary>
         /// txtRemark 控件。

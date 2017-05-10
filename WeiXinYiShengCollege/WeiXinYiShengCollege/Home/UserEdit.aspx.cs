@@ -24,6 +24,7 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 InitddlProvince();
                 InitddlCity(0);
                 InitddlParentUserId(openId);
+                InitddlNewLiShiUserId(openId);
                 InitddlExpertsLiShiUserId(openId);
                 if(String.IsNullOrEmpty(openId))
                 {//证明只是查看用户信息
@@ -56,6 +57,14 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 {
                     MessageBox.Show(Page, "用户类型是粉丝类型必须选择所属理事");
                     return;
+                }
+                if(Convert.ToInt32(hidUserType.Value)==(int)UserType.理事类型)
+                {
+                    if (ddlNewLiShiId.SelectedValue == "0")
+                    {
+                        MessageBox.Show(Page, "用户降级为粉丝类型必须为其粉丝选择所属的新理事");
+                        return;
+                    }
                 }
             }
             if (ddlUserType.SelectedValue == Convert.ToInt32(UserType.理事类型).ToString())
@@ -114,67 +123,73 @@ namespace WeiXinYiShengCollege.WebSite.Home
                     return;
                 }
 
-                //查找
+                //查找原来没有荣誉理事的情况
                 if(hidExpertsLiShiId.Value=="0")
                 {
                     if (ddlUserType.SelectedValue == Convert.ToInt32(UserType.理事类型).ToString())
                     {
-                        //新增 新分配
-                        //如果没有对应关系则插入
-                        ExportsLiShi expertsLiShiInsert = new ExportsLiShi()
+                        //选择了新荣誉理事
+                        if (Convert.ToInt32(ddlExpertsLiShi.SelectedValue) > 0)
                         {
-                            ExpertsSysUserId = Convert.ToInt32(ddlExpertsLiShi.SelectedValue)
-                                ,
-                            LiShiSysUserId = u.Id
-                                ,
-                            CreateDateTime = DateTime.Now
-                        };
-                        object objInsertExpert = db.Insert(expertsLiShiInsert);
-                        if (Convert.ToInt32(objInsertExpert) <= 0)
-                        {
-                            db.AbortTransaction();
-                            MessageBox.Show(Page, "插入荣誉理事ExportsLiShi表失败");
-                            return;
+                            //新增 新分配
+                            //如果没有对应关系则插入
+                            ExportsLiShi expertsLiShiInsert = new ExportsLiShi()
+                            {
+                                ExpertsSysUserId = Convert.ToInt32(ddlExpertsLiShi.SelectedValue)
+                                    ,
+                                LiShiSysUserId = u.Id
+                                    ,
+                                CreateDateTime = DateTime.Now
+                            };
+                            object objInsertExpert = db.Insert(expertsLiShiInsert);
+                            if (Convert.ToInt32(objInsertExpert) <= 0)
+                            {
+                                db.AbortTransaction();
+                                MessageBox.Show(Page, "插入荣誉理事ExportsLiShi表失败");
+                                return;
+                            }
                         }
                     }
 
                 }else
                 {
+                    //原来有荣誉理事的情况
                     if (ddlUserType.SelectedValue == Convert.ToInt32(UserType.理事类型).ToString())
                     {
-
-                        //之前已有值  如果这次选择的是更新
-                        ExportsLiShi expertsLiShiUpdate = new ExportsLiShi()
-                        {
-                            ExpertsSysUserId = Convert.ToInt32(ddlExpertsLiShi.SelectedValue)
-                                ,
-                            LiShiSysUserId = u.Id
-                                ,
-                            CreateDateTime = DateTime.Now
-                            ,
-                            Id = Convert.ToInt32(hidExpertsLiShiId.Value)
-                        };
-                        if (Convert.ToInt32(ddlExpertsLiShi.SelectedValue) == 0)
-                        {
-                            //删除 专家理事的关系
-                            int rdelete = db.Delete<ExportsLiShi>((object)hidExpertsLiShiId.Value);
-                            if (rdelete <= 0)
+                        
+                            //之前已有值  如果这次选择的是更新
+                            ExportsLiShi expertsLiShiUpdate = new ExportsLiShi()
                             {
-                                db.AbortTransaction();
-                                MessageBox.Show(Page, "删除荣誉理事ExportsLiShi表失败");
-                                return;
-                            }
-                        }
-                        else
-                        {
-                            int objUpdate = db.Update(expertsLiShiUpdate);
-                            if (objUpdate <= 0)
+                                ExpertsSysUserId = Convert.ToInt32(ddlExpertsLiShi.SelectedValue)
+                                    ,
+                                LiShiSysUserId = u.Id
+                                    ,
+                                CreateDateTime = DateTime.Now
+                                ,
+                                Id = Convert.ToInt32(hidExpertsLiShiId.Value)
+                            };
+                            if (Convert.ToInt32(ddlExpertsLiShi.SelectedValue) == 0)
                             {
-                                db.AbortTransaction();
-                                MessageBox.Show(Page, "更新荣誉理事ExportsLiShi表失败");
-                                return;
+                                //删除 专家理事的关系
+                                int rdelete = db.Delete<ExportsLiShi>((object)hidExpertsLiShiId.Value);
+                                if (rdelete <= 0)
+                                {
+                                    db.AbortTransaction();
+                                    MessageBox.Show(Page, "删除荣誉理事ExportsLiShi表失败");
+                                    return;
+                                }
                             }
-                        }
+                            else
+                            {
+                                int objUpdate = db.Update(expertsLiShiUpdate);
+                                if (objUpdate <= 0)
+                                {
+                                    db.AbortTransaction();
+                                    MessageBox.Show(Page, "更新荣誉理事ExportsLiShi表失败");
+                                    return;
+                                }
+                            }
+                        
                     }else if(ddlUserType.SelectedValue == Convert.ToInt32(UserType.粉丝类型).ToString())
                     {
                         //降级成粉丝 那么对应的把 专家理事和理事的关系删掉
@@ -186,6 +201,33 @@ namespace WeiXinYiShengCollege.WebSite.Home
                             return;
                         }
                     
+                    }
+                }
+
+                //如果原来是理事 那么降级成粉丝 那么直接把粉丝对应的理事改成新理事
+                if (Convert.ToInt32(hidUserType.Value) == (int)UserType.理事类型)
+                {
+                    //改为粉丝
+                    if (ddlUserType.SelectedValue == Convert.ToInt32(UserType.粉丝类型).ToString())
+                    {
+                        int newParentId=Convert.ToInt32(ddlNewLiShiId.SelectedValue);
+                        string strSql = String.Format(@"update Sys_User set parentid={0} where parentid={1}",
+                            newParentId, u.Id);
+                        db.Execute(strSql);
+                    }
+                }
+
+                //如果选择的是理事类型 并且 原来是荣誉理事 现在降级成其他理事
+                if (Convert.ToInt32(ddlUserType.SelectedValue) == (int)UserType.理事类型)
+                {
+                    if (Convert.ToInt32(hidUserLevel.Value) == (int)UserLevel.荣誉理事)
+                    {
+                        if (Convert.ToInt32(ddlUserLevel.SelectedValue) != (int)UserLevel.荣誉理事)
+                        {
+                            //直接删除荣誉理事和理事的关系
+                            //降级成粉丝 那么对应的把 专家理事和理事的关系删掉
+                            db.Delete<ExportsLiShi>(" where ExpertsSysUserId=@0",u.Id);
+                        }
                     }
                 }
 
@@ -205,6 +247,8 @@ namespace WeiXinYiShengCollege.WebSite.Home
           
             
         }
+
+        #region 初始化相关信息
         private void InitddlCustomerManagerId()
         {
             List<CustomerManager> cstmaglist = CustomerManager.Query("").ToList();
@@ -226,6 +270,19 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 ddlParentId.Items.Add(new ListItem() { Text = cm.NickName + "|" + cm.Mobile, Value = cm.Id.ToString() });
             }
             ddlParentId.Items.Insert(0, new ListItem() { Text = "请选择理事", Value = "0" });
+        }
+
+        /// <summary>
+        /// 初始化降级后要选择的新理事列表
+        /// </summary>
+        private void InitddlNewLiShiUserId(string openId)
+        {
+            List<Sys_User> sUserList = Sys_User.Query("where parentid=@0 and OpenId!=@1 order by Mobile asc", 0, openId).ToList();
+            foreach (Sys_User cm in sUserList)
+            {
+                ddlNewLiShiId.Items.Add(new ListItem() { Text = cm.NickName + "|" + cm.Mobile, Value = cm.Id.ToString() });
+            }
+            ddlNewLiShiId.Items.Insert(0, new ListItem() { Text = "请选择新理事", Value = "0" });
         }
 
         /// <summary>
@@ -261,6 +318,7 @@ namespace WeiXinYiShengCollege.WebSite.Home
             ddlCity.Items.Insert(0, new ListItem() { Text = "不详", Value = "0" });
         }
 
+        #endregion
 
         private void ShowDetail(string openid)
         {
@@ -285,7 +343,9 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 ddlApprove.SelectedValue = u.ApproveFlag.ToString();
                 ddlCustomerManagerId.SelectedValue = u.CustomerManagerId.ToString();
                 ddlUserLevel.SelectedValue = u.UserLevel.ToString();
+                hidUserLevel.Value = u.UserLevel.ToString();
                 ddlUserType.SelectedValue = u.UserType.ToString();
+                hidUserType.Value = u.UserType.ToString();
                 ddlParentId.SelectedValue = u.ParentId.ToString();
                 txtUserInfoJson.Text = u.UserInfoJson;
                 
@@ -309,6 +369,7 @@ namespace WeiXinYiShengCollege.WebSite.Home
         protected void ddlUserType_SelectedIndexChanged(object sender, EventArgs e)
         {
             SetDDLStatusForUserType();
+            
         }
 
         private void SetDDLStatusForUserType()
@@ -330,7 +391,15 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 ddlParentId.Enabled = true;
                 //专家理事
                 ddlExpertsLiShi.Enabled = false;
-                
+
+                if(Convert.ToInt32(hidUserType.Value)==(int)UserType.理事类型)
+                {
+                    //原来是理事 现在变成粉丝，属于降级操作，那么需要重新为用户选择新董事
+                    panelLiShiToFans.Visible = true;
+                }else
+                {
+                    panelLiShiToFans.Visible = false;
+                }
             }
             else
             {
@@ -339,8 +408,8 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 ddlParentId.Enabled = false;
                 ddlExpertsLiShi.Enabled = true;
                 ddlCustomerManagerId.Enabled = true;
+                panelLiShiToFans.Visible = false;
             }
-            
         }
 
 

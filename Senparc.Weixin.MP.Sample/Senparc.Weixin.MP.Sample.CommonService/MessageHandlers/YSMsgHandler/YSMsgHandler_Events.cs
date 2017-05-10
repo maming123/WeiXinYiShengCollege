@@ -185,7 +185,7 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
 
                 if (!string.IsNullOrEmpty(eventKey))
                 {
-                    responseMessage.Content += string.Format(@"您已成为{0}的粉丝，请到个人中心完善信息",lishiName);// + eventKey;
+                    responseMessage.Content += string.Format(@"恭喜！{0}已经成为您的私人医生。", lishiName);// + eventKey;
                 }
             }
             else
@@ -209,7 +209,7 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
                         sUser.Update(new String[] { "ParentId", "UserInfoJson", "IsDelete", "Province", "City", "HeadImgUrl", "UpdateDateTime" });
                         if (!string.IsNullOrEmpty(eventKey))
                         {
-                            responseMessage.Content += string.Format(@"信息变更，您已成为{0}的粉丝，请到个人中心完善信息", lishiName);// + eventKey;
+                            responseMessage.Content += string.Format(@"恭喜！{0}已经成为您的私人医生。", lishiName);// + eventKey;
                         }
                     }else
                     {
