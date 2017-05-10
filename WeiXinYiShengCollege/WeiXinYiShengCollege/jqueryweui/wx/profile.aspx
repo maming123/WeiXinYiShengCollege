@@ -15,6 +15,15 @@
     <link rel="stylesheet" href="../lib/weui.min.css">
     <link rel="stylesheet" href="../css/jquery-weui.css">
     <link rel="stylesheet" href="css/demos.css">
+    <style>
+        .demos-title {
+            text-align: center;
+            font-size: 30px;
+            color: #3cc51f;
+            font-weight: 400;
+            margin: 0px 12px 0px 20px;
+        }
+    </style>
 </head>
 
 <body ontouchstart>
@@ -22,8 +31,10 @@
     <%--认证通过了才能看到菜单--%>
     <%if (sUser.ApproveFlag == 1)
       { %>
-    <header class='demos-header'>
-        <h1 class="demos-title"><%=sUser.NickName %></h1>
+    <header style="padding:10px 0;background-color:#f2f2f2;">
+        <div style="margin-left:10px;"><img id="imgPhoto" style="border-radius: 100px;border: none; width:120px;height:120px;" src="<%=sUser.HeadImgUrl %>" />
+        <span class="demos-title"><%=sUser.NickName %></span> <span>(<%=Enum.GetName(typeof(UserLevel),sUser.UserLevel) %>)</span>
+        </div>
     </header>
 
     <div class="page__bd">
@@ -32,12 +43,7 @@
             <div class="weui-panel__bd">
                 <div class="weui-media-box weui-media-box_small-appmsg">
                     <div class="weui-cells">
-                        <a class="weui-cell weui-cell_access" href="javascript:;">
-                            <div class="weui-cell__bd weui-cell_primary">
-                                <p><%=Enum.GetName(typeof(UserLevel),sUser.UserLevel) %></p>
-                            </div>
-                            
-                        </a>
+                        
                        
                         <a class="weui-cell weui-cell_access" href="javascript:;">
 

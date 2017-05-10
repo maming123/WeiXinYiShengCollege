@@ -116,7 +116,7 @@
 
                     <asp:TextBox ID="txtCompanyName" runat="server" CssClass="input_205 input_txt"></asp:TextBox>
                     <asp:Panel ID="panelLiShiToFans" runat="server" Visible="false">
-                        因理事降级成粉丝，请为粉丝指定新理事：
+                        因将该理事降级成粉丝类型，请为该理事的粉丝指定新理事：
                         <asp:DropDownList ID="ddlNewLiShiId" runat="server" Width="145px"></asp:DropDownList>
 
                     </asp:Panel>
