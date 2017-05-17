@@ -73,7 +73,7 @@ namespace HospitalBookWebSite.Home.handler
 
 
             int pageIndex = RequestKeeper.GetFormInt(Request["PageIndex"]);
-            int pageSize = 12;// RequestKeeper.GetFormInt(Request["PageSize"]);
+            int pageSize = 20;// RequestKeeper.GetFormInt(Request["PageSize"]);
 
             PageList<List<dynamic>> pList = UserBusiness.GetUserList(mobile, userType, userLevel, cmId, province, city, approveflag, pageIndex, pageSize);
             if (pList != null && pList.Source != null && pList.Source.Count > 0)
