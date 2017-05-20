@@ -47,7 +47,7 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
 
                     }else
                     {
-                        //直接插入数据库
+                        //重新执行订阅逻辑（不知什么原因有可能在订阅时未将用户信息插入）
                         WeiXinBusiness.Subscribe("", OpenId);
                         tmpUser = UserBusiness.GetUserInfo(OpenId);
                     }
