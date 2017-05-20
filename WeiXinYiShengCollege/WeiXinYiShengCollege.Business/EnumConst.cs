@@ -91,4 +91,15 @@ namespace WeiXinYiShengCollege.Business
         /// </summary>
         HavePayed = 2,
     }
+
+    public enum ErrorCode : int
+    {
+        
+        NotFindOpenId=10000,
+        /// <summary>
+        /// 二次获取code失败
+        /// </summary>
+        NotFindNewCode=10001,
+        NotFindUser=10002
+    }
 }

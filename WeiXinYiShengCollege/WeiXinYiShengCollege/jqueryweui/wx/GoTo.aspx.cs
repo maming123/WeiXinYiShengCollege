@@ -20,10 +20,40 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
             string code = RequestKeeper.GetFormString(Request["code"]);
             if (!string.IsNullOrEmpty(code))
             {
+                String OpenId = "";
                 //获取Accesstoken 进而获取openId 通过OpenId获取用户信息
-                String OpenId = WeiXinBusiness.GetOpenIdFromOAuthAccessToken(code);
+                try
+                {
+                    OpenId = WeiXinBusiness.GetOpenIdFromOAuthAccessToken(code);
 
-                Sys_User tmpUser = UserBusiness.GetUserInfo(OpenId);
+                }catch(Exception ex)
+                {
+                    //出现错误 记录错误日志
+                    SNS.Library.Logs.LogDAOFactory.Write(ex.Message+ex.Source+ex.StackTrace,"",Convert.ToString((int)ErrorCode.NotFindOpenId), SNS.Library.Logs.LogType.Error);
+                    Response.Write("微信获取的OpenId不正确，请重新进入公众号，错误码:" + Convert.ToString((int)ErrorCode.NotFindOpenId));
+                    Response.End();
+                }
+
+                Sys_User tmpUser = UserBusiness.GetUserInfoForIsNotDelete(OpenId);
+
+                if(null == tmpUser)
+                {
+                    //不存在该用户，并且OpenId长度》0则新创建该用户
+                    if(string.IsNullOrEmpty(OpenId))
+                    {
+                        SNS.Library.Logs.LogDAOFactory.Write("OpenId为空", "",Convert.ToString((int)ErrorCode.NotFindOpenId), SNS.Library.Logs.LogType.Error);
+                        Response.Write("个人中心异常，请重新进入公众号或者联系管理人员，错误码:" + Convert.ToString((int)ErrorCode.NotFindOpenId));
+                        Response.End();
+
+                    }else
+                    {
+                        //直接插入数据库
+                        WeiXinBusiness.Subscribe("", OpenId);
+                        tmpUser = UserBusiness.GetUserInfo(OpenId);
+                    }
+                }
+
+
                 if (tmpUser != null)
                 {
                     sUser = tmpUser;
@@ -57,6 +87,10 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
                             Response.Redirect("Profile.aspx?OpenId=" + sUser.OpenId);
                         }
                     }
+                }else
+                {
+                    Response.Write("个人中心异常，请重新进入公众号或者联系管理人员,错误码:" + Convert.ToString((int)ErrorCode.NotFindUser));
+                    Response.End();
                 }
 
                 //Response.Write(openId+BaseCommon.ObjectToJson(sUser));
@@ -66,6 +100,41 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
             {
                 Response.Write("获取code失败,请重试");
             }
+        }
+
+        /// <summary>
+        /// 获取url中的code
+        /// </summary>
+        /// <param name="strUrl"></param>
+        /// <returns></returns>
+        private string GetCode(string strUrl)
+        {
+            Uri uri = new Uri(strUrl);
+            String[] strArray = uri.Query.Replace("?", "").Split('&');
+            string codevalue = "";
+            foreach (string s in strArray)
+            {
+                string[] sArr = s.Split('=');
+                if (sArr.Length == 2)
+                {
+                    if (sArr[0].ToLower() == "code")
+                    {
+
+                        codevalue = sArr[1];
+                        break;
+                    }
+                }
+            }
+            return codevalue;
+
+        }
+        private void SetPageNoCache()
+        {
+            Response.Buffer = true;
+            Response.ExpiresAbsolute = System.DateTime.Now.AddSeconds(-1);
+            Response.Expires = 0;
+            Response.CacheControl = "no-cache";
+            Response.AppendHeader("Pragma", "No-Cache");
         }
     }
 }

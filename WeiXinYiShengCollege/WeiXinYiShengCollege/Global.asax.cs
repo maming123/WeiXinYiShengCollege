@@ -54,6 +54,8 @@ namespace WeiXinYiShengCollege.WebSite
             {
                 SNS.Library.Tools.WebTools.WriteLog(ex.Message + ex.Source + ex.StackTrace, SNS.Library.Logs.LogType.Error);
 
+                Response.Write("服务器开小差了，请关闭后重新进入公众号");
+                Response.End();
                 //string loginStr = string.Format(@"<a href='/view/account/login.aspx'>登录</a>");
                 //Response.Write(ex.Message + ex.Source + ex.StackTrace + loginStr);
             }

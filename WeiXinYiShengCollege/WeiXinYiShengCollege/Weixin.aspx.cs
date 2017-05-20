@@ -75,7 +75,7 @@ namespace WeiXinYiShengCollege.WebSite
                     messageHandler.RequestDocument.Save(
                         Server.MapPath("~/App_Data/" + DateTime.Now.Ticks + "_Request_" +
                                        messageHandler.RequestMessage.FromUserName + ".txt"));
-                    LogHelper.WriteLogInfo(typeof(Weixin), XmlUtility.XDocumentToString(messageHandler.RequestDocument));
+                    //LogHelper.WriteLogInfo(typeof(Weixin), XmlUtility.XDocumentToString(messageHandler.RequestDocument));
                     //LogHelper.WriteLogInfo(typeof(Weixin), "AAA");
                     
                     //执行微信处理过程
@@ -84,7 +84,7 @@ namespace WeiXinYiShengCollege.WebSite
                     messageHandler.ResponseDocument.Save(
                         Server.MapPath("~/App_Data/" + DateTime.Now.Ticks + "_Response_" +
                                        messageHandler.ResponseMessage.ToUserName + ".txt"));
-                    LogHelper.WriteLogInfo(typeof(Weixin), XmlUtility.XDocumentToString(messageHandler.ResponseDocument));
+                    //LogHelper.WriteLogInfo(typeof(Weixin), XmlUtility.XDocumentToString(messageHandler.ResponseDocument));
                     WriteContent(messageHandler.ResponseDocument.ToString());
                     return;
                 }
@@ -101,6 +101,7 @@ namespace WeiXinYiShengCollege.WebSite
                         tw.Flush();
                         tw.Close();
                     }
+                    LogHelper.WriteLogInfo(typeof(Weixin),ex.Message+ex.InnerException.Message+ex.Source+ex.StackTrace);
                 }
                 finally
                 {

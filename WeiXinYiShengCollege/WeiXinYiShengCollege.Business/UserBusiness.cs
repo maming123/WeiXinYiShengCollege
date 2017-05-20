@@ -64,10 +64,20 @@ WHERE   s1.IsDelete = 0
             return pList;
         }
 
+        /// <summary>
+        /// 不论是否被逻辑删除都获取
+        /// </summary>
+        /// <param name="openId"></param>
+        /// <returns></returns>
         public static Sys_User GetUserInfo(string openId)
         {
-            Sys_User u = Sys_User.SingleOrDefault(" where OpenId=@0", openId);
+            Sys_User u = Sys_User.SingleOrDefault(" where OpenId=@0 ", openId);
            return u;
+        }
+        public static Sys_User GetUserInfoForIsNotDelete(string openId)
+        {
+            Sys_User u = Sys_User.SingleOrDefault(" where OpenId=@0 and IsDelete=0", openId);
+            return u;
         }
         public static Sys_User GetUserInfoById(int id)
         {
