@@ -99,6 +99,7 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
             else
             {
                 Response.Write("获取code失败,请重试");
+                Response.End();
             }
         }
 

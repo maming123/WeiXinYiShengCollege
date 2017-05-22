@@ -100,6 +100,10 @@ namespace WeiXinYiShengCollege.Business
         /// 二次获取code失败
         /// </summary>
         NotFindNewCode=10001,
-        NotFindUser=10002
+        NotFindUser=10002,
+        /// <summary>
+        /// 插入地区表
+        /// </summary>
+        InsertArea=10003
     }
 }
