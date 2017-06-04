@@ -106,4 +106,27 @@ namespace WeiXinYiShengCollege.Business
         /// </summary>
         InsertArea=10003
     }
+
+    /// <summary>
+    /// 目录的类型
+    /// </summary>
+    public enum SysModuleLinkType:int
+    {
+        临证参考=1,
+        经典方剂=2
+    }
+    /// <summary>
+    /// 用户点击日志类型（UserOpLog表）
+    /// </summary>
+    public enum OptionType : int
+    {
+        /// <summary>
+        /// 点赞
+        /// </summary>
+        zan=1,
+        /// <summary>
+        /// 查看
+        /// </summary>
+        see=2
+    }
 }

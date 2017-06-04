@@ -94,6 +94,7 @@
     <Compile Include="EnumConst.cs" />
     <Compile Include="LogHelper.cs" />
     <Compile Include="LoginAdminUser.cs" />
+    <Compile Include="MedicineBusiness.cs" />
     <Compile Include="MsgAutoReplyBusiness.cs" />
     <Compile Include="OrderBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

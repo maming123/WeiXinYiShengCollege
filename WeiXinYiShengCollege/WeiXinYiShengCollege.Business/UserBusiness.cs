@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web;
 using Module.Models;
 using Module.Utils;
 using PetaPoco;
@@ -191,6 +192,36 @@ ON su.Id=es.LiShiSysUserId WHERE es.ExpertsSysUserId={0}", expertsSysUserId);
             string strSql = string.Format(@"SELECT * FROM dbo.ExportsLiShi WHERE LiShiSysUserId={0}", liShiSysUserId);
             ExportsLiShi sUser = ExportsLiShi.FirstOrDefault(strSql);
             return sUser;
+        }
+
+
+        #endregion
+
+        #region 读取 写入加密后的用户cookie
+
+        public static void WriteCookie(Sys_User tmpUser)
+        {
+            //把OpenID和用户ID写入cookie
+            CookiesHelper.SetCookie("OpenId", EncryptTools.AES.AESEncrypt(tmpUser.OpenId));
+            CookiesHelper.SetCookie("UserId", EncryptTools.AES.AESEncrypt(tmpUser.Id.ToString()));
+        }
+        public static string GetCookieOpenId()
+        {
+            
+            HttpCookie cookie = CookiesHelper.GetCookie("OpenId");
+            if (null != cookie)
+                return EncryptTools.AES.AESDecrypt(cookie.Value);
+            else
+                return "";
+        }
+        public static string GetCookieUserId()
+        {
+
+            HttpCookie cookie = CookiesHelper.GetCookie("UserId");
+            if (null != cookie)
+                return EncryptTools.AES.AESDecrypt(cookie.Value);
+            else
+                return "";
         }
 
 

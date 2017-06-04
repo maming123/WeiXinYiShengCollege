@@ -16,16 +16,16 @@
       <publishTime>04/11/2017 11:14:04</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.dll">
-      <publishTime>05/07/2017 18:23:46</publishTime>
+      <publishTime>06/04/2017 16:53:09</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.dll">
-      <publishTime>05/22/2017 11:29:16</publishTime>
+      <publishTime>06/04/2017 17:08:40</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.dll">
-      <publishTime>05/22/2017 11:29:19</publishTime>
+      <publishTime>06/04/2017 17:08:43</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.pdb">
       <publishTime>04/11/2017 16:18:56</publishTime>
@@ -34,7 +34,7 @@
       <publishTime>04/11/2017 16:18:51</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.dll">
-      <publishTime>05/22/2017 11:29:16</publishTime>
+      <publishTime>06/04/2017 16:53:10</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
@@ -46,7 +46,7 @@
       <publishTime>04/11/2017 16:18:58</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.WebSite.dll">
-      <publishTime>05/22/2017 11:29:22</publishTime>
+      <publishTime>06/04/2017 17:08:45</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>04/14/2017 18:51:59</publishTime>
@@ -68,6 +68,12 @@
     </File>
     <File Include="Home/CustomerMgr/CustomerManagerList.aspx">
       <publishTime>04/28/2017 09:55:19</publishTime>
+    </File>
+    <File Include="Home/EditClassicPrescription.aspx">
+      <publishTime>06/04/2017 14:20:38</publishTime>
+    </File>
+    <File Include="Home/EditPoint.aspx">
+      <publishTime>06/04/2017 14:22:33</publishTime>
     </File>
     <File Include="Home/handler/PageHandler.ashx">
       <publishTime>04/12/2017 16:58:52</publishTime>
@@ -211,7 +217,7 @@
       <publishTime>04/12/2017 16:58:52</publishTime>
     </File>
     <File Include="Home/Index.aspx">
-      <publishTime>04/27/2017 18:23:03</publishTime>
+      <publishTime>06/03/2017 11:21:58</publishTime>
     </File>
     <File Include="Home/Login/CodePngComplex.ashx">
       <publishTime>04/12/2017 16:58:52</publishTime>
@@ -269,6 +275,18 @@
     </File>
     <File Include="Home/ScoreManage/ScoreConfigList.aspx">
       <publishTime>05/07/2017 15:00:27</publishTime>
+    </File>
+    <File Include="Home/SystemModule/Sys/Modules/add.aspx">
+      <publishTime>06/04/2017 13:49:11</publishTime>
+    </File>
+    <File Include="Home/SystemModule/Sys/Modules/edit.aspx">
+      <publishTime>06/04/2017 13:58:07</publishTime>
+    </File>
+    <File Include="Home/SystemModule/Sys/Modules/modulelist.aspx">
+      <publishTime>06/03/2017 11:40:57</publishTime>
+    </File>
+    <File Include="Home/SystemModule/Sys/Modules/selectparentmodule.aspx">
+      <publishTime>06/03/2017 11:38:07</publishTime>
     </File>
     <File Include="Home/UserEdit.aspx">
       <publishTime>05/10/2017 16:31:38</publishTime>
@@ -588,6 +606,9 @@
     <File Include="jqueryweui/lib/zepto.js">
       <publishTime>04/12/2017 11:41:12</publishTime>
     </File>
+    <File Include="jqueryweui/wx/ClassicPrescription.aspx">
+      <publishTime>06/04/2017 16:46:58</publishTime>
+    </File>
     <File Include="jqueryweui/wx/CreateQrCodeUI.aspx">
       <publishTime>05/07/2017 18:28:46</publishTime>
     </File>
@@ -723,6 +744,12 @@
     <File Include="jqueryweui/wx/images/vcode.jpg">
       <publishTime>04/12/2017 12:02:52</publishTime>
     </File>
+    <File Include="jqueryweui/wx/MedicalGuide.aspx">
+      <publishTime>06/04/2017 16:28:37</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/MedicineList.aspx">
+      <publishTime>06/04/2017 14:28:20</publishTime>
+    </File>
     <File Include="jqueryweui/wx/MyCustomerManager.aspx">
       <publishTime>04/21/2017 09:57:11</publishTime>
     </File>
@@ -748,7 +775,7 @@
       <publishTime>04/24/2017 16:31:34</publishTime>
     </File>
     <File Include="jqueryweui/wx/profile.aspx">
-      <publishTime>05/10/2017 16:24:56</publishTime>
+      <publishTime>06/04/2017 16:30:18</publishTime>
     </File>
     <File Include="jqueryweui/wx/ProfileApprove.aspx">
       <publishTime>05/07/2017 10:39:36</publishTime>

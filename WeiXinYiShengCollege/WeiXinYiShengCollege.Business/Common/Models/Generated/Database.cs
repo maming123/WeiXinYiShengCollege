@@ -702,7 +702,7 @@ namespace Module.Models
 	}
 
     
-	[TableName("Sys_Point")]
+	[TableName("UserExceptions")]
 
 
 	[PrimaryKey("Id")]
@@ -710,7 +710,7 @@ namespace Module.Models
 
 
 	[ExplicitColumns]
-    public partial class Sys_Point : CoreDB.Record<Sys_Point>  
+    public partial class UserException : CoreDB.Record<UserException>  
     {
 
 
@@ -721,37 +721,19 @@ namespace Module.Models
 
 
 
-		[Column] public int ModulelId { get; set; }
+		[Column] public int UserId { get; set; }
 
 
 
 
 
-		[Column] public string Content { get; set; }
+		[Column] public int ExceptionsType { get; set; }
 
 
 
 
 
 		[Column] public DateTime CreateDateTime { get; set; }
-
-
-
-
-
-		[Column] public DateTime? UpdateDateTime { get; set; }
-
-
-
-
-
-		[Column] public int ZanCount { get; set; }
-
-
-
-
-
-		[Column] public int SeeCount { get; set; }
 
 
 
@@ -792,6 +774,40 @@ namespace Module.Models
 
 
 		[Column] public string Remark { get; set; }
+
+
+
+	}
+
+    
+	[TableName("MyCollectMedicine")]
+
+
+	[ExplicitColumns]
+    public partial class MyCollectMedicine : CoreDB.Record<MyCollectMedicine>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public int UserId { get; set; }
+
+
+
+
+
+		[Column] public int PointId { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDateTime { get; set; }
 
 
 
@@ -854,6 +870,112 @@ namespace Module.Models
 
 
 		[Column] public string FromOrderId { get; set; }
+
+
+
+	}
+
+    
+	[TableName("Sys_Point")]
+
+
+	[PrimaryKey("Id")]
+
+
+
+	[ExplicitColumns]
+    public partial class Sys_Point : CoreDB.Record<Sys_Point>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public int ModuleId { get; set; }
+
+
+
+
+
+		[Column] public string Title { get; set; }
+
+
+
+
+
+		[Column] public string Content { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDateTime { get; set; }
+
+
+
+
+
+		[Column] public DateTime? UpdateDateTime { get; set; }
+
+
+
+
+
+		[Column] public int ZanCount { get; set; }
+
+
+
+
+
+		[Column] public int SeeCount { get; set; }
+
+
+
+	}
+
+    
+	[TableName("UserOpLog")]
+
+
+	[PrimaryKey("Id")]
+
+
+
+	[ExplicitColumns]
+    public partial class UserOpLog : CoreDB.Record<UserOpLog>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public int UserId { get; set; }
+
+
+
+
+
+		[Column] public DateTime? CreateDateTime { get; set; }
+
+
+
+
+
+		[Column] public int PointId { get; set; }
+
+
+
+
+
+		[Column] public int OptionType { get; set; }
 
 
 

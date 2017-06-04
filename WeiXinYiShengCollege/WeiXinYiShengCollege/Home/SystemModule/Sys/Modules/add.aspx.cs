@@ -47,7 +47,7 @@ namespace MLK.SystemModule.Sys.Modules
             module.LinkPath = "";// txtLinkName.Text;
             module.LinkTarget = "";//txtTargetName.Text;
             module.Display = chkIsDisplay.Checked;
-            module.LinkType = "1";//ddlistLinkType.SelectedValue;
+            module.LinkType = ddlistLinkType.SelectedValue;
             ModuleDAO moduleDAO = ModuleDAOFactory.CreateObject();
             int iModuleID = moduleDAO.Add(module);
 

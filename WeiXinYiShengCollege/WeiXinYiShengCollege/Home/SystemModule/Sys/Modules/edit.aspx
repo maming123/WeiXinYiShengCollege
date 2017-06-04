@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="edit.aspx.cs" Inherits="MLK.SystemModule.Sys.Modules.edit" %>
-
+<%@ Import Namespace="WeiXinYiShengCollege.Business" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <html>
 <head>
@@ -64,31 +64,16 @@
                                 <td style="width: 61px">指向的目标</td>
                                 <td>
                                     <asp:TextBox ID="txtTargetName" runat="server" CssClass="BigInput" Width="211px"></asp:TextBox></td>
-                            </tr>
+                            </tr>--%>
                             <tr class="TableDataRow">
                                 <td style="width: 61px">链接类型</td>
                                 <td>
                                     <asp:DropDownList ID="ddlistLinkType" runat="server">
-                                        <asp:ListItem Value="0">无链接</asp:ListItem>
-                                        <asp:ListItem Value="1">普通链接</asp:ListItem>
-                                        <asp:ListItem Value="2">静态链接</asp:ListItem>
-                                        <asp:ListItem Value="3">任务列表</asp:ListItem>
-                                        <asp:ListItem Value="13">公共列表</asp:ListItem>
-                                        <asp:ListItem Value="4">业务录入</asp:ListItem>
-                                        <asp:ListItem Value="11">业务查询</asp:ListItem>
-                                        <asp:ListItem Value="5">档案管理</asp:ListItem>
-                                        <asp:ListItem Value="6">GIS查询</asp:ListItem>
-                                        <asp:ListItem Value="7">办公申请</asp:ListItem>
-                                        <asp:ListItem Value="8">办公初审</asp:ListItem>
-                                        <asp:ListItem Value="9">办公复审</asp:ListItem>
-                                        <asp:ListItem Value="10">办公查询</asp:ListItem>
-                                        <asp:ListItem Value="12">汇总表</asp:ListItem>
-                                        <asp:ListItem Value="20">汇总表展示模块2011年</asp:ListItem>
-                                        <asp:ListItem Value="14">进度统计</asp:ListItem>
-
+                                          <asp:ListItem Value="1">临证参考</asp:ListItem>
+                                          <asp:ListItem Value="2">经典方剂</asp:ListItem>
                                     </asp:DropDownList>
                                 </td>
-                            </tr>--%>
+                            </tr>
                             <tr class="TableDataRow">
                                 <td style="width: 61px"></td>
                                 <td>
@@ -100,8 +85,12 @@
                                     <asp:Button ID="btnEdit" runat="server" Text="修改" CssClass="BigButton" OnClick="btnEdit_Click"></asp:Button>
                                     &nbsp;&nbsp;<input type="button" value="返回" class="BigButton" onclick="history.go(-1);">
                                 <%if(!isHaveChild){ %>
-                                    <a href="/Home/EditPoint.aspx?ModuleID=<%=Request["ModuleID"] %>">具体内容修改</a>
-                                    <%} %>
+                                    <%if(Convert.ToInt32(this.ddlistLinkType.SelectedValue) == (int)SysModuleLinkType.临证参考){ %>
+                                    <a href="/Home/EditPoint.aspx?ModuleID=<%=Request["ModuleID"] %>"><%=SysModuleLinkType.临证参考.ToString() %>内容修改</a>
+                                    <%}else if(Convert.ToInt32(this.ddlistLinkType.SelectedValue) == (int)SysModuleLinkType.经典方剂){ %>
+                                    <a href="/Home/EditClassicPrescription.aspx?ModuleID=<%=Request["ModuleID"] %>"><%=SysModuleLinkType.经典方剂.ToString() %>内容修改</a>
+                                    <%}
+                                      } %>
                                 </td>
                             </tr>
                         </table>

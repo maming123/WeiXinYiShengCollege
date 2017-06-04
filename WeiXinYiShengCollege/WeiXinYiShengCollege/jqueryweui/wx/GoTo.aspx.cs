@@ -56,6 +56,7 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
 
                 if (tmpUser != null)
                 {
+                    UserBusiness.WriteCookie(tmpUser);
                     sUser = tmpUser;
                     if (sUser.ParentId > 0)
                     {

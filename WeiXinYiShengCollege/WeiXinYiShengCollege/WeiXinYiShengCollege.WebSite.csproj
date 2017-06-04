@@ -70,6 +70,7 @@
     <Content Include="Home\css\sysmodule.css" />
     <Content Include="Home\CustomerMgr\CustomerManagerList.aspx" />
     <Content Include="Home\EditPoint.aspx" />
+    <Content Include="Home\EditClassicPrescription.aspx" />
     <Content Include="Home\images\block-corner.png" />
     <Content Include="Home\images\block-h.gif" />
     <Content Include="Home\images\box-title.gif" />
@@ -241,6 +242,7 @@
     <Content Include="jqueryweui\lib\weui.css" />
     <Content Include="jqueryweui\lib\weui.min.css" />
     <Content Include="jqueryweui\lib\zepto.js" />
+    <Content Include="jqueryweui\wx\ClassicPrescription.aspx" />
     <Content Include="jqueryweui\wx\CreateQrCodeUI.aspx" />
     <Content Include="jqueryweui\wx\css\demos.css" />
     <Content Include="jqueryweui\wx\DoctorAdd.aspx" />
@@ -252,6 +254,8 @@
     <Content Include="jqueryweui\wx\DoctorWorkManage.aspx" />
     <Content Include="jqueryweui\wx\DoctorWorkView.aspx" />
     <Content Include="jqueryweui\wx\GoTo.aspx" />
+    <Content Include="jqueryweui\wx\MedicalGuide.aspx" />
+    <Content Include="jqueryweui\wx\MedicineList.aspx" />
     <Content Include="jqueryweui\wx\MyExchange.aspx" />
     <Content Include="jqueryweui\wx\FansProfile.aspx" />
     <Content Include="jqueryweui\wx\FansProfileComplete.aspx" />
@@ -693,6 +697,13 @@
     <Compile Include="Home\EditPoint.aspx.designer.cs">
       <DependentUpon>EditPoint.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Home\EditClassicPrescription.aspx.cs">
+      <DependentUpon>EditClassicPrescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\EditClassicPrescription.aspx.designer.cs">
+      <DependentUpon>EditClassicPrescription.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home\handler\PageHandler.ashx.cs">
       <DependentUpon>PageHandler.ashx</DependentUpon>
     </Compile>
@@ -824,6 +835,13 @@
     <Compile Include="Home\UserManage.aspx.designer.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="jqueryweui\wx\ClassicPrescription.aspx.cs">
+      <DependentUpon>ClassicPrescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\ClassicPrescription.aspx.designer.cs">
+      <DependentUpon>ClassicPrescription.aspx</DependentUpon>
+    </Compile>
     <Compile Include="jqueryweui\wx\CreateQrCodeUI.aspx.cs">
       <DependentUpon>CreateQrCodeUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -893,6 +911,20 @@
     </Compile>
     <Compile Include="jqueryweui\wx\GoTo.aspx.designer.cs">
       <DependentUpon>GoTo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jqueryweui\wx\MedicalGuide.aspx.cs">
+      <DependentUpon>MedicalGuide.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\MedicalGuide.aspx.designer.cs">
+      <DependentUpon>MedicalGuide.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jqueryweui\wx\MedicineList.aspx.cs">
+      <DependentUpon>MedicineList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\MedicineList.aspx.designer.cs">
+      <DependentUpon>MedicineList.aspx</DependentUpon>
     </Compile>
     <Compile Include="jqueryweui\wx\MyExchange.aspx.cs">
       <DependentUpon>MyExchange.aspx</DependentUpon>

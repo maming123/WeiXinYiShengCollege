@@ -68,18 +68,17 @@
                                         指向的目标</td>
                                     <td>
                                         <asp:TextBox ID="txtTargetName" runat="server" CssClass="BigInput" Width="211px"></asp:TextBox></td>
-                                </tr>
+                                </tr>>--%>
                                 <tr class="TableDataRow">
                                     <td style="width: 61px">
-                                        链接类型</td>
+                                        节点类型</td>
                                     <td>
                                         <asp:DropDownList ID="ddlistLinkType" runat="server">
-                                            <asp:ListItem Value="0">无链接</asp:ListItem>
-                                            <asp:ListItem Value="1">普通链接</asp:ListItem>
-                                            <asp:ListItem Value="2">静态链接</asp:ListItem>
+                                            <asp:ListItem Value="1">临证参考</asp:ListItem>
+                                            <asp:ListItem Value="2">经典方剂</asp:ListItem>
                                         </asp:DropDownList>
                                         </td>
-                                </tr>--%>
+                                </tr
 								<TR class="TableDataRow">
 									<TD style="WIDTH: 61px"></TD>
 									<TD><asp:checkbox id="chkIsDisplay" runat="server" Text="是否显示" Checked="True"></asp:checkbox>

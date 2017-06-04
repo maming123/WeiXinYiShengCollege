@@ -58,7 +58,7 @@ namespace MLK.SystemModule.Sys.Modules
                 //txtLinkName.Text = module.LinkPath;
                 //txtTargetName.Text = module.LinkTarget;
                 chkIsDisplay.Checked = module.Display;
-                //ddlistLinkType.SelectedValue = module.LinkType;
+                ddlistLinkType.SelectedValue = module.LinkType;
 
                 
             }
@@ -77,7 +77,7 @@ namespace MLK.SystemModule.Sys.Modules
             module.LinkPath = "";// txtLinkName.Text;
             module.Display = chkIsDisplay.Checked;
             module.LinkTarget = "";// txtTargetName.Text;
-            module.LinkType = "1";//ddlistLinkType.SelectedValue;
+            module.LinkType = ddlistLinkType.SelectedValue;
 
             ModuleDAO moduleDAO = ModuleDAOFactory.CreateObject();
             module.ID = int.Parse(Request["ModuleID"]);

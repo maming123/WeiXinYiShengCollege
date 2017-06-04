@@ -21,6 +21,7 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 if (Request["ModuleID"] != null)
                 {
                     moduleId = Convert.ToInt32(Request["ModuleID"]);
+                    lblModule.Text = moduleId.ToString();
                 }
                 ShowDetail(moduleId);
             }
@@ -28,11 +29,13 @@ namespace WeiXinYiShengCollege.WebSite.Home
         private void ShowDetail(int moduleId)
         {
             Sys_Module unit = Sys_Module.Single((object)moduleId);
-            Sys_Point point = Sys_Point.FirstOrDefault(@"where ModulelId=@0", moduleId);
+            txttitle.Text = unit.MODULE_NAME;
+
+            Sys_Point point = Sys_Point.FirstOrDefault(@"where ModuleId=@0", moduleId);
             if (point != null && point.Id > 0)
             {
                 lblPointId.Text = point.Id.ToString();
-                lblModule.Text = unit.MODULE_NAME;
+                
                 string str = point.Content;
                 Medicine md =  BaseCommon.JsonToObject<Medicine>(str);
                 if (null != md)
@@ -90,8 +93,9 @@ namespace WeiXinYiShengCollege.WebSite.Home
             string strJson = BaseCommon.ObjectToJson(md);
             if (string.IsNullOrEmpty(lblPointId.Text))
             {
-                point.ModulelId = Convert.ToInt32(this.lblModule.Text);
+                point.ModuleId = Convert.ToInt32(this.lblModule.Text);
                 point.Content = strJson;
+                point.Title = txttitle.Text;
                 point.CreateDateTime = DateTime.Now;
                object objr= point.Insert();
                 r =Convert.ToInt32(objr);
@@ -105,7 +109,7 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 point = Sys_Point.Single((object)Convert.ToInt32(lblPointId.Text));
 
                 point.Content = strJson;
-
+                point.Title = txttitle.Text;
                 point.UpdateDateTime = DateTime.Now;
 
                  r= point.Update();

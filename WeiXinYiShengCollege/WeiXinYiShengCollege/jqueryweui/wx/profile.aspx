@@ -81,6 +81,18 @@
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>
+                        <%--<a class="weui-cell weui-cell_access" href="MedicineList.aspx?moduleId=2">
+                            <div class="weui-cell__bd weui-cell_primary">
+                                <p>临证参考</p>
+                            </div>
+                            <span class="weui-cell__ft"></span>
+                        </a>
+                         <a class="weui-cell weui-cell_access" href="MedicineList.aspx?moduleId=6">
+                            <div class="weui-cell__bd weui-cell_primary">
+                                <p>经典方剂</p>
+                            </div>
+                            <span class="weui-cell__ft"></span>
+                        </a>--%>
                         <a class="weui-cell weui-cell_access" href="MyCustomerManager.aspx?CustomerManagerId=<%=sUser.CustomerManagerId %>">
 
                             <div class="weui-cell__bd weui-cell_primary">
@@ -125,6 +137,15 @@
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>
+                        <a class="weui-cell weui-cell_access" href="DoctorWorkManage.aspx?OpenId=<%=sUser.OpenId %>">
+
+                            <div class="weui-cell__bd weui-cell_primary">
+                                <p>出诊日期设置</p>
+                            </div>
+                            <span class="weui-cell__ft"></span>
+                        </a>
+                        
+                        
                     </div>
                 </div>
             </div>
