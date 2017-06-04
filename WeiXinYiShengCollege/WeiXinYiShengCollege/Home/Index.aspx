@@ -66,6 +66,7 @@
                     <li><a href="javascript:void(0)" onclick="addTab('积分兑换管理','ScoreManage/ExchangeScoreList.aspx')"><span style="color:#977171">>&nbsp;&nbsp;积分兑换管理</span></a></li>
                     <li><a href="javascript:void(0)" onclick="addTab('兑换配置查看','ScoreManage/ScoreConfigList.aspx')"><span style="color:#977171">>&nbsp;&nbsp;兑换配置查看</span></a></li>
                     <li><a href="javascript:void(0)" onclick="addTab('客户经理查看','CustomerMgr/CustomerManagerList.aspx')"><span style="color:#977171">>&nbsp;&nbsp;客户经理查看</span></a></li>
+                    <li><a href="javascript:void(0)" onclick="addTab('药方目录管理','SystemModule/Sys/Modules/modulelist.aspx')"><span style="color:#977171">>&nbsp;&nbsp;药方目录管理</span></a></li>
                     
                 </ul>
             </div>

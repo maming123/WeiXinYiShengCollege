@@ -69,6 +69,7 @@
     <Content Include="Home\css\admin.global.css" />
     <Content Include="Home\css\sysmodule.css" />
     <Content Include="Home\CustomerMgr\CustomerManagerList.aspx" />
+    <Content Include="Home\EditPoint.aspx" />
     <Content Include="Home\images\block-corner.png" />
     <Content Include="Home\images\block-h.gif" />
     <Content Include="Home\images\box-title.gif" />
@@ -132,6 +133,10 @@
     <Content Include="Home\OrderManage\OrderList.aspx" />
     <Content Include="Home\ScoreManage\ExchangeScoreList.aspx" />
     <Content Include="Home\ScoreManage\ScoreConfigList.aspx" />
+    <Content Include="Home\SystemModule\Sys\Modules\add.aspx" />
+    <Content Include="Home\SystemModule\Sys\Modules\edit.aspx" />
+    <Content Include="Home\SystemModule\Sys\Modules\modulelist.aspx" />
+    <Content Include="Home\SystemModule\Sys\Modules\selectparentmodule.aspx" />
     <Content Include="Home\UserEdit.aspx" />
     <Content Include="Home\UserManage.aspx" />
     <Content Include="images\Query\00000001_r1_c1.gif" />
@@ -681,6 +686,13 @@
     <Compile Include="Home\CustomerMgr\CustomerManagerList.aspx.designer.cs">
       <DependentUpon>CustomerManagerList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Home\EditPoint.aspx.cs">
+      <DependentUpon>EditPoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\EditPoint.aspx.designer.cs">
+      <DependentUpon>EditPoint.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home\handler\PageHandler.ashx.cs">
       <DependentUpon>PageHandler.ashx</DependentUpon>
     </Compile>
@@ -769,6 +781,34 @@
     </Compile>
     <Compile Include="Home\ScoreManage\ScoreConfigList.aspx.designer.cs">
       <DependentUpon>ScoreConfigList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\SystemModule\Sys\Modules\add.aspx.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\SystemModule\Sys\Modules\add.aspx.designer.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\SystemModule\Sys\Modules\edit.aspx.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\SystemModule\Sys\Modules\edit.aspx.designer.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\SystemModule\Sys\Modules\modulelist.aspx.cs">
+      <DependentUpon>modulelist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\SystemModule\Sys\Modules\modulelist.aspx.designer.cs">
+      <DependentUpon>modulelist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\SystemModule\Sys\Modules\selectparentmodule.aspx.cs">
+      <DependentUpon>selectparentmodule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\SystemModule\Sys\Modules\selectparentmodule.aspx.designer.cs">
+      <DependentUpon>selectparentmodule.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home\UserEdit.aspx.cs">
       <DependentUpon>UserEdit.aspx</DependentUpon>

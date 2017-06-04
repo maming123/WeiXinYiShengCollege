@@ -592,6 +592,172 @@ namespace Module.Models
 	}
 
     
+	[TableName("Sys_Module")]
+
+
+	[PrimaryKey("MODULE_ID")]
+
+
+
+	[ExplicitColumns]
+    public partial class Sys_Module : CoreDB.Record<Sys_Module>  
+    {
+
+
+
+		[Column] public int MODULE_ID { get; set; }
+
+
+
+
+
+		[Column] public string MODULE_NAME { get; set; }
+
+
+
+
+
+		[Column] public int? PARENT_MODULE_ID { get; set; }
+
+
+
+
+
+		[Column] public byte IS_DISPLAY { get; set; }
+
+
+
+
+
+		[Column] public short? ORDER_ID { get; set; }
+
+
+
+
+
+		[Column] public short? Banner_Button_Width { get; set; }
+
+
+
+
+
+		[Column] public string Link_Path { get; set; }
+
+
+
+
+
+		[Column] public byte Link_Type { get; set; }
+
+
+
+
+
+		[Column] public string Link_Target { get; set; }
+
+
+
+
+
+		[Column] public byte Create_Table { get; set; }
+
+
+
+
+
+		[Column] public int? Template_ID { get; set; }
+
+
+
+
+
+		[Column] public string Description { get; set; }
+
+
+
+
+
+		[Column] public string Business_Table { get; set; }
+
+
+
+
+
+		[Column] public bool Is_Sys_File { get; set; }
+
+
+
+
+
+		[Column] public bool Is_Original_Data { get; set; }
+
+
+
+
+
+		[Column] public string Creator_Area_Code { get; set; }
+
+
+
+	}
+
+    
+	[TableName("Sys_Point")]
+
+
+	[PrimaryKey("Id")]
+
+
+
+	[ExplicitColumns]
+    public partial class Sys_Point : CoreDB.Record<Sys_Point>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public int ModulelId { get; set; }
+
+
+
+
+
+		[Column] public string Content { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDateTime { get; set; }
+
+
+
+
+
+		[Column] public DateTime? UpdateDateTime { get; set; }
+
+
+
+
+
+		[Column] public int ZanCount { get; set; }
+
+
+
+
+
+		[Column] public int SeeCount { get; set; }
+
+
+
+	}
+
+    
 	[TableName("ScoreMoneyConfig")]
 
 
