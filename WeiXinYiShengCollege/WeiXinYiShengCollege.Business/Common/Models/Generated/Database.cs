@@ -702,7 +702,7 @@ namespace Module.Models
 	}
 
     
-	[TableName("UserExceptions")]
+	[TableName("UserExceptionsRecord")]
 
 
 	[PrimaryKey("Id")]
@@ -710,7 +710,7 @@ namespace Module.Models
 
 
 	[ExplicitColumns]
-    public partial class UserException : CoreDB.Record<UserException>  
+    public partial class UserExceptionsRecord : CoreDB.Record<UserExceptionsRecord>  
     {
 
 

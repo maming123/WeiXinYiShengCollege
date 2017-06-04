@@ -253,6 +253,7 @@
     <Content Include="jqueryweui\wx\DoctorWorkList.aspx" />
     <Content Include="jqueryweui\wx\DoctorWorkManage.aspx" />
     <Content Include="jqueryweui\wx\DoctorWorkView.aspx" />
+    <Content Include="jqueryweui\wx\ExceptionsNotice.aspx" />
     <Content Include="jqueryweui\wx\GoTo.aspx" />
     <Content Include="jqueryweui\wx\MedicalGuide.aspx" />
     <Content Include="jqueryweui\wx\MedicineList.aspx" />
@@ -904,6 +905,13 @@
     </Compile>
     <Compile Include="jqueryweui\wx\DoctorWorkView.aspx.designer.cs">
       <DependentUpon>DoctorWorkView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jqueryweui\wx\ExceptionsNotice.aspx.cs">
+      <DependentUpon>ExceptionsNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\ExceptionsNotice.aspx.designer.cs">
+      <DependentUpon>ExceptionsNotice.aspx</DependentUpon>
     </Compile>
     <Compile Include="jqueryweui\wx\GoTo.aspx.cs">
       <DependentUpon>GoTo.aspx</DependentUpon>

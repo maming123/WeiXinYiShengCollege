@@ -30,15 +30,16 @@
                     <asp:TextBox ID="txttitle" runat="server" CssClass=" input_txt"></asp:TextBox></td>
             </tr>
             <tr>
-                <td>病症：</td>
+                <%--<td>病症：</td>
                 <td>
                     <asp:TextBox ID="txtbingzheng" runat="server" CssClass=" input_txt"></asp:TextBox></td>
                 <td>辩证：</td>
                 <td>
                     <asp:TextBox ID="txtbianzheng" runat="server" CssClass=" input_txt"></asp:TextBox></td>
+                --%>
                 <td>症候：</td>
-                <td>
-                    <asp:TextBox ID="txtzhenghou" runat="server" CssClass=" input_txt" Height="63px" Rows="3" TextMode="MultiLine" Width="243px"></asp:TextBox></td>
+                <td colspan="5">
+                    <asp:TextBox ID="txtzhenghou" runat="server" CssClass=" input_txt" Height="63px" Rows="3" TextMode="MultiLine" Width="521px"></asp:TextBox></td>
             </tr>
             <tr>
                 <td colspan="6">内治法</td>

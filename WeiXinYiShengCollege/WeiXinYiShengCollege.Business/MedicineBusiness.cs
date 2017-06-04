@@ -69,5 +69,27 @@ namespace WeiXinYiShengCollege.Business
                 return new Medicine();
             }
         }
+
+        /// <summary>
+        /// 是否有同意免责声明 缓存30分钟
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <returns></returns>
+        public static bool IsHaveAgreeExceptions(int userid,ExceptionsType et)
+        {
+            string cacheKey = string.Format(@"IsHaveAgreeExceptions_{0}_{1}", userid,et.ToString());
+            if (BaseCommon.HasCache(cacheKey))
+            {
+                return BaseCommon.GetCache<bool>(cacheKey);
+            }
+            UserExceptionsRecord ue = UserExceptionsRecord.SingleOrDefault(@"where UserId=@0 and ExceptionsType=@1", userid, (int)et);
+            if (null != ue && ue.Id > 0)
+            {
+                BaseCommon.CacheInsert(cacheKey, true, DateTime.Now.AddMinutes(30));
+                return true;
+            }
+            else
+                return false;
+        }
     }
 }

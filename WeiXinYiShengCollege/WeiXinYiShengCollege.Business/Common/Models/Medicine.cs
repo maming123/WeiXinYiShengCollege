@@ -10,8 +10,8 @@ namespace WeiXinYiShengCollege.Business.Common.Models
     /// </summary>
     public class Medicine
     {
-        public string 病症 { get;set;}
-        public string 辩证 { get; set; }
+        //public string 病症 { get;set;}
+        //public string 辩证 { get; set; }
         public string 症候 { get; set; }
         public InternalMethod 内治法 { get; set; }
         public ExternalMethod 外治法 { get; set; }

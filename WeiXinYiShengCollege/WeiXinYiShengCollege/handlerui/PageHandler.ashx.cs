@@ -42,6 +42,52 @@ namespace HospitalBookWebSite.handler
             dictAction.Add("UpdateDoctorInfo", UpdateDoctorInfo);
             //删除医生信息
             dictAction.Add("DeleteDoctorInfo", DeleteDoctorInfo);
+            //插入免责声明表
+            dictAction.Add("InsertUserExceptions", InsertUserExceptions);
+
+            
+
+        }
+
+        private void InsertUserExceptions()
+        {
+            if (!IsReady())
+                return;
+            int moduleId = RequestKeeper.GetFormInt(Request["moduleId"]);
+            int linkType = RequestKeeper.GetFormInt(Request["linkType"]);
+            if (moduleId <= 0 || linkType<=0)
+            {
+                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = -1, m = "参数非法" }));
+                return;
+            }
+            int userId = UserBusiness.GetCookieUserId();
+            ExceptionsType et = ExceptionsType.经典方剂;
+            if (linkType == (int)SysModuleLinkType.临证参考)
+            {
+                et = ExceptionsType.临证参考;
+            }
+            else if (linkType == (int)SysModuleLinkType.经典方剂)
+            {
+                et = ExceptionsType.经典方剂;
+            }
+
+            UserExceptionsRecord uer = new UserExceptionsRecord()
+            {
+                CreateDateTime = DateTime.Now
+                 ,
+                ExceptionsType = (int)et
+                 ,
+                UserId = userId
+            };
+            object obj =uer.Insert();
+            if (Convert.ToInt32(obj) > 0)
+            {
+                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = 1, m = "成功" }));
+            }
+            else
+            {
+                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = 0, m = "失败" }));
+            }
 
         }
 
@@ -456,7 +502,9 @@ namespace HospitalBookWebSite.handler
         /// <returns></returns>
         private bool IsReady()
         {
-            if (WeiXinBusiness.IsEnabledWeixinBrowser() && !WeiXinBusiness.IsSideInWeixinBrowser(Request.RequestContext.HttpContext))
+            if (WeiXinBusiness.IsEnabledWeixinBrowser() 
+                && !WeiXinBusiness.IsSideInWeixinBrowser(Request.RequestContext.HttpContext)
+                && UserBusiness.GetCookieUserId()>0)
             {
                 return false;
             }

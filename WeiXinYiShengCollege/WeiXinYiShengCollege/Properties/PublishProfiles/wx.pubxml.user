@@ -19,13 +19,13 @@
       <publishTime>06/04/2017 16:53:09</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.dll">
-      <publishTime>06/04/2017 17:08:40</publishTime>
+      <publishTime>06/04/2017 23:02:15</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.dll">
-      <publishTime>06/04/2017 17:08:43</publishTime>
+      <publishTime>06/04/2017 23:02:18</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.pdb">
       <publishTime>04/11/2017 16:18:56</publishTime>
@@ -34,7 +34,7 @@
       <publishTime>04/11/2017 16:18:51</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.dll">
-      <publishTime>06/04/2017 16:53:10</publishTime>
+      <publishTime>06/04/2017 23:02:15</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
@@ -46,7 +46,7 @@
       <publishTime>04/11/2017 16:18:58</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.WebSite.dll">
-      <publishTime>06/04/2017 17:08:45</publishTime>
+      <publishTime>06/04/2017 23:02:20</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>04/14/2017 18:51:59</publishTime>
@@ -70,10 +70,10 @@
       <publishTime>04/28/2017 09:55:19</publishTime>
     </File>
     <File Include="Home/EditClassicPrescription.aspx">
-      <publishTime>06/04/2017 14:20:38</publishTime>
+      <publishTime>06/04/2017 22:14:00</publishTime>
     </File>
     <File Include="Home/EditPoint.aspx">
-      <publishTime>06/04/2017 14:22:33</publishTime>
+      <publishTime>06/04/2017 22:13:32</publishTime>
     </File>
     <File Include="Home/handler/PageHandler.ashx">
       <publishTime>04/12/2017 16:58:52</publishTime>
@@ -639,6 +639,9 @@
     <File Include="jqueryweui/wx/DoctorWorkView.aspx">
       <publishTime>05/03/2017 19:46:54</publishTime>
     </File>
+    <File Include="jqueryweui/wx/ExceptionsNotice.aspx">
+      <publishTime>06/04/2017 22:43:52</publishTime>
+    </File>
     <File Include="jqueryweui/wx/FansProfile.aspx">
       <publishTime>05/17/2017 16:56:31</publishTime>
     </File>
@@ -745,7 +748,7 @@
       <publishTime>04/12/2017 12:02:52</publishTime>
     </File>
     <File Include="jqueryweui/wx/MedicalGuide.aspx">
-      <publishTime>06/04/2017 16:28:37</publishTime>
+      <publishTime>06/04/2017 22:14:21</publishTime>
     </File>
     <File Include="jqueryweui/wx/MedicineList.aspx">
       <publishTime>06/04/2017 14:28:20</publishTime>
@@ -775,7 +778,7 @@
       <publishTime>04/24/2017 16:31:34</publishTime>
     </File>
     <File Include="jqueryweui/wx/profile.aspx">
-      <publishTime>06/04/2017 16:30:18</publishTime>
+      <publishTime>06/04/2017 23:01:51</publishTime>
     </File>
     <File Include="jqueryweui/wx/ProfileApprove.aspx">
       <publishTime>05/07/2017 10:39:36</publishTime>

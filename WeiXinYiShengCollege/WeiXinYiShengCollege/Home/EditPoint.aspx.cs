@@ -40,8 +40,8 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 Medicine md =  BaseCommon.JsonToObject<Medicine>(str);
                 if (null != md)
                 {
-                    txtbingzheng.Text = md.病症;
-                    txtbianzheng.Text = md.辩证;
+                    //txtbingzheng.Text = md.病症;
+                    //txtbianzheng.Text = md.辩证;
                     txterxue.Text = md.外治法.耳穴;
                     txtjingyanfang.Text = md.内治法.经验方;
                     txtjinji.Text = md.禁忌;
@@ -62,10 +62,10 @@ namespace WeiXinYiShengCollege.WebSite.Home
 
             Medicine md = new Medicine()
             {
-                辩证 = txtbianzheng.Text
-                ,
-                病症 = txtbingzheng.Text
-                ,
+                //辩证 = txtbianzheng.Text
+                //,
+                //病症 = txtbingzheng.Text
+                //,
                 禁忌 = txtjinji.Text
                 ,
                 症候 = txtzhenghou.Text

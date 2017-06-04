@@ -129,4 +129,17 @@ namespace WeiXinYiShengCollege.Business
         /// </summary>
         see=2
     }
+
+    /// <summary>
+    /// 免责类型 表UserException
+    /// </summary>
+
+    public enum ExceptionsType : int
+    {
+        /// <summary>
+        /// 临证参考免责类型
+        /// </summary>
+        临证参考=1,
+        经典方剂 = 2
+    }
 }

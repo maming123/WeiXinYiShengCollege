@@ -214,14 +214,14 @@ ON su.Id=es.LiShiSysUserId WHERE es.ExpertsSysUserId={0}", expertsSysUserId);
             else
                 return "";
         }
-        public static string GetCookieUserId()
+        public static int GetCookieUserId()
         {
 
             HttpCookie cookie = CookiesHelper.GetCookie("UserId");
             if (null != cookie)
-                return EncryptTools.AES.AESDecrypt(cookie.Value);
+                return Convert.ToInt32(EncryptTools.AES.AESDecrypt(cookie.Value));
             else
-                return "";
+                return 0;
         }
 
 

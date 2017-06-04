@@ -24,7 +24,15 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
                 //获取Accesstoken 进而获取openId 通过OpenId获取用户信息
                 try
                 {
-                    OpenId = WeiXinBusiness.GetOpenIdFromOAuthAccessToken(code);
+                    if (code == "aa")
+                    {
+                        //test 的openid
+                        OpenId = "od_wK1iAymw_T0jC10JOzfq1vgvY";
+                    }
+                    else
+                    {
+                        OpenId = WeiXinBusiness.GetOpenIdFromOAuthAccessToken(code);
+                    }
 
                 }catch(Exception ex)
                 {
