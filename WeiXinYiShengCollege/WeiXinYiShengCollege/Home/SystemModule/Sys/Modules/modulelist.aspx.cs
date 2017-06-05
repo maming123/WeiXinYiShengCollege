@@ -134,29 +134,29 @@ namespace MLK.SystemModule.Sys.Modules
 
                     if (i == 0)
                     {
-                        //childNode.Text = childModule.Name + "&nbsp;&nbsp;[<a href=\"#\" onClick=\"setModuleOrder('" +
-                        //    childModule.ID + "');\">排到最后</a>]&nbsp;<a href=\"#\" onClick=\"setModuleOrder('" +
-                        //    childModule.ID + "$Down');\"><img border=\"0\" src=\"" +
-                        //    SNS.Library.Tools.StyleHelper.GetStyle("winfo/LevelDown.gif") + "\"></a>";
-                        childNode.Text = childModule.Name ;
+                        childNode.Text = childModule.Name + "&nbsp;&nbsp;[<a href=\"#\" onClick=\"setModuleOrder('" +
+                            childModule.ID + "');\">排到最后</a>]&nbsp;<a href=\"#\" onClick=\"setModuleOrder('" +
+                            childModule.ID + "$Down');\"><img border=\"0\" src=\"" +
+                            SNS.Library.Tools.StyleHelper.GetStyle("winfo/LevelDown.gif") + "\"></a>";
+                        //childNode.Text = childModule.Name ;
                     }
                     else if (i == childModules.Count - 1)
                     {
-                        //childNode.Text = childModule.Name + "&nbsp;&nbsp;<a href=\"#\" onClick=\"setModuleOrder('" +
-                        //    childModule.ID + "$Up');\"><img border=\"0\" src=\"" +
-                        //    SNS.Library.Tools.StyleHelper.GetStyle("winfo/LevelUp.gif") + "\"></a>";
-                        childNode.Text = childModule.Name ;
+                        childNode.Text = childModule.Name + "&nbsp;&nbsp;<a href=\"#\" onClick=\"setModuleOrder('" +
+                            childModule.ID + "$Up');\"><img border=\"0\" src=\"" +
+                            SNS.Library.Tools.StyleHelper.GetStyle("winfo/LevelUp.gif") + "\"></a>";
+                        //childNode.Text = childModule.Name ;
                     }
                     else
                     {
-                        //childNode.Text = childModule.Name + "&nbsp;&nbsp;[<a href=\"#\" onClick=\"setModuleOrder('" +
-                        //    childModule.ID + "');\">排到最后</a>]&nbsp;<a href=\"#\" onClick=\"setModuleOrder('" +
-                        //    childModule.ID + "$Up');\"><img border=\"0\" src=\"" +
-                        //    SNS.Library.Tools.StyleHelper.GetStyle("winfo/LevelUp.gif") + "\"></a>" +
-                        //    "&nbsp;<a href=\"#\" onClick=\"setModuleOrder('" +
-                        //    childModule.ID + "$Down');\"><img border=\"0\" src=\"" +
-                        //    SNS.Library.Tools.StyleHelper.GetStyle("winfo/LevelDown.gif") + "\"></a>";
-                        childNode.Text = childModule.Name ;
+                        childNode.Text = childModule.Name + "&nbsp;&nbsp;[<a href=\"#\" onClick=\"setModuleOrder('" +
+                            childModule.ID + "');\">排到最后</a>]&nbsp;<a href=\"#\" onClick=\"setModuleOrder('" +
+                            childModule.ID + "$Up');\"><img border=\"0\" src=\"" +
+                            SNS.Library.Tools.StyleHelper.GetStyle("winfo/LevelUp.gif") + "\"></a>" +
+                            "&nbsp;<a href=\"#\" onClick=\"setModuleOrder('" +
+                            childModule.ID + "$Down');\"><img border=\"0\" src=\"" +
+                            SNS.Library.Tools.StyleHelper.GetStyle("winfo/LevelDown.gif") + "\"></a>";
+                        //childNode.Text = childModule.Name ;
                     }
 
                     childNode.Value = childModule.ID.ToString();

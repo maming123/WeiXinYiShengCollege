@@ -227,6 +227,22 @@ ON su.Id=es.LiShiSysUserId WHERE es.ExpertsSysUserId={0}", expertsSysUserId);
 
         #endregion
 
+        /// <summary>
+        /// 是否是白名单用户，白名单可以测试未上线的功能
+        /// </summary>
+        /// <returns></returns>
+        public static bool isInWhiteList()
+        {
+            string OpenId = GetCookieOpenId();
+            WhiteList m = WhiteList.SingleOrDefault("where OpenId=@0", OpenId);
+            if (null != m && m.OpenId.Length > 0)
+                return true;
+            else
+
+                return false;
+
+        }
+
     }
 
 }

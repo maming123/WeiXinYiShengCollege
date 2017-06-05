@@ -1014,6 +1014,36 @@ namespace Module.Models
 	}
 
     
+	[TableName("WhiteList")]
+
+
+	[PrimaryKey("Mobile", autoIncrement=false)]
+
+	[ExplicitColumns]
+    public partial class WhiteList : CoreDB.Record<WhiteList>  
+    {
+
+
+
+		[Column] public long Mobile { get; set; }
+
+
+
+
+
+		[Column] public string OpenId { get; set; }
+
+
+
+
+
+		[Column] public string NickName { get; set; }
+
+
+
+	}
+
+    
 	[TableName("MaterialNews")]
 
 

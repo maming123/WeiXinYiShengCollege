@@ -13,8 +13,23 @@ namespace WeiXinYiShengCollege.Business.Common.Models
         //public string 病症 { get;set;}
         //public string 辩证 { get; set; }
         public string 症候 { get; set; }
-        public InternalMethod 内治法 { get; set; }
-        public ExternalMethod 外治法 { get; set; }
+        private InternalMethod _内治法 = new InternalMethod();
+
+        public InternalMethod 内治法
+        {
+            get { return _内治法; }
+            set { _内治法 = value; }
+        }
+
+
+        private ExternalMethod _外治法 = new ExternalMethod();
+
+        public ExternalMethod 外治法
+        {
+            get { return _外治法; }
+            set { _外治法 = value; }
+        }
+        
         public string 禁忌 { get; set; }
        
     }

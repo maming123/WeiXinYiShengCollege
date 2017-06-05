@@ -653,7 +653,7 @@ namespace SNS.Library.SystemModules
         /// <param name="moduleID">Ä£¿é±àºÅ</param>
         public void SetOrderToEnd(string moduleID)
         {
-            string strSql = "UPDATE Sys_Module SET Order_ID=(SELECT MAX(Order_ID) + 1 FROM FSys_Module) " +
+            string strSql = "UPDATE Sys_Module SET Order_ID=(SELECT MAX(Order_ID) + 1 FROM Sys_Module) " +
                 "WHERE Module_ID=" + moduleID;
             DatabaseFactory.ExecuteNonQuery(strSql);
         }

@@ -25,7 +25,7 @@ namespace WeiXinYiShengCollege.Business
                 return BaseCommon.GetCache<List<Sys_Module>>(cacheKey);
             }
 
-            List<Sys_Module> list = Sys_Module.Query("where parent_module_id=@0",parentId).ToList();
+            List<Sys_Module> list = Sys_Module.Query("where parent_module_id=@0 order by ORDER_ID  asc",parentId).ToList();
             if(null!=list)
             {
                 BaseCommon.CacheInsert(cacheKey, list, DateTime.Now.AddMinutes(5));
