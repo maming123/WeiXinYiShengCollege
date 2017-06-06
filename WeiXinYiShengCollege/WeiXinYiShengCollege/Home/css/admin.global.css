@@ -46,10 +46,9 @@ input[type=submit] {border:1px solid #4168a5;box-shadow:0 1px 0 #81a6d0 inset;ba
 /* 通用文本 */
 select{height:24px; line-height:24px;}
 input,textarea{border:1px solid #A4A4A4; color:#4a4a4a; font-size:12px; font-family:Tahoma,"Times New Roman", Times, "宋体";}
-.input-code,.input-small,.input-normal,.input-big,.input-xbig,.input-xxbig{height:18px; line-height:18px;}
-
-.input-code{width:35px;}
-.input-small{width:100px;}
+.input-code,.input-small,.i
+input,textarea{border:1px solid #A4A4A4; color:#4a4a4a; font-size:12px; font-family:Tahoma,"Times New Roman", Times, "宋体";}
+:100px;}
 .input-normal{width:180px;}
 .input-big{width:250px;}
 .input-xbig{width:350px;}

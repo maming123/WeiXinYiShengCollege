@@ -42,7 +42,9 @@ namespace WeiXinYiShengCollege.WebSite.Home
             ddlMsgType.SelectedValue = arc.ResponseMsgType;
             ddlIsDelete.SelectedValue = arc.IsDelete.ToString();
             txtUpKey.Text = arc.UpKey;
+           
             txtUpKey.ReadOnly = true;
+            txtRemark.Text = arc.Remark;
             if (arc.ResponseMsgType == ResponseMsgType.Text.ToString().ToLower())
             {
                 this.panelText.Visible = true;
@@ -100,9 +102,8 @@ namespace WeiXinYiShengCollege.WebSite.Home
                     ResponseMsgType = ddlMsgType.SelectedValue
                     ,
                     UpKey = txtUpKey.Text.Trim()
-                    ,
-                    
-                    Id = Id
+                    ,Remark =txtRemark.Text.Trim()
+                    ,Id = Id
                 };
                 
                 if (this.panelText.Visible)
@@ -131,6 +132,8 @@ namespace WeiXinYiShengCollege.WebSite.Home
                     ResponseMsgType = ddlMsgType.SelectedValue
                     ,
                     UpKey = txtUpKey.Text.Trim()
+                    ,
+                    Remark = txtRemark.Text.Trim()
                     ,
                     ReplyContent = txtText.Text
                 };

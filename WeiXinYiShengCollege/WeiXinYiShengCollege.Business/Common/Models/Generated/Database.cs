@@ -353,6 +353,12 @@ namespace Module.Models
 
 
 
+
+
+		[Column] public string Remark { get; set; }
+
+
+
 	}
 
     

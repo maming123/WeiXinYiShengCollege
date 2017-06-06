@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>粉丝信息完善</title>
+    <title>会员信息完善</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -20,7 +20,7 @@
 
 
     <header class='demos-header'>
-        <h1 class="demos-title">粉丝信息完善</h1>
+        <h1 class="demos-title">会员信息完善</h1>
     </header>
 
     <div class="weui-cells__title"></div>

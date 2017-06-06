@@ -35,8 +35,11 @@
             <asp:ListItem  Value="text">文本</asp:ListItem>
             
         </asp:DropDownList>
-            &nbsp;填写用户上行内容：<asp:TextBox ID="txtUpKey" runat="server"></asp:TextBox>
-            &nbsp;回复是否生效：<asp:DropDownList ID="ddlIsDelete" runat="server">
+            &nbsp;填写用户上行内容：<asp:TextBox ID="txtUpKey" runat="server" Width="327px"></asp:TextBox>
+            &nbsp;<br />
+            填写备注：<asp:TextBox ID="txtRemark" runat="server" Width="574px"></asp:TextBox>
+            <br />
+            回复是否生效：<asp:DropDownList ID="ddlIsDelete" runat="server">
                 <asp:ListItem Selected="True" Value="0">生效</asp:ListItem>
                 <asp:ListItem Value="1">失效</asp:ListItem>
             </asp:DropDownList>

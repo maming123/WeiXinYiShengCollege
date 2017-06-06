@@ -117,15 +117,16 @@
                     $contentTrTmp.find("td").eq(0).html(tmpItem.Id);
                     $contentTrTmp.find("td").eq(1).html(tmpItem.UpKey);
                     $contentTrTmp.find("td").eq(2).html(tmpItem.ResponseMsgType);
-                    $contentTrTmp.find("td").eq(3).html(tmpItem.CreateDatetime);
+                    $contentTrTmp.find("td").eq(3).html(tmpItem.Remark);
+                    $contentTrTmp.find("td").eq(4).html(tmpItem.CreateDatetime);
                     //（1:删除 0：未删除）
                     var isDelete = '正常显示';
                     if (tmpItem.IsDelete == 1)
                     {
                         isDelete = '已被删除';
                     }
-                    $contentTrTmp.find("td").eq(4).html(isDelete);
-                    $contentTrTmp.find("td").eq(5).html('<a href="MsgAutoReplyEdit.aspx?msgtype=' + tmpItem.ResponseMsgType + '&Id=' + tmpItem.Id + '" >编辑</a>');
+                    $contentTrTmp.find("td").eq(5).html(isDelete);
+                    $contentTrTmp.find("td").eq(6).html('<a href="MsgAutoReplyEdit.aspx?msgtype=' + tmpItem.ResponseMsgType + '&Id=' + tmpItem.Id + '" >编辑</a>');
                     
                     $contentTrTmp.appendTo("#tbodyHtml");
                 }
@@ -169,6 +170,7 @@ select option {
                                 <th scope="col" >序号</th>
                                 <th align="left" scope="col" >用户上行语</th>
                                 <th scope="col" >回复类型</th>
+                                <th scope="col" >备注</th>
                                 <th scope="col" >创建时间</th>
                                 <th scope="col" >状态</th>
                                 <th scope="col" >编辑</th>
@@ -179,7 +181,7 @@ select option {
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
-                             
+                                <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                

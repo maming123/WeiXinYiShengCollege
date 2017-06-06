@@ -81,7 +81,7 @@ namespace Senparc.Weixin.MP.Sample.CommonService
 
                if (!string.IsNullOrEmpty(eventKey))
                {
-                   returnMsg = string.Format(@"恭喜！{0}已经成为您的私人医生。", lishiName);// + eventKey;
+                   returnMsg = string.Format(@"恭喜！{0}已经成为您的健康顾问。", lishiName);// + eventKey;
                }
            }
            else
@@ -105,7 +105,7 @@ namespace Senparc.Weixin.MP.Sample.CommonService
                        sUser.Update(new String[] { "ParentId", "UserInfoJson", "IsDelete", "Province", "City", "HeadImgUrl", "UpdateDateTime" });
                        if (!string.IsNullOrEmpty(eventKey))
                        {
-                           returnMsg = string.Format(@"恭喜！{0}已经成为您的私人医生。", lishiName);// + eventKey;
+                           returnMsg = string.Format(@"恭喜！{0}已经成为您的健康顾问。", lishiName);// + eventKey;
                        }
                    }
                    else
