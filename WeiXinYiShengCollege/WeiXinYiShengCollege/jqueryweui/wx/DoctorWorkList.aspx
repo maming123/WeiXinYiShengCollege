@@ -1,11 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyCustomerManager.aspx.cs" Inherits="WeiXinYiShengCollege.WebSite.jqueryweui.wx.MyCustomerManager" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DoctorWorkList.aspx.cs" Inherits="WeiXinYiShengCollege.WebSite.jqueryweui.wx.DoctorWorkList" %>
+
 
 
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>我的客服经理</title>
+    <title>出诊医生设置</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -19,19 +20,16 @@
 <body ontouchstart>
 
     <div class="weui-cells">
-
-        <a class="weui-cell weui-cell_access" href="javascript:;">
+      
+        <%foreach(Module.Models.DoctorWorkSchedule dws in listDws){ %>
+        <a class="weui-cell weui-cell_access" href="DoctorWorkView.aspx?OpenId=<%=OpenId %>&Id=<%=dws.Id %>">
             <div class="weui-cell__bd">
-                <p>姓名：<%=cM.Name %></p>
+                <%--<p>2017年8月2日 上午 (出诊医生：张三)</p>--%>
+                <p><%=dws.WorkDateTime.ToString("yyyy年MM月dd日") %> <%=dws.DayTime==9?"上午":"下午" %> (出诊医生：<%=dws.DoctorName %>)</p>
             </div>
-            
+            <div class="weui-cell__ft"></div>
         </a>
-        <a class="weui-cell weui-cell_access" href="javascript:;">
-            <div class="weui-cell__bd">
-                <p>电话：<%=cM.Mobile %></p>
-            </div>
-            
-        </a>
+        <%} %>
     </div>
     <script src="../lib/jquery-2.1.4.js"></script>
     <script src="../lib/fastclick.js"></script>
@@ -44,4 +42,3 @@
 
 </body>
 </html>
-

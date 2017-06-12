@@ -1,10 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProfileEdit.aspx.cs" Inherits="WeiXinYiShengCollege.WebSite.jqueryweui.wx.ProfileEdit" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProfileApprove.aspx.cs" Inherits="WeiXinYiShengCollege.WebSite.jqueryweui.wx.ProfileApprove" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>个人信息设置</title>
+    <title>认证申请</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -20,7 +19,7 @@
 
 
     <header class='demos-header'>
-        <h1 class="demos-title">个人信息设置</h1>
+        <h1 class="demos-title">认证申请</h1>
     </header>
 
     <div class="weui-cells__title"></div>
@@ -29,7 +28,7 @@
             <div class="weui-cell__hd">
                 <label class="weui-label">姓名</label></div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请填写姓名" id="txtnickname" value="<%=sUser.NickName %>">
+                <input class="weui-input" type="text" placeholder="请填写姓名" id="txtnickname">
             </div>
         </div>
         <div class="weui-cell ">
@@ -37,7 +36,7 @@
                 <label class="weui-label">手机号</label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="tel" placeholder="请输入手机号" id="txtmobile" value="<%=sUser.Mobile %>">
+                <input class="weui-input" type="tel" placeholder="请输入手机号" id="txtmobile">
             </div>
 
         </div>
@@ -71,7 +70,7 @@
             <div class="weui-cell__hd">
                 <label class="weui-label">单位名称</label></div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请填写名称" id="txtcompanyname"  value="<%=sUser.CompanyName %>">
+                <input class="weui-input" type="text" placeholder="请填写名称" id="txtcompanyname">
             </div>
         </div>
 
@@ -79,7 +78,7 @@
     </div>
 
 
-    <div class="weui-cells__tips">描述:请修改个人信息</div>
+    <div class="weui-cells__tips">描述:请完成申请，等待申请通过，才能查看相关功能和菜单</div>
 
 
     <div class="weui-btn-area">
@@ -119,19 +118,17 @@
             $.ajax({
                 type: "POST",
                 url: "../../handlerui/PageHandler.ashx",
-                data: { Action: "UpdateProfile", OpenId: OpenId, mobile: mobile, nickname: nickname, companyname: companyname, r: Math.random() },
+                data: { Action: "SubmitApprove",OpenId:OpenId, mobile: mobile, nickname: nickname, companyname: companyname, r: Math.random() },
                 dataType: "json",
                 async: true,
                 success: function (result) {
                     if (result && typeof result == "object") {
                         if (result.code == 1) {
-
-                            $.toast("修改成功", function () {
+                            $.toast("申请成功", function () {
                                 //console.log('close');
                                 //操作成功弹窗消失后执行
                                 document.location.href = "Profile.aspx?OpenId=" + OpenId;
                             });
-                            //console.log(result.m);
                         }else
                         {
                             $.toptip('提交失败');
@@ -157,3 +154,4 @@
     </script>
 </body>
 </html>
+

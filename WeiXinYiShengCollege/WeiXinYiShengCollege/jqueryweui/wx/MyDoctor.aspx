@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyCustomerManager.aspx.cs" Inherits="WeiXinYiShengCollege.WebSite.jqueryweui.wx.MyCustomerManager" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyDoctor.aspx.cs" Inherits="WeiXinYiShengCollege.WebSite.jqueryweui.wx.MyDoctor" %>
 
 
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>我的客服经理</title>
+    <title>我的健康顾问</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -22,13 +22,19 @@
 
         <a class="weui-cell weui-cell_access" href="javascript:;">
             <div class="weui-cell__bd">
-                <p>姓名：<%=cM.Name %></p>
+                <p>姓名：<%=cM.NickName %></p>
             </div>
             
         </a>
         <a class="weui-cell weui-cell_access" href="javascript:;">
             <div class="weui-cell__bd">
                 <p>电话：<%=cM.Mobile %></p>
+            </div>
+            
+        </a>
+        <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+                <p>单位名称：<%=cM.CompanyName %></p>
             </div>
             
         </a>
@@ -44,4 +50,3 @@
 
 </body>
 </html>
-

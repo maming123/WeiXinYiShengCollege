@@ -1,11 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyCustomerManager.aspx.cs" Inherits="WeiXinYiShengCollege.WebSite.jqueryweui.wx.MyCustomerManager" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MedicineList.aspx.cs" Inherits="WeiXinYiShengCollege.WebSite.jqueryweui.wx.MedicineList" %>
 
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>我的客服经理</title>
+    <title>药方</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -19,19 +18,16 @@
 <body ontouchstart>
 
     <div class="weui-cells">
+        <%foreach(Module.Models.Sys_Module m in mySysModuleList) {%>
+        
+        <a class="weui-cell weui-cell_access" href="MedicineList.aspx?moduleId=<%=m.MODULE_ID %>&linkType=<%=m.Link_Type %>">
+            <div class="weui-cell__bd">
+                <p><%=m.MODULE_NAME %></p>
+            </div>
+        </a>
 
-        <a class="weui-cell weui-cell_access" href="javascript:;">
-            <div class="weui-cell__bd">
-                <p>姓名：<%=cM.Name %></p>
-            </div>
-            
-        </a>
-        <a class="weui-cell weui-cell_access" href="javascript:;">
-            <div class="weui-cell__bd">
-                <p>电话：<%=cM.Mobile %></p>
-            </div>
-            
-        </a>
+        <%} %>
+
     </div>
     <script src="../lib/jquery-2.1.4.js"></script>
     <script src="../lib/fastclick.js"></script>
