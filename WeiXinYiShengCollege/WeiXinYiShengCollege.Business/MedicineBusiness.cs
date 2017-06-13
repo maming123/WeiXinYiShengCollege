@@ -91,5 +91,53 @@ namespace WeiXinYiShengCollege.Business
             else
                 return false;
         }
+
+        /// <summary>
+        /// 查看是否针对某个病例点过赞
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <param name="pointid"></param>
+        /// <returns></returns>
+        public static bool IsHaveZan(int userid,int pointid)
+        {
+            string cacheKey = string.Format(@"IsHaveZan_{0}_{1}", userid, pointid.ToString());
+            if (BaseCommon.HasCache(cacheKey))
+            {
+                return BaseCommon.GetCache<bool>(cacheKey);
+            }
+            UserOpLog ue = UserOpLog.FirstOrDefault(@"where UserId=@0 and PointId=@1 and OptionType=@2", userid, pointid, (int)OptionType.zan);
+            if (null != ue && ue.Id > 0)
+            {
+                BaseCommon.CacheInsert(cacheKey, true, DateTime.Now.AddMinutes(5));
+                return true;
+            }
+            else
+                return false;
+        }
+
+        /// <summary>
+        /// 查看是否针对某个病例点过收藏
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <param name="pointid"></param>
+        /// <returns></returns>
+        public static bool IsCollect(int userid, int pointid)
+        {
+            string cacheKey = string.Format(@"IsCollect_{0}_{1}", userid, pointid.ToString());
+            if (BaseCommon.HasCache(cacheKey))
+            {
+                return BaseCommon.GetCache<bool>(cacheKey);
+            }
+            MyCollectMedicine ue = MyCollectMedicine.FirstOrDefault(@"where UserId=@0 and PointId=@1 ", userid, pointid);
+            if (null != ue && ue.Id > 0)
+            {
+                BaseCommon.CacheInsert(cacheKey, true, DateTime.Now.AddMinutes(5));
+                return true;
+            }
+            else
+                return false;
+        }
+        
+
     }
 }

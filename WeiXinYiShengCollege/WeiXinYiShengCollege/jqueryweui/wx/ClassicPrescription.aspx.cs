@@ -15,9 +15,9 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
     /// </summary>
     public partial class ClassicPrescription : PageBase
     {
-
         public Sys_Point sysPoint = new Sys_Point();
-
+        public bool IsHaveZan = false;
+        public bool IsCollect = false;
         protected void Page_Load(object sender, EventArgs e)
         {
             int moduleId = RequestKeeper.GetFormInt(Request["moduleId"]);
@@ -27,7 +27,10 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
                 sysPoint = tmp;
                 //update seecount
                 tmp.SeeCount++;
-                tmp.Update();
+
+                tmp.Update(new String[]{ "SeeCount" });
+                IsHaveZan = MedicineBusiness.IsHaveZan(UserBusiness.GetCookieUserId(), tmp.Id);
+                IsCollect = MedicineBusiness.IsCollect(UserBusiness.GetCookieUserId(), tmp.Id);
             }
         }
     }

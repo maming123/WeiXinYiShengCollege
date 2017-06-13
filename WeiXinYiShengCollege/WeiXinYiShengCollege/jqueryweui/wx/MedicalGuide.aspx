@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="../css/jquery-weui.css">
 <link rel="stylesheet" href="css/demos.css">
 
-  </head>
+</head>
 
   <body ontouchstart>
 
@@ -31,6 +31,7 @@
           <p>
             <%=medicine.辩证 %>
           </p>--%>
+           
           <h2>症候：</h2>
           <p>
             <%=medicine.症候 %>
@@ -73,10 +74,27 @@
         
       </section>
     </article>
-	<%--<div class="button_sp_area">
-        <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary">赞</a>
-        <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default weui-btn_disabled">按钮</a>
-    </div>--%>
+	<div class="button_sp_area">
+        <%if (sysPoint.Id>0)
+          { %>
+        <%if(IsHaveZan){%>
+            <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary  weui-btn_disabled">已赞</a>
+            <%}else{ %>
+            <a href="javascript:;" id="azan" class="weui-btn weui-btn_mini weui-btn_primary">赞</a>
+            <%}
+               %>
+
+        <%if(IsCollect){%>
+            <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary  weui-btn_disabled">已收藏</a>
+            <%}else{ %>
+            <a href="javascript:;" id="acollect" class="weui-btn weui-btn_mini weui-btn_primary">收藏</a>
+            <%}
+               %>
+
+        <%} %>
+        赞(<%=sysPoint.ZanCount %>)浏览(<%=sysPoint.SeeCount %>)收藏(<%=sysPoint.CollectCount %>)
+       <%-- <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default weui-btn_disabled">按钮</a>--%>
+    </div>
     <script src="../lib/jquery-2.1.4.js"></script>
 <script src="../lib/fastclick.js"></script>
 <script>
@@ -85,7 +103,65 @@
   });
 </script>
 <script src="../js/jquery-weui.js"></script>
+      <script>
+          var pointid = "<%=sysPoint.Id %>";
+      </script>
+       <script>
+           $("#azan").click(function () {
+               
+               $.ajax({
+                   type: "POST",
+                   url: "../../handlerui/PageHandler.ashx",
+                   data: { Action: "InsertUserOpLogZan", pointid: pointid, r: Math.random() },
+                   dataType: "json",
+                   async: true,
+                   success: function (result) {
+                       if (result && typeof result == "object") {
+                           if (result.code == 1) {
 
+                               $.toast("已赞", function () {
+                                   //console.log('close');
+                                   //操作成功弹窗消失后执行
+                                   //document.location.href = "Profile.aspx?OpenId=" + OpenId;
+                                   $("#azan").addClass("weui-btn_disabled").html("已赞");
+                                   $("#azan").unbind("click");
+                               });
+                               //console.log(result.m);
+                           } else {
+                               $.toptip('提交失败');
+                           }
+                       }
+                   }
+               });
+           });
+           $("#acollect").click(function () {
+
+               $.ajax({
+                   type: "POST",
+                   url: "../../handlerui/PageHandler.ashx",
+                   data: { Action: "InsertMyCollectMedicine", pointid: pointid, r: Math.random() },
+                   dataType: "json",
+                   async: true,
+                   success: function (result) {
+                       if (result && typeof result == "object") {
+                           if (result.code == 1) {
+
+                               $.toast("已收藏", function () {
+                                   //console.log('close');
+                                   //操作成功弹窗消失后执行
+                                   //document.location.href = "Profile.aspx?OpenId=" + OpenId;
+                                   $("#acollect").addClass("weui-btn_disabled").html("已收藏");
+                                   $("#acollect").unbind("click");
+                               });
+                               //console.log(result.m);
+                           } else {
+                               $.toptip('提交失败');
+                           }
+                       }
+                   }
+               });
+           });
+    </script>
   </body>
 </html>
 

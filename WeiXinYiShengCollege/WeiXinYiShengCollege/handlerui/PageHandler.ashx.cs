@@ -44,9 +44,81 @@ namespace HospitalBookWebSite.handler
             dictAction.Add("DeleteDoctorInfo", DeleteDoctorInfo);
             //插入免责声明表
             dictAction.Add("InsertUserExceptions", InsertUserExceptions);
+            //点赞
+            dictAction.Add("InsertUserOpLogZan", InsertUserOpLogZan);
+            //点收藏
+            dictAction.Add("InsertMyCollectMedicine", InsertMyCollectMedicine);
+        }
 
+        private void InsertMyCollectMedicine()
+        {
+            if (!IsReady())
+                return;
+            int pointid = RequestKeeper.GetFormInt(Request["pointid"]);
+            if (pointid <= 0)
+            {
+                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = -1, m = "参数非法" }));
+                return;
+            }
+            int userId = UserBusiness.GetCookieUserId();
+            MyCollectMedicine userOp = new MyCollectMedicine()
+            {
+                CreateDateTime = DateTime.Now
+                ,
+                PointId = pointid
+                ,
+                UserId = userId
+            };
+
+            object obj = userOp.Insert();
+            Sys_Point sPoint = Sys_Point.SingleOrDefault((int)pointid);
+            sPoint.CollectCount++;
+            sPoint.Update(new String[] { "CollectCount" });
+            string cacheKey = string.Format(@"GetMedicine_{0}", sPoint.ModuleId);
+            BaseCommon.CacheRemove(cacheKey);
+            if (Convert.ToInt32(obj) > 0)
+            {
+                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = 1, m = "成功" }));
+            }
+            else
+            {
+                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = 0, m = "失败" }));
+            }
+        }
+
+        private void InsertUserOpLogZan()
+        {
+            if (!IsReady())
+                return;
+            int pointid = RequestKeeper.GetFormInt(Request["pointid"]);
+            if(pointid<=0)
+            {
+                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = -1, m = "参数非法" }));
+                return;
+            }
+            int userId = UserBusiness.GetCookieUserId();
+            UserOpLog userOp = new UserOpLog() { 
+             CreateDateTime=DateTime.Now
+             , OptionType= (int)OptionType.zan
+             , PointId=pointid
+             ,
+             UserId = userId
+            };
             
-
+            object obj = userOp.Insert();
+            Sys_Point sPoint = Sys_Point.SingleOrDefault((int)pointid);
+            sPoint.ZanCount++;
+            sPoint.Update(new String[] { "ZanCount" });
+            string cacheKey = string.Format(@"GetMedicine_{0}", sPoint.ModuleId);
+            BaseCommon.CacheRemove(cacheKey);
+            if (Convert.ToInt32(obj) > 0)
+            {
+                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = 1, m = "成功" }));
+            }
+            else
+            {
+                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = 0, m = "失败" }));
+            }
         }
 
         private void InsertUserExceptions()

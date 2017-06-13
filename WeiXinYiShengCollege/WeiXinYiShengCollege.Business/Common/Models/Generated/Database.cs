@@ -789,6 +789,10 @@ namespace Module.Models
 	[TableName("MyCollectMedicine")]
 
 
+	[PrimaryKey("Id")]
+
+
+
 	[ExplicitColumns]
     public partial class MyCollectMedicine : CoreDB.Record<MyCollectMedicine>  
     {
@@ -938,6 +942,12 @@ namespace Module.Models
 
 
 		[Column] public int SeeCount { get; set; }
+
+
+
+
+
+		[Column] public int CollectCount { get; set; }
 
 
 
