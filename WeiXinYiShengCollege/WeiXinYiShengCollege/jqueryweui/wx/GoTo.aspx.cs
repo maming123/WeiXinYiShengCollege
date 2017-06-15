@@ -66,6 +66,7 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
                 {
                     UserBusiness.WriteCookie(tmpUser);
                     sUser = tmpUser;
+                    WeiXinBusiness.UpdateSysUser(tmpUser.OpenId);
                     if (sUser.ParentId > 0)
                     {
                         //认为是粉丝

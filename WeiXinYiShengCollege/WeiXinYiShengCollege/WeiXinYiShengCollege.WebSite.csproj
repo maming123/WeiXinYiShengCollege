@@ -295,6 +295,7 @@
     <Content Include="jqueryweui\wx\MyCustomerManager.aspx" />
     <Content Include="jqueryweui\wx\MyDoctor.aspx" />
     <Content Include="jqueryweui\wx\MyExchangeList.aspx" />
+    <Content Include="jqueryweui\wx\MyCollect.aspx" />
     <Content Include="jqueryweui\wx\MyFansList.aspx" />
     <Content Include="jqueryweui\wx\MyLiShiList.aspx" />
     <Content Include="jqueryweui\wx\MyOrderList.aspx" />
@@ -982,6 +983,13 @@
     </Compile>
     <Compile Include="jqueryweui\wx\MyExchangeList.aspx.designer.cs">
       <DependentUpon>MyExchangeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jqueryweui\wx\MyCollect.aspx.cs">
+      <DependentUpon>MyCollect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\MyCollect.aspx.designer.cs">
+      <DependentUpon>MyCollect.aspx</DependentUpon>
     </Compile>
     <Compile Include="jqueryweui\wx\MyFansList.aspx.cs">
       <DependentUpon>MyFansList.aspx</DependentUpon>

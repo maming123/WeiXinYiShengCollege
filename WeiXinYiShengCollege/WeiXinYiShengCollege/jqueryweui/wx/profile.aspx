@@ -82,6 +82,13 @@
                             <span class="weui-cell__ft"></span>
                         </a>
                         <%if(UserBusiness.isInWhiteList()){ %>
+                        <a class="weui-cell weui-cell_access" href="MyCollect.aspx?OpenId=<%=sUser.OpenId %>">
+                            <div class="weui-cell__bd weui-cell_primary">
+                                <p>我的收藏</p>
+                            </div>
+                            <span class="weui-cell__ft"></span>
+                        </a>
+                        
                         <a class="weui-cell weui-cell_access" href="MedicineList.aspx?moduleId=2&linkType=1">
                             <div class="weui-cell__bd weui-cell_primary">
                                 <p>临证参考</p>

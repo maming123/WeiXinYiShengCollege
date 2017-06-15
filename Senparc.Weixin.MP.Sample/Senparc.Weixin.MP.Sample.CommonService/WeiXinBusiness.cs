@@ -250,6 +250,47 @@ namespace Senparc.Weixin.MP.Sample.CommonService
            return userInfoJson;
        }
 
+       /// <summary>
+       /// 当用户微信信息有更新时，从微信api获取用户信息然后更新本地的用户信息
+       /// </summary>
+       /// <param name="eventKey"></param>
+       /// <param name="FromUserName">OpenId</param>
+       public static int UpdateSysUser(String FromUserName)
+       {
+           
+           //获取用户信息
+           Sys_User sUserRequest = UserBusiness.GetUserInfo(FromUserName);
+           //从api获取微信信息
+           UserInfoJson userInfoJson = AdvancedAPIs.UserApi.Info(WeiXinBusiness.Appid, FromUserName);
+           String userInfoJsonStr = BaseCommon.ObjectToJson(userInfoJson);
+           if (null != sUserRequest 
+               && null != userInfoJson 
+               && sUserRequest.UserInfoJson.Trim() == userInfoJsonStr.Trim())
+           {
+               return 0;
+           }
+
+           string nickName = userInfoJson.nickname;
+           string headImgUrl = userInfoJson.headimgurl;
+           Area provinceArea, cityArea;
+           AreaBusiness.Insert(userInfoJson.province, userInfoJson.city, out provinceArea, out cityArea);
+           int provinceId = provinceArea.Id;
+           int cityId = cityArea.Id;
+           
+            //存在 假如存在就恢复删除标识
+            Sys_User sUser = new Sys_User() { Id = sUserRequest.Id };
+            sUser.Province = provinceId;
+            sUser.City = cityId;
+            sUser.HeadImgUrl = headImgUrl;
+            sUser.UpdateDateTime = DateTime.Now;
+            sUser.UserInfoJson = userInfoJsonStr;
+            int r =  sUser.Update(new String[] { "UserInfoJson", "Province", "City", "HeadImgUrl", "UpdateDateTime" });
+            SNS.Library.Logs.LogDAOFactory.Write("同步用户微信信息到本地", "", nickName + "|" + sUserRequest.Mobile, SNS.Library.Logs.LogType.Application);
+            return r;
+       }
+
+
+
        #region 消息回复逻辑
 
        /// <summary>

@@ -137,6 +137,24 @@ namespace WeiXinYiShengCollege.Business
             else
                 return false;
         }
+
+
+        /// <summary>
+        /// 获取我的收藏
+        /// </summary>
+        /// <returns></returns>
+        public static List<dynamic> GetMyCollectMedicine(int userId)
+        {
+            String strSql = @"SELECT C.Id,C.PointId, P.Title,M.Link_Type,M.MODULE_ID
+                            FROM dbo.MyCollectMedicine C 
+                            LEFT JOIN dbo.Sys_Point P ON C.PointId=P.Id
+                            LEFT JOIN dbo.Sys_Module M ON P.ModuleId=M.MODULE_ID 
+                            WHERE C.UserId=@0";
+
+            List<dynamic> list = CoreDB.GetInstance().Query<dynamic>(strSql,userId).ToList();
+            return list;
+        }
+
         
 
     }
