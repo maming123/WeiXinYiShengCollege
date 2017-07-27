@@ -37,6 +37,8 @@ namespace WeiXinYiShengCollege.WebSite.Home
                 lblPointId.Text = point.Id.ToString();
                 
                 string str = point.Content;
+                try
+                { 
                 Medicine md =  BaseCommon.JsonToObject<Medicine>(str);
                 if (null != md)
                 {
@@ -51,6 +53,11 @@ namespace WeiXinYiShengCollege.WebSite.Home
                     txtyundong.Text = md.外治法.运动;
                     txtzhenghou.Text = md.症候;
                     txtzhongchengyao.Text = md.内治法.中成药;
+                }
+                }
+                catch (Exception ex)
+                {
+                    SNS.Library.Logs.LogDAOFactory.Write(ex.Message + ex.Source, SNS.Library.Logs.LogType.Error);
                 }
             }
         }

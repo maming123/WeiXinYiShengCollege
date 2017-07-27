@@ -12,7 +12,7 @@ using WeiXinYiShengCollege.Business.Common.Models;
 namespace WeiXinYiShengCollege.WebSite.Home
 {
     /// <summary>
-    /// 临证参考
+    /// 经典方剂
     /// </summary>
     public partial class EditClassicPrescription : ManagePageBase
     {
@@ -37,8 +37,26 @@ namespace WeiXinYiShengCollege.WebSite.Home
             if (point != null && point.Id > 0)
             {
                 lblPointId.Text = point.Id.ToString();
+
                 string str = point.Content;
-                txtContent.Text = str;
+                try
+                {
+                    ClassPrescription md = BaseCommon.JsonToObject<ClassPrescription>(str);
+                    if (null != md)
+                    {
+                        //txtbingzheng.Text = md.病症;
+                        //txtbianzheng.Text = md.辩证;
+                        txtlaiyuan.Text = md.来源;
+                        txtzucheng.Text = md.组成;
+                        txtgongxiao.Text = md.功效;
+                        txtzhuzhi.Text = md.主治;
+                        txtyongfa.Text = md.用法;
+                        txtqita.Text = md.其他;
+                    }
+                }catch(Exception ex)
+                {
+                    SNS.Library.Logs.LogDAOFactory.Write(ex.Message + ex.Source, SNS.Library.Logs.LogType.Error);
+                }
             }
         }
 
@@ -46,11 +64,22 @@ namespace WeiXinYiShengCollege.WebSite.Home
         {
             int r=0;
             Sys_Point point = new Sys_Point();
+
+            ClassPrescription md = new ClassPrescription()
+            {
+                功效 =txtgongxiao.Text
+                , 来源=txtlaiyuan.Text
+                , 其他=txtqita.Text
+                , 用法=txtyongfa.Text
+                , 主治 =txtzhuzhi.Text
+                , 组成 =txtzucheng.Text
+            };
+            string strJson = BaseCommon.ObjectToJson(md);
             
             if (string.IsNullOrEmpty(lblPointId.Text))
             {
                 point.ModuleId = Convert.ToInt32(this.lblModule.Text);
-                point.Content = txtContent.Text;
+                point.Content = strJson;
                 point.Title = txttitle.Text;
                 point.CreateDateTime = DateTime.Now;
                object objr= point.Insert();
@@ -64,7 +93,7 @@ namespace WeiXinYiShengCollege.WebSite.Home
             {
                 point = Sys_Point.Single((object)Convert.ToInt32(lblPointId.Text));
 
-                point.Content = txtContent.Text;
+                point.Content = strJson;
                 point.Title = txttitle.Text;
                 point.UpdateDateTime = DateTime.Now;
 

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Module.Models;
 using Module.Utils;
 using WeiXinYiShengCollege.Business;
+using WeiXinYiShengCollege.Business.Common.Models;
 
 namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
 {
@@ -16,6 +17,7 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
     public partial class ClassicPrescription : PageBase
     {
         public Sys_Point sysPoint = new Sys_Point();
+        public ClassPrescription cp = new ClassPrescription();
         public bool IsHaveZan = false;
         public bool IsCollect = false;
         protected void Page_Load(object sender, EventArgs e)
@@ -25,6 +27,9 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
             if(null!=tmp && tmp.Id>0)
             {
                 sysPoint = tmp;
+
+                 cp = MedicineBusiness.GetClassPrescriptionFromContent(tmp.Content);
+
                 //update seecount
                 tmp.SeeCount++;
 

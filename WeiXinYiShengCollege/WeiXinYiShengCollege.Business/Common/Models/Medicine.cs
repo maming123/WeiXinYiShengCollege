@@ -47,4 +47,17 @@ namespace WeiXinYiShengCollege.Business.Common.Models
         public string 食疗{get;set;}
         public string 运动{get;set;}
     }
+
+    /// <summary>
+    /// 经典方剂
+    /// </summary>
+    public class ClassPrescription
+    {
+        public string 来源 { get; set; }
+        public string 组成 { get; set; }
+        public string 功效 { get; set; }
+        public string 主治 { get; set; }
+        public string 用法 { get; set; }
+        public string 其他 { get; set; }
+    }
 }

@@ -71,6 +71,24 @@ namespace WeiXinYiShengCollege.Business
         }
 
         /// <summary>
+        /// 获取经典方剂
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
+        public static ClassPrescription GetClassPrescriptionFromContent(string content)
+        {
+            try
+            {
+                ClassPrescription m = BaseCommon.JsonToObject<ClassPrescription>(content);
+                return m;
+            }
+            catch
+            {
+                return new ClassPrescription();
+            }
+        }
+
+        /// <summary>
         /// 是否有同意免责声明 缓存30分钟
         /// </summary>
         /// <param name="userid"></param>
