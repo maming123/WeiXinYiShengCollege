@@ -1060,6 +1060,68 @@ namespace Module.Models
 	}
 
     
+	[TableName("Question")]
+
+
+	[PrimaryKey("Id")]
+
+
+
+	[ExplicitColumns]
+    public partial class Question : CoreDB.Record<Question>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string Name { get; set; }
+
+
+
+
+
+		[Column] public string Sex { get; set; }
+
+
+
+
+
+		[Column] public DateTime? Birthday { get; set; }
+
+
+
+
+
+		[Column] public string Profession { get; set; }
+
+
+
+
+
+		[Column] public string Mobile { get; set; }
+
+
+
+
+
+		[Column] public string Sickness { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDateTime { get; set; }
+
+
+
+	}
+
+    
 	[TableName("MaterialNews")]
 
 
@@ -1098,6 +1160,52 @@ namespace Module.Models
 
 
 		[Column] public DateTime? UpdateDateTime { get; set; }
+
+
+
+	}
+
+    
+	[TableName("SickMusicDic")]
+
+
+	[ExplicitColumns]
+    public partial class SickMusicDic : CoreDB.Record<SickMusicDic>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public int SickNum { get; set; }
+
+
+
+
+
+		[Column] public string SickName { get; set; }
+
+
+
+
+
+		[Column] public string MusicList { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDateTime { get; set; }
+
+
+
+
+
+		[Column] public int Status { get; set; }
 
 
 

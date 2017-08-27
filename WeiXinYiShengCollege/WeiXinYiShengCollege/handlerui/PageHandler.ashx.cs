@@ -48,6 +48,60 @@ namespace HospitalBookWebSite.handler
             dictAction.Add("InsertUserOpLogZan", InsertUserOpLogZan);
             //点收藏
             dictAction.Add("InsertMyCollectMedicine", InsertMyCollectMedicine);
+            //提交问卷调查
+            dictAction.Add("SubmitQuestion", SubmitQuestion);
+            
+        }
+
+        private void SubmitQuestion()
+        {
+            string name = RequestKeeper.GetFormString(Request["Name"]);
+            string sex = RequestKeeper.GetFormString(Request["Sex"]);
+            string birthday = RequestKeeper.GetFormString(Request["Birthday"]);
+            string profession = RequestKeeper.GetFormString(Request["Profession"]);
+            string mobile = RequestKeeper.GetFormString(Request["Mobile"]);
+            string sickness = RequestKeeper.GetFormString(Request["Sickness"]);
+
+            if (String.IsNullOrEmpty(name))
+            {
+                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = -1, m = "姓名不能为空" }));
+                return;
+            }
+            if (String.IsNullOrEmpty(mobile))
+            {
+                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = -1, m = "手机号不能为空" }));
+                return;
+            }
+            if (String.IsNullOrEmpty(sickness))
+            {
+                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = -1, m = "病症不能为空" }));
+                return;
+            }
+            DateTime dt = Convert.ToDateTime(birthday + " 00:00:00");
+            Question qExist =QuestionBusiness.GetQuestion(mobile, dt);
+            if(null!=qExist)
+            {
+                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = -900, m = "此手机号和此生日已提交过问卷，请不要重复提交" }));
+                return;
+            }
+            bool bOk = QuestionBusiness.Add(new Question() { 
+                 Name=name,
+                  Birthday=dt,
+                   Mobile=mobile,
+                    Profession= profession,
+                     Sex=sex,
+                      Sickness=sickness,
+                      CreateDateTime=DateTime.Now
+            });
+
+           if (bOk)
+            {
+                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = 1, m = "成功" }));
+            }
+            else
+            {
+                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = 0, m = "失败" }));
+            }
         }
 
         private void InsertMyCollectMedicine()

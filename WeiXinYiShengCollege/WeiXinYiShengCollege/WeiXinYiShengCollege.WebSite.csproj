@@ -303,6 +303,8 @@
     <Content Include="jqueryweui\wx\MyOrderList.aspx" />
     <Content Include="jqueryweui\wx\ProfileApprove.aspx" />
     <Content Include="jqueryweui\wx\ProfileEdit.aspx" />
+    <Content Include="jqueryweui\wx\QuestionWeb.aspx" />
+    <Content Include="jqueryweui\wx\QuestionResult.aspx" />
     <Content Include="js\admin.js" />
     <Content Include="js\bdCount.js" />
     <Content Include="js\common.js" />
@@ -1031,6 +1033,20 @@
     <Compile Include="jqueryweui\wx\ProfileEdit.aspx.designer.cs">
       <DependentUpon>ProfileEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="jqueryweui\wx\QuestionWeb.aspx.cs">
+      <DependentUpon>QuestionWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\QuestionWeb.aspx.designer.cs">
+      <DependentUpon>QuestionWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jqueryweui\wx\QuestionResult.aspx.cs">
+      <DependentUpon>QuestionResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\QuestionResult.aspx.designer.cs">
+      <DependentUpon>QuestionResult.aspx</DependentUpon>
+    </Compile>
     <Compile Include="OAuth2.aspx.cs">
       <DependentUpon>OAuth2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1073,6 +1089,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="images\qrcode\" />
     <Folder Include="js\kindeditor-4.1.10\attached\" />
+    <Folder Include="music\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Senparc.Weixin.MP.Sample\Senparc.Weixin.MP.Sample.CommonService\Senparc.Weixin.MP.Sample.CommonService.csproj">
