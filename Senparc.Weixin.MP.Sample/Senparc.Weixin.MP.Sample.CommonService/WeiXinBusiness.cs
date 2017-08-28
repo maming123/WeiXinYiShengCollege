@@ -29,6 +29,17 @@ namespace Senparc.Weixin.MP.Sample.CommonService
 
        #region 自定义处理逻辑
 
+       public static string GetWelcomeInfo()
+       {
+           AutoReplyContent arc = AutoReplyContent.SingleOrDefault("where UpKey='默认欢迎语'");
+           string welcomeStr = "欢迎关注易生大健康";
+           if (null != arc)
+           {
+               welcomeStr = arc.ReplyContent;
+           }
+           return welcomeStr;
+       }
+
        /// <summary>
        /// 订阅关注逻辑
        /// </summary>
@@ -118,6 +129,7 @@ namespace Senparc.Weixin.MP.Sample.CommonService
                else
                {
                    sUser.Update(new String[] { "UserInfoJson", "IsDelete", "Province", "City", "HeadImgUrl", "UpdateDateTime" });
+                   returnMsg = GetWelcomeInfo();
                }
            }
            return returnMsg;
@@ -223,6 +235,19 @@ namespace Senparc.Weixin.MP.Sample.CommonService
 
            String strUrl = OAuthApi.GetAuthorizeUrl(Appid, redirectUrl, "none", OAuthScope.snsapi_base);
            
+           return strUrl;
+       }
+
+       /// <summary>
+       /// 获取redirectUrl?code=xxx 弹出授权也没
+       /// </summary>
+       /// <param name="redirectUrl"></param>
+       /// <returns></returns>
+       public static string GetAuthorizeUrlByPopAutherPage(string redirectUrl)
+       {
+
+           String strUrl = OAuthApi.GetAuthorizeUrl(Appid, redirectUrl, "none", OAuthScope.snsapi_userinfo);
+
            return strUrl;
        }
 

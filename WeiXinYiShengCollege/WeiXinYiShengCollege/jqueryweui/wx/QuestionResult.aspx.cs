@@ -16,10 +16,12 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
         public List<SickMusicItem> listMusic = new List<SickMusicItem>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            string openId = UserBusiness.GetCookieOpenId();
+            Question question = QuestionBusiness.GetQuestion(openId);
             //mobile=" + mobile+"&birthday="+txtBirthday
-            string mobile = RequestKeeper.GetFormString(Request["mobile"]);
-            string birthday = RequestKeeper.GetFormString(Request["birthday"]);
-            Question question = QuestionBusiness.GetQuestion(mobile, Convert.ToDateTime(birthday));
+            //string mobile = RequestKeeper.GetFormString(Request["mobile"]);
+            //string birthday = RequestKeeper.GetFormString(Request["birthday"]);
+            //Question question = QuestionBusiness.GetQuestion(mobile, Convert.ToDateTime(birthday));
             if (null != question && !string.IsNullOrEmpty(question.Sickness))
             {
                 //获取曲目名称

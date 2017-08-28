@@ -33,6 +33,22 @@ namespace WeiXinYiShengCollege.Business
         };
 
         /// <summary>
+        /// 是否完成过调查问卷
+        /// </summary>
+        /// <param name="openId"></param>
+        /// <returns></returns>
+        public static bool IsExist(string openId)
+        {
+            Question q = Question.SingleOrDefault("where OpenId=@0", openId);
+
+            if (null != q && q.Id > 0)
+
+                return true;
+            else
+                return false;
+        }
+
+        /// <summary>
         /// 添加问卷调查内容
         /// </summary>
         /// <param name="question"></param>
@@ -56,6 +72,21 @@ namespace WeiXinYiShengCollege.Business
         public static Question GetQuestion(string mobile ,DateTime birthday)
         {
             Question q = Question.SingleOrDefault("where Mobile=@0 and Birthday=@1", mobile, birthday);
+
+            if (null != q && q.Id > 0)
+
+                return q;
+            else
+                return null;
+        }
+        /// <summary>
+        /// 通过OpenId获取病症
+        /// </summary>
+        /// <param name="openId"></param>
+        /// <returns></returns>
+        public static Question GetQuestion(string openId)
+        {
+            Question q = Question.SingleOrDefault("where OpenId=@0", openId);
 
             if (null != q && q.Id > 0)
 

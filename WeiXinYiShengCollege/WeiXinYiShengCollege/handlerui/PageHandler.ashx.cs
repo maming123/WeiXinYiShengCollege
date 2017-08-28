@@ -77,6 +77,8 @@ namespace HospitalBookWebSite.handler
                 Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = -1, m = "病症不能为空" }));
                 return;
             }
+
+
             DateTime dt = Convert.ToDateTime(birthday + " 00:00:00");
             Question qExist =QuestionBusiness.GetQuestion(mobile, dt);
             if(null!=qExist)
@@ -84,7 +86,38 @@ namespace HospitalBookWebSite.handler
                 Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = -900, m = "此手机号和此生日已提交过问卷，请不要重复提交" }));
                 return;
             }
+
+            //查看是否用户已经注册，如果未注册那么在数据库中添加一条信息并设置parentId=尉迟的号
+            string OpenId = UserBusiness.GetCookieOpenId();
+            Sys_User tmpUser = UserBusiness.GetUserInfoForIsNotDelete(OpenId);
+
+            if (null == tmpUser)
+            {
+                //不存在该用户，并且OpenId长度》0则新创建该用户
+                if (string.IsNullOrEmpty(OpenId))
+                {
+                    SNS.Library.Logs.LogDAOFactory.Write("OpenId为空", "", Convert.ToString((int)ErrorCode.NotFindOpenId), SNS.Library.Logs.LogType.Error);
+                    
+                    Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = -901, m = "OpenId为空,错误码:" + Convert.ToString((int)ErrorCode.NotFindOpenId) }));
+                    return;
+
+                }
+                else
+                {
+                    //重新执行订阅逻辑（不知什么原因有可能在订阅时未将用户信息插入）
+                    WeiXinBusiness.Subscribe("", OpenId);
+                    tmpUser = UserBusiness.GetUserInfo(OpenId);
+                    //然后更新手机号码和用户名
+                    tmpUser.Mobile = Convert.ToInt64(mobile);
+                    tmpUser.NickName = name;
+                    tmpUser.UserType = (int)UserType.粉丝类型;
+                    tmpUser.ParentId = 17;//17是数据库里边的尉迟
+                    tmpUser.Update();
+                }
+            }
+
             bool bOk = QuestionBusiness.Add(new Question() { 
+                OpenId=OpenId,
                  Name=name,
                   Birthday=dt,
                    Mobile=mobile,

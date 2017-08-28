@@ -16,13 +16,7 @@ namespace Senparc.Weixin.MP.Sample.CommonService.MessageHandlers.YSMsgHandler
 
         private string GetWelcomeInfo()
         {
-            AutoReplyContent arc = AutoReplyContent.SingleOrDefault("where UpKey='默认欢迎语'");
-            string welcomeStr = "欢迎关注易生大健康";
-            if(null!=arc)
-            {
-                welcomeStr = arc.ReplyContent;
-            }
-            return welcomeStr;
+           return  WeiXinBusiness.GetWelcomeInfo();
         }
 
         public string GetDownloadInfo(CodeRecord codeRecord)

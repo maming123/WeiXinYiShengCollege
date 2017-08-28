@@ -14,6 +14,8 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
     {
 
         public Sys_User sUser = new Sys_User();
+        //是否存在调查问卷答案
+        public bool isExistQuestionResult = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,6 +27,7 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
                 {
                     sUser = tmpUser;
                 }
+                isExistQuestionResult = QuestionBusiness.IsExist(OpenId);
             }
             
         }

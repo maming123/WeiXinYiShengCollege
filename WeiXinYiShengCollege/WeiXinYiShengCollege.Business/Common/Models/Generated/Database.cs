@@ -1060,68 +1060,6 @@ namespace Module.Models
 	}
 
     
-	[TableName("Question")]
-
-
-	[PrimaryKey("Id")]
-
-
-
-	[ExplicitColumns]
-    public partial class Question : CoreDB.Record<Question>  
-    {
-
-
-
-		[Column] public int Id { get; set; }
-
-
-
-
-
-		[Column] public string Name { get; set; }
-
-
-
-
-
-		[Column] public string Sex { get; set; }
-
-
-
-
-
-		[Column] public DateTime? Birthday { get; set; }
-
-
-
-
-
-		[Column] public string Profession { get; set; }
-
-
-
-
-
-		[Column] public string Mobile { get; set; }
-
-
-
-
-
-		[Column] public string Sickness { get; set; }
-
-
-
-
-
-		[Column] public DateTime CreateDateTime { get; set; }
-
-
-
-	}
-
-    
 	[TableName("MaterialNews")]
 
 
@@ -1206,6 +1144,74 @@ namespace Module.Models
 
 
 		[Column] public int Status { get; set; }
+
+
+
+	}
+
+    
+	[TableName("Question")]
+
+
+	[PrimaryKey("Id")]
+
+
+
+	[ExplicitColumns]
+    public partial class Question : CoreDB.Record<Question>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string OpenId { get; set; }
+
+
+
+
+
+		[Column] public string Name { get; set; }
+
+
+
+
+
+		[Column] public string Sex { get; set; }
+
+
+
+
+
+		[Column] public DateTime? Birthday { get; set; }
+
+
+
+
+
+		[Column] public string Profession { get; set; }
+
+
+
+
+
+		[Column] public string Mobile { get; set; }
+
+
+
+
+
+		[Column] public string Sickness { get; set; }
+
+
+
+
+
+		[Column] public DateTime CreateDateTime { get; set; }
 
 
 

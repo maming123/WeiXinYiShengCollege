@@ -3,13 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>问卷调查</title>
+    <title>易生学苑大健康-问卷调查</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-">
+    <meta name="description" content="易生学苑大健康">
 
     <link rel="stylesheet" href="../lib/weui.min.css">
     <link rel="stylesheet" href="../css/jquery-weui.css">
@@ -112,12 +111,15 @@
     </div>
 
 
-    <div class="weui-cells__tips">描述:请完成问卷调查，并提交，然后可下载对应症状的曲目</div>
-
+    
+    
     <div class="weui-btn-area">
         <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">确定</a>
     </div>
-
+    <div class="weui-cells__tips">说明:在您完成问卷之后，系统会为您推荐3首曲目进行试听，曲目对缓解您的病症有益。如需反复试听请搜索公众号：易生学苑大健康或扫描下方二维码，进入个人中心-问卷调查结果继续试听。</div>
+    <div  class="weui-cells__tips">
+        <img   src="/images/qrcode/QrCodeScene_id_37.jpg"  style="width:200px; height:200px;"/>
+    </div>
     <script src="../lib/jquery-2.1.4.js"></script>
     <script src="../lib/fastclick.js"></script>
     <script>
@@ -179,7 +181,8 @@
                             $.toast("提交成功", function () {
                                 //console.log('close');
                                 //操作成功弹窗消失后执行
-                                document.location.href = "QuestionResult.aspx?mobile=" + mobile+"&birthday="+txtBirthday;
+                               // document.location.href = "QuestionResult.aspx?mobile=" + mobile + "&birthday=" + txtBirthday;
+                                document.location.href = "QuestionResult.aspx";
                             });
                             //console.log(result.m);
                         } else {
