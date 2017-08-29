@@ -77,19 +77,18 @@ namespace HospitalBookWebSite.handler
                 Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = -1, m = "病症不能为空" }));
                 return;
             }
-
-
-            DateTime dt = Convert.ToDateTime(birthday + " 00:00:00");
-            Question qExist =QuestionBusiness.GetQuestion(mobile, dt);
-            if(null!=qExist)
-            {
-                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = -900, m = "此手机号和此生日已提交过问卷，请不要重复提交" }));
-                return;
-            }
-
+            
             //查看是否用户已经注册，如果未注册那么在数据库中添加一条信息并设置parentId=尉迟的号
             string OpenId = UserBusiness.GetCookieOpenId();
             Sys_User tmpUser = UserBusiness.GetUserInfoForIsNotDelete(OpenId);
+
+            DateTime dt = Convert.ToDateTime(birthday + " 00:00:00");
+            Question qExist = QuestionBusiness.GetQuestion(OpenId);
+            if(null!=qExist && qExist.Id>0)
+            {
+                Response.Write(BaseCommon.ObjectToJson(new ReturnJsonType<string>() { code = -900, m = "您已提交过问卷，请不要重复提交" }));
+                return;
+            }
 
             if (null == tmpUser)
             {

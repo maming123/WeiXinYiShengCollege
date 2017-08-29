@@ -82,32 +82,7 @@
                 </select>
             </div>
         </div>
-        <%-- <div class="weui-cell weui-cell_select weui-cell_select-after">
-        <div class="weui-cell__hd">
-          <label for="" class="weui-label">第二种症状</label>
-        </div>
-        <div class="weui-cell__bd">
-          <select class="weui-select" name="selectSick2" id="selectSick2">
-            <option value="0">请选择</option>
-            <option value="1">高血压</option>
-            <option value="2">糖尿病</option>
-            <option value="3">高血脂</option>
-          </select>
-        </div>
-      </div>
-      <div class="weui-cell weui-cell_select weui-cell_select-after">
-        <div class="weui-cell__hd">
-          <label for="" class="weui-label">第三种症状</label>
-        </div>
-        <div class="weui-cell__bd">
-          <select class="weui-select" name="selectSick3" id="selectSick3">
-            <option value="0">请选择</option>
-            <option value="1">高血压</option>
-            <option value="2">糖尿病</option>
-            <option value="3">高血脂</option>
-          </select>
-        </div>
-      </div>--%>
+        
     </div>
 
 
@@ -116,9 +91,16 @@
     <div class="weui-btn-area">
         <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">确定</a>
     </div>
-    <div class="weui-cells__tips">说明:在您完成问卷之后，系统会为您推荐3首曲目进行试听，曲目对缓解您的病症有益。如需反复试听请搜索公众号：易生学苑大健康或扫描下方二维码，进入个人中心-问卷调查结果继续试听。</div>
+    <div class="weui-cells__tips">
+        说明:
+        <br />在您完成问卷之后，系统会为您生成3首适合您个人的曲目，通过专业定制音箱播放个性化曲目可以调理您的身心平衡。
+        <br />如需反复收听，请搜索公众号“易生学苑大健康”，或扫描下方二维码，进入“个人中心”，点击“五音疗愈曲目”。<br/>获取专业定制化音箱请咨询：电话/微信：13520927078。
+    </div>
     <div  class="weui-cells__tips"  style="text-align:center">
         <img   src="/images/qrcode/QrCodeScene_id_37.jpg"  style="width:200px; height:200px;"/>
+    </div>
+    <div class="weui-footer">
+        <p class="weui-footer__text">Copyright © 2009-<%=DateTime.Now.Year %> YI SHENG</p>
     </div>
     <script src="../lib/jquery-2.1.4.js"></script>
     <script src="../lib/fastclick.js"></script>

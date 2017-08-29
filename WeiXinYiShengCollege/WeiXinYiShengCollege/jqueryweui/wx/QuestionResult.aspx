@@ -41,17 +41,22 @@
         </section>
     </article>
     <div class="weui-cells__tips">
-        如您有反复试听的需要，请搜索公众号：易生学苑大健康 或扫描下方二维码，进入个人中心-问卷调查结果继续试听。
+        如您有反复收听的需要，请搜索公众号“易生学苑大健康”， 或扫描下方二维码，进入“个人中心”，点击“五音疗愈曲目”。
         <br />
         建议：
         <br />
-        (1)如您想获得更好的效果，请用专业设备播放（建议设备：）
+        (1)因曲目中含有起到治疗作用的低频成分，如您想获得更好的效果，请使用专业设备播放（专业定制化音箱请咨询客服人员）
         <br />
-        (2)如您想获得更多的曲目，请联系客服或进入微店咨询详情
+        (2)如您想获得更多的五音疗愈曲目，请联系客服人员。
+        <br />
+        客服电话/微信：13520927078
     </div>
     <div class="weui-cells__tips" style="text-align:center">
         
         <img src="/images/qrcode/QrCodeScene_id_37.jpg" style="width: 200px; height: 200px;" />
+    </div>
+    <div class="weui-footer">
+        <p class="weui-footer__text">Copyright © 2009-<%=DateTime.Now.Year %> YI SHENG</p>
     </div>
     <script src="../lib/jquery-2.1.4.js"></script>
     <script src="../lib/fastclick.js"></script>
