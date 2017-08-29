@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>易生学苑大健康-问卷调查</title>
+    <title>易生学苑大健康-五音疗愈个性曲目下载</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -18,8 +18,8 @@
 <body ontouchstart>
 
 
-    <header class='demos-header'>
-        <h1 class="demos-title">问卷调查</h1>
+    <header  class='demos-header'>
+        <h1 class="demos-title" style="font-size:x-large">五音疗愈个性曲目下载</h1>
     </header>
 
     <div class="weui-cells__title"></div>
@@ -117,7 +117,7 @@
         <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">确定</a>
     </div>
     <div class="weui-cells__tips">说明:在您完成问卷之后，系统会为您推荐3首曲目进行试听，曲目对缓解您的病症有益。如需反复试听请搜索公众号：易生学苑大健康或扫描下方二维码，进入个人中心-问卷调查结果继续试听。</div>
-    <div  class="weui-cells__tips">
+    <div  class="weui-cells__tips"  style="text-align:center">
         <img   src="/images/qrcode/QrCodeScene_id_37.jpg"  style="width:200px; height:200px;"/>
     </div>
     <script src="../lib/jquery-2.1.4.js"></script>

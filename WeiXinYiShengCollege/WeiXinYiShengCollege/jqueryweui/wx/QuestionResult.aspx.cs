@@ -11,7 +11,7 @@ using WeiXinYiShengCollege.Business.Common.Models;
 
 namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
 {
-    public partial class QuestionResult : System.Web.UI.Page
+    public partial class QuestionResult : PageBase
     {
         public List<SickMusicItem> listMusic = new List<SickMusicItem>();
         protected void Page_Load(object sender, EventArgs e)

@@ -11,7 +11,7 @@ using WeiXinYiShengCollege.Business;
 
 namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
 {
-    public partial class GoToQuestion : System.Web.UI.Page
+    public partial class GoToQuestion : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
