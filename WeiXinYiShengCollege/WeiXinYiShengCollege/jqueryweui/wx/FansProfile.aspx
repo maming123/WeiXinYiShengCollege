@@ -78,15 +78,7 @@
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>
-                        <%if(isExistQuestionResult){ %>
-                        <a class="weui-cell weui-cell_access" href="QuestionResult.aspx">
-
-                            <div class="weui-cell__bd weui-cell_primary">
-                                <p>调查问卷结果</p>
-                            </div>
-                            <span class="weui-cell__ft"></span>
-                        </a>
-                        <%} %>
+                        
                         
                     </div>
                 </div>
