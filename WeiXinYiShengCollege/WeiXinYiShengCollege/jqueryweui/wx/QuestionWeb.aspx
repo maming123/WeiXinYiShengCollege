@@ -93,8 +93,9 @@
     </div>
     <div class="weui-cells__tips">
         说明:
+        <br />因本疗法与中医子午流注和五运六气有关，请您填写正确的各项信息，以便获得正确的个性曲目。
         <br />在您完成问卷之后，系统会为您生成3首适合您个人的曲目，通过专业定制音箱播放个性化曲目可以调理您的身心平衡。
-        <br />如需反复收听，请搜索公众号“易生学苑大健康”，或扫描下方二维码，进入“个人中心”，点击“五音疗愈曲目”。<br/>获取专业定制化音箱请咨询：电话/微信：13520927078。
+        <br />如需反复收听，请搜索公众号“易生学苑大健康”，或扫描下方二维码，进入“我的”，点击“我的曲目”。<br/>获取专业定制化音箱请咨询：电话/微信：13520927078。
     </div>
     <div  class="weui-cells__tips"  style="text-align:center">
         <img   src="/images/qrcode/QrCodeScene_id_37.jpg"  style="width:200px; height:200px;"/>
@@ -141,41 +142,49 @@
                 $.toptip('请选择病症');
                 return false;
             }
-            $.ajax({
-                type: "POST",
-                url: "../../handlerui/PageHandler.ashx",
-                data: {
-                    Action: "SubmitQuestion"
-                                                  , Name: nickname
-                                                  , Sex: selectSex
-                                                  , Birthday: txtBirthday
-                                                  , Profession: txtPressional
-                                                  , Mobile: mobile
-                                                  , Sickness: selectSick1
-                                                  , r: Math.random()
-                },
-                dataType: "json",
-                async: true,
-                success: function (result) {
-                    if (result && typeof result == "object") {
-                        if (result.code == 1) {
+            $.confirm("因本疗法与中医子午流注和五运六气有关，请您确认所填写各项信息均准确无误，以便获取正确个性曲目。", "确定提交吗?", function () {
+                    //$.toast("文件已经删除!");
+                    $.ajax({
+                        type: "POST",
+                        url: "../../handlerui/PageHandler.ashx",
+                        data: {
+                            Action: "SubmitQuestion"
+                                                          , Name: nickname
+                                                          , Sex: selectSex
+                                                          , Birthday: txtBirthday
+                                                          , Profession: txtPressional
+                                                          , Mobile: mobile
+                                                          , Sickness: selectSick1
+                                                          , r: Math.random()
+                        },
+                        dataType: "json",
+                        async: true,
+                        success: function (result) {
+                            if (result && typeof result == "object") {
+                                if (result.code == 1) {
 
-                            $.toast("提交成功", function () {
-                                //console.log('close');
-                                //操作成功弹窗消失后执行
-                               // document.location.href = "QuestionResult.aspx?mobile=" + mobile + "&birthday=" + txtBirthday;
-                                document.location.href = "QuestionResult.aspx";
-                            });
-                            //console.log(result.m);
-                        } else {
-                            
-                                $.toptip(result.m);
-                            
+                                    $.toast("提交成功", function () {
+                                        //console.log('close');
+                                        //操作成功弹窗消失后执行
+                                        // document.location.href = "QuestionResult.aspx?mobile=" + mobile + "&birthday=" + txtBirthday;
+                                        document.location.href = "QuestionResult.aspx";
+                                    });
+                                    //console.log(result.m);
+                                } else {
+
+                                    $.toptip(result.m);
+
+                                }
+                            }
                         }
-                    }
-                }
+                    });
+
+                }, function () {
+                    //取消操作
+                });
             });
-        });
+            
+        
     </script>
 </body>
 </html>
