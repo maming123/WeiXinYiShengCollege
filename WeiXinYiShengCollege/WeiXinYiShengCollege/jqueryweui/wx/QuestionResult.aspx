@@ -21,28 +21,39 @@
     <header class='demos-header'>
         <h1 class="demos-title">五音疗愈曲目</h1>
     </header>
-    <article class="weui-article">
+    <style>
+      .weui-row {
+        margin-top: 10px;
+      }
+      [class*="weui-col-"] {
+        border: 0px solid #ccc;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+      }
 
-        <section>
-            <%int i = 1; %>
-            <%foreach (SickMusicItem music in listMusic)
+    </style>
+    <%int i = 1; %>
+    <%foreach (SickMusicItem music in listMusic)
               { %>
-            <section>
-                <p>
-                    个性化曲目<%=i %>
-                </p>
-                <audio controls="controls" id="audio<%=i %>">
+    &nbsp;&nbsp;个性化曲目<%=i %>
+    <div class="weui-row  weui-no-gutter">
+      
+      <div class="weui-col-55">&nbsp;&nbsp;<audio controls="controls" id="audio<%=i %>" style="width:150px;">
                     <source src="http://wx.yishengcollege.com/music/<%=music.MusicFileName %>" type="audio/mpeg" />
                     您浏览器不支持audio标签.
-                </audio>
-                
-                <a href="javascript:void(0);" class="weui-btn weui-btn_mini weui-btn_primary" id="aplay<%=i %>" onclick="playMusic(<%=i %>);return false;">循环播放曲目<%=i %></a>
-            </section>
-            <%i++;
+                </audio></div>
+        <div class="weui-col-1"></div>
+      <div class="weui-col-44"><a href="javascript:void(0);" class="weui-btn weui-btn_mini weui-btn_primary" id="aplay<%=i %>" onclick="playMusic(<%=i %>);return false;">循环播放</a>&nbsp;&nbsp;</div>
+    </div>
+    <%i++;
               } %>
-            <a href="javascript:void(0);"  class="weui-btn weui-btn_mini weui-btn_primary" id="aplay">顺序循环播放所有曲目</a>
-        </section>
-    </article>
+   <div class="weui-row weui-no-gutter">
+      <div class="weui-col-20"></div>
+      <div class="weui-col-60"><a href="javascript:void(0);"  class="weui-btn weui-btn_mini weui-btn_primary" id="aplay">循环播放所有曲目</a></div>
+      <div class="weui-col-20"></div>
+    </div>
+    
     <div class="weui-cells__tips">
         如您有反复收听的需要，请搜索公众号“易生学苑大健康”， 或扫描下方二维码，进入“我的”，点击“我的曲目”，如您还未定制五音曲目，请到“我的”-“定制五音曲目”生成我的曲目。
         <br />
