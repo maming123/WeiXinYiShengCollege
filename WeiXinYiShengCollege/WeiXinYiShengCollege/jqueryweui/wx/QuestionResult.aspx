@@ -35,9 +35,12 @@
                     <source src="http://wx.yishengcollege.com/music/<%=music.MusicFileName %>" type="audio/mpeg" />
                     您浏览器不支持audio标签.
                 </audio>
+                
+                <a href="javascript:void(0);" class="weui-btn weui-btn_mini weui-btn_primary" id="aplay<%=i %>" onclick="playMusic(<%=i %>);return false;">循环播放曲目<%=i %></a>
             </section>
             <%i++;
               } %>
+            <a href="javascript:void(0);"  class="weui-btn weui-btn_mini weui-btn_primary" id="aplay">顺序循环播放所有曲目</a>
         </section>
     </article>
     <div class="weui-cells__tips">
@@ -67,12 +70,70 @@
 
     </script>
     <script src="../js/jquery-weui.js"></script>
-    <script>function PlayAudio(msg) {
-        if (msg == "1") {
-            var audio = $("#audio1")[0];
+    <script>
+        $(function () {
+            $("#aplay").click(function () {
+
+                var audio1 = $("#audio1")[0];
+                var audio2 = $("#audio2")[0];
+                var audio3 = $("#audio3")[0];
+                audio1.pause();
+                audio2.pause();
+                audio3.pause();
+                audio1.preload="metadata"; 
+                audio1.play();
+                audio1.addEventListener('ended', function () {
+                    // Wait 500 milliseconds before next loop  
+                    
+                    audio2.preload = "metadata";
+                    audio2.play();
+                    audio2.addEventListener('ended', function () {
+                        // Wait 500 milliseconds before next loop  
+                        
+                        audio3.preload = "metadata";
+                        audio3.play();
+                        audio3.addEventListener('ended', function () {
+                            // Wait 500 milliseconds before next loop  
+                            audio1.preload = "metadata";
+                            audio1.play();
+                        }, false);
+                    }, false);
+                }, false);
+            });
+            
+        });
+
+        function playMusic(musicnum) {
+        
+            var audio = $("#audio" + musicnum)[0];
+            $("audio").each(function() {
+                if($(this)[0].id != audio.id)
+                {
+                    //console.log($(this)[0]);
+                    if ($(this)[0].paused==false) {
+                        $(this)[0].pause();
+                    }
+                }
+            });
+            audio.preload = "metadata";
+            audio.loop = "loop";
             audio.play();
+            
+            //audio.load();                //音频加载
+            ////这里的监听事件，表示音频开始加载的时候触发
+            //audio.addEventListener("loadstart", function () {
+            //         var audioNew = new Audio();                //重新创建一个新的audio对象，为了下面获取长度的时候避免每次都获取同一个audio的长度
+            //         audioNew.src = voicePath;　　　　　　　　　　 //重新设置新的audio对象的音频url　　
+            //         audioNew.preload = "metadata";               //设置新的audio对象加载音频元数据
+            //         audioNew.load();　　　　　　　　　　　　　　　　//新的audio对象开始加载
+            //         //新的audio对象元数据加载成功之后的回调 audio.duration 获取音频的时长，需要音频元数据加载完成之后才会有，否则就是NaN
+            //         audioNew.onloadedmetadata = function () {
+            //             console.log("src=" + audioNew.currentSrc + "|||||||<><><><><><><><><>" + audioNew.duration);
+            //             //这里获取到不同的消息对应的时长之后就可以将时长渲染到页面咯
+            //         }
+            //     });
         }
-}</script>
+    </script>
 </body>
 </html>
 

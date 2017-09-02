@@ -16,6 +16,7 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
         public List<SickMusicItem> listMusic = new List<SickMusicItem>();
         protected void Page_Load(object sender, EventArgs e)
         {
+           // UserBusiness.WriteCookie(new Sys_User() { OpenId = "od_wK1iAymw_T0jC10JOzfq1vgvY" });
             string openId = UserBusiness.GetCookieOpenId();
             Question question = QuestionBusiness.GetQuestion(openId);
             //mobile=" + mobile+"&birthday="+txtBirthday
