@@ -258,6 +258,8 @@
     <Content Include="jqueryweui\wx\ExceptionsNotice.aspx" />
     <Content Include="jqueryweui\wx\GoTo.aspx" />
     <Content Include="jqueryweui\wx\GoToQuestion.aspx" />
+    <Content Include="jqueryweui\wx\images\7.png" />
+    <Content Include="jqueryweui\wx\images\iconloop.png" />
     <Content Include="jqueryweui\wx\MedicalGuide.aspx" />
     <Content Include="jqueryweui\wx\MedicineList.aspx" />
     <Content Include="jqueryweui\wx\MyExchange.aspx" />
@@ -671,6 +673,11 @@
     <Content Include="js\My97DatePicker\skin\WdatePicker.css" />
     <Content Include="js\My97DatePicker\WdatePicker.js" />
     <Content Include="js\validate.js" />
+    <Content Include="js\webchataudio\.gitattributes" />
+    <Content Include="js\webchataudio\src\demo.html" />
+    <Content Include="js\webchataudio\src\img\iconloop.png" />
+    <Content Include="js\webchataudio\src\js\weixinAudio.js" />
+    <Content Include="js\webchataudio\src\sound\sound.mp3" />
     <Content Include="OAuth2.aspx" />
     <Content Include="Web.config" />
     <Content Include="Weixin.aspx" />
@@ -1085,6 +1092,10 @@
     <Content Include="js\kindeditor-4.1.10\asp.net\file_manager_json.ashx" />
     <Content Include="js\kindeditor-4.1.10\asp.net\upload_json.ashx" />
     <Content Include="handlerui\PageHandler.ashx" />
+    <Content Include="js\webchataudio\.project" />
+    <Content Include="js\webchataudio\README.md" />
+    <Content Include="js\webchataudio\README_EN.md" />
+    <Content Include="js\webchataudio\src\img\Thumbs.db" />
     <None Include="Properties\PublishProfiles\wx.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
