@@ -178,8 +178,8 @@
               { %>
     <p class="weixinAudio">
                             <audio name="media" id="audio<%=i %>" width="1" height="1" preload = "metadata">
-                                <%--<source src="http://wx.yishengcollege.com/music/<%=music.MusicFileName %>" type="audio/mpeg" />--%>
-                                <source src="/js/webchataudio/src/sound/8586.wav" type="audio/mpeg" /> 
+                                <source src="http://wx.yishengcollege.com/music/<%=music.MusicFileName %>" type="audio/mpeg" />
+                                <%--<source src="/js/webchataudio/src/sound/8586.wav" type="audio/mpeg" /> --%>
                                 您浏览器不支持audio标签.
                             </audio>
                             <span id="audio_area" class="db audio_area">
