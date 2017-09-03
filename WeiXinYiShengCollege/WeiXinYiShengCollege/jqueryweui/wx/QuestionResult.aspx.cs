@@ -17,26 +17,34 @@ namespace WeiXinYiShengCollege.WebSite.jqueryweui.wx
         protected void Page_Load(object sender, EventArgs e)
         {
            // UserBusiness.WriteCookie(new Sys_User() { OpenId = "od_wK1iAymw_T0jC10JOzfq1vgvY" });
-            string openId = UserBusiness.GetCookieOpenId();
-            Question question = QuestionBusiness.GetQuestion(openId);
-            //mobile=" + mobile+"&birthday="+txtBirthday
-            //string mobile = RequestKeeper.GetFormString(Request["mobile"]);
-            //string birthday = RequestKeeper.GetFormString(Request["birthday"]);
-            //Question question = QuestionBusiness.GetQuestion(mobile, Convert.ToDateTime(birthday));
-            if (null != question && !string.IsNullOrEmpty(question.Sickness))
+            //判断如果openid未获取到那么重新跳转到授权页
+            string openid = UserBusiness.GetCookieOpenId();
+            if (string.IsNullOrEmpty(openid))
             {
-                //获取曲目名称
-                SickMusicItem music =   QuestionBusiness.GetMusicNameFromSickness(question.Sickness);
-                listMusic.Add(music);
-                SickMusicItem musicNianGan = QuestionBusiness.GetMusicNameFromNianGan(Convert.ToDateTime(question.Birthday));
-                if(null!=musicNianGan && !string.IsNullOrEmpty(musicNianGan.MusicName))
+                Response.Redirect("gotoquestionresult.aspx");
+            }
+            else
+            {
+                Question question = QuestionBusiness.GetQuestion(openid);
+                //mobile=" + mobile+"&birthday="+txtBirthday
+                //string mobile = RequestKeeper.GetFormString(Request["mobile"]);
+                //string birthday = RequestKeeper.GetFormString(Request["birthday"]);
+                //Question question = QuestionBusiness.GetQuestion(mobile, Convert.ToDateTime(birthday));
+                if (null != question && !string.IsNullOrEmpty(question.Sickness))
                 {
-                    listMusic.Add(musicNianGan);
-                }
-                SickMusicItem musicRiZhi = QuestionBusiness.GetMusicNameFromRiZhi(Convert.ToDateTime(question.Birthday));
-                if (null != musicRiZhi && !string.IsNullOrEmpty(musicRiZhi.MusicName))
-                {
-                    listMusic.Add(musicRiZhi);
+                    //获取曲目名称
+                    SickMusicItem music = QuestionBusiness.GetMusicNameFromSickness(question.Sickness);
+                    listMusic.Add(music);
+                    SickMusicItem musicNianGan = QuestionBusiness.GetMusicNameFromNianGan(Convert.ToDateTime(question.Birthday));
+                    if (null != musicNianGan && !string.IsNullOrEmpty(musicNianGan.MusicName))
+                    {
+                        listMusic.Add(musicNianGan);
+                    }
+                    SickMusicItem musicRiZhi = QuestionBusiness.GetMusicNameFromRiZhi(Convert.ToDateTime(question.Birthday));
+                    if (null != musicRiZhi && !string.IsNullOrEmpty(musicRiZhi.MusicName))
+                    {
+                        listMusic.Add(musicRiZhi);
+                    }
                 }
             }
 

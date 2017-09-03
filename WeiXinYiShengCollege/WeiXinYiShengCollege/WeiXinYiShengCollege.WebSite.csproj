@@ -257,6 +257,7 @@
     <Content Include="jqueryweui\wx\DoctorWorkView.aspx" />
     <Content Include="jqueryweui\wx\ExceptionsNotice.aspx" />
     <Content Include="jqueryweui\wx\GoTo.aspx" />
+    <Content Include="jqueryweui\wx\GoToQuestionResult.aspx" />
     <Content Include="jqueryweui\wx\GoToQuestion.aspx" />
     <Content Include="jqueryweui\wx\images\7.png" />
     <Content Include="jqueryweui\wx\images\iconloop.png" />
@@ -932,6 +933,13 @@
     </Compile>
     <Compile Include="jqueryweui\wx\GoTo.aspx.designer.cs">
       <DependentUpon>GoTo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jqueryweui\wx\GoToQuestionResult.aspx.cs">
+      <DependentUpon>GoToQuestionResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\GoToQuestionResult.aspx.designer.cs">
+      <DependentUpon>GoToQuestionResult.aspx</DependentUpon>
     </Compile>
     <Compile Include="jqueryweui\wx\GoToQuestion.aspx.cs">
       <DependentUpon>GoToQuestion.aspx</DependentUpon>
