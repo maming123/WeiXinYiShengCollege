@@ -45,3 +45,21 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/Senparc.Weixin/Senparc.Weixin/bin/Debug
+/Senparc.Weixin/Senparc.Weixin/obj
+/Senparc.Weixin.MP/Senparc.Weixin.MP/obj
+/Senparc.Weixin.MP/Senparc.Weixin.MP.Test
+/Senparc.Weixin.MP/Senparc.WeixinTests
+/Senparc.Weixin.MP.BuildOutPut
+/Senparc.Weixin.MP.Sample/packages
+/Senparc.Weixin.MP.Sample/Senparc.Weixin.MP.Sample.Tests
+/Senparc.Weixin.MP.Sample/Senparc.Weixin.MP.Sample.CommonService/bin
+/Senparc.Weixin.MP.Sample/Senparc.Weixin.MP.Sample.CommonService/obj
+/WeiXinYiShengCollege/Senparc.Weixin.MP.Sample.CommonService.Test
+/WeiXinYiShengCollege/WeiXinYiShengCollege/obj
+/WeiXinYiShengCollege/WeiXinYiShengCollege/log
+/WeiXinYiShengCollege/WeiXinYiShengCollege/bin
+/WeiXinYiShengCollege/.vs
+/WeiXinYiShengCollege/WeiXinYiShengCollege.Business/bin
+/WeiXinYiShengCollege/WeiXinYiShengCollege.Business/obj
+/WeiXinYiShengCollege/WeiXinYiShengCollege.Business.Test

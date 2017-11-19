@@ -43,14 +43,11 @@
             <div class="weui-panel__bd">
                 <div class="weui-media-box weui-media-box_small-appmsg">
                     <div class="weui-cells">
-                        
-                       
                         <a class="weui-cell weui-cell_access" href="javascript:;">
 
                             <div class="weui-cell__bd weui-cell_primary">
                                 <p>我的积分(<%=sUser.LastScore/100 %>)</p>
                             </div>
-
                         </a>
                          <%if(sUser.UserLevel== (int)UserLevel.荣誉理事){%>
                          <a class="weui-cell weui-cell_access" href="MyLiShiList.aspx?Id=<%=sUser.Id %>">
@@ -146,7 +143,13 @@
                             </div>
                             <span class="weui-cell__ft"></span>
                         </a>
+                        <a class="weui-cell weui-cell_access" href="ProfileMusicType.aspx?OpenId=<%=sUser.OpenId %>">
 
+                            <div class="weui-cell__bd weui-cell_primary">
+                                <p>五音疗愈曲目</p>
+                            </div>
+                            <span class="weui-cell__ft"></span>
+                        </a>
                     </div>
                 </div>
             </div>

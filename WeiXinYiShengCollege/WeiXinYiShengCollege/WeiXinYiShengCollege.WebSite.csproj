@@ -22,6 +22,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -302,11 +303,13 @@
     <Content Include="jqueryweui\wx\MyDoctor.aspx" />
     <Content Include="jqueryweui\wx\MyExchangeList.aspx" />
     <Content Include="jqueryweui\wx\MyCollect.aspx" />
+    <Content Include="jqueryweui\wx\ProfileMusicType.aspx" />
     <Content Include="jqueryweui\wx\MyFansList.aspx" />
     <Content Include="jqueryweui\wx\MyLiShiList.aspx" />
     <Content Include="jqueryweui\wx\MyOrderList.aspx" />
     <Content Include="jqueryweui\wx\ProfileApprove.aspx" />
     <Content Include="jqueryweui\wx\ProfileEdit.aspx" />
+    <Content Include="jqueryweui\wx\ProfileMusicList.aspx" />
     <Content Include="jqueryweui\wx\QuestionWeb.aspx" />
     <Content Include="jqueryweui\wx\QuestionResult.aspx" />
     <Content Include="js\admin.js" />
@@ -1018,6 +1021,13 @@
     <Compile Include="jqueryweui\wx\MyCollect.aspx.designer.cs">
       <DependentUpon>MyCollect.aspx</DependentUpon>
     </Compile>
+    <Compile Include="jqueryweui\wx\ProfileMusicType.aspx.cs">
+      <DependentUpon>ProfileMusicType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\ProfileMusicType.aspx.designer.cs">
+      <DependentUpon>ProfileMusicType.aspx</DependentUpon>
+    </Compile>
     <Compile Include="jqueryweui\wx\MyFansList.aspx.cs">
       <DependentUpon>MyFansList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1055,6 +1065,13 @@
     </Compile>
     <Compile Include="jqueryweui\wx\ProfileEdit.aspx.designer.cs">
       <DependentUpon>ProfileEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jqueryweui\wx\ProfileMusicList.aspx.cs">
+      <DependentUpon>ProfileMusicList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqueryweui\wx\ProfileMusicList.aspx.designer.cs">
+      <DependentUpon>ProfileMusicList.aspx</DependentUpon>
     </Compile>
     <Compile Include="jqueryweui\wx\QuestionWeb.aspx.cs">
       <DependentUpon>QuestionWeb.aspx</DependentUpon>

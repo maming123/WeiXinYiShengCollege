@@ -1,0 +1,8 @@
+# git ignore file
+*.[user]
+*.[suo]
+.vs/
+_ReSharper.Senparc.Weixin.MP.Sample
+TestResults/
+obj/
+Debug/

@@ -96,7 +96,7 @@ namespace WeiXinYiShengCollege.Business
         }
 
         /// <summary>
-        /// 获取病症曲目字典表 status=0 曲目字典表
+        /// 获取病症曲目字典表 status=1 曲目字典表
         /// </summary>
         /// <returns></returns>
         public static List<SickMusicDic> GetSickMusicDic()
@@ -104,6 +104,36 @@ namespace WeiXinYiShengCollege.Business
             List<SickMusicDic> list = new List<SickMusicDic>();
             list = SickMusicDic.Query("where status=1").ToList();
             return list;
+        }
+
+        /// <summary>
+        /// 根据病症类型获取曲目列表
+        /// </summary>
+        /// <param name="sickName"></param>
+        /// <returns></returns>
+        public static List<SickMusicItem> GetMusicNameFromSicknessStatus(int status)
+        {
+            string strWhere = "";
+            if(status==1)
+            {
+                strWhere = "where Status=1 ";
+            }else
+            {
+                strWhere = "where Status in (2,3) ";
+            }
+            List<SickMusicDic> sickMusicList = SickMusicDic.Query(strWhere).ToList();
+            if (null != sickMusicList)
+            {
+                List<SickMusicItem> list = new List<SickMusicItem>();
+                foreach (SickMusicDic sickMusic in sickMusicList)
+                {
+                    SickMusicItem s = BaseCommon.JsonToObject<SickMusicItem>(sickMusic.MusicList);
+                    list.Add(s);
+                }
+                return list;
+            }
+            else
+                return new List<SickMusicItem>();
         }
 
         /// <summary>

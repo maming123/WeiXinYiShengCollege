@@ -6,7 +6,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>E:\WebWXRelease</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\myoldwork\Release\WeiXinRelease</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/log4net.dll">
@@ -16,16 +16,16 @@
       <publishTime>04/11/2017 11:14:04</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.dll">
-      <publishTime>08/27/2017 23:47:33</publishTime>
+      <publishTime>11/19/2017 17:57:54</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.dll">
-      <publishTime>08/29/2017 11:52:02</publishTime>
+      <publishTime>11/19/2017 18:15:52</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.dll">
-      <publishTime>08/29/2017 11:52:13</publishTime>
+      <publishTime>11/19/2017 18:15:53</publishTime>
     </File>
     <File Include="bin/Senparc.Weixin.MP.Sample.CommonService.pdb">
       <publishTime>04/11/2017 16:18:56</publishTime>
@@ -34,7 +34,7 @@
       <publishTime>04/11/2017 16:18:51</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.dll">
-      <publishTime>08/28/2017 23:04:03</publishTime>
+      <publishTime>11/19/2017 18:15:52</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.Business.pdb">
       <publishTime>04/11/2017 16:18:53</publishTime>
@@ -46,7 +46,7 @@
       <publishTime>04/11/2017 16:18:58</publishTime>
     </File>
     <File Include="bin/WeiXinYiShengCollege.WebSite.dll">
-      <publishTime>08/29/2017 11:52:17</publishTime>
+      <publishTime>11/19/2017 18:15:54</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>04/14/2017 18:51:59</publishTime>
@@ -643,7 +643,7 @@
       <publishTime>06/04/2017 22:43:52</publishTime>
     </File>
     <File Include="jqueryweui/wx/FansProfile.aspx">
-      <publishTime>08/28/2017 22:51:28</publishTime>
+      <publishTime>08/30/2017 18:16:02</publishTime>
     </File>
     <File Include="jqueryweui/wx/FansProfileComplete.aspx">
       <publishTime>06/06/2017 10:05:04</publishTime>
@@ -656,6 +656,15 @@
     </File>
     <File Include="jqueryweui/wx/GoToQuestion.aspx">
       <publishTime>08/28/2017 23:59:35</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/GoToQuestionResult.aspx">
+      <publishTime>09/03/2017 21:32:01</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/7.png">
+      <publishTime>09/03/2017 02:24:19</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/images/iconloop.png">
+      <publishTime>09/03/2017 00:41:46</publishTime>
     </File>
     <File Include="jqueryweui/wx/images/icon_nav_actionSheet.png">
       <publishTime>04/12/2017 12:02:52</publishTime>
@@ -783,8 +792,11 @@
     <File Include="jqueryweui/wx/ProductDetail.aspx">
       <publishTime>04/24/2017 16:31:34</publishTime>
     </File>
+    <File Include="jqueryweui/wx/ProfieMusicList.aspx">
+      <publishTime>11/19/2017 17:54:28</publishTime>
+    </File>
     <File Include="jqueryweui/wx/profile.aspx">
-      <publishTime>08/28/2017 22:52:34</publishTime>
+      <publishTime>11/19/2017 17:44:20</publishTime>
     </File>
     <File Include="jqueryweui/wx/ProfileApprove.aspx">
       <publishTime>05/07/2017 10:39:36</publishTime>
@@ -795,11 +807,17 @@
     <File Include="jqueryweui/wx/ProfileEdit.aspx">
       <publishTime>04/28/2017 12:36:38</publishTime>
     </File>
+    <File Include="jqueryweui/wx/ProfileMusicList.aspx">
+      <publishTime>11/19/2017 18:06:21</publishTime>
+    </File>
+    <File Include="jqueryweui/wx/ProfileMusicType.aspx">
+      <publishTime>11/19/2017 18:15:25</publishTime>
+    </File>
     <File Include="jqueryweui/wx/QuestionResult.aspx">
-      <publishTime>08/29/2017 11:50:14</publishTime>
+      <publishTime>09/03/2017 22:08:52</publishTime>
     </File>
     <File Include="jqueryweui/wx/QuestionWeb.aspx">
-      <publishTime>08/29/2017 11:49:45</publishTime>
+      <publishTime>09/01/2017 17:49:20</publishTime>
     </File>
     <File Include="js/admin.js">
       <publishTime>04/12/2017 16:58:56</publishTime>
@@ -1902,6 +1920,33 @@
     <File Include="js/validate.js">
       <publishTime>04/12/2017 16:59:02</publishTime>
     </File>
+    <File Include="js/webchataudio/.gitattributes">
+      <publishTime>09/03/2017 00:35:44</publishTime>
+    </File>
+    <File Include="js/webchataudio/.project">
+      <publishTime>09/03/2017 00:35:44</publishTime>
+    </File>
+    <File Include="js/webchataudio/README.md">
+      <publishTime>09/03/2017 00:35:44</publishTime>
+    </File>
+    <File Include="js/webchataudio/README_EN.md">
+      <publishTime>09/03/2017 00:35:44</publishTime>
+    </File>
+    <File Include="js/webchataudio/src/demo.html">
+      <publishTime>09/03/2017 00:35:44</publishTime>
+    </File>
+    <File Include="js/webchataudio/src/img/iconloop.png">
+      <publishTime>09/03/2017 00:35:44</publishTime>
+    </File>
+    <File Include="js/webchataudio/src/img/Thumbs.db">
+      <publishTime>09/03/2017 00:35:44</publishTime>
+    </File>
+    <File Include="js/webchataudio/src/js/weixinAudio.js">
+      <publishTime>09/03/2017 02:08:32</publishTime>
+    </File>
+    <File Include="js/webchataudio/src/sound/sound.mp3">
+      <publishTime>09/03/2017 00:35:44</publishTime>
+    </File>
     <File Include="log4.config">
       <publishTime>04/11/2017 16:36:25</publishTime>
     </File>
@@ -1915,7 +1960,7 @@
       <publishTime>07/27/2017 09:35:23</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/27/2017 23:47:41</publishTime>
+      <publishTime>11/19/2017 17:57:59</publishTime>
     </File>
     <File Include="Weixin.aspx">
       <publishTime>04/17/2017 16:58:55</publishTime>
