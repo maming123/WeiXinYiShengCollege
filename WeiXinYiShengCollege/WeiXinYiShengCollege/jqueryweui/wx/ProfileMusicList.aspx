@@ -159,7 +159,7 @@
 <body ontouchstart>
 
     <header class='demos-header'>
-        <h1 class="demos-title">五音疗愈曲目列表</h1>
+        <h1 class="demos-title">五音疗愈曲目</h1>
     </header>
     <style>
       .weui-row {
